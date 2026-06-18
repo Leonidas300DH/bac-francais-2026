@@ -88,7 +88,7 @@ Et tu me diras : « Cherche ! » en inclinant la tête,
 La mère fait du tricot
 Le fils fait la guerre
 Elle trouve ça tout naturel la mère
-Et le père qu'est-ce qu'il fait le père ?
+Et le père qu’est-ce qu’il fait le père ?
 Il fait des affaires
 Sa femme fait du tricot
 Son fils la guerre
@@ -112,19 +112,19 @@ La vie avec le cimetière.
   `),
 
   portraitRaphael: toLines(`
-Au premier coup d'oeil, les joueurs lurent sur le visage du novice quelque horrible mystère.
-Ses jeunes traits étaient empreints d'une grâce nébuleuse, son regard attestait des efforts trahis, mille espérances trompées !
+Au premier coup d’œil, les joueurs lurent sur le visage du novice quelque horrible mystère.
+Ses jeunes traits étaient empreints d’une grâce nébuleuse, son regard attestait des efforts trahis, mille espérances trompées !
 La morne impassibilité du suicide donnait à ce front une pâleur mate et maladive.
 Un sourire amer dessinait le léger pli dans les coins de la bouche, et la physionomie exprimait une résignation qui faisait mal à voir.
 Quelque secret génie scintillait au fond de ces yeux voilés peut-être par les fatigues du plaisir.
 Était-ce la débauche qui marquait de son sale cachet cette noble figure jadis pure et brûlante, maintenant dégradée ?
-Les médecins auraient sans doute attribué à des lésions au coeur ou à la poitrine le cercle jaune qui encadrait les paupières, et la rougeur qui marquait les joues.
-Les poètes eussent voulu reconnaître à ces signes les ravages de la science, les traces de nuits passées à la lueur d'une lampe studieuse.
-Mais une passion plus mortelle que la maladie, une maladie plus impitoyable que l'étude et le génie, altéraient cette jeune tête.
-Elle contractait ces muscles vivaces, tordait ce coeur qu'avaient seulement effleuré les orgies, l'étude et la maladie.
-Comme, lorsqu'un célèbre criminel arrive au bagne, les condamnés l'accueillent avec respect.
+Les médecins auraient sans doute attribué à des lésions au cœur ou à la poitrine le cercle jaune qui encadrait les paupières, et la rougeur qui marquait les joues.
+Les poètes eussent voulu reconnaître à ces signes les ravages de la science, les traces de nuits passées à la lueur d’une lampe studieuse.
+Mais une passion plus mortelle que la maladie, une maladie plus impitoyable que l’étude et le génie, altéraient cette jeune tête.
+Elle contractait ces muscles vivaces, tordait ce cœur qu’avaient seulement effleuré les orgies, l’étude et la maladie.
+Comme, lorsqu’un célèbre criminel arrive au bagne, les condamnés l’accueillent avec respect.
 Ainsi tous ces démons humains, experts en tortures, saluèrent une douleur inouïe, une blessure profonde que sondait leur regard.
-Ils reconnurent un de leurs princes à la majesté de sa muette ironie, à l'élégante misère de ses vêtements.
+Ils reconnurent un de leurs princes à la majesté de sa muette ironie, à l’élégante misère de ses vêtements.
   `),
 
   antiquaire: toLines(`

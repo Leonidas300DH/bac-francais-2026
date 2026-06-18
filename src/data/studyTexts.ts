@@ -454,25 +454,53 @@ const texts: StudyText[] = [
     author: "Jacques Prévert",
     sourceLabel: "Paroles, 1946",
     lines: sourceTexts.familiale,
-    context: "Prévert écrit après les guerres mondiales et utilise une langue simple pour dénoncer l'absurdité sociale.",
-    quizFocus: "Le poème montre que la guerre et les affaires deviennent des habitudes acceptées comme normales.",
-    problematique: "Comment Prévert dénonce-t-il la banalisation de la guerre ?",
-    recap: "La famille répète des gestes ordinaires, la guerre tue le fils, mais la société continue comme si tout était normal.",
+    context: "Dans Paroles, Prévert adopte une écriture volontairement orale et répétitive pour attaquer les évidences sociales. Familiale montre une famille ordinaire qui accepte la guerre et les affaires comme un ordre naturel.",
+    quizFocus: "Le poème montre que la guerre, le travail domestique et les affaires sont traités comme des gestes équivalents, jusqu'à rendre la mort du fils presque banale.",
+    problematique: "Comment Prévert utilise-t-il la répétition du quotidien pour dénoncer la banalisation de la guerre ?",
+    recap: "Prévert enferme d'abord chaque membre de la famille dans un rôle mécanique, efface ensuite la pensée du fils, puis montre que la mort elle-même ne brise pas le cycle social.",
     opening: "On peut le rapprocher de Rimbaud, Le Mal, qui dénonce aussi la violence guerrière.",
     movements: [
       movement("m1", "I. Une famille mécanique", 1, 9, ["répétition", "quotidien", "normalité"], [
-        section("m1a", "Des rôles figés", "La mère tricote, le père fait des affaires, le fils fait la guerre. Chacun est enfermé dans un rôle.", "La répétition rend l'absurde visible.", [
-          figure("f1", "Anaphore", "fait", "Le même verbe met sur le même plan tricot, affaires et guerre.", 1, 8),
+        section("m1a", "Des rôles distribués comme une évidence", "Le début associe immédiatement la mère, le fils et le père à une activité fixe. Aucun personnage n'est présenté par ses sentiments : chacun est réduit à une fonction.", undefined, [
+          figure("f1", "Parallélisme", "La mère fait / Le fils fait", "La même structure grammaticale place tricot et guerre sur le même plan.", 1, 2),
+          figure("f2", "Verbe banal", "fait", "Le verbe ordinaire banalise des réalités très différentes, de l'activité domestique à la guerre.", 1, 5),
+        ]),
+        section("m1b", "Une normalité inquiétante", "La mère puis le père trouvent la situation naturelle. L'horreur vient du fait que personne ne s'étonne de voir le fils faire la guerre.", undefined, [
+          figure("f3", "Reprise insistante", "tout naturel", "La répétition signale une acceptation sociale absurde.", 3, 9),
+          figure("f4", "Registre familier", "ça", "Le langage courant donne à la guerre une place banale dans la conversation.", 3),
+        ]),
+        section("m1c", "La guerre mise au même niveau que les affaires", "Le poème enchaîne le tricot, la guerre et les affaires sans hiérarchie. Cette égalité grammaticale dénonce une société qui traite la guerre comme une activité ordinaire.", undefined, [
+          figure("f5", "Ellipse verbale", "Son fils la guerre / Lui des affaires", "La suppression du verbe accélère la mécanique des rôles.", 7, 8),
+          figure("f6", "Question rhétorique", "qu’est-ce qu’il fait le père ?", "La fausse question relance le système sans vraiment l'interroger.", 4),
         ]),
       ]),
       movement("m2", "II. Le fils n'a pas de pensée possible", 10, 18, ["vide", "mort", "destin"], [
-        section("m2a", "Le fils disparaît", "Le fils ne trouve rien : il est pris dans la guerre avant même d'exister comme individu.", "La mort est racontée sans pathos, ce qui la rend plus choquante.", [
-          figure("f2", "Négation", "rien absolument rien", "Le vide intérieur du fils est martelé.", 12),
+        section("m2a", "Le fils devient le centre vide du poème", "La répétition de son nom attire l'attention sur lui, mais quand la question porte sur ce qu'il pense ou trouve, la réponse est le vide.", undefined, [
+          figure("f7", "Répétition", "Et le fils et le fils", "La répétition crée une attente autour du fils.", 10),
+          figure("f8", "Question directe", "Qu’est-ce qu’il trouve le fils ?", "La question semble ouvrir un espace de pensée individuelle.", 11),
+        ]),
+        section("m2b", "Une intériorité niée", "Le fils ne trouve rien : le poème lui refuse une parole personnelle, comme si la guerre empêchait toute pensée propre.", undefined, [
+          figure("f9", "Négation absolue", "rien absolument rien", "L'accumulation de la négation vide le personnage de toute perspective.", 12),
+          figure("f10", "Répétition du nom", "le fils", "Le nom revient, mais sans construire une identité autonome.", 10, 13),
+        ]),
+        section("m2c", "Un destin social déjà tracé", "Le vers 13 rassemble toute la famille dans une seule phrase sans ponctuation forte. La suite annonce que le fils passera de la guerre aux affaires, comme son père.", undefined, [
+          figure("f11", "Accumulation", "sa mère fait du tricot son père des affaires lui la guerre", "La phrase compacte enferme chacun dans son rôle.", 13),
+          figure("f12", "Futur programmatique", "Il fera des affaires avec son père", "Le futur présente l'avenir du fils comme une reproduction du modèle paternel.", 15),
         ]),
       ]),
       movement("m3", "III. La vie continue absurdement", 19, 24, ["cimetière", "cycle", "critique"], [
-        section("m3a", "La société ne change pas", "Même après la mort, les parents trouvent cela naturel et le cycle reprend.", "Le poème accuse l'habitude qui empêche de s'indigner.", [
-          figure("f3", "Énumération", "le tricot la guerre les affaires", "Les mots tournent en boucle comme un mécanisme.", 21, 23),
+        section("m3a", "La mort intégrée au mécanisme", "La mort du fils est énoncée brutalement, sans lyrisme. Le choc vient de la simplicité de la phrase et du contraste avec la continuation des autres activités.", undefined, [
+          figure("f13", "Antithèse", "La guerre continue / Le fils est tué", "La guerre continue alors que le fils, lui, ne continue plus.", 16, 18),
+          figure("f14", "Phrase brève", "Le fils est tué", "La sécheresse de la phrase rend la mort plus violente.", 18),
+        ]),
+        section("m3b", "Le cimetière accepté comme une étape ordinaire", "Les parents vont au cimetière et trouvent encore cela naturel. Prévert dénonce une société où même la mort du fils est absorbée par l'habitude.", undefined, [
+          figure("f15", "Euphémisme narratif", "vont au cimetière", "Le déplacement remplace l'expression directe du deuil.", 19),
+          figure("f16", "Reprise accusatrice", "Ils trouvent ça naturel", "La formule réapparaît après la mort et devient insupportable.", 20),
+        ]),
+        section("m3c", "Une boucle sociale sans issue", "Les derniers vers mélangent le tricot, la guerre et les affaires dans un ordre circulaire. La vie continue, mais cette vie contient désormais le cimetière.", undefined, [
+          figure("f17", "Anaphore", "La vie continue la vie", "La répétition donne une impression de cycle automatique.", 21),
+          figure("f18", "Énumération circulaire", "le tricot la guerre les affaires", "Les trois mots tournent comme les pièces d'un mécanisme social.", 21, 23),
+          figure("f19", "Chute", "La vie avec le cimetière.", "Le dernier vers associe définitivement la vie sociale à la mort.", 24),
         ]),
       ]),
     ],
@@ -483,25 +511,55 @@ const texts: StudyText[] = [
     author: "Honoré de Balzac",
     sourceLabel: "La Peau de chagrin, 1831",
     lines: sourceTexts.portraitRaphael,
-    context: "Balzac présente Raphaël de Valentin au début du roman : un jeune homme déjà usé par le désir, l'étude et le désespoir.",
-    quizFocus: "Le portrait fait de Raphaël un héros marqué par l'énergie dépensée et proche de la destruction.",
-    problematique: "Comment ce portrait annonce-t-il la destruction de Raphaël ?",
-    recap: "Le regard des joueurs révèle un corps malade, une âme blessée et une grandeur inquiétante.",
+    context: "Au début de La Peau de chagrin, Raphaël de Valentin entre dans un lieu de jeu après avoir envisagé le suicide. Balzac le présente d'abord à travers le regard des joueurs, qui lisent sur son visage une histoire de souffrance.",
+    quizFocus: "Le portrait transforme le visage de Raphaël en signe visible d'une énergie déjà consumée par la débauche, l'étude, la maladie et surtout la passion.",
+    problematique: "Comment Balzac fait-il du portrait de Raphaël l'annonce d'une destruction intérieure ?",
+    recap: "Balzac donne d'abord au visage de Raphaël une aura mystérieuse, multiplie ensuite les signes physiques de dégradation, puis fait reconnaître en lui une grandeur sombre par les joueurs.",
     opening: "On peut ouvrir sur le thème balzacien de l'énergie vitale qui se consume.",
     movements: [
       movement("m1", "I. Un visage mystérieux", 1, 5, ["portrait", "mystère", "souffrance"], [
-        section("m1a", "Le corps parle avant le personnage", "Les joueurs lisent son visage comme un secret. Le portrait est presque médical.", "Le visage est une fiche d'identité morale.", [
-          figure("f1", "Champ lexical", "pâleur / maladive / amer", "Les mots installent l'idée de maladie et de malheur.", 2, 4),
+        section("m1a", "Un portrait vu par les joueurs", "Raphaël n'est pas présenté directement par un narrateur neutre : ce sont les joueurs qui lisent son visage. Le personnage apparaît donc comme une énigme offerte au regard.", undefined, [
+          figure("f1", "Focalisation collective", "les joueurs lurent", "Le regard du groupe transforme le visage en texte à déchiffrer.", 1),
+          figure("f2", "Métaphore de la lecture", "lurent sur le visage", "Le visage devient un document où s'inscrit le passé du personnage.", 1),
+        ]),
+        section("m1b", "Un mystère inquiétant", "Dès la première phrase, le portrait associe jeunesse et horreur. Raphaël attire parce qu'il semble porter un secret grave.", undefined, [
+          figure("f3", "Expression hyperbolique", "quelque horrible mystère", "L'adjectif horrible dramatise immédiatement le portrait.", 1),
+          figure("f4", "Contraste", "jeunes traits / horrible mystère", "La jeunesse du personnage s'oppose à la gravité de ce qu'il porte.", 1, 2),
+        ]),
+        section("m1c", "Une beauté déjà abîmée", "La grâce de Raphaël reste présente, mais elle est brouillée par l'échec et le désespoir. Balzac construit un héros séduisant et détruit à la fois.", undefined, [
+          figure("f5", "Oxymore discret", "grâce nébuleuse", "La beauté est associée au flou et à l'obscurcissement.", 2),
+          figure("f6", "Accumulation", "efforts trahis, mille espérances trompées", "Les échecs répétés donnent une profondeur biographique au visage.", 2),
         ]),
       ]),
       movement("m2", "II. Les causes de la dégradation", 6, 10, ["débauche", "étude", "passion"], [
-        section("m2a", "Plusieurs explications possibles", "Balzac hésite entre plaisir, science et maladie : Raphaël semble détruit par toutes les formes d'excès.", "Ce qui l'a abîmé, c'est l'énergie dépensée.", [
-          figure("f2", "Question rhétorique", "Était-ce la débauche", "La question dramatise l'origine du mal.", 7),
+        section("m2a", "Une dégradation physique précise", "Le portrait devient presque médical : pâleur, cercle jaune, rougeur des joues. Le corps porte les marques d'une usure avancée.", undefined, [
+          figure("f7", "Champ lexical médical", "pâleur / maladive / lésions", "Les termes donnent au portrait une dimension clinique.", 3, 7),
+          figure("f8", "Détails corporels", "paupières / joues", "Balzac localise les signes du mal dans le visage.", 7),
+        ]),
+        section("m2b", "Plusieurs causes possibles", "Balzac fait hésiter l'interprétation : débauche, maladie, étude, génie. Raphaël semble avoir été abîmé par toutes les formes d'excès.", undefined, [
+          figure("f9", "Question rhétorique", "Était-ce la débauche", "La question dramatise l'origine du mal sans la résoudre immédiatement.", 6),
+          figure("f10", "Antithèse temporelle", "jadis pure et brûlante, maintenant dégradée", "Le portrait oppose la noblesse passée à la ruine présente.", 6),
+          figure("f11", "Parallélisme", "Les médecins / Les poètes", "Deux types d'interprétation se répondent : le corps malade et l'esprit consumé.", 7, 8),
+        ]),
+        section("m2c", "La passion plus destructrice que tout", "La cause profonde dépasse la maladie et l'étude : Balzac désigne une passion mortelle qui tord le cœur et les muscles.", undefined, [
+          figure("f12", "Comparatif d'intensité", "plus mortelle que la maladie", "La passion est présentée comme une force plus dangereuse que le mal physique.", 9),
+          figure("f13", "Personnification violente", "tordait ce cœur", "La passion agit comme une force qui déforme le corps de l'intérieur.", 10),
+          figure("f14", "Accumulation", "orgies, l’étude et la maladie", "Les différentes dépenses d'énergie convergent vers la destruction.", 10),
         ]),
       ]),
       movement("m3", "III. Une grandeur sombre", 11, 13, ["démons", "respect", "misère"], [
-        section("m3a", "Un prince du malheur", "Les joueurs reconnaissent en lui quelqu'un qui souffre plus qu'eux.", "Raphaël est pauvre, mais il garde une forme de majesté.", [
-          figure("f3", "Comparaison", "comme lorsqu'un célèbre criminel", "La comparaison rend le personnage inquiétant et exceptionnel.", 11),
+        section("m3a", "Une comparaison inquiétante", "Balzac compare l'arrivée de Raphaël à celle d'un grand criminel accueilli par des condamnés. Le personnage est donc valorisé et inquiétant à la fois.", undefined, [
+          figure("f15", "Comparaison", "Comme, lorsqu’un célèbre criminel arrive au bagne", "La comparaison donne à Raphaël une aura de danger et d'exception.", 11),
+          figure("f16", "Champ lexical du crime", "criminel / bagne / condamnés", "Le jeu est rapproché d'un univers moralement sombre.", 11),
+        ]),
+        section("m3b", "Les joueurs comme experts de la souffrance", "Les joueurs reconnaissent chez Raphaël une douleur supérieure à la leur. Leur regard fonctionne comme un jugement d'initiés.", undefined, [
+          figure("f17", "Métaphore diabolique", "démons humains", "Les joueurs sont présentés comme des êtres corrompus et lucides.", 12),
+          figure("f18", "Hyperbole", "une douleur inouïe", "La souffrance de Raphaël dépasse l'expérience ordinaire.", 12),
+          figure("f19", "Métaphore médicale", "une blessure profonde que sondait leur regard", "Le regard des joueurs pénètre la douleur comme une sonde.", 12),
+        ]),
+        section("m3c", "Une majesté dans la misère", "La fin du portrait donne à Raphaël une noblesse paradoxale : ses vêtements sont misérables, mais son ironie et son allure le font reconnaître comme un prince.", undefined, [
+          figure("f20", "Métaphore sociale", "un de leurs princes", "Raphaël devient le souverain d'un monde de perdants et de joueurs.", 13),
+          figure("f21", "Oxymore", "élégante misère", "La pauvreté se mêle à une forme de distinction aristocratique.", 13),
         ]),
       ]),
     ],
@@ -512,25 +570,56 @@ const texts: StudyText[] = [
     author: "Honoré de Balzac",
     sourceLabel: "La Peau de chagrin, 1831",
     lines: sourceTexts.antiquaire,
-    context: "Raphaël découvre le talisman. L'antiquaire lui explique la loi dangereuse du désir.",
-    quizFocus: "La scène oppose le désir de vivre intensément à la sagesse qui consiste à économiser son énergie.",
-    problematique: "Comment l'antiquaire transforme-t-il le talisman en leçon de vie ?",
-    recap: "La curiosité détourne Raphaël du suicide, puis le vieillard formule l'opposition VOULOIR / POUVOIR / SAVOIR.",
+    context: "Dans la boutique de l'antiquaire, Raphaël découvre la Peau de chagrin, un talisman qui promet d'accomplir ses désirs. Le vieillard transforme cette tentation romanesque en leçon philosophique sur l'énergie humaine.",
+    quizFocus: "La scène oppose la curiosité de Raphaël au savoir de l'antiquaire : vouloir et pouvoir consument l'existence, tandis que savoir permet de conserver sa vie.",
+    problematique: "Comment l'antiquaire fait-il du talisman une leçon sur le désir, le pouvoir et la maîtrise de soi ?",
+    recap: "L'antiquaire constate d'abord que Raphaël est repris par le désir, refuse ensuite l'expérience du talisman, puis formule la loi du roman : VOULOIR brûle, POUVOIR détruit, SAVOIR apaise.",
     opening: "On peut ouvrir sur le mythe de Faust : obtenir un pouvoir en échange de sa vie.",
     movements: [
       movement("m1", "I. Un objet dangereux attire Raphaël", 1, 6, ["mystère", "ironie", "fatalité"], [
-        section("m1a", "La curiosité remplace le suicide", "Le regard ironique de l'antiquaire montre que Raphaël est déjà repris par le désir.", "Le talisman réveille l'envie de vivre.", [
-          figure("f1", "Discours direct", "Est-ce une plaisanterie", "La question montre le trouble de Raphaël.", 3),
+        section("m1a", "Le regard lucide de l'antiquaire", "Le vieux marchand comprend immédiatement que Raphaël, venu pour mourir, est déjà distrait par le mystère du talisman.", undefined, [
+          figure("f1", "Regard interprétatif", "un regard empreint d’une froide ironie", "L'antiquaire voit plus clair que Raphaël sur son désir naissant.", 1),
+          figure("f2", "Discours indirect libre", "Il ne pense déjà plus à mourir", "La pensée attribuée au regard révèle que la curiosité a remplacé le suicide.", 1),
+        ]),
+        section("m1b", "Raphaël entre dans le mystère", "La question du jeune homme oscille entre plaisanterie et mystère. Il ne sait pas encore si le talisman relève du jeu, du surnaturel ou du danger.", undefined, [
+          figure("f3", "Alternative interrogative", "plaisanterie / mystère", "La question met en balance rationalité et fantastique.", 2),
+          figure("f4", "Discours direct", "demanda le jeune inconnu", "La parole immédiate montre le trouble de Raphaël.", 2),
+        ]),
+        section("m1c", "Un contrat fatal refusé par les autres", "L'antiquaire explique que des hommes plus énergiques que Raphaël ont refusé le talisman. L'objet est présenté comme une puissance dangereuse.", undefined, [
+          figure("f5", "Lexique de la fatalité", "terrible pouvoir / contrat fatalement proposé", "Le vocabulaire associe le talisman à une menace pour la destinée.", 4, 5),
+          figure("f6", "Opposition implicite", "plus d’énergie que vous", "Raphaël est placé en position de faiblesse face à d'autres hommes plus forts.", 4),
+          figure("f7", "Accumulation de refus", "j’ai douté, je me suis abstenu", "La sagesse du vieillard se manifeste par le retrait plutôt que par l'action.", 6),
         ]),
       ]),
       movement("m2", "II. Le vieillard refuse l'expérience", 7, 12, ["prudence", "mort", "limite"], [
-        section("m2a", "Essayer serait se détruire", "L'antiquaire compare l'essai à un saut mortel. Il présente le désir comme une force impossible à arrêter.", "Le savoir naît du refus de tout vouloir.", [
-          figure("f2", "Question rhétorique", "Peut-on arrêter le cours de la vie ?", "La question impose l'évidence de la limite humaine.", 10),
+        section("m2a", "Une interruption qui révèle l'impatience de Raphaël", "Raphaël coupe le vieillard pour demander s'il a essayé. Cette impatience montre déjà sa tentation de l'expérience.", undefined, [
+          figure("f8", "Interruption", "en l’interrompant", "Raphaël rompt le discours sage par une réaction de curiosité.", 7),
+          figure("f9", "Exclamation", "Essayer !", "La reprise exclamative du vieillard transforme la question en absurdité.", 8),
+        ]),
+        section("m2b", "Essayer serait choisir la mort", "L'antiquaire compare l'expérience du talisman à un saut depuis la colonne Vendôme. Le pouvoir est donc immédiatement associé à une chute mortelle.", undefined, [
+          figure("f10", "Comparaison hypothétique", "sur la colonne de la place Vendôme", "L'image rend concrète la folie de l'essai.", 9),
+          figure("f11", "Question rhétorique", "essaieriez-vous de vous jeter dans les airs ?", "La question impose la réponse : essayer serait se détruire.", 9),
+        ]),
+        section("m2c", "La limite humaine rappelée", "Le vieillard passe du cas particulier au principe général : on ne maîtrise ni le cours de la vie ni la mort.", undefined, [
+          figure("f12", "Questions rhétoriques", "Peut-on arrêter le cours de la vie ? L’homme a-t-il jamais pu scinder la mort ?", "Les questions rappellent les limites infranchissables de l'existence humaine.", 10),
+          figure("f13", "Apostrophe", "Enfant !", "Le vieillard rabaisse Raphaël et affirme son autorité d'expérience.", 12),
+          figure("f14", "Antithèse", "mourir / énigme plus intéressante", "Le mystère de la vie remplace l'idée de suicide.", 11, 12),
         ]),
       ]),
       movement("m3", "III. La formule du roman", 13, 21, ["vouloir", "pouvoir", "savoir"], [
-        section("m3a", "Une morale en trois verbes", "VOULOIR brûle, POUVOIR détruit, SAVOIR apaise. Toute l'oeuvre est résumée.", "La triade VOULOIR / POUVOIR / SAVOIR concentre la loi philosophique du roman.", [
-          figure("f3", "Antithèse", "brûle / détruit / calme", "Les verbes opposent dépense et maîtrise de l'énergie.", 21),
+        section("m3a", "L'autorité d'une longue expérience", "L'antiquaire fonde sa leçon sur sa propre vie : pauvreté, vieillesse, fortune. Son discours tire sa force de l'expérience accumulée.", undefined, [
+          figure("f15", "Récit autobiographique", "j’ai mendié mon pain", "Le vieillard transforme sa vie en preuve.", 15),
+          figure("f16", "Antithèse paradoxale", "le malheur m’a donné la fortune, l’ignorance m’a instruit", "Les contraires montrent que la sagesse vient de l'épreuve.", 16),
+        ]),
+        section("m3b", "Le grand mystère de la vie humaine", "Le vieillard formule une loi générale : l'homme s'épuise par vouloir et pouvoir. Le talisman devient le symbole de cette dépense d'énergie.", undefined, [
+          figure("f17", "Annonce solennelle", "un grand mystère de la vie humaine", "La phrase donne au discours une portée philosophique.", 17),
+          figure("f18", "Métaphore vitale", "tarissent les sources de son existence", "La vie est représentée comme une source que le désir épuise.", 18),
+          figure("f19", "Majuscules symboliques", "VOULOIR et POUVOIR", "Les verbes deviennent des forces abstraites et centrales.", 19),
+        ]),
+        section("m3c", "La sagesse contre la dépense d'énergie", "La formule finale oppose trois verbes. Vouloir et pouvoir consument la vie ; savoir maintient le calme et la durée.", undefined, [
+          figure("f20", "Triade philosophique", "VOULOIR / POUVOIR / SAVOIR", "Les trois verbes résument l'opposition entre dépense et maîtrise de soi.", 19, 21),
+          figure("f21", "Antithèse", "brûle / détruit / calme", "Les verbes opposent la violence du désir à l'apaisement du savoir.", 21),
+          figure("f22", "Présent de vérité générale", "Vouloir nous brûle et Pouvoir nous détruit", "La phrase énonce une loi valable pour tous les hommes.", 21),
         ]),
       ]),
     ],

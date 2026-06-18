@@ -58,6 +58,36 @@ describe("study content", () => {
     }
   });
 
+  it("keeps exact uploaded wording for T4 to T6", () => {
+    const expectedFragments = new Map([
+      ["familiale", "Et le père qu’est-ce qu’il fait le père ?"],
+      ["portrait-de-raphael", "Au premier coup d’œil"],
+      ["chez-l-antiquaire", "Vouloir nous brûle et Pouvoir nous détruit"],
+    ]);
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
+  it("provides dense analysis for the Prévert and Balzac sequence", () => {
+    const expectedMinimums = new Map([
+      ["familiale", { sections: 9, figures: 18 }],
+      ["portrait-de-raphael", { sections: 9, figures: 20 }],
+      ["chez-l-antiquaire", { sections: 9, figures: 20 }],
+    ]);
+
+    for (const [slug, minimums] of expectedMinimums) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      const movementSections = text?.movements.flatMap((movement) => movement.sections) ?? [];
+      const figures = movementSections.flatMap((section) => section.figures ?? []);
+
+      expect(movementSections.length).toBeGreaterThanOrEqual(minimums.sections);
+      expect(figures.length).toBeGreaterThanOrEqual(minimums.figures);
+    }
+  });
+
   it("validates every publishable text shape", () => {
     const errors = studyTexts.flatMap(validateStudyText);
     expect(errors).toEqual([]);

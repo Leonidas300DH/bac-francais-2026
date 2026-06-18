@@ -10,7 +10,7 @@ import {
   Search,
   Sparkles,
 } from "lucide-react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useParams } from "react-router-dom";
 import { findStudyText, studyTexts } from "./data/studyTexts";
 import { formatRange, isLineInRange } from "./lib/ranges";
@@ -554,6 +554,12 @@ function SourceText({
   selectedRange: LineRange | null;
   onSelectRange: (range: LineRange) => void;
 }) {
+  const activeLineRef = useRef<HTMLButtonElement | null>(null);
+
+  useEffect(() => {
+    activeLineRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
+  }, [selectedRange?.start, selectedRange?.end]);
+
   return (
     <aside className="poem-card" id="texte-source" aria-label="Texte source">
       <div className="poem-heading">
@@ -561,17 +567,21 @@ function SourceText({
         <p>{text.author} - {text.sourceLabel}</p>
       </div>
       <div className="poem-scroll">
-        {text.lines.map((line) => (
-          <button
-            key={line.number}
-            className={isLineInRange(line.number, selectedRange) ? "verse active" : "verse"}
-            type="button"
-            onClick={() => onSelectRange({ start: line.number, end: line.number })}
-          >
-            <span className="line-number">{line.number}</span>
-            <span>{line.text}</span>
-          </button>
-        ))}
+        {text.lines.map((line) => {
+          const active = isLineInRange(line.number, selectedRange);
+          return (
+            <button
+              key={line.number}
+              ref={active && line.number === selectedRange?.start ? activeLineRef : null}
+              className={active ? "verse active" : "verse"}
+              type="button"
+              onClick={() => onSelectRange({ start: line.number, end: line.number })}
+            >
+              <span className="line-number">{line.number}</span>
+              <span>{line.text}</span>
+            </button>
+          );
+        })}
       </div>
     </aside>
   );

@@ -567,7 +567,7 @@ h1, h2 {
 .figure-list { display: grid; gap: 9px; }
 .figure-item {
   display: grid;
-  grid-template-columns: minmax(105px, 0.34fr) minmax(0, 1fr) auto;
+  grid-template-columns: minmax(130px, 0.34fr) minmax(0, 1fr) auto;
   gap: 10px;
   align-items: start;
   padding: 10px;
@@ -576,8 +576,13 @@ h1, h2 {
   background: rgba(255, 255, 255, 0.66);
 }
 .figure-name {
+  min-width: 0;
   color: #6d4d16;
   font-weight: 850;
+  overflow-wrap: normal;
+}
+.figure-text {
+  min-width: 0;
 }
 .figure-text q {
   color: var(--accent-dark);
