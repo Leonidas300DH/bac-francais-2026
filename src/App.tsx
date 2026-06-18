@@ -175,6 +175,7 @@ function StudyPage({ text }: { text: StudyText }) {
 
         <nav className="toolbar" aria-label="Navigation de la fiche">
           <a href="#texte-source">Texte</a>
+          <a href="#methode">Méthode</a>
           <a href="#introduction">Introduction</a>
           {text.movements.map((movement, index) => (
             <a key={movement.id} href={`#${movement.id}`}>Mouvement {index + 1}</a>
@@ -189,6 +190,8 @@ function StudyPage({ text }: { text: StudyText }) {
 
         <div className="study-layout">
           <section className="analysis-column" key={detailsKey}>
+            <MethodPanel />
+
             <Chapter id="introduction" title="Introduction" defaultOpen={defaultOpen}>
               {text.introduction.map((section) => (
                 <SectionDrawer
@@ -200,7 +203,14 @@ function StudyPage({ text }: { text: StudyText }) {
                   onSelectRange={setSelectedRange}
                 />
               ))}
-              <div className="problematic">{text.problematique}</div>
+              <div className="problematic">
+                <strong>Problématique</strong>
+                <span>{text.problematique}</span>
+              </div>
+              <div className="problem-answer">
+                <strong>Réponse directrice</strong>
+                <span>{text.recap}</span>
+              </div>
             </Chapter>
 
             {text.movements.map((movement) => (
@@ -282,6 +292,54 @@ function LibrarySidebar({ activeSlug }: { activeSlug: string }) {
   );
 }
 
+function MethodPanel() {
+  return (
+    <section className="method-panel" id="methode" aria-label="Méthode officielle de l'analyse linéaire">
+      <div className="method-heading">
+        <ListChecks aria-hidden="true" />
+        <div>
+          <h2>Méthode de l'analyse linéaire</h2>
+          <p>Structure attendue de l'exposé oral, d'après les consignes officielles de préparation.</p>
+        </div>
+      </div>
+
+      <div className="method-grid">
+        <article>
+          <h3>Introduction</h3>
+          <ul>
+            <li>Présentation de l'auteur et de l'oeuvre.</li>
+            <li>Situation du passage dans l'oeuvre et caractérisation de l'extrait.</li>
+            <li>Problématique et annonce des mouvements.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Analyse linéaire</h3>
+          <ul>
+            <li>Passage explicite d'un mouvement à l'autre.</li>
+            <li>Références régulières au texte avec les lignes.</li>
+            <li>Identification et interprétation des procédés.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Conclusion</h3>
+          <ul>
+            <li>Bilan de la lecture proposée.</li>
+            <li>Ouverture si elle éclaire réellement le texte.</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Temps de l'exposé</h3>
+          <ul>
+            <li>12 minutes au total.</li>
+            <li>Jusqu'à 2 minutes pour la lecture à voix haute.</li>
+            <li>8 minutes pour l'explication linéaire, puis 2 minutes pour la grammaire.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+  );
+}
+
 function MemoryPanel({
   text,
   onSelectRange,
@@ -331,13 +389,13 @@ function MemoryPanel({
           </div>
         </article>
         <article className="memo-card">
-          <h3>Pièges à éviter</h3>
+          <h3>Réponse à la problématique</h3>
           <ul>
             {text.memoryCard.traps.map((item) => <li key={item}>{item}</li>)}
           </ul>
         </article>
         <article className="memo-card">
-          <h3>Check oral</h3>
+          <h3>Enchaînement de l'analyse</h3>
           <ul>
             {text.memoryCard.oralChecklist.map((item) => <li key={item}>{item}</li>)}
           </ul>
@@ -439,10 +497,10 @@ function SectionDrawer({
       </summary>
       <div className="detail">
         <div className="simple-box">
-          <h4>En mots simples</h4>
+          <h4>Analyse</h4>
           <p>{section.simple}</p>
           {section.memory ? (
-            <p className="memory"><strong>À retenir :</strong> {section.memory}</p>
+            <p className="analysis-note">{section.memory}</p>
           ) : null}
           {section.bullets ? (
             <ul>
@@ -500,7 +558,7 @@ function SourceText({
     <aside className="poem-card" id="texte-source" aria-label="Texte source">
       <div className="poem-heading">
         <h2>{text.title}</h2>
-        <p>{text.author} - cliquez une ligne ou un bouton de l'analyse.</p>
+        <p>{text.author} - {text.sourceLabel}</p>
       </div>
       <div className="poem-scroll">
         {text.lines.map((line) => (

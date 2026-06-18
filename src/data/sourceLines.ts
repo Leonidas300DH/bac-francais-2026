@@ -115,80 +115,94 @@ La vie avec le cimetière.
 Au premier coup d'oeil, les joueurs lurent sur le visage du novice quelque horrible mystère.
 Ses jeunes traits étaient empreints d'une grâce nébuleuse, son regard attestait des efforts trahis, mille espérances trompées !
 La morne impassibilité du suicide donnait à ce front une pâleur mate et maladive.
-Un sourire amer dessinait le léger pli dans les coins de la bouche.
-La physionomie exprimait une résignation qui faisait mal à voir.
+Un sourire amer dessinait le léger pli dans les coins de la bouche, et la physionomie exprimait une résignation qui faisait mal à voir.
 Quelque secret génie scintillait au fond de ces yeux voilés peut-être par les fatigues du plaisir.
 Était-ce la débauche qui marquait de son sale cachet cette noble figure jadis pure et brûlante, maintenant dégradée ?
-Les médecins auraient sans doute attribué à des lésions au coeur ou à la poitrine le cercle jaune qui encadrait les paupières.
+Les médecins auraient sans doute attribué à des lésions au coeur ou à la poitrine le cercle jaune qui encadrait les paupières, et la rougeur qui marquait les joues.
 Les poètes eussent voulu reconnaître à ces signes les ravages de la science, les traces de nuits passées à la lueur d'une lampe studieuse.
 Mais une passion plus mortelle que la maladie, une maladie plus impitoyable que l'étude et le génie, altéraient cette jeune tête.
 Elle contractait ces muscles vivaces, tordait ce coeur qu'avaient seulement effleuré les orgies, l'étude et la maladie.
-Comme lorsqu'un célèbre criminel arrive au bagne, les condamnés l'accueillent avec respect.
-Ainsi tous ces démons humains, experts en tortures, saluèrent une douleur inouïe.
+Comme, lorsqu'un célèbre criminel arrive au bagne, les condamnés l'accueillent avec respect.
+Ainsi tous ces démons humains, experts en tortures, saluèrent une douleur inouïe, une blessure profonde que sondait leur regard.
 Ils reconnurent un de leurs princes à la majesté de sa muette ironie, à l'élégante misère de ses vêtements.
   `),
 
   antiquaire: toLines(`
-Le vieux marchand remit la lampe sur la colonne où il l'avait prise.
-Il lança au jeune homme un regard empreint d'une froide ironie qui semblait dire : Il ne pense déjà plus à mourir.
-"Est-ce une plaisanterie, est-ce un mystère ?" demanda le jeune inconnu.
-Le vieillard hocha de la tête et dit gravement : "Je ne saurais vous répondre."
-"J'ai offert le terrible pouvoir que donne ce talisman à des hommes doués de plus d'énergie que vous ne paraissez en avoir."
-"Aucun n'a voulu se risquer à conclure ce contrat si fatalement proposé."
-"Et vous n'avez même pas essayé ?" dit le jeune homme en l'interrompant.
-"Essayer !" dit le vieillard.
-"Si vous étiez sur la colonne de la place Vendôme, essaieriez-vous de vous jeter dans les airs ?"
-"Peut-on arrêter le cours de la vie ? L'homme a-t-il jamais pu scinder la mort ?"
-"Avant d'entrer dans ce cabinet, vous aviez résolu de vous suicider."
-"Mais tout à coup un secret vous occupe et vous distrait de mourir."
-"Écoutez-moi. Je vais vous révéler en peu de mots un grand mystère de la vie humaine."
-"L'homme s'épuise par deux actes instinctivement accomplis qui tarissent les sources de son existence."
-"Deux verbes expriment toutes les formes que prennent ces deux causes de mort : VOULOIR et POUVOIR."
-"Vouloir nous brûle et Pouvoir nous détruit : mais SAVOIR laisse notre faible organisation dans un perpétuel état de calme."
+Le vieux marchand remit la lampe sur la colonne où il l'avait prise, en lançant au jeune homme un regard empreint d'une froide ironie qui semblait dire : Il ne pense déjà plus à mourir.
+"- Est-ce une plaisanterie, est-ce un mystère ?" demanda le jeune inconnu.
+Le vieillard hocha de la tête et dit gravement : "- je ne saurais vous répondre.
+J'ai offert le terrible pouvoir que donne ce talisman à des hommes doués de plus d'énergie que vous ne paraissez en avoir.
+Mais, tout en se moquant de la problématique influence qu'il devait exercer sur leurs destinées futures, aucun n'a voulu se risquer à conclure ce contrat si fatalement proposé par je ne sais quelle puissance.
+Je pense comme eux, j'ai douté, je me suis abstenu, et ...
+- Et vous n'avez même pas essayé ? dit le jeune homme en l'interrompant.
+- Essayer ! dit le vieillard.
+Si vous étiez sur la colonne de la place Vendôme, essaieriez-vous de vous jeter dans les airs ?
+Peut-on arrêter le cours de la vie ? L'homme a-t-il jamais pu scinder la mort ?
+Avant d'entrer dans ce cabinet, vous aviez résolu de vous suicider ; mais tout à coup un secret vous occupe et vous distrait de mourir.
+Enfant ! Chacun de vos jours ne vous offrira-t-il pas une énigme plus intéressante que ne l'est celle-ci ?
+Écoutez-moi.
+J'ai vu la cour licencieuse du régent.
+Comme vous, j'étais alors dans la misère, j'ai mendié mon pain.
+Néanmoins j'ai atteint l'âge de cent deux ans, et je suis devenu millionnaire : le malheur m'a donné la fortune, l'ignorance m'a instruit.
+Je vais vous révéler en peu de mots un grand mystère de la vie humaine.
+L'homme s'épuise par deux actes instinctivement accomplis qui tarissent les sources de son existence.
+Deux verbes expriment toutes les formes que prennent ces deux causes de mort : VOULOIR et POUVOIR.
+Entre ces deux termes de l'action humaine, il est une autre formule dont s'emparent les sages, et je lui dois le bonheur et ma longévité.
+Vouloir nous brûle et Pouvoir nous détruit : mais SAVOIR laisse notre faible organisation dans un perpétuel état de calme.
   `),
 
   mortRaphael: toLines(`
-Raphaël tira de dessous son chevet le lambeau de la Peau de chagrin, fragile et petit comme la feuille d'une pervenche.
-"Pauline, belle image de ma vie, disons-nous adieu", dit-il.
-"Adieu ?" répéta-t-elle d'un air surpris.
-"Oui, ceci est un talisman qui accomplit mes désirs, et représente ma vie."
-"Vois ce qu'il m'en reste. Si tu me regardes encore, je vais mourir..."
-La jeune fille crut Valentin devenir fou.
-Elle prit le talisman, et alla chercher la lampe.
-Éclairée par la lueur vacillante, elle examina le visage de son amant et la dernière parcelle de la Peau magique.
+Raphaël tira de dessous son chevet le lambeau de la Peau de chagrin, fragile et petit comme la feuille d'une pervenche, et le lui montrant : Pauline, belle image de ma vie, disons-nous adieu, dit-il.
+- Adieu ? répéta-t-elle d'un air surpris.
+- Oui, ceci est un talisman qui accomplit mes désirs, et représente ma vie.
+Vois ce qu'il m'en reste.
+Si tu me regardes encore, je vais mourir...
+La jeune fille crut Valentin devenir fou, elle prit le talisman, et alla chercher la lampe.
+Éclairée par la lueur vacillante qui se projetait également sur Raphaël et sur le talisman, elle examina très attentivement et le visage de son amant et la dernière parcelle de la Peau magique.
 En la voyant belle de terreur et d'amour, il ne fut plus maître de sa pensée.
+Les souvenirs des scènes caressantes et des joies délirantes de sa passion triomphèrent dans son âme depuis longtemps endormie, et s'y réveillèrent comme un foyer mal éteint.
 "Pauline, viens ! Pauline !"
 Un cri terrible sortit du gosier de la jeune fille.
-À mesure que grandissait ce désir, la Peau, en se contractant, lui chatouillait la main.
+Ses yeux se dilatèrent, ses sourcils, violemment tirés par une douleur inouïe, s'écartèrent avec horreur.
+Elle lisait dans les yeux de Raphaël un de ces désirs furieux, jadis sa gloire à elle.
+Mais à mesure que grandissait ce désir, la Peau, en se contractant, lui chatouillait la main.
 Sans réfléchir, elle s'enfuit dans le salon voisin dont elle ferma la porte.
-"Pauline ! Pauline ! cria le moribond, je t'aime, je t'adore, je te veux !"
-Par une force singulière, dernier éclat de vie, il jeta la porte à terre.
-Pauline avait tenté vainement de se déchirer le sein et cherchait à s'étrangler avec son châle.
-"Si je meurs, il vivra !" disait-elle.
-Raphaël se jeta sur elle avec la légèreté d'un oiseau de proie.
-Le moribond ne trouva que les sons étranglés du râle dans sa poitrine.
+"Pauline ! Pauline ! cria le moribond en courant après elle, je t'aime, je t'adore, je te veux !"
+Je te maudis, si tu ne m'ouvres !
+Je veux mourir à toi !"
+Par une force singulière, dernier éclat de vie, il jeta la porte à terre, et vit sa maîtresse à demi nue se roulant sur un canapé.
+Pauline avait tenté vainement de se déchirer le sein, et pour se donner une prompte mort, elle cherchait à s'étrangler avec son châle.
+"Si je meurs, il vivra !" disait-elle en tâchant vainement de serrer le noeud.
+Ses cheveux étaient épars, ses épaules nues, ses vêtements en désordre.
+Dans cette lutte avec la mort, les yeux en pleurs, le visage enflammé, se tordant sous un horrible désespoir, elle présentait à Raphaël, ivre d'amour, mille beautés qui augmentèrent son délire.
+Il se jeta sur elle avec la légèreté d'un oiseau de proie, brisa le châle, et voulut la prendre dans ses bras.
+Le moribond chercha des paroles pour exprimer le désir qui dévorait toutes ses forces.
+Mais il ne trouva que les sons étranglés du râle dans sa poitrine, dont chaque respiration creusée plus avant semblait partir de ses entrailles.
 Enfin, ne pouvant bientôt plus former de sons, il mordit Pauline au sein.
-Jonathas tenta d'arracher à la jeune fille le cadavre sur lequel elle s'était accroupie.
+Jonathas se présenta tout épouvanté des cris qu'il entendait, et tenta d'arracher à la jeune fille le cadavre sur lequel elle s'était accroupie dans un coin.
 "Que demandez-vous ? dit-elle. Il est à moi, je l'ai tué, ne l'avais-je pas prédit ?"
   `),
 
   zolaOeuvre: toLines(`
-Peu à peu, si la bravoure de son obstination paraissait grandir, il retombait pourtant à ses doutes d'autrefois.
-Il était ravagé par la lutte qu'il soutenait contre la nature.
-Toute toile qui revenait lui semblait mauvaise, incomplète surtout, ne réalisant pas l'effort tenté.
+Peu à peu, si la bravoure de son obstination paraissait grandir, il retombait pourtant à ses doutes d'autrefois, ravagé par la lutte qu'il soutenait contre la nature.
+Toute toile qui revenait, lui semblait mauvaise, incomplète surtout, ne réalisant pas l'effort tenté.
 C'était cette impuissance qui l'exaspérait, plus encore que les refus du jury.
-Quelle souffrance de ne jamais se donner entier dans le chef-d'oeuvre dont il ne pouvait accoucher son génie !
+Sans doute, il ne pardonnait pas à ce dernier : ses oeuvres, même embryonnaires, valaient cent fois les médiocrités reçues.
+Mais quelle souffrance de ne jamais se donner entier, dans le chef-d'oeuvre dont il ne pouvait accoucher son génie !
 Il y avait toujours des morceaux superbes, il était content de celui-ci, de celui-là, de cet autre.
-Alors pourquoi de brusques trous ? Pourquoi des parties indignes, tuant le tableau ensuite d'une tare ineffaçable ?
-Il se sentait incapable de correction, un mur se dressait à un moment, un obstacle infranchissable.
-S'il reprenait vingt fois le morceau, vingt fois il aggravait le mal.
+Alors pourquoi de brusques trous ?
+Pourquoi des parties indignes, inaperçues pendant le travail, tuant le tableau ensuite d'une tare ineffaçable ?
+Et il se sentait incapable de correction, un mur se dressait à un moment, un obstacle infranchissable, au-delà duquel il lui était défendu d'aller.
+S'il reprenait vingt fois le morceau, vingt fois il aggravait le mal, tout se brouillait et glissait au gâchis.
 Il s'énervait, ne voyait plus, n'exécutait plus, et arrivait à une véritable paralysie de la volonté.
-Les crises se multipliaient, il recommençait à vivre des semaines abominables.
-L'unique soutien, c'était le rêve consolateur de l'oeuvre future.
-Par un phénomène constant, son besoin de créer allait ainsi plus vite que ses doigts.
+Étaient-ce donc ses yeux, étaient-ce ses mains qui cessaient de lui appartenir [...] ?
+Les crises se multipliaient, il recommençait à vivre des semaines abominables, se dévorant, éternellement secoué de l'incertitude à l'espérance.
+L'unique soutien, pendant ces heures mauvaises, passées à s'acharner sur l'oeuvre rebelle, c'était le rêve consolateur de l'oeuvre future, celle où il se satisferait enfin, où ses mains se délieraient pour la création.
+Par un phénomène constant, son besoin de créer allait ainsi plus vite que ses doigts, il ne travaillait jamais à une toile, sans concevoir la toile suivante.
 Une seule hâte lui restait, se débarrasser du travail en train, dont il agonisait.
-Ce qu'il ferait ensuite, ah ! ce qu'il ferait, il le voyait superbe et héroïque.
-Perpétuel mirage qui fouette le courage des damnés de l'art.
+Sans doute, ça ne vaudrait rien encore, il en était aux concessions fatales, aux tricheries, à tout ce qu'un artiste doit abandonner de sa conscience.
+Mais ce qu'il ferait ensuite, ah ! ce qu'il ferait, il le voyait superbe et héroïque, inattaquable, indestructible.
+Perpétuel mirage qui fouette le courage des damnés de l'art, mensonge de tendresse et de pitié sans lequel la production serait impossible, pour tous ceux qui se meurent de ne pouvoir faire de la vie !
   `),
 };
 

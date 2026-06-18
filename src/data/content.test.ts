@@ -16,6 +16,17 @@ describe("study content", () => {
     expect(text?.quiz.length).toBeGreaterThanOrEqual(4);
   });
 
+  it("keeps the rich original analysis structure for Les Effarés", () => {
+    const text = studyTexts.find((item) => item.slug === "les-effares");
+    const movementSections = text?.movements.flatMap((movement) => movement.sections) ?? [];
+    const figures = movementSections.flatMap((section) => section.figures ?? []);
+
+    expect(text?.introduction.length).toBeGreaterThanOrEqual(4);
+    expect(movementSections).toHaveLength(9);
+    expect(figures.length).toBeGreaterThanOrEqual(25);
+    expect(text?.conclusion.length).toBeGreaterThanOrEqual(2);
+  });
+
   it("validates every publishable text shape", () => {
     const errors = studyTexts.flatMap(validateStudyText);
     expect(errors).toEqual([]);
@@ -42,12 +53,35 @@ describe("study content", () => {
     }
   });
 
+  it("does not publish generic coaching comments as analysis content", () => {
+    const allContent = JSON.stringify(studyTexts);
+
+    expect(allContent).not.toMatch(/formule l'enjeu avec des mots simples/i);
+    expect(allContent).not.toMatch(/pas avec une phrase trop savante/i);
+    expect(allContent).not.toMatch(/Dire en une phrase/i);
+    expect(allContent).not.toMatch(/Nommer le procédé, citer quelques mots/i);
+  });
+
   it("keeps exact theater source wording for T13 to T16", () => {
     const expectedFragments = new Map([
       ["blazius-arrive", "l'écritoire au côté"],
       ["tirade-de-perdican", "le masque de plâtre que les nonnes t'ont plaqué sur les joues"],
       ["perdican-rosette", "l'eau qui s'était troublée reprend son équilibre"],
       ["dom-juan-charlotte-mathurine", "Vous voyez qu'al le soutient"],
+    ]);
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
+  it("keeps exact Balzac and Zola source wording for T5 to T8", () => {
+    const expectedFragments = new Map([
+      ["portrait-de-raphael", "une blessure profonde que sondait leur regard"],
+      ["chez-l-antiquaire", "Entre ces deux termes de l'action humaine, il est une autre formule"],
+      ["mort-de-raphael", "Les souvenirs des scènes caressantes et des joies délirantes de sa passion"],
+      ["l-oeuvre-zola", "mensonge de tendresse et de pitié sans lequel la production serait impossible"],
     ]);
 
     for (const [slug, fragment] of expectedFragments) {

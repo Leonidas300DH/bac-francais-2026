@@ -94,6 +94,7 @@ h1, h2 {
 .poem-heading p {
   margin: 0;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .primary-action {
@@ -337,6 +338,9 @@ h1, h2 {
   gap: 22px;
   align-items: start;
 }
+.study-layout > * {
+  min-width: 0;
+}
 
 .chapter {
   margin: 0 0 16px;
@@ -386,6 +390,60 @@ h1, h2 {
 }
 .chapter[open] > summary::before { content: "-"; }
 .chapter-body { padding: 18px 20px 23px; }
+
+.method-panel {
+  margin: 0 0 16px;
+  padding: 18px 20px 20px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  scroll-margin-top: 132px;
+}
+.method-heading {
+  display: flex;
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 14px;
+}
+.method-heading svg {
+  flex: 0 0 auto;
+  width: 28px;
+  height: 28px;
+  color: var(--accent);
+}
+.method-heading h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 1.4rem;
+}
+.method-heading p {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.method-grid article {
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: #fff;
+}
+.method-grid h3 {
+  margin: 0 0 7px;
+  color: var(--accent-dark);
+  font-size: 1rem;
+}
+.method-grid ul {
+  margin: 0;
+  padding-left: 1.15rem;
+}
+.method-grid li + li {
+  margin-top: 4px;
+}
 
 .labels {
   display: flex;
@@ -497,8 +555,7 @@ h1, h2 {
 .simple-box h4 { color: #365840; }
 .simple-box p { margin: 0; }
 .simple-box ul { margin: 10px 0 0; padding-left: 1.2rem; }
-.memory { margin: 11px 0 0; color: #4c4541; font-size: 0.94rem; }
-.memory strong { color: var(--accent-dark); }
+.analysis-note { margin: 11px 0 0; color: #4c4541; font-size: 0.94rem; }
 
 .figures {
   padding: 13px 14px 14px;
@@ -533,15 +590,35 @@ h1, h2 {
   font-size: 0.92rem;
 }
 
-.problematic {
+.problematic,
+.problem-answer {
   margin: 15px 0;
   padding: 14px 16px;
   border-left: 5px solid var(--accent);
   border-radius: 0 10px 10px 0;
   background: var(--accent-soft);
+}
+.problematic strong,
+.problem-answer strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--accent-dark);
+  font-family: system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.problematic span,
+.problem-answer span {
+  display: block;
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.05rem;
   font-weight: 700;
+}
+.problem-answer {
+  border-left-color: var(--simple-border);
+  background: var(--simple);
 }
 
 .glossary-grid {
@@ -869,8 +946,35 @@ h1, h2 {
   .text-grid,
   .memo-grid,
   .quiz-grid,
-  .glossary-grid {
+  .glossary-grid,
+  .method-grid {
     grid-template-columns: 1fr;
+  }
+  .figure-item {
+    grid-template-columns: 1fr;
+  }
+  .figure-item .locate {
+    justify-self: start;
+  }
+  .method-panel,
+  .chapter,
+  .poem-card,
+  .quiz-panel,
+  .memo-panel {
+    width: 100%;
+    max-width: calc(100vw - 18px);
+  }
+  .study-layout,
+  .poem-scroll {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .verse {
+    grid-template-columns: 1.6rem minmax(0, 1fr);
+    font-size: 0.95rem;
+  }
+  .verse span:last-child {
+    overflow-wrap: anywhere;
   }
   .toolbar {
     max-width: 100%;

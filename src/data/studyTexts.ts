@@ -32,7 +32,9 @@ type TextInput = {
   lines: StudyLine[];
   context: string;
   problematique: string;
+  introduction?: StudySection[];
   movements: Movement[];
+  conclusion?: StudySection[];
   recap: string;
   opening: string;
   quizFocus: string;
@@ -46,10 +48,11 @@ function section(
   id: string,
   title: string,
   simple: string,
-  memory: string,
+  memory: string | undefined,
   figures: Figure[],
+  bullets?: string[],
 ): StudySection {
-  return { id, title, simple, memory, figures };
+  return { id, title, simple, memory, figures, bullets };
 }
 
 function movement(
@@ -69,13 +72,11 @@ function introSections(input: TextInput): StudySection[] {
       id: "intro-contexte",
       title: "Contexte",
       simple: input.context,
-      memory: "Dire en une phrase qui parle, dans quelle oeuvre, et pourquoi cet extrait compte.",
     },
     {
       id: "intro-enjeu",
       title: "Enjeu du passage",
       simple: input.quizFocus,
-      memory: "Pour l'oral, formule l'enjeu avec des mots simples, pas avec une phrase trop savante.",
     },
   ];
 }
@@ -86,13 +87,11 @@ function conclusionSections(input: TextInput): StudySection[] {
       id: "conclusion-bilan",
       title: "Bilan",
       simple: input.recap,
-      memory: "Revenir à la problématique et montrer le mouvement général du texte.",
     },
     {
       id: "conclusion-ouverture",
       title: "Ouverture",
       simple: input.opening,
-      memory: "L'ouverture doit être courte : une oeuvre, un thème commun, une différence.",
     },
   ];
 }
@@ -101,6 +100,15 @@ function quiz(input: TextInput): QuizItem[] {
   const first = input.movements[0];
   const second = input.movements[1];
   const third = input.movements[2];
+  const firstFigure = input.movements.flatMap((movementItem) =>
+    movementItem.sections.flatMap((sectionItem) => sectionItem.figures ?? []),
+  )[0];
+  const secondFigure = input.movements.flatMap((movementItem) =>
+    movementItem.sections.flatMap((sectionItem) => sectionItem.figures ?? []),
+  )[1];
+  const figureAnswer = firstFigure
+    ? `${firstFigure.name} : ${firstFigure.quote} -> ${firstFigure.explanation}`
+    : input.recap;
   return [
     {
       id: "q-enjeu",
@@ -116,12 +124,12 @@ function quiz(input: TextInput): QuizItem[] {
     },
     {
       id: "q-procede",
-      prompt: "Quel réflexe adopter devant un procédé ?",
-      answer: "Nommer le procédé, citer quelques mots, puis expliquer l'effet.",
+      prompt: "Quel procédé précis peut servir d'appui dans ce texte ?",
+      answer: figureAnswer,
       choices: [
-        "Nommer le procédé, citer quelques mots, puis expliquer l'effet.",
-        "Citer sans expliquer.",
-        "Réciter toute la biographie de l'auteur.",
+        figureAnswer,
+        secondFigure ? `${secondFigure.name} : ${secondFigure.quote}` : second.keywords.join(" / "),
+        third.keywords.join(" / "),
       ],
     },
     {
@@ -175,16 +183,16 @@ function memoryCard(input: TextInput): MemoryCard {
     keyQuotes: keyQuotes(input),
     finalSentence: input.recap,
     traps: [
-      "Ne pas raconter toute l'oeuvre : rester sur l'extrait et ses lignes.",
-      "Ne jamais citer seul : nommer le procédé, citer, puis expliquer l'effet.",
-      "Ne pas apprendre un bloc par coeur : mémoriser le mouvement logique.",
+      `Enjeu : ${input.quizFocus}`,
+      `Réponse : ${input.recap}`,
+      `Ouverture : ${input.opening}`,
     ],
     oralChecklist: [
-      "Présenter auteur, oeuvre, date et contexte en une phrase claire.",
-      "Lire le passage en marquant les pauses et les oppositions.",
-      "Annoncer la problématique puis les trois mouvements.",
-      "Pour chaque mouvement : idée simple, citation courte, effet produit.",
-      "Conclure en répondant explicitement à la problématique.",
+      `Contexte : ${input.context}`,
+      ...input.movements.map((item, index) =>
+        `${index + 1}. ${normalizePlanTitle(item.title)} : ${item.keywords.join(", ")}`,
+      ),
+      `Conclusion : ${input.recap}`,
     ],
   };
 }
@@ -197,10 +205,10 @@ function makeText(input: TextInput): StudyText {
     sourceLabel: input.sourceLabel,
     status: input.status ?? "review",
     lines: input.lines,
-    introduction: introSections(input),
+    introduction: input.introduction ?? introSections(input),
     problematique: input.problematique,
     movements: input.movements,
-    conclusion: conclusionSections(input),
+    conclusion: input.conclusion ?? conclusionSections(input),
     glossary,
     recap: input.recap,
     memoryCard: memoryCard(input),
@@ -215,30 +223,111 @@ const lesEffares = makeText({
   sourceLabel: "Cahiers de Douai, 1870",
   status: "ready",
   lines: sourceTexts.lesEffares,
-  context: "Rimbaud, adolescent, écrit un poème social : cinq enfants pauvres regardent du pain sans pouvoir y accéder.",
-  quizFocus: "Une scène de faim devient une dénonciation de la misère des enfants.",
-  problematique: "Comment Rimbaud transforme-t-il une scène de rue en dénonciation sociale ?",
-  recap: "Les enfants passent du froid à la fascination du pain, puis retombent dans l'exclusion.",
-  opening: "On peut rapprocher ce texte de Victor Hugo, qui dénonce aussi la misère enfantine dans Les Misérables.",
+  context: "Au XIXe siècle, l'industrialisation et les inégalités sociales rendent particulièrement visible la misère urbaine. Rimbaud, encore adolescent, transforme ici une scène de rue en accusation poétique.",
+  quizFocus: "Le poème montre cinq enfants affamés fascinés par une boulangerie, puis révèle que la chaleur, la lumière et le pain restent hors d'atteinte.",
+  problematique: "Comment Rimbaud transforme-t-il la scène de cinq enfants regardant du pain en une dénonciation de leur misère ?",
+  recap: "Rimbaud part d'un tableau hivernal pathétique, fait du pain un spectacle presque merveilleux, puis ramène brutalement les enfants à l'exclusion sociale.",
+  opening: "On peut rapprocher ce texte de Victor Hugo, qui dénonce aussi la misère enfantine, notamment à travers les figures d'enfants pauvres dans Les Misérables.",
+  introduction: [
+    {
+      id: "intro-contexte",
+      title: "Le contexte",
+      simple: "Au XIXe siècle, l'industrie progresse mais les inégalités sociales restent très fortes. Le poème s'inscrit dans cette sensibilité sociale : il place au premier plan des enfants pauvres, affamés, devant une boulangerie.",
+    },
+    {
+      id: "intro-auteur-scene",
+      title: "L'auteur et la scène présentée",
+      simple: "Arthur Rimbaud écrit Les Effarés en 1870, alors qu'il est adolescent. Il ne raconte pas une action complexe : il observe cinq enfants qui regardent cuire et sortir le pain, sans pouvoir le manger.",
+    },
+    {
+      id: "intro-forme-but",
+      title: "La forme et l'enjeu du poème",
+      simple: "Le poème est composé de douze tercets. Sa progression donne d'abord à voir la misère, puis la fascination sensorielle, avant une fin qui transforme la pitié en dénonciation.",
+    },
+    {
+      id: "intro-plan",
+      title: "Annonce du plan",
+      simple: "L'analyse suit les trois mouvements du poème : la mise en place d'un décor froid et pathétique, le spectacle fascinant du pain, puis le retour dramatique à la réalité des enfants.",
+      bullets: [
+        "Vers 1 à 6 : le contexte et le portrait humilié des enfants.",
+        "Vers 7 à 21 : la préparation du pain, spectacle chaud et sensoriel.",
+        "Vers 22 à 36 : l'extase brève, puis la misère et l'abandon.",
+      ],
+    },
+  ],
   movements: [
-    movement("m1", "I. Un décor froid et des enfants exclus", 1, 6, ["froid", "contraste", "pitié"], [
-      section("m1a", "La misère apparaît tout de suite", "La neige, la brume et le noir installent une scène dure. Les enfants ressortent comme des êtres isolés.", "Le décor fait ressentir la souffrance avant même l'explication.", [
-        figure("f1", "Antithèse", "Noirs dans la neige", "Le noir des enfants s'oppose au blanc de la neige.", 1),
-        figure("f2", "Incise exclamative", "- misère ! -", "Le poète intervient et force la compassion.", 4),
+    movement("m1", "I. La mise en place du contexte et le portrait des enfants", 1, 6, ["froid", "contraste", "misère"], [
+      section("m1a", "Un décor hivernal inquiétant", "Le poème s'ouvre sur un contraste violent : les enfants apparaissent noirs, dans la neige et la brume. Le lecteur entre immédiatement dans une scène de froid, de pauvreté et d'exclusion.", undefined, [
+        figure("f1", "Antithèse", "Noirs dans la neige", "L'opposition entre le noir et le blanc rend visible la séparation des enfants avec le monde qui les entoure.", 1),
+        figure("f2", "Champ lexical du froid", "neige / brume", "Le décor hivernal crée une atmosphère hostile et accentue la fragilité des enfants.", 1),
+        figure("f3", "Mise en relief", "Noirs", "Le premier mot du poème isole les enfants et concentre le regard sur leur silhouette pauvre.", 1),
+      ]),
+      section("m1b", "L'opposition entre la rue et la boulangerie", "Le soupirail allumé introduit une lumière chaude, mais cette chaleur reste séparée des enfants. La boulangerie devient un espace de vie inaccessible.", undefined, [
+        figure("f4", "Antithèse", "neige / soupirail qui s'allume", "Le froid extérieur s'oppose à la chaleur lumineuse de l'intérieur.", 1, 2),
+        figure("f5", "Symbole", "le soupirail", "Cette ouverture basse laisse voir le pain mais marque aussi la frontière entre les enfants et la nourriture.", 2),
+      ]),
+      section("m1c", "Un portrait humiliant et pathétique des enfants", "Les enfants sont montrés à genoux, collés au sol, dans une posture de supplication. Rimbaud mêle le trivial et le pathétique pour rendre leur misère concrète.", undefined, [
+        figure("f6", "Langage trivial", "Leurs culs en rond", "L'expression rabaisse les corps et refuse toute idéalisation de la pauvreté.", 3),
+        figure("f7", "Incise exclamative", "- misère ! -", "Le commentaire interrompt le vers et impose au lecteur une réaction de pitié.", 4),
+        figure("f8", "Enjambement", "A genoux, cinq petits / Regardent", "La syntaxe suspend le regard et insiste sur l'attente des enfants.", 4, 5),
+        figure("f9", "Adjectifs valorisants", "lourd pain blond", "Le pain apparaît comme un objet riche, nourrissant et presque lumineux.", 6),
       ]),
     ]),
-    movement("m2", "II. Le pain devient un spectacle fascinant", 7, 21, ["sens", "chaleur", "désir"], [
-      section("m2a", "Les sens sont éveillés", "Les enfants voient, entendent et sentent le pain. Le pain paraît presque vivant.", "Ils ne mangent pas : ils rêvent par les sens.", [
-        figure("f3", "Métonymie", "le fort bras blanc", "Le bras représente le boulanger et sa puissance.", 7),
-        figure("f4", "Comparaison", "Chaud comme un sein", "La chaleur rappelle une protection maternelle.", 15),
+    movement("m2", "II. La préparation du pain, un spectacle fascinant", 7, 21, ["boulanger", "sensations", "désir"], [
+      section("m2a", "Le boulanger observé par les enfants", "Les enfants ne voient d'abord qu'un geste : le bras du boulanger travaille la pâte. Le pain naît sous leurs yeux, mais celui qui le fabrique reste du côté de la force et de l'abondance.", undefined, [
+        figure("f10", "Métonymie", "le fort bras blanc", "Le bras suffit à désigner le boulanger et met en valeur sa puissance physique.", 7),
+        figure("f11", "Contraste", "fort / blanc", "La force et la blancheur du boulanger s'opposent implicitement aux enfants noirs, faibles et dehors.", 1, 7),
+        figure("f12", "Connotation", "gras sourire", "L'adjectif suggère l'abondance du boulanger face à la faim des enfants.", 11),
+      ]),
+      section("m2b", "Tous les sens des enfants sont éveillés", "La scène mobilise la vue, l'ouïe, l'odorat et la sensation de chaleur. Comme les enfants ne peuvent pas manger, leur désir passe par la perception.", undefined, [
+        figure("f13", "Anaphore", "Ils voient / Ils écoutent / Ils sont", "La répétition organise la fascination progressive des enfants.", 7, 13),
+        figure("f14", "Accumulation sensorielle", "voient / écoutent / souffle", "Les verbes et sensations donnent au pain une présence presque totale.", 7, 14),
+        figure("f15", "Comparaison", "Chaud comme un sein", "La chaleur du four évoque une protection maternelle et transforme le pain en promesse de réconfort.", 15),
+        figure("f16", "Image maternelle", "souffle du soupirail rouge", "Le rouge et la chaleur associent la boulangerie à un lieu de vie.", 14, 15),
+      ]),
+      section("m2c", "Une fascination de plus en plus forte", "Le pain devient un spectacle vivant : il est façonné, il pétille, il chante et il parfume l'espace. Rimbaud donne au pain une force d'attraction presque magique.", undefined, [
+        figure("f17", "Anaphore temporelle", "Et quand / Quand / Quand", "La répétition retarde l'instant attendu et amplifie le désir.", 16, 22),
+        figure("f18", "Accumulation", "Façonné, pétillant et jaune", "Les adjectifs rendent le pain visible, chaud et appétissant.", 17),
+        figure("f19", "Personnification", "Chantent les croûtes", "Les croûtes semblent vivantes, comme si le pain avait sa propre voix.", 20),
+        figure("f20", "Synesthésie", "Chantent les croûtes parfumées", "L'ouïe et l'odorat se mêlent pour traduire l'intensité de la fascination.", 20),
       ]),
     ]),
-    movement("m3", "III. L'espoir retombe dans le tragique", 22, 36, ["illusion", "grillage", "abandon"], [
-      section("m3a", "La fin laisse les enfants dehors", "Le four donne un instant de vie, mais les haillons, le grillage et le vent rappellent la misère.", "Le poème ne propose pas de solution : il accuse.", [
-        figure("f5", "Métaphore", "souffle la vie", "Le four semble donner une énergie vitale.", 22),
-        figure("f6", "Comparaison", "comme une prière", "Le chant devient un appel au secours.", 31),
+    movement("m3", "III. L'impact dramatique du spectacle sur les enfants", 22, 36, ["bonheur bref", "réalité", "abandon"], [
+      section("m3a", "Une extase très courte", "Au contact imaginaire de la chaleur, les enfants semblent reprendre vie. Mais cette extase ne dure pas : les haillons rappellent aussitôt leur pauvreté.", undefined, [
+        figure("f21", "Métaphore", "ce trou chaud souffle la vie", "Le soupirail donne l'impression de transmettre une énergie vitale.", 22),
+        figure("f22", "Personnification", "ce trou chaud souffle", "L'ouverture devient presque un être vivant qui respire.", 22),
+        figure("f23", "Contraste", "âme si ravie / haillons", "L'élan intérieur des enfants s'oppose à la réalité matérielle de leurs vêtements pauvres.", 23, 24),
+      ]),
+      section("m3b", "Le retour brutal à la misère", "Le poème revient aux corps gelés et au grillage. Les enfants sont proches du pain, mais la séparation demeure infranchissable.", undefined, [
+        figure("f24", "Exclamation pathétique", "Les pauvres petits pleins de givre !", "L'exclamation insiste sur la pitié et sur la souffrance physique.", 26),
+        figure("f25", "Animalisation", "leurs petits museaux roses", "Les enfants sont comparés à de petits animaux collés à une grille.", 28),
+        figure("f26", "Termes affectifs", "pauvres petits / petits museaux roses", "Le vocabulaire attendrit le lecteur tout en soulignant leur vulnérabilité.", 26, 28),
+        figure("f27", "Symbole", "le grillage", "La grille matérialise l'exclusion sociale : le pain est visible, mais inaccessible.", 29, 30),
+      ]),
+      section("m3c", "Une prière sans réponse et une fin tragique", "Le chant des enfants devient une prière, mais personne ne répond. La fin au vent d'hiver laisse les enfants dans la même misère qu'au début.", undefined, [
+        figure("f28", "Comparaison", "comme une prière", "Le chant est assimilé à une supplication religieuse.", 31),
+        figure("f29", "Métaphore religieuse", "cette lumière / Du ciel rouvert", "La boulangerie prend une dimension céleste, comme un paradis brièvement entrevu.", 32, 33),
+        figure("f30", "Hyperbole", "qu'ils crèvent leur culotte", "L'intensité du geste montre le désir désespéré des enfants.", 34),
+        figure("f31", "Points de suspension", "Au vent d'hiver...", "La suspension finale prolonge l'abandon et laisse la misère sans résolution.", 36),
       ]),
     ]),
+  ],
+  conclusion: [
+    {
+      id: "conclusion-bilan",
+      title: "Bilan",
+      simple: "Rimbaud montre cinq enfants affamés devant une boulangerie. Le décor froid crée la pitié, le pain devient un spectacle vivant et presque maternel, puis la fin rappelle que les enfants restent dehors, séparés de la nourriture par le grillage.",
+      bullets: [
+        "Le contraste entre froid extérieur et chaleur intérieure organise tout le poème.",
+        "Les sensations donnent au pain une présence fascinante, sans jamais satisfaire la faim.",
+        "La fin transforme la scène en dénonciation sociale : les enfants espèrent, mais restent abandonnés.",
+      ],
+    },
+    {
+      id: "conclusion-ouverture",
+      title: "Ouverture",
+      simple: "Cette dénonciation de la misère enfantine peut être rapprochée de Victor Hugo dans Les Misérables, où les enfants pauvres deviennent eux aussi des figures pathétiques et accusatrices.",
+    },
   ],
 });
 
@@ -349,14 +438,14 @@ const texts: StudyText[] = [
           figure("f1", "Champ lexical", "pâleur / maladive / amer", "Les mots installent l'idée de maladie et de malheur.", 2, 4),
         ]),
       ]),
-      movement("m2", "II. Les causes de la dégradation", 6, 11, ["débauche", "étude", "passion"], [
+      movement("m2", "II. Les causes de la dégradation", 6, 10, ["débauche", "étude", "passion"], [
         section("m2a", "Plusieurs explications possibles", "Balzac hésite entre plaisir, science et maladie : Raphaël semble détruit par toutes les formes d'excès.", "Ce qui l'a abîmé, c'est l'énergie dépensée.", [
           figure("f2", "Question rhétorique", "Était-ce la débauche", "La question dramatise l'origine du mal.", 7),
         ]),
       ]),
-      movement("m3", "III. Une grandeur sombre", 12, 14, ["démons", "respect", "misère"], [
+      movement("m3", "III. Une grandeur sombre", 11, 13, ["démons", "respect", "misère"], [
         section("m3a", "Un prince du malheur", "Les joueurs reconnaissent en lui quelqu'un qui souffre plus qu'eux.", "Raphaël est pauvre, mais il garde une forme de majesté.", [
-          figure("f3", "Comparaison", "comme lorsqu'un célèbre criminel", "La comparaison rend le personnage inquiétant et exceptionnel.", 12),
+          figure("f3", "Comparaison", "comme lorsqu'un célèbre criminel", "La comparaison rend le personnage inquiétant et exceptionnel.", 11),
         ]),
       ]),
     ],
@@ -383,9 +472,9 @@ const texts: StudyText[] = [
           figure("f2", "Question rhétorique", "Peut-on arrêter le cours de la vie ?", "La question impose l'évidence de la limite humaine.", 10),
         ]),
       ]),
-      movement("m3", "III. La formule du roman", 13, 16, ["vouloir", "pouvoir", "savoir"], [
+      movement("m3", "III. La formule du roman", 13, 21, ["vouloir", "pouvoir", "savoir"], [
         section("m3a", "Une morale en trois verbes", "VOULOIR brûle, POUVOIR détruit, SAVOIR apaise. Toute l'oeuvre est résumée.", "À apprendre : Vouloir / Pouvoir / Savoir.", [
-          figure("f3", "Antithèse", "brûle / détruit / calme", "Les verbes opposent dépense et maîtrise de l'énergie.", 16),
+          figure("f3", "Antithèse", "brûle / détruit / calme", "Les verbes opposent dépense et maîtrise de l'énergie.", 21),
         ]),
       ]),
     ],
@@ -402,19 +491,19 @@ const texts: StudyText[] = [
     recap: "La Peau minuscule annonce la fin, le désir explose, puis l'amour devient violence et mort.",
     opening: "On peut comparer cette fin à une tragédie : le héros est détruit par sa propre passion.",
     movements: [
-      movement("m1", "I. La Peau annonce la mort", 1, 8, ["talisman", "adieu", "fragilité"], [
+      movement("m1", "I. La Peau annonce la mort", 1, 7, ["talisman", "adieu", "fragilité"], [
         section("m1a", "Un objet presque disparu", "La Peau est minuscule : elle matérialise ce qu'il reste de vie à Raphaël.", "Objet petit = vie presque finie.", [
           figure("f1", "Comparaison", "comme la feuille d'une pervenche", "La petitesse rend la mort visible.", 1),
         ]),
       ]),
-      movement("m2", "II. Le désir renaît violemment", 9, 17, ["désir", "terreur", "fuite"], [
+      movement("m2", "II. Le désir renaît violemment", 8, 18, ["désir", "terreur", "fuite"], [
         section("m2a", "L'amour devient menace", "La beauté de Pauline réveille le désir de Raphaël et provoque la contraction de la Peau.", "Chez Balzac, désirer = perdre de la vie.", [
           figure("f2", "Exclamation", "Pauline, viens !", "Le cri montre l'urgence du désir.", 10),
         ]),
       ]),
-      movement("m3", "III. Une fin tragique", 18, 22, ["râle", "violence", "cadavre"], [
+      movement("m3", "III. Une fin tragique", 19, 29, ["râle", "violence", "cadavre"], [
         section("m3a", "Le désir se change en mort", "Raphaël ne parle plus : il râle, mord, puis devient cadavre. Pauline est brisée.", "La passion détruit les deux personnages.", [
-          figure("f3", "Métaphore animale", "oiseau de proie", "Raphaël devient prédateur.", 18),
+          figure("f3", "Métaphore animale", "oiseau de proie", "Raphaël devient prédateur.", 24),
         ]),
       ]),
     ],
@@ -436,14 +525,14 @@ const texts: StudyText[] = [
           figure("f1", "Champ lexical", "doutes / lutte / impuissance", "Les mots donnent une image douloureuse de la création.", 1, 4),
         ]),
       ]),
-      movement("m2", "II. L'oeuvre résiste", 6, 10, ["obstacle", "correction", "paralysie"], [
+      movement("m2", "II. L'oeuvre résiste", 6, 12, ["obstacle", "correction", "paralysie"], [
         section("m2a", "L'artiste ne peut pas réparer", "Même quand certains morceaux sont beaux, l'ensemble échappe au peintre.", "Le détail réussi ne suffit pas à faire un chef-d'oeuvre.", [
           figure("f2", "Question rhétorique", "Alors pourquoi", "Les questions font entendre l'obsession de l'échec.", 7),
         ]),
       ]),
-      movement("m3", "III. Le mirage de l'oeuvre future", 11, 16, ["rêve", "hâte", "illusion"], [
+      movement("m3", "III. Le mirage de l'oeuvre future", 13, 19, ["rêve", "hâte", "illusion"], [
         section("m3a", "L'espoir permet de continuer", "L'artiste supporte l'échec présent parce qu'il imagine une oeuvre future parfaite.", "Le rêve sauve et torture en même temps.", [
-          figure("f3", "Métaphore", "mirage", "L'oeuvre future attire mais reste inaccessible.", 16),
+          figure("f3", "Métaphore", "mirage", "L'oeuvre future attire mais reste inaccessible.", 19),
         ]),
       ]),
     ],
