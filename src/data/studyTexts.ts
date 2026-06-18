@@ -1040,24 +1040,57 @@ texts.push(
     sourceLabel: "On ne badine pas avec l'amour, 1834",
     lines: sourceTexts.mussetBlazius,
     context: "La scène d'ouverture présente l'univers de la pièce sur un ton comique et villageois.",
-    quizFocus: "L'ouverture mélange théâtre, récit et comique pour annoncer l'arrivée de Perdican.",
+    quizFocus: "L'ouverture confie l'exposition à un choeur fantaisiste et à un messager grotesque : l'information sérieuse arrive par le détour du comique.",
     problematique: "Comment Musset ouvre-t-il sa pièce de manière originale et comique ?",
-    recap: "Le choeur présente Blazius, le rend ridicule, puis l'information sérieuse arrive par un personnage comique.",
+    recap: "Musset ouvre sa pièce de manière originale en mêlant choeur, récit et dialogue, puis il rend Blazius burlesque avant de faire annoncer Perdican par une parole savante mais déjà ironisée.",
     opening: "On peut ouvrir sur le rôle du choeur antique, réinventé ici de façon fantaisiste.",
     movements: [
       movement("m1", "I. Une entrée très théâtrale", 1, 4, ["choeur", "portrait", "comique"], [
-        section("m1a", "Blazius est un personnage caricatural", "Le choeur décrit son corps, sa mule et son attitude avec humour.", "Le spectateur rit avant de connaître l'intrigue.", [
-          figure("f1", "Comparaison", "Comme un poupon", "La comparaison ridiculise Blazius.", 3),
+        section("m1a", "Un choeur pour ouvrir la scène", "Musset commence par un dispositif théâtral inhabituel : le choeur décrit l'arrivée de Blazius avant que celui-ci ne parle. L'ouverture tient donc du récit autant que du dialogue.", "L'originalité vient de cette voix collective qui installe le décor et guide le regard du spectateur.", [
+          figure("f1", "Didascalie spatiale", "Une place devant le château", "Le lieu ouvre immédiatement un espace scénique visible.", 1),
+          figure("f2", "Référence au choeur", "LE CHOEUR", "Musset reprend un héritage antique mais l'utilise dans une scène villageoise et comique.", 2),
+          figure("f3", "Participe descriptif", "Doucement bercé", "L'entrée de Blazius est présentée comme un petit spectacle en mouvement.", 2),
+        ]),
+        section("m1b", "Blazius est un personnage burlesque", "Le portrait insiste sur le corps, la mollesse et le ridicule. Blazius est associé à un enfant, à un ventre rebondi, puis à un triple menton.", "Le comique naît du décalage entre le statut de maître et l'image très corporelle du personnage.", [
+          figure("f4", "Comparaison dégradante", "Comme un poupon sur l'oreiller", "Blazius est infantilisée par l'image du bébé bercé.", 3),
+          figure("f5", "Champ lexical du corps", "ventre rebondi / triple menton", "La description rabaisse le personnage à son apparence physique.", 3),
+          figure("f6", "Détail religieux comique", "il marmotte un Pater noster", "La prière devient un murmure ridicule, perdu dans le portrait corporel.", 3),
+        ]),
+        section("m1c", "Une grandeur aussitôt parodiée", "Le choeur salue Blazius comme un personnage important, mais le compare à une amphore. L'image valorise et ridiculise en même temps.", "La scène annonce un théâtre où les beaux signes sont toujours traversés par l'ironie.", [
+          figure("f7", "Apostrophe", "Salut, maître Blazius", "Le salut donne une solennité parodique à l'entrée du personnage.", 4),
+          figure("f8", "Repère saisonnier", "au temps de la vendange", "Le décor rural rattache la scène au village et au vin.", 4),
+          figure("f9", "Comparaison burlesque", "pareil à une amphore antique", "L'image antique est noble, mais l'amphore évoque aussi le vin et le ventre de Blazius.", 4),
         ]),
       ]),
       movement("m2", "II. Une parole liée au vin", 5, 6, ["boire", "attente", "comique"], [
-        section("m2a", "L'annonce est retardée", "Blazius veut boire avant de parler : cela crée une attente comique.", "Le messager n'est pas noble, il est gourmand.", [
-          figure("f2", "Comique de caractère", "verre de vin frais", "Le personnage est défini par son appétit.", 5),
+        section("m2a", "La nouvelle est retardée par la gourmandise", "Blazius annonce qu'il possède une information importante, mais il exige d'abord du vin. L'exposition dramatique est donc suspendue par un besoin trivial.", "Le messager est comique parce que son appétit passe avant sa mission.", [
+          figure("f10", "Périphrase d'attente", "une nouvelle d'importance", "L'expression crée une attente d'exposition.", 5),
+          figure("f11", "Condition comique", "m'apportent ici premièrement un verre de vin frais", "L'information est conditionnée par une récompense à boire.", 5),
+          figure("f12", "Adverbe d'ordre", "premièrement", "Le mot place le vin avant la nouvelle et produit le comique.", 5),
+        ]),
+        section("m2b", "Le choeur entre dans le jeu comique", "Le choeur ne condamne pas Blazius : il lui donne à boire et accepte qu'il parle après. La scène devient une petite cérémonie comique autour du vin.", "L'exposition est collective, vivante et détournée par le plaisir.", [
+          figure("f13", "Objet comique", "notre plus grande écuelle", "Le récipient accentue le caractère gourmand et rustique de la scène.", 6),
+          figure("f14", "Impératif", "buvez, maître Blazius", "Le choeur encourage le défaut du personnage.", 6),
+          figure("f15", "Chute temporelle", "vous parlerez après", "La parole sérieuse est repoussée au second plan.", 6),
         ]),
       ]),
       movement("m3", "III. Perdican est annoncé", 7, 16, ["Perdican", "savoir", "ironie"], [
-        section("m3a", "Un héros déjà moqué", "Perdican est brillant, mais le portrait insiste aussi sur son langage savant et excessif.", "La pièce se méfie des beaux discours.", [
-          figure("f3", "Hyperbole", "un livre d'or", "L'image valorise et ironise sur Perdican.", 9),
+        section("m3a", "L'information sérieuse arrive enfin", "Blazius annonce le retour de Perdican, devenu majeur et docteur. La scène remplit donc sa fonction d'exposition, mais par une voix comique.", "Le spectateur apprend l'entrée prochaine du héros tout en gardant une distance ironique.", [
+          figure("f16", "Formule d'annonce", "Vous saurez, mes enfants", "Blazius prend une posture de maître qui s'adresse au village.", 7),
+          figure("f17", "Statut social", "fils de notre seigneur", "Perdican est présenté comme un personnage central et noble.", 7),
+          figure("f18", "Double événement", "majorité / docteur à Paris", "Le retour de Perdican est associé à l'âge adulte et au savoir.", 7),
+        ]),
+        section("m3b", "Le savoir de Perdican est admiré et moqué", "Blazius admire les discours de Perdican, mais l'abondance des images donne aussi une impression d'excès. Le savoir devient brillant, fleuri, presque théâtral.", "Le texte prépare l'importance des paroles dans la pièce : séduire, convaincre, se protéger.", [
+          figure("f19", "Métaphore florale", "façons de parler si belles et si fleuries", "Le langage de Perdican est présenté comme séduisant mais peut-être décoratif.", 8),
+          figure("f20", "Hyperbole", "un livre d'or", "L'image valorise Perdican comme incarnation du savoir.", 9),
+          figure("f21", "Détail savant", "comment cela s'appelle en latin", "La culture de Perdican est montrée dans des gestes quotidiens.", 10),
+          figure("f22", "Comparaison hyperbolique", "des yeux grands comme la porte", "La réaction attendue du public villageois rend le savoir spectaculaire.", 12),
+        ]),
+        section("m3c", "Le messager redevient comique", "Après l'annonce de Perdican, Blazius ramène la scène à son confort : chaise, mule, cou, gorgée. L'ouverture se referme sur le corps comique du messager.", "Musset installe un mélange durable de sérieux et de fantaisie.", [
+          figure("f23", "Métaphore précieuse", "un diamant fin des pieds à la tête", "La formule idéalise Perdican tout en conservant une emphase comique.", 13),
+          figure("f24", "Retour au corps", "sans me casser le cou", "La préoccupation physique de Blazius casse la noblesse de l'annonce.", 15),
+          figure("f25", "Personnification animale légère", "La bête est tant soit peu rétive", "La mule prolonge le comique de scène.", 16),
+          figure("f26", "Boucle comique", "boire encore une gorgée", "La fin revient au trait dominant de Blazius : la gourmandise.", 16),
         ]),
       ]),
     ],
@@ -1069,24 +1102,66 @@ texts.push(
     sourceLabel: "On ne badine pas avec l'amour, 1834",
     lines: sourceTexts.mussetTiradeAmour,
     context: "Perdican répond à Camille et oppose les leçons du couvent à l'expérience réelle de l'amour.",
-    quizFocus: "La tirade défend un amour imparfait mais vivant contre une existence protégée et factice.",
+    quizFocus: "La tirade part d'une attaque contre l'éducation religieuse de Camille, traverse une vision noire du monde, puis sauve l'amour comme expérience douloureuse mais authentique.",
     problematique: "Comment Perdican transforme-t-il une dispute amoureuse en éloge de la vie ?",
-    recap: "Il accuse les nonnes, généralise violemment sur les hommes et les femmes, puis sauve l'amour comme seule vérité.",
+    recap: "Perdican transforme la dispute en éloge de la vie en accusant les nonnes d'avoir fabriqué un être factice, en assumant la corruption du monde, puis en affirmant que l'amour, même blessant, prouve qu'on a vraiment vécu.",
     opening: "On peut ouvrir sur le romantisme, qui valorise l'expérience intense même douloureuse.",
     movements: [
       movement("m1", "I. L'accusation du couvent", 1, 13, ["religion", "enfance", "coeur"], [
-        section("m1a", "Perdican attaque l'éducation de Camille", "Il reproche aux nonnes d'avoir fabriqué sa peur de l'amour.", "Le coeur est opposé aux leçons apprises.", [
-          figure("f1", "Personnification", "ton cœur a battu", "Le cœur devient plus vrai que le discours.", 9),
+        section("m1a", "Une attaque frontale contre les nonnes", "Perdican commence par interroger Camille, mais ses questions visent surtout les nonnes. Il accuse leur discours de transformer l'amour en mensonge et de détourner Camille de la vie.", "Le conflit amoureux devient un procès de l'éducation reçue.", [
+          figure("f1", "Question directe", "Sais-tu ce que c'est que des nonnes", "La tirade s'ouvre comme une mise en accusation.", 1),
+          figure("f2", "Apostrophe accusatrice", "malheureuse fille", "Perdican place Camille en victime d'une éducation qu'il dénonce.", 1),
+          figure("f3", "Antithèse religieuse", "l'amour des hommes / l'amour divin", "Il oppose l'amour humain et l'amour religieux pour critiquer le couvent.", 2),
+          figure("f4", "Champ lexical moral", "mensonge / crime", "Le vocabulaire transforme la leçon des nonnes en faute grave.", 2, 3),
+        ]),
+        section("m1b", "La leçon du couvent a effacé l'enfance", "Perdican rappelle les signes du passé commun : la main refusée, le bois, la fontaine, les jours d'enfance. Le reproche devient affectif.", "La dispute oppose la mémoire vivante de l'enfance à la rigidité apprise au couvent.", [
+          figure("f5", "Exclamation", "Ah ! comme elles t'ont fait la leçon !", "L'exclamation condense colère et regret.", 4),
+          figure("f6", "Anaphore", "Tu voulais / tu ne voulais / Tu reniais", "La répétition accumule les refus de Camille.", 6, 7),
+          figure("f7", "Personnification pathétique", "cette pauvre petite fontaine qui nous regarde tout en larmes", "Le lieu d'enfance semble pleurer la séparation.", 6),
+          figure("f8", "Métaphore", "le masque de plâtre", "Le visage de Camille paraît figé par l'éducation religieuse.", 8),
+        ]),
+        section("m1c", "Le coeur résiste à la leçon", "Perdican oppose au masque et aux discours le battement du coeur. Le coeur ne sait pas lire : il échappe donc à la leçon apprise.", "La vie intérieure de Camille contredit l'être artificiel fabriqué par le couvent.", [
+          figure("f9", "Personnification", "ton cœur a battu", "Le coeur devient un personnage qui répond à la place de Camille.", 9),
+          figure("f10", "Antithèse", "il a oublié sa leçon / lui qui ne sait pas lire", "L'ignorance du coeur devient une vérité supérieure aux discours appris.", 9),
+          figure("f11", "Retour au lieu naturel", "t'asseoir sur l'herbe", "L'herbe oppose le monde vivant au couvent.", 9),
+          figure("f12", "Ironie amère", "ces femmes ont bien parlé", "Perdican feint d'approuver les nonnes avant de les condamner.", 10),
+          figure("f13", "Sentence d'exclusion", "le ciel n'est pas pour elles", "La formule retourne le vocabulaire religieux contre les nonnes.", 11),
         ]),
       ]),
       movement("m2", "II. Une vision noire du monde", 14, 16, ["généralisation", "violence", "dégoût"], [
-        section("m2a", "Un réquisitoire excessif", "Perdican accumule les défauts des hommes et des femmes : le monde paraît corrompu.", "L'excès prépare le retournement final.", [
-          figure("f2", "Énumération", "menteurs, inconstants, faux", "L'accumulation donne une force oratoire.", 14),
+        section("m2a", "La parole devient réquisitoire", "Après le départ symbolique de Camille vers le couvent, Perdican formule ce qu'elle devra répondre aux récits qui l'ont empoisonnée. Il reprend la noirceur du discours qu'il combat.", "Le mouvement est volontairement excessif : il prépare le retournement vers l'amour.", [
+          figure("f14", "Impératifs de rupture", "Adieu / retourne", "Perdican pousse Camille vers le couvent tout en continuant à argumenter.", 13),
+          figure("f15", "Métaphore toxique", "récits hideux qui t'ont empoisonnée", "Les discours religieux sont présentés comme un poison moral.", 13),
+          figure("f16", "Verbe d'énonciation", "réponds ce que je vais te dire", "Perdican construit sa tirade comme une réponse à transmettre.", 13),
+        ]),
+        section("m2b", "Les hommes et les femmes sont condamnés en bloc", "Perdican accumule les défauts des hommes puis des femmes. Cette généralisation donne au monde une apparence totalement corrompue.", "La violence de la liste rend crédible l'idée que l'amour expose à la souffrance.", [
+          figure("f17", "Énumération", "menteurs, inconstants, faux, bavards", "L'accumulation produit un effet d'accablement.", 14),
+          figure("f18", "Gradation péjorative", "lâches, méprisables et sensuels", "La liste se termine sur une condamnation morale et physique.", 14),
+          figure("f19", "Parallélisme", "Tous les hommes / Toutes les femmes", "La structure condamne symétriquement les deux sexes.", 14, 15),
+          figure("f20", "Énumération au féminin", "perfides, artificieuses, vaniteuses", "Le second inventaire prolonge la vision noire du monde.", 15),
+        ]),
+        section("m2c", "Le monde est représenté comme un espace répugnant", "La métaphore de l'égout donne à la corruption morale une image concrète et violente. Perdican ne nie pas la laideur du monde : il va faire surgir l'amour malgré elle.", "L'éloge final sera plus fort parce qu'il naît d'un monde décrit comme affreux.", [
+          figure("f21", "Métaphore dégradante", "un égout sans fond", "Le monde est assimilé à un lieu de saleté infinie.", 16),
+          figure("f22", "Animalisation", "phoques les plus informes", "Les êtres humains sont rabaissés à des corps grotesques.", 16),
+          figure("f23", "Hyperbole visuelle", "des montagnes de fange", "La boue devient immense, presque impossible à dépasser.", 16),
         ]),
       ]),
       movement("m3", "III. L'amour sauve la vie", 17, 22, ["amour", "souffrance", "vérité"], [
-        section("m3a", "Aimer vaut mieux que se protéger", "Même trompé et blessé, celui qui aime peut dire qu'il a vraiment vécu.", "Phrase clé : j'ai souffert, mais j'ai aimé.", [
-          figure("f3", "Antithèse", "vécu / être factice", "L'amour oppose la vraie vie à l'existence artificielle.", 21),
+        section("m3a", "L'amour surgit malgré l'imperfection", "Le connecteur mais introduit le retournement : au sein d'un monde laid, il existe une chose sainte et sublime. L'amour vaut précisément parce qu'il unit des êtres imparfaits.", "Perdican ne défend pas un amour pur, mais un amour humain.", [
+          figure("f24", "Connecteur d'opposition", "Mais", "Le mot renverse la vision noire du mouvement précédent.", 17),
+          figure("f25", "Antithèse valorisante", "sainte et sublime / imparfaits et affreux", "La grandeur de l'amour naît de la faiblesse humaine.", 17),
+          figure("f26", "Formule absolue", "une chose sainte et sublime", "L'amour reçoit une valeur quasi sacrée.", 17),
+        ]),
+        section("m3b", "La souffrance n'annule pas l'amour", "Perdican enchaîne les participes trompé, blessé, malheureux, puis les dépasse par la formule mais on aime. La douleur devient une composante de l'expérience, non une raison de la fuir.", "L'amour est défendu comme vérité vécue, pas comme bonheur garanti.", [
+          figure("f27", "Anaphore", "souvent trompé / souvent blessé / souvent malheureux", "La répétition reconnaît la fréquence de la souffrance amoureuse.", 18),
+          figure("f28", "Opposition brève", "mais on aime", "La brièveté donne à l'amour la force d'une évidence.", 18),
+          figure("f29", "Image de bilan", "sur le bord de sa tombe", "La valeur de l'amour se mesure au moment de regarder toute une vie.", 19),
+        ]),
+        section("m3c", "Aimer prouve qu'on a vécu", "La conclusion de Perdican transforme la souffrance en preuve d'existence. L'être qui refuse l'amour devient factice, fabriqué par l'orgueil et l'ennui.", "La tirade répond à la problématique : Perdican passe de la dispute à une définition de la vraie vie.", [
+          figure("f30", "Discours direct", "J'ai souffert souvent... mais j'ai aimé", "La phrase sonne comme un bilan de vie assumé.", 20),
+          figure("f31", "Antithèse", "vécu / être factice", "L'amour oppose la vie authentique à l'existence artificielle.", 21),
+          figure("f32", "Champ lexical du faux", "être factice / créé", "Ce vocabulaire condamne l'identité fabriquée par le refus d'aimer.", 21),
+          figure("f33", "Sortie scénique", "Il sort", "La tirade se clôt sur un geste net qui laisse Camille face aux paroles entendues.", 22),
         ]),
       ]),
     ],
@@ -1098,24 +1173,67 @@ texts.push(
     sourceLabel: "On ne badine pas avec l'amour, 1834",
     lines: sourceTexts.mussetRosette,
     context: "Perdican parle à Rosette pour être entendu par Camille : le langage amoureux devient stratégie.",
-    quizFocus: "La scène montre un jeu cruel : Perdican utilise Rosette pour atteindre Camille.",
+    quizFocus: "La scène détourne les codes de la déclaration amoureuse : Perdican parle à Rosette, mais il vise Camille et transforme les objets amoureux en instruments de revanche.",
     problematique: "Comment cette déclaration amoureuse devient-elle une manipulation ?",
-    recap: "Perdican déclare son amour, transforme les objets en symboles, puis laisse Rosette répondre naïvement.",
+    recap: "La déclaration devient manipulation parce que Perdican organise une double adresse, met en scène la chaîne et la bague pour blesser Camille, puis oppose la nature et la jeunesse de Rosette à l'éducation religieuse de Camille.",
     opening: "On peut ouvrir sur le titre de la pièce : on ne joue pas sans danger avec l'amour.",
     movements: [
       movement("m1", "I. Une déclaration destinée à Camille", 1, 5, ["double adresse", "Rosette", "Camille"], [
-        section("m1a", "La parole est piégée", "Perdican semble parler à Rosette, mais l'indication précise qu'il veut être entendu par Camille.", "Toujours repérer à qui la parole est vraiment destinée.", [
-          figure("f1", "Double énonciation", "de manière que Camille l'entende", "Le théâtre montre deux destinataires.", 1),
+        section("m1a", "La parole est organisée pour être entendue", "La didascalie précise que Perdican parle à haute voix pour Camille. Le spectateur sait donc que Rosette n'est pas la seule destinataire.", "La manipulation commence avant même le contenu de la déclaration : elle est dans la situation d'énonciation.", [
+          figure("f1", "Didascalie de double adresse", "à haute voix, de manière que Camille l'entende", "Le théâtre révèle la stratégie de Perdican.", 1),
+          figure("f2", "Déclaration directe", "Je t'aime, Rosette", "La formule amoureuse paraît simple, mais elle est immédiatement piégée par la double adresse.", 1),
+          figure("f3", "Nom propre", "Rosette", "Le prénom donne l'impression d'une parole intime, alors qu'elle est destinée à être entendue par une autre.", 1),
+        ]),
+        section("m1b", "Rosette est valorisée contre Camille", "Perdican affirme que Rosette seule n'a rien oublié. Il oppose implicitement sa fidélité à l'oubli ou au reniement de Camille.", "Rosette devient un instrument de comparaison.", [
+          figure("f4", "Anaphore", "toi seule / Toi seule", "La répétition isole Rosette comme figure de fidélité.", 1, 2),
+          figure("f5", "Champ lexical du souvenir", "oublié / souviens / beaux jours passés", "Le souvenir sert à opposer Rosette à Camille.", 1, 2),
+          figure("f6", "Antithèse temporelle", "vie qui n'est plus / vie nouvelle", "Perdican transforme le passé partagé en promesse d'avenir.", 2, 3),
+        ]),
+        section("m1c", "Le don de la chaîne matérialise le jeu amoureux", "La chaîne posée sur le cou de Rosette donne un signe visible à la déclaration. Mais ce signe est théâtral : il doit être vu et compris par Camille.", "L'objet amoureux devient accessoire de scène.", [
+          figure("f7", "Impératif de don", "donne-moi ton cœur", "Perdican demande un engagement affectif à Rosette.", 3),
+          figure("f8", "Objet symbolique", "le gage de notre amour", "La chaîne devient la preuve visible d'une relation affichée.", 3),
+          figure("f9", "Didascalie gestuelle", "Il lui pose sa chaîne sur le cou", "Le geste rend la déclaration spectaculaire.", 4),
+          figure("f10", "Réplique naïve", "Vous me donnez votre chaîne en or ?", "Rosette comprend d'abord l'objet concret, ce qui révèle son innocence.", 5),
         ]),
       ]),
       movement("m2", "II. Les objets symbolisent la rupture", 6, 17, ["source", "bague", "image"], [
-        section("m2a", "La bague effacée", "Perdican jette la bague de Camille dans l'eau : il met en scène une rupture.", "L'amour devient spectacle.", [
-          figure("f2", "Symbole", "la bague dans l'eau", "La bague représente le lien avec Camille.", 9),
+        section("m2a", "La fontaine devient un miroir de théâtre", "Perdican amène Rosette près de la fontaine et l'invite à regarder leur reflet. L'amour est mis en scène comme une image à produire sous les yeux de Camille.", "La manipulation passe par le regard : il faut que Camille voie ce qu'on lui retire.", [
+          figure("f11", "Impératifs", "Regarde / Lève-toi / approchons-nous", "Perdican dirige les gestes et le regard de Rosette.", 6, 7),
+          figure("f12", "Question visuelle", "Nous vois-tu tous les deux", "La scène force Rosette à regarder le couple formé dans l'eau.", 8),
+          figure("f13", "Image de l'union", "ta main dans la mienne", "Le reflet fabrique une image intime du couple.", 9),
+        ]),
+        section("m2b", "La bague de Camille est effacée symboliquement", "Perdican jette la bague dans l'eau, puis demande à Rosette de regarder l'image disparaître. L'objet de Camille est sacrifié dans un geste visible.", "Le geste ne rompt pas seulement avec Camille : il cherche à la blesser.", [
+          figure("f14", "Impératif", "Regarde tout cela s'effacer", "Perdican transforme l'effacement en spectacle.", 10),
+          figure("f15", "Didascalie symbolique", "Il jette la bague dans l'eau", "La bague représente le lien avec Camille, rejeté dans la source.", 11),
+          figure("f16", "Constat de disparition", "notre image a disparu", "L'eau matérialise la disparition momentanée du couple.", 12),
+          figure("f17", "Aparté de Camille", "Il a jeté ma bague dans l'eau", "Le spectateur vérifie que la stratégie atteint bien Camille.", 17),
+        ]),
+        section("m2c", "L'eau troublée rend visible le trouble amoureux", "La source reprend peu à peu son équilibre, mais de grands cercles noirs restent à la surface. Le paysage reflète la violence émotionnelle de la scène.", "L'objet et le décor portent la signification : l'amour devient image, trouble et retour trompeur à l'ordre.", [
+          figure("f18", "Personnification", "l'eau qui s'était troublée reprend son équilibre", "L'eau semble ressentir puis apaiser le trouble causé par le geste.", 13),
+          figure("f19", "Image inquiétante", "de grands cercles noirs", "La noirceur visuelle suggère une blessure dans la scène amoureuse.", 13),
+          figure("f20", "Temporalité de l'attente", "Patience / Encore une minute", "Perdican dirige le temps de la scène comme un metteur en scène.", 14, 15),
+          figure("f21", "Révélation finale", "une bague que m'avait donnée Camille", "Le sens réel du geste apparaît : Rosette sert à atteindre Camille.", 16),
         ]),
       ]),
       movement("m3", "III. Rosette reste naïve", 18, 25, ["innocence", "décalage", "cruauté"], [
-        section("m3a", "Une réponse simple face à un jeu complexe", "Rosette ne comprend pas totalement la stratégie et répond avec humilité.", "Le comique devient cruel.", [
-          figure("f3", "Antithèse", "Monsieur le docteur / comme je pourrai", "La simplicité de Rosette contraste avec les grands discours.", 25),
+        section("m3a", "Perdican rejoue le grand discours amoureux", "Perdican demande à Rosette si elle sait ce qu'est l'amour, puis convoque le vent, la pluie, le soleil. Sa parole prend une ampleur lyrique.", "La beauté du discours rend la manipulation plus dangereuse : elle paraît sincère.", [
+          figure("f22", "Question reprise", "Sais-tu ce que c'est que l'amour", "La question transforme Rosette en élève d'une leçon sentimentale.", 18),
+          figure("f23", "Impératif d'écoute", "Écoute !", "Perdican dirige encore la réception de sa parole.", 19),
+          figure("f24", "Personnification de la nature", "le vent se tait", "La nature semble suspendue pour accueillir la déclaration.", 19),
+          figure("f25", "Image précieuse", "la pluie du matin roule en perles", "Le décor naturel embellit la scène amoureuse.", 19),
+        ]),
+        section("m3b", "Rosette est opposée à Camille", "Perdican valorise la jeunesse, le sang vermeil, le refus du couvent. Rosette devient l'image d'une nature non corrompue, opposée à Camille et aux nonnes.", "La déclaration est aussi une vengeance idéologique contre l'éducation religieuse.", [
+          figure("f26", "Serment lyrique", "Par la lumière du ciel, par le soleil", "Perdican donne à sa déclaration une solennité presque sacrée.", 20),
+          figure("f27", "Question de consentement", "Tu veux bien de moi, n'est-ce pas ?", "La question cherche l'adhésion de Rosette tout en gardant une pression affective.", 21),
+          figure("f28", "Métaphore de la corruption", "flétri ta jeunesse", "Rosette est présentée comme une jeunesse non fanée.", 22),
+          figure("f29", "Antithèse physique", "sang vermeil / sang affadi", "Le sang vivant de Rosette s'oppose au sang affaibli associé au couvent.", 22),
+          figure("f30", "Opposition au religieux", "Tu ne veux as te faire religieuse", "Perdican oppose Rosette à la vocation religieuse de Camille.", 23),
+        ]),
+        section("m3c", "La réponse de Rosette révèle le décalage", "Rosette répond avec humilité et maladresse. Elle ne possède ni le langage brillant de Perdican ni la stratégie de Camille : sa sincérité rend la manipulation cruelle.", "La scène devient tragique parce que la victime ne maîtrise pas le jeu dans lequel elle est prise.", [
+          figure("f31", "Exclamation pathétique", "Hélas !", "Le mot laisse entendre la fragilité de Rosette.", 25),
+          figure("f32", "Adresse sociale", "Monsieur le docteur", "Rosette marque la distance sociale et intellectuelle avec Perdican.", 25),
+          figure("f33", "Formule humble", "je vous aimerai comme je pourrai", "La simplicité de la réponse contraste avec la rhétorique de Perdican.", 25),
+          figure("f34", "Antithèse implicite", "grand discours / comme je pourrai", "Le décalage entre les deux paroles fait apparaître la cruauté du jeu.", 20, 25),
         ]),
       ]),
     ],
@@ -1127,24 +1245,64 @@ texts.push(
     sourceLabel: "Dom Juan, 1665",
     lines: sourceTexts.domJuanDeuxPaysannes,
     context: "Dom Juan a promis le mariage à deux paysannes et tente de les tromper toutes les deux en même temps.",
-    quizFocus: "La scène révèle l'art de manipuler par la parole et le comique du double jeu.",
+    quizFocus: "La scène fait rire par la situation impossible de Dom Juan entre deux femmes, mais elle dénonce aussi une parole de séduction qui promet, esquive et abandonne.",
     problematique: "Comment Molière fait-il rire tout en dénonçant le mensonge de Dom Juan ?",
-    recap: "Les deux femmes demandent la vérité, Dom Juan esquive, puis Sganarelle avertit de la menace.",
+    recap: "Molière fait rire par la symétrie des deux paysannes et les apartés contradictoires de Dom Juan, puis il dénonce le mensonge lorsque Sganarelle rappelle que les victimes courent à leur malheur.",
     opening: "On peut ouvrir sur les autres scènes de séduction de Dom Juan, toujours fondées sur la parole.",
     movements: [
       movement("m1", "I. Deux demandes de vérité", 1, 18, ["mariage", "rivalité", "vérité"], [
-        section("m1a", "Les paysannes confrontent Dom Juan", "Charlotte et Mathurine veulent savoir laquelle dit vrai.", "Le comique naît de la situation impossible.", [
-          figure("f1", "Répétition", "promis / donné parole", "Les deux questions se répondent et enferment Dom Juan.", 1, 3),
+        section("m1a", "Deux promesses se répondent", "Charlotte et Mathurine posent presque la même question : Dom Juan a-t-il promis le mariage ? La répétition enferme immédiatement le séducteur dans ses contradictions.", "Le comique naît d'une situation impossible : deux femmes réclament la même vérité en même temps.", [
+          figure("f1", "Questions parallèles", "promis de l'épouser / donné parole d'être son mari", "Les deux formulations se répondent et révèlent la double promesse.", 1, 3),
+          figure("f2", "Champ lexical de l'engagement", "promis / donné parole / mari", "La parole de Dom Juan est associée à une obligation sérieuse.", 1, 3),
+          figure("f3", "Apartés immédiats", "bas, à Charlotte / bas, à Mathurine", "Dom Juan répond séparément pour éviter une vérité commune.", 2, 4),
+        ]),
+        section("m1b", "Les paysannes cherchent un jugement", "Charlotte et Mathurine veulent forcer Dom Juan à trancher. Le vocabulaire de la vérité et du jugement transforme la scène en petit procès.", "Molière rend les victimes actives : elles demandent des comptes.", [
+          figure("f4", "Expression de vérité", "il faut savoir la vérité", "Charlotte exige une clarification publique.", 9),
+          figure("f5", "Lexique judiciaire", "juger ça / videz la querelle / Mettez-nous d'accord", "Les paysannes placent Dom Juan en arbitre de son propre mensonge.", 10, 14),
+          figure("f6", "Impératifs brefs", "Dites / Parlez", "Les deux femmes pressent Dom Juan de répondre.", 17, 18),
+        ]),
+        section("m1c", "La rivalité produit le comique populaire", "Les deux femmes s'attaquent avec des expressions familières. Le comique vient du langage populaire et de la symétrie des répliques.", "La scène reste drôle, mais ce rire repose sur une rivalité créée par Dom Juan.", [
+          figure("f7", "Expression populaire", "votre bec jaune", "Charlotte ridiculise Mathurine dans un registre familier.", 11),
+          figure("f8", "Réplique symétrique", "vous rendre un peu camuse", "Mathurine répond sur le même ton moqueur.", 12),
+          figure("f9", "Répétition", "Vous allez voir / Vous allez voir vous-même", "La symétrie renforce le duel comique.", 15, 16),
         ]),
       ]),
       movement("m2", "II. L'esquive brillante de Dom Juan", 19, 31, ["mensonge", "double jeu", "parole"], [
-        section("m2a", "Dom Juan parle sans répondre", "Il produit un discours général et glisse des apartés contradictoires à chacune.", "Il maîtrise la parole pour éviter la vérité.", [
-          figure("f2", "Aparté", "Bas, à Mathurine / Bas, à Charlotte", "Le public entend la duplicité du personnage.", 25, 30),
+        section("m2a", "Dom Juan répond par une fausse impartialité", "Dom Juan feint l'embarras et parle aux deux femmes ensemble. Il reformule le problème sans répondre clairement, ce qui lui permet de gagner du temps.", "Sa maîtrise de la parole consiste à repousser la vérité.", [
+          figure("f10", "Didascalie", "embarrassé", "Le mot montre la difficulté de la situation, même pour Dom Juan.", 19),
+          figure("f11", "Question d'évitement", "Que voulez-vous que je dise ?", "Dom Juan transforme son obligation de répondre en impossibilité apparente.", 19),
+          figure("f12", "Formule d'équilibre", "également toutes deux", "Il met les deux femmes au même niveau pour éviter de choisir.", 19),
+        ]),
+        section("m2b", "Le discours moral masque le mensonge", "Dom Juan oppose les paroles et les effets. Il prétend que l'action du mariage décidera mieux que les discours, alors qu'il se sert précisément des discours pour tromper.", "La scène dénonce une rhétorique séduisante mais vide.", [
+          figure("f13", "Questions rhétoriques", "Est-ce que chacune... Pourquoi m'obliger...", "Les questions empêchent les paysannes d'obtenir une réponse directe.", 20, 21),
+          figure("f14", "Antithèse", "faire et non pas dire", "Dom Juan se donne une apparence de sincérité pratique.", 23),
+          figure("f15", "Maxime trompeuse", "les effets décident mieux que les paroles", "La formule paraît raisonnable mais sert à différer la vérité.", 23),
+          figure("f16", "Futur d'évitement", "l'on verra, quand je me marierai", "La décision est renvoyée à plus tard.", 24),
+        ]),
+        section("m2c", "Les apartés montrent la duplicité en direct", "Dom Juan alterne les apartés à Mathurine et à Charlotte. Le public entend les deux discours contradictoires, alors que chaque femme croit recevoir une confidence unique.", "Le comique vient de ce que le spectateur voit le mensonge fonctionner.", [
+          figure("f17", "Apartés alternés", "Bas, à Mathurine / Bas, à Charlotte", "La structure scénique expose le double jeu.", 25, 30),
+          figure("f18", "Impératifs manipulateurs", "Laissez-lui croire / Laissez-la se flatter", "Dom Juan encourage chacune à rester dans son illusion.", 25, 26),
+          figure("f19", "Déclarations contradictoires", "Je vous adore / Je suis tout à vous", "Il promet l'exclusivité aux deux femmes.", 27, 28),
+          figure("f20", "Hyperbole galante", "Tous les visages sont laids auprès du vôtre", "Le compliment excessif est un instrument de séduction.", 29),
+          figure("f21", "Fuite temporelle", "dans un quart d'heure", "Dom Juan sort de la difficulté en reportant la suite.", 31),
         ]),
       ]),
       movement("m3", "III. L'avertissement de Sganarelle", 32, 35, ["innocence", "danger", "morale"], [
-        section("m3a", "Le rire devient critique", "Sganarelle rappelle que les deux femmes risquent leur malheur.", "Molière fait rire, mais il dénonce aussi.", [
-          figure("f3", "Apostrophe", "pauvres filles", "Sganarelle prend pitié et moralise la scène.", 34),
+        section("m3a", "Les deux femmes restent dans l'illusion", "Après le départ de Dom Juan, Charlotte et Mathurine continuent chacune à croire qu'elle est choisie. Le mensonge a donc produit son effet.", "La persistance de l'illusion rend le comique plus cruel.", [
+          figure("f22", "Affirmations rivales", "Je suis celle qu'il aime / C'est moi qu'il épousera", "Les deux phrases montrent que chacune croit avoir gagné.", 32, 33),
+          figure("f23", "Pronoms opposés", "Je / moi", "Les pronoms soulignent la rivalité entretenue par Dom Juan.", 32, 33),
+          figure("f24", "Futur de croyance", "épousera", "Mathurine croit encore à la promesse de mariage.", 33),
+        ]),
+        section("m3b", "Sganarelle introduit la pitié", "Sganarelle interrompt le jeu comique par une parole de compassion. Il voit l'innocence des deux femmes et le danger auquel elles s'exposent.", "La scène passe du rire à la critique morale.", [
+          figure("f25", "Exclamation pathétique", "Ah ! pauvres filles", "Sganarelle exprime une pitié directe.", 34),
+          figure("f26", "Champ lexical moral", "pitié / innocence / malheur", "Le vocabulaire révèle les conséquences humaines du mensonge.", 34),
+          figure("f27", "Expression de refus", "je ne puis souffrir", "Sganarelle se distingue moralement de Dom Juan.", 34),
+        ]),
+        section("m3c", "Le valet formule l'avertissement final", "Sganarelle conseille aux deux femmes de ne plus écouter les contes de séduction. La parole de Dom Juan est ramenée à un récit trompeur.", "Molière dénonce le libertinage verbal : les mots séduisent mais exposent les victimes au malheur.", [
+          figure("f28", "Impératif de conseil", "Croyez-moi", "Sganarelle tente de protéger les deux paysannes.", 35),
+          figure("f29", "Négation préventive", "ne vous amusez point", "Le verbe amusez rappelle que le jeu amoureux est dangereux.", 35),
+          figure("f30", "Métaphore du mensonge", "tous les contes qu'on vous fait", "Les promesses de Dom Juan sont réduites à des fictions.", 35),
+          figure("f31", "Retour au village", "demeurez dans votre village", "Sganarelle propose de sortir du monde séducteur de Dom Juan.", 35),
         ]),
       ]),
     ],

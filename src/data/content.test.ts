@@ -173,6 +173,41 @@ describe("study content", () => {
     }
   });
 
+  it("keeps restored theater source details for T13 to T16", () => {
+    const expectedFragments = [
+      ["blazius-arrive", "pareil à une amphore antique"],
+      ["tirade-de-perdican", "lâches, méprisables et sensuels"],
+      ["tirade-de-perdican", "C'est moi qui ai vécu, et non pas un être factice"],
+      ["perdican-rosette", "de manière que Camille l'entende"],
+      ["perdican-rosette", "le vent se tait ; la pluie du matin roule en perles"],
+      ["dom-juan-charlotte-mathurine", "il faut faire et non pas dire"],
+      ["dom-juan-charlotte-mathurine", "ne vous amusez point à tous les contes qu'on vous fait"],
+    ] as const;
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
+  it("provides dense analysis for the theater sequence", () => {
+    const expectedMinimums = new Map([
+      ["blazius-arrive", { sections: 8, figures: 24 }],
+      ["tirade-de-perdican", { sections: 9, figures: 30 }],
+      ["perdican-rosette", { sections: 9, figures: 30 }],
+      ["dom-juan-charlotte-mathurine", { sections: 9, figures: 28 }],
+    ]);
+
+    for (const [slug, minimums] of expectedMinimums) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      const movementSections = text?.movements.flatMap((movement) => movement.sections) ?? [];
+      const figures = movementSections.flatMap((section) => section.figures ?? []);
+
+      expect(movementSections.length).toBeGreaterThanOrEqual(minimums.sections);
+      expect(figures.length).toBeGreaterThanOrEqual(minimums.figures);
+    }
+  });
+
   it("keeps exact Balzac and Zola source wording for T5 to T8", () => {
     const expectedFragments = new Map([
       ["portrait-de-raphael", "une blessure profonde que sondait leur regard"],

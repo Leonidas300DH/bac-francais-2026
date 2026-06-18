@@ -326,7 +326,7 @@ Eh bien ! Camille, ces femmes ont bien parlé ; elles t'ont mise dans le vrai ch
 Il pourra m'en coûter le bonheur de ma vie ; mais dis-leur cela de ma part : le ciel n'est pas pour elles.
 CAMILLE. - Ni pour moi, n'est-ce pas ?
 PERDICAN. - Adieu, Camille, retourne à ton couvent, et lorsqu'on te fera de ces récits hideux qui t'ont empoisonnée, réponds ce que je vais te dire :
-Tous les hommes sont menteurs, inconstants, faux, bavards, hypocrites, orgueilleux et lâches.
+Tous les hommes sont menteurs, inconstants, faux, bavards, hypocrites, orgueilleux et lâches, méprisables et sensuels.
 Toutes les femmes sont perfides, artificieuses, vaniteuses, curieuses et dépravées.
 Le monde n'est qu'un égout sans fond où les phoques les plus informes rampent et se tordent sur des montagnes de fange.
 Mais il y a au monde une chose sainte et sublime, c'est l'union de deux de ces êtres si imparfaits et si affreux.
