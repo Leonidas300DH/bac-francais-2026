@@ -152,57 +152,57 @@ Vouloir nous brûle et Pouvoir nous détruit : mais SAVOIR laisse notre faible o
   `),
 
   mortRaphael: toLines(`
-Raphaël tira de dessous son chevet le lambeau de la Peau de chagrin, fragile et petit comme la feuille d'une pervenche, et le lui montrant : Pauline, belle image de ma vie, disons-nous adieu, dit-il.
-- Adieu ? répéta-t-elle d'un air surpris.
+Raphaël tira de dessous son chevet le lambeau de la Peau de chagrin, fragile et petit comme la feuille d’une pervenche, et le lui montrant : Pauline, belle image de ma vie, disons-nous adieu, dit-il.
+- Adieu ? répéta-t-elle d’un air surpris.
 - Oui, ceci est un talisman qui accomplit mes désirs, et représente ma vie.
-Vois ce qu'il m'en reste.
-Si tu me regardes encore, je vais mourir...
+Vois ce qu’il m’en reste.
+Si tu me regardes encore, je vais mourir…
 La jeune fille crut Valentin devenir fou, elle prit le talisman, et alla chercher la lampe.
 Éclairée par la lueur vacillante qui se projetait également sur Raphaël et sur le talisman, elle examina très attentivement et le visage de son amant et la dernière parcelle de la Peau magique.
-En la voyant belle de terreur et d'amour, il ne fut plus maître de sa pensée.
-Les souvenirs des scènes caressantes et des joies délirantes de sa passion triomphèrent dans son âme depuis longtemps endormie, et s'y réveillèrent comme un foyer mal éteint.
-"Pauline, viens ! Pauline !"
+En la voyant belle de terreur et d’amour, il ne fut plus maître de sa pensée.
+Les souvenirs des scènes caressantes et des joies délirantes de sa passion triomphèrent dans son âme depuis longtemps endormie, et s’y réveillèrent comme un foyer mal éteint.
+« Pauline, viens ! Pauline ! »
 Un cri terrible sortit du gosier de la jeune fille.
-Ses yeux se dilatèrent, ses sourcils, violemment tirés par une douleur inouïe, s'écartèrent avec horreur.
+Ses yeux se dilatèrent, ses sourcils, violemment tirés par une douleur inouïe, s’écartèrent avec horreur.
 Elle lisait dans les yeux de Raphaël un de ces désirs furieux, jadis sa gloire à elle.
 Mais à mesure que grandissait ce désir, la Peau, en se contractant, lui chatouillait la main.
-Sans réfléchir, elle s'enfuit dans le salon voisin dont elle ferma la porte.
-"Pauline ! Pauline ! cria le moribond en courant après elle, je t'aime, je t'adore, je te veux !"
-Je te maudis, si tu ne m'ouvres !
-Je veux mourir à toi !"
+Sans réfléchir, elle s’enfuit dans le salon voisin dont elle ferma la porte.
+« Pauline ! Pauline ! cria le moribond en courant après elle, je t’aime, je t’adore, je te veux ! »
+Je te maudis, si tu ne m’ouvres !
+Je veux mourir à toi ! »
 Par une force singulière, dernier éclat de vie, il jeta la porte à terre, et vit sa maîtresse à demi nue se roulant sur un canapé.
-Pauline avait tenté vainement de se déchirer le sein, et pour se donner une prompte mort, elle cherchait à s'étrangler avec son châle.
-"Si je meurs, il vivra !" disait-elle en tâchant vainement de serrer le noeud.
+Pauline avait tenté vainement de se déchirer le sein, et pour se donner une prompte mort, elle cherchait à s’étrangler avec son châle.
+« Si je meurs, il vivra ! » disait-elle en tâchant vainement de serrer le nœud.
 Ses cheveux étaient épars, ses épaules nues, ses vêtements en désordre.
-Dans cette lutte avec la mort, les yeux en pleurs, le visage enflammé, se tordant sous un horrible désespoir, elle présentait à Raphaël, ivre d'amour, mille beautés qui augmentèrent son délire.
-Il se jeta sur elle avec la légèreté d'un oiseau de proie, brisa le châle, et voulut la prendre dans ses bras.
+Dans cette lutte avec la mort, les yeux en pleurs, le visage enflammé, se tordant sous un horrible désespoir, elle présentait à Raphaël, ivre d’amour, mille beautés qui augmentèrent son délire.
+Il se jeta sur elle avec la légèreté d’un oiseau de proie, brisa le châle, et voulut la prendre dans ses bras.
 Le moribond chercha des paroles pour exprimer le désir qui dévorait toutes ses forces.
 Mais il ne trouva que les sons étranglés du râle dans sa poitrine, dont chaque respiration creusée plus avant semblait partir de ses entrailles.
 Enfin, ne pouvant bientôt plus former de sons, il mordit Pauline au sein.
-Jonathas se présenta tout épouvanté des cris qu'il entendait, et tenta d'arracher à la jeune fille le cadavre sur lequel elle s'était accroupie dans un coin.
-"Que demandez-vous ? dit-elle. Il est à moi, je l'ai tué, ne l'avais-je pas prédit ?"
+Jonathas se présenta tout épouvanté des cris qu’il entendait, et tenta d’arracher à la jeune fille le cadavre sur lequel elle s’était accroupie dans un coin.
+« Que demandez-vous ? dit-elle. Il est à moi, je l’ai tué, ne l’avais-je pas prédit ? »
   `),
 
   zolaOeuvre: toLines(`
-Peu à peu, si la bravoure de son obstination paraissait grandir, il retombait pourtant à ses doutes d'autrefois, ravagé par la lutte qu'il soutenait contre la nature.
-Toute toile qui revenait, lui semblait mauvaise, incomplète surtout, ne réalisant pas l'effort tenté.
-C'était cette impuissance qui l'exaspérait, plus encore que les refus du jury.
-Sans doute, il ne pardonnait pas à ce dernier : ses oeuvres, même embryonnaires, valaient cent fois les médiocrités reçues.
-Mais quelle souffrance de ne jamais se donner entier, dans le chef-d'oeuvre dont il ne pouvait accoucher son génie !
+Peu à peu, si la bravoure de son obstination paraissait grandir, il retombait pourtant à ses doutes d’autrefois, ravagé par la lutte qu’il soutenait contre la nature.
+Toute toile qui revenait, lui semblait mauvaise, incomplète surtout, ne réalisant pas l’effort tenté.
+C’était cette impuissance qui l’exaspérait, plus encore que les refus du jury.
+Sans doute, il ne pardonnait pas à ce dernier : ses œuvres, même embryonnaires, valaient cent fois les médiocrités reçues.
+Mais quelle souffrance de ne jamais se donner entier, dans le chef-d’œuvre dont il ne pouvait accoucher son génie !
 Il y avait toujours des morceaux superbes, il était content de celui-ci, de celui-là, de cet autre.
 Alors pourquoi de brusques trous ?
-Pourquoi des parties indignes, inaperçues pendant le travail, tuant le tableau ensuite d'une tare ineffaçable ?
-Et il se sentait incapable de correction, un mur se dressait à un moment, un obstacle infranchissable, au-delà duquel il lui était défendu d'aller.
-S'il reprenait vingt fois le morceau, vingt fois il aggravait le mal, tout se brouillait et glissait au gâchis.
-Il s'énervait, ne voyait plus, n'exécutait plus, et arrivait à une véritable paralysie de la volonté.
-Étaient-ce donc ses yeux, étaient-ce ses mains qui cessaient de lui appartenir [...] ?
-Les crises se multipliaient, il recommençait à vivre des semaines abominables, se dévorant, éternellement secoué de l'incertitude à l'espérance.
-L'unique soutien, pendant ces heures mauvaises, passées à s'acharner sur l'oeuvre rebelle, c'était le rêve consolateur de l'oeuvre future, celle où il se satisferait enfin, où ses mains se délieraient pour la création.
+Pourquoi des parties indignes, inaperçues pendant le travail, tuant le tableau ensuite d’une tare ineffaçable ?
+Et il se sentait incapable de correction, un mur se dressait à un moment, un obstacle infranchissable, au-delà duquel il lui était défendu d’aller.
+S’il reprenait vingt fois le morceau, vingt fois il aggravait le mal, tout se brouillait et glissait au gâchis.
+Il s’énervait, ne voyait plus, n’exécutait plus, et arrivait à une véritable paralysie de la volonté.
+Étaient-ce donc ses yeux, étaient-ce ses mains qui cessaient de lui appartenir [..] ?
+Les crises se multipliaient, il recommençait à vivre des semaines abominables, se dévorant, éternellement secoué de l’incertitude à l’espérance.
+L’unique soutien, pendant ces heures mauvaises, passées à s’acharner sur l’œuvre rebelle, c’était le rêve consolateur de l’œuvre future, celle où il se satisferait enfin, où ses mains se délieraient pour la création.
 Par un phénomène constant, son besoin de créer allait ainsi plus vite que ses doigts, il ne travaillait jamais à une toile, sans concevoir la toile suivante.
 Une seule hâte lui restait, se débarrasser du travail en train, dont il agonisait.
-Sans doute, ça ne vaudrait rien encore, il en était aux concessions fatales, aux tricheries, à tout ce qu'un artiste doit abandonner de sa conscience.
-Mais ce qu'il ferait ensuite, ah ! ce qu'il ferait, il le voyait superbe et héroïque, inattaquable, indestructible.
-Perpétuel mirage qui fouette le courage des damnés de l'art, mensonge de tendresse et de pitié sans lequel la production serait impossible, pour tous ceux qui se meurent de ne pouvoir faire de la vie !
+Sans doute, ça ne vaudrait rien encore, il en était aux concessions fatales, aux tricheries, à tout ce qu’un artiste doit abandonner de sa conscience.
+Mais ce qu’il ferait ensuite, ah ! ce qu’il ferait, il le voyait superbe et héroïque, inattaquable, indestructible.
+Perpétuel mirage qui fouette le courage des damnés de l’art, mensonge de tendresse et de pitié sans lequel la production serait impossible, pour tous ceux qui se meurent de ne pouvoir faire de la vie !
   `),
 };
 

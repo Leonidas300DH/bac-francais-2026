@@ -88,6 +88,39 @@ describe("study content", () => {
     }
   });
 
+  it("keeps exact uploaded wording for T7 and T8", () => {
+    const expectedFragments = [
+      ["mort-de-raphael", "fragile et petit comme la feuille d’une pervenche"],
+      ["mort-de-raphael", "« Si je meurs, il vivra ! »"],
+      ["mort-de-raphael", "nœud"],
+      ["l-oeuvre-zola", "ses œuvres"],
+      ["l-oeuvre-zola", "chef-d’œuvre"],
+      ["l-oeuvre-zola", "l’œuvre rebelle"],
+      ["l-oeuvre-zola", "damnés de l’art"],
+    ] as const;
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
+  it("provides dense analysis for the final Balzac and Zola sequence", () => {
+    const expectedMinimums = new Map([
+      ["mort-de-raphael", { sections: 9, figures: 30 }],
+      ["l-oeuvre-zola", { sections: 9, figures: 30 }],
+    ]);
+
+    for (const [slug, minimums] of expectedMinimums) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      const movementSections = text?.movements.flatMap((movement) => movement.sections) ?? [];
+      const figures = movementSections.flatMap((section) => section.figures ?? []);
+
+      expect(movementSections.length).toBeGreaterThanOrEqual(minimums.sections);
+      expect(figures.length).toBeGreaterThanOrEqual(minimums.figures);
+    }
+  });
+
   it("validates every publishable text shape", () => {
     const errors = studyTexts.flatMap(validateStudyText);
     expect(errors).toEqual([]);

@@ -631,24 +631,66 @@ const texts: StudyText[] = [
     sourceLabel: "La Peau de chagrin, 1831",
     lines: sourceTexts.mortRaphael,
     context: "À la fin du roman, la Peau est presque réduite à rien : le désir amoureux précipite la mort de Raphaël.",
-    quizFocus: "La scène montre que le désir, même amoureux, consume littéralement la vie du héros.",
+    quizFocus: "La scène fait coïncider déclaration amoureuse, contraction du talisman et agonie : l'amour n'apaise pas la malédiction, il en devient l'accomplissement.",
     problematique: "Comment Balzac fait-il de cette scène amoureuse une scène de mort ?",
-    recap: "La Peau minuscule annonce la fin, le désir explose, puis l'amour devient violence et mort.",
+    recap: "Balzac transforme l'amour en scène de mort en faisant du talisman un compte à rebours visible, puis en montrant le désir comme une force incontrôlable qui détruit la parole, le corps et Pauline elle-même.",
     opening: "On peut comparer cette fin à une tragédie : le héros est détruit par sa propre passion.",
     movements: [
-      movement("m1", "I. La Peau annonce la mort", 1, 7, ["talisman", "adieu", "fragilité"], [
-        section("m1a", "Un objet presque disparu", "La Peau est minuscule : elle matérialise ce qu'il reste de vie à Raphaël.", "La petitesse du talisman rend visible l'épuisement de la vie du héros.", [
-          figure("f1", "Comparaison", "comme la feuille d'une pervenche", "La petitesse rend la mort visible.", 1),
+      movement("m1", "I. Le talisman réduit à un signe de mort", 1, 7, ["talisman", "adieu", "fragilité"], [
+        section("m1a", "La Peau matérialise la vie restante", "Le passage s'ouvre sur un objet presque disparu : le talisman n'est plus une promesse de puissance, mais la mesure concrète de la vie qui reste à Raphaël.", "La mort devient lisible dans la taille de la Peau avant même que le corps ne s'effondre.", [
+          figure("f1", "Comparaison", "comme la feuille d’une pervenche", "L'image végétale insiste sur la petitesse, la fragilité et la disparition prochaine du talisman.", 1),
+          figure("f2", "Champ lexical de la petitesse", "lambeau / fragile et petit", "La Peau est réduite à un reste : elle annonce une existence elle aussi presque entièrement consommée.", 1),
+          figure("f3", "Objet symbolique", "la Peau de chagrin", "Le talisman condense toute la logique du roman : chaque désir satisfait retire de la vie.", 1),
+        ]),
+        section("m1b", "L'amour placé sous le signe de l'adieu", "Raphaël s'adresse à Pauline comme à la plus belle part de sa vie, mais la déclaration amoureuse est immédiatement encadrée par l'adieu.", "L'amour apparaît comme ce qui rend la mort plus douloureuse, non comme ce qui l'empêche.", [
+          figure("f4", "Apostrophe affective", "Pauline, belle image de ma vie", "Pauline est associée à la vie de Raphaël, ce qui rend l'adieu plus tragique.", 1),
+          figure("f5", "Motif de l'adieu", "disons-nous adieu", "Le verbe à la première personne du pluriel lie les deux personnages dans une séparation imminente.", 1),
+          figure("f6", "Question brève", "Adieu ?", "La reprise interrogative de Pauline marque l'incompréhension devant une scène d'amour devenue scène de rupture.", 2),
+        ]),
+        section("m1c", "Le regard de Pauline devient mortel", "Raphaël explique lui-même la règle tragique : le talisman accomplit les désirs et représente sa vie. Le simple regard de Pauline suffit désormais à menacer son existence.", "Le danger ne vient pas d'un ennemi extérieur : il vient du désir suscité par celle qu'il aime.", [
+          figure("f7", "Définition du talisman", "accomplit mes désirs, et représente ma vie", "La phrase résume le mécanisme fatal qui lie désir et mort.", 3),
+          figure("f8", "Impératif", "Vois ce qu’il m’en reste", "Raphaël force Pauline à regarder la preuve matérielle de sa condamnation.", 4),
+          figure("f9", "Menace conditionnelle", "Si tu me regardes encore, je vais mourir…", "La condition transforme un geste amoureux ordinaire, le regard, en déclencheur de mort.", 5),
+          figure("f10", "Points de suspension", "mourir…", "La phrase reste suspendue comme la vie de Raphaël.", 5),
         ]),
       ]),
-      movement("m2", "II. Le désir renaît violemment", 8, 18, ["désir", "terreur", "fuite"], [
-        section("m2a", "L'amour devient menace", "La beauté de Pauline réveille le désir de Raphaël et provoque la contraction de la Peau.", "Chez Balzac, désirer = perdre de la vie.", [
-          figure("f2", "Exclamation", "Pauline, viens !", "Le cri montre l'urgence du désir.", 10),
+      movement("m2", "II. Le désir renaît et se retourne contre Pauline", 8, 18, ["désir", "terreur", "fuite"], [
+        section("m2a", "Pauline révèle la dernière parcelle de vie", "La lampe éclaire à la fois Raphaël et le talisman : la scène fait voir ensemble le corps du mourant et l'objet qui mesure sa fin.", "La lumière ne rassure pas ; elle révèle l'état exact du danger.", [
+          figure("f11", "Lumière symbolique", "lueur vacillante", "La lumière fragile correspond à la vie presque éteinte de Raphaël.", 7),
+          figure("f12", "Parallélisme visuel", "sur Raphaël et sur le talisman", "Le corps et la Peau sont placés dans le même éclairage, comme deux versions d'une même agonie.", 7),
+          figure("f13", "Expression décisive", "la dernière parcelle de la Peau magique", "Le mot parcelle réduit la vie à un fragment minuscule.", 7),
+        ]),
+        section("m2b", "Le désir se réveille comme une force incontrôlable", "La beauté de Pauline mêle terreur et amour. Raphaël perd la maîtrise de sa pensée : le désir renaît malgré l'avertissement qu'il vient de formuler.", "La passion n'est plus un sentiment choisi ; elle est une puissance qui reprend possession du personnage.", [
+          figure("f14", "Antithèse", "terreur et d’amour", "Les deux sentiments incompatibles montrent que l'amour est devenu effrayant.", 8),
+          figure("f15", "Métaphore", "comme un foyer mal éteint", "Le désir ressemble à un feu qui couvait et qui reprend violemment.", 9),
+          figure("f16", "Exclamation", "« Pauline, viens ! Pauline ! »", "Le cri répété remplace le raisonnement par l'appel immédiat du désir.", 10),
+        ]),
+        section("m2c", "La passion fait basculer la scène dans la terreur", "Pauline lit le désir dans les yeux de Raphaël et comprend que sa présence le tue. La Peau se contracte au rythme de ce désir, puis Pauline fuit pour tenter de sauver l'homme qu'elle aime.", "La scène amoureuse devient une scène de poursuite : plus Raphaël désire Pauline, plus il la met en danger.", [
+          figure("f17", "Champ lexical de l'horreur", "cri terrible / douleur inouïe / horreur", "La réaction de Pauline donne au désir de Raphaël une dimension terrifiante.", 11, 12),
+          figure("f18", "Hyperbole", "désirs furieux", "L'adjectif rend le désir violent, presque animal.", 13),
+          figure("f19", "Symbole dynamique", "la Peau, en se contractant", "La contraction rend matériel le lien entre désir et diminution de la vie.", 14),
+          figure("f20", "Verbe de fuite", "elle s’enfuit", "Pauline tente d'échapper au désir pour préserver Raphaël.", 15),
+          figure("f21", "Accumulation verbale", "je t’aime, je t’adore, je te veux", "La progression va de l'amour à la possession : Raphaël ne demande plus seulement Pauline, il la veut.", 16),
         ]),
       ]),
-      movement("m3", "III. Une fin tragique", 19, 29, ["râle", "violence", "cadavre"], [
-        section("m3a", "Le désir se change en mort", "Raphaël ne parle plus : il râle, mord, puis devient cadavre. Pauline est brisée.", "La passion détruit les deux personnages.", [
-          figure("f3", "Métaphore animale", "oiseau de proie", "Raphaël devient prédateur.", 24),
+      movement("m3", "III. Une scène d'amour transformée en agonie", 19, 29, ["râle", "violence", "cadavre"], [
+        section("m3a", "Le dernier éclat de vie devient violence", "Raphaël trouve encore assez de force pour détruire la porte. Cette énergie n'est pas un retour à la vie : c'est une flambée terminale.", "Le corps agit encore, mais cette action confirme la proximité de la mort.", [
+          figure("f22", "Formule tragique", "dernier éclat de vie", "L'expression annonce que la force de Raphaël est l'ultime sursaut avant l'agonie.", 19),
+          figure("f23", "Hyperbole gestuelle", "il jeta la porte à terre", "La violence du geste matérialise l'irruption brutale du désir.", 19),
+          figure("f24", "Contraste scénique", "à demi nue se roulant sur un canapé", "La sensualité de la posture est traversée par la panique et par la tentative de suicide.", 19),
+        ]),
+        section("m3b", "Pauline cherche à sauver Raphaël par sa propre mort", "Pauline inverse la logique du talisman : elle pense que sa disparition peut empêcher le désir de Raphaël et donc le sauver. Son corps devient le lieu d'un sacrifice impossible.", "La scène pousse l'amour jusqu'au paradoxe : Pauline veut mourir pour que Raphaël vive.", [
+          figure("f25", "Discours direct", "« Si je meurs, il vivra ! »", "La phrase donne accès à la logique sacrificielle de Pauline.", 21),
+          figure("f26", "Champ lexical du désordre", "cheveux épars / vêtements en désordre", "Le désordre physique rend visible l'affolement intérieur.", 22),
+          figure("f27", "Antithèse", "meurs / vivra", "La survie de Raphaël semble dépendre de la mort de Pauline.", 21),
+          figure("f28", "Comparaison animale", "légèreté d’un oiseau de proie", "Raphaël est assimilé à un prédateur : le désir amoureux est devenu attaque.", 24),
+        ]),
+        section("m3c", "Le désir finit dans le râle et le cadavre", "La parole de Raphaël se défait : il ne peut plus formuler son désir, seulement produire les sons du râle. Le dernier contact avec Pauline est une morsure, puis le texte bascule dans le cadavre.", "La scène répond à la problématique : l'amour devient mort parce que le désir détruit jusqu'au langage et au corps.", [
+          figure("f29", "Champ lexical de l'agonie", "moribond / râle / entrailles", "Les mots enferment la scène dans le corps souffrant et la respiration de la mort.", 25, 26),
+          figure("f30", "Négation de la parole", "ne trouva que les sons étranglés", "Le héros perd la parole humaine au moment où son désir est le plus intense.", 26),
+          figure("f31", "Violence finale", "il mordit Pauline au sein", "La morsure remplace l'étreinte amoureuse et transforme le désir en blessure.", 27),
+          figure("f32", "Mot final du corps", "cadavre", "Raphaël n'est plus nommé comme sujet vivant, mais comme corps mort.", 28),
+          figure("f33", "Paradoxe tragique", "Il est à moi, je l’ai tué", "Pauline affirme la possession amoureuse au moment même où elle reconnaît la mort.", 29),
         ]),
       ]),
     ],
@@ -660,24 +702,65 @@ const texts: StudyText[] = [
     sourceLabel: "L'Oeuvre, 1886",
     lines: sourceTexts.zolaOeuvre,
     context: "Zola montre un artiste qui rêve du chef-d'oeuvre mais se heurte à son impuissance créatrice.",
-    quizFocus: "L'extrait présente la création artistique comme une lutte douloureuse et jamais satisfaite.",
+    quizFocus: "L'extrait présente la création comme une lutte physique et mentale : l'artiste voit l'oeuvre idéale, mais son corps, ses yeux et ses mains ne parviennent pas à la produire.",
     problematique: "Comment Zola montre-t-il la souffrance de l'artiste face à l'oeuvre impossible ?",
-    recap: "L'artiste doute, constate l'échec de ses toiles, puis survit grâce au mirage de l'oeuvre future.",
+    recap: "Zola montre la souffrance de l'artiste par le retour du doute, par l'image d'une oeuvre qui résiste comme un obstacle matériel, puis par le mirage d'une oeuvre future qui console tout en relançant l'échec.",
     opening: "On peut ouvrir sur Balzac : l'énergie créatrice peut autant élever que détruire.",
     movements: [
-      movement("m1", "I. Le retour du doute", 1, 5, ["doute", "lutte", "impuissance"], [
-        section("m1a", "Créer devient souffrir", "L'artiste veut être courageux, mais chaque toile le renvoie à son insuffisance.", "Le vrai sujet est l'écart entre rêve et résultat.", [
-          figure("f1", "Champ lexical", "doutes / lutte / impuissance", "Les mots donnent une image douloureuse de la création.", 1, 4),
+      movement("m1", "I. La création comme doute et impuissance", 1, 5, ["doute", "lutte", "impuissance"], [
+        section("m1a", "Une obstination minée par le doute", "La première phrase oppose l'obstination du peintre à la reprise des doutes. L'artiste ne manque pas de volonté : il est ravagé par l'écart entre son ambition et ce qu'il obtient.", "Zola ne décrit pas une simple hésitation, mais une lutte intérieure durable.", [
+          figure("f1", "Antithèse", "bravoure de son obstination / doutes d’autrefois", "La force morale est contredite par le retour du doute.", 1),
+          figure("f2", "Champ lexical du combat", "lutte / ravagé", "La création est présentée comme une guerre qui abîme l'artiste.", 1),
+          figure("f3", "Adverbe d'opposition", "pourtant", "Le mot renverse l'élan positif de l'obstination vers l'échec intérieur.", 1),
+        ]),
+        section("m1b", "Chaque toile revient comme un échec", "Le peintre juge ses toiles non seulement mauvaises, mais surtout incomplètes : le problème n'est pas l'absence de talent, c'est l'impossibilité d'atteindre la forme rêvée.", "L'échec porte sur la réalisation : l'oeuvre produite reste en dessous de l'effort tenté.", [
+          figure("f4", "Gradation négative", "mauvaise, incomplète surtout", "Le jugement s'aggrave : la toile est ratée parce qu'elle ne va pas au bout de l'intention.", 2),
+          figure("f5", "Négation de l'accomplissement", "ne réalisant pas l’effort tenté", "Le verbe réaliser souligne la distance entre l'élan créateur et le résultat visible.", 2),
+          figure("f6", "Répétition implicite", "Toute toile qui revenait", "La formule donne à l'échec un caractère répétitif, presque mécanique.", 2),
+        ]),
+        section("m1c", "L'impuissance artistique devient souffrance", "La souffrance de l'artiste tient à une impuissance précise : il possède un génie qu'il ne parvient pas à faire naître entièrement dans une oeuvre.", "Zola fait de la création un accouchement impossible, donc une douleur sans délivrance.", [
+          figure("f7", "Substantivation", "cette impuissance", "Le défaut devient une force autonome qui domine le personnage.", 3),
+          figure("f8", "Hyperbole polémique", "valaient cent fois les médiocrités reçues", "L'artiste se sent supérieur aux oeuvres admises, ce qui rend son échec plus amer.", 4),
+          figure("f9", "Métaphore de l'accouchement impossible", "ne pouvait accoucher son génie", "Le génie existe en lui, mais il ne parvient pas à prendre forme dans le chef-d'oeuvre.", 5),
+          figure("f10", "Mot idéal", "chef-d’œuvre", "Le terme concentre l'exigence absolue qui rend toute toile insuffisante.", 5),
         ]),
       ]),
-      movement("m2", "II. L'oeuvre résiste", 6, 12, ["obstacle", "correction", "paralysie"], [
-        section("m2a", "L'artiste ne peut pas réparer", "Même quand certains morceaux sont beaux, l'ensemble échappe au peintre.", "Le détail réussi ne suffit pas à faire un chef-d'oeuvre.", [
-          figure("f2", "Question rhétorique", "Alors pourquoi", "Les questions font entendre l'obsession de l'échec.", 7),
+      movement("m2", "II. L'oeuvre résiste et paralyse l'artiste", 6, 12, ["obstacle", "correction", "paralysie"], [
+        section("m2a", "Des fragments réussis mais un ensemble raté", "Le peintre reconnaît la beauté de certains morceaux, mais cette réussite partielle rend l'échec global plus incompréhensible. Le tableau peut contenir du superbe sans devenir une oeuvre réussie.", "La souffrance vient du désaccord entre le détail réussi et l'ensemble impossible.", [
+          figure("f11", "Accumulation démonstrative", "celui-ci, de celui-là, de cet autre", "La liste prouve que les réussites existent, mais restent fragmentaires.", 6),
+          figure("f12", "Questions rhétoriques", "Alors pourquoi... Pourquoi...", "Les questions font entendre l'obsession de l'échec et l'incapacité à l'expliquer.", 7, 8),
+          figure("f13", "Image destructrice", "tuant le tableau", "Une partie ratée détruit l'ensemble, comme si l'oeuvre était un organisme vivant.", 8),
+        ]),
+        section("m2b", "L'obstacle devient infranchissable", "La difficulté n'est plus seulement technique : Zola la rend matérielle avec l'image d'un mur. La correction se heurte à une limite que l'artiste ne peut pas franchir.", "L'oeuvre impossible devient un espace fermé où la volonté se brise.", [
+          figure("f14", "Métaphore", "un mur se dressait", "La difficulté prend la forme concrète d'un obstacle vertical.", 9),
+          figure("f15", "Adjectif absolu", "obstacle infranchissable", "Le mot exclut toute solution et radicalise l'impuissance.", 9),
+          figure("f16", "Interdit passif", "il lui était défendu d’aller", "La formule donne l'impression qu'une puissance extérieure interdit l'accès à la réussite.", 9),
+        ]),
+        section("m2c", "La volonté se défait", "Plus l'artiste reprend le morceau, plus il l'abîme. Le travail, au lieu de corriger, produit le gâchis, puis la paralysie de la volonté.", "Le passage répond à la problématique en montrant une souffrance qui atteint les yeux, les mains et la décision même d'agir.", [
+          figure("f17", "Répétition", "vingt fois... vingt fois", "La reprise insistante montre l'acharnement et l'échec répété.", 10),
+          figure("f18", "Champ lexical du gâchis", "brouillait / glissait au gâchis", "Le travail de correction devient une dégradation de l'oeuvre.", 10),
+          figure("f19", "Gradation négative", "ne voyait plus, n’exécutait plus", "La perte touche d'abord la perception, puis le geste.", 11),
+          figure("f20", "Question rhétorique", "Étaient-ce donc ses yeux, étaient-ce ses mains", "L'artiste ne reconnaît plus ses propres facultés.", 12),
+          figure("f21", "Formule médicale", "paralysie de la volonté", "La crise artistique devient une atteinte physique et nerveuse.", 11),
         ]),
       ]),
-      movement("m3", "III. Le mirage de l'oeuvre future", 13, 19, ["rêve", "hâte", "illusion"], [
-        section("m3a", "L'espoir permet de continuer", "L'artiste supporte l'échec présent parce qu'il imagine une oeuvre future parfaite.", "Le rêve sauve et torture en même temps.", [
-          figure("f3", "Métaphore", "mirage", "L'oeuvre future attire mais reste inaccessible.", 19),
+      movement("m3", "III. Le mirage de l'oeuvre future permet de continuer", 13, 19, ["rêve", "hâte", "illusion"], [
+        section("m3a", "Une alternance d'angoisse et d'espoir", "Les crises se répètent et font osciller l'artiste entre incertitude et espérance. La création est donc à la fois torture et moteur.", "Zola montre une instabilité permanente : l'artiste ne sort jamais vraiment de la crise.", [
+          figure("f22", "Hyperbole temporelle", "semaines abominables", "La crise s'étend dans la durée et envahit la vie de l'artiste.", 13),
+          figure("f23", "Antithèse", "l’incertitude à l’espérance", "Le peintre passe sans cesse de l'effondrement à l'espoir.", 13),
+          figure("f24", "Personnification", "l’œuvre rebelle", "L'oeuvre semble résister activement à celui qui veut la créer.", 14),
+        ]),
+        section("m3b", "L'oeuvre future devient consolation", "Ce qui soutient l'artiste n'est pas l'oeuvre présente, mais celle qu'il imagine ensuite. L'avenir promet la délivrance que le présent refuse.", "La consolation repose sur une projection : l'oeuvre parfaite existe d'abord comme promesse.", [
+          figure("f25", "Expression affective", "rêve consolateur", "Le rêve compense les échecs présents et donne la force de continuer.", 14),
+          figure("f26", "Projection vers l'accomplissement", "celle où il se satisferait enfin", "Le conditionnel situe la réussite dans un avenir désiré, encore incertain.", 14),
+          figure("f27", "Métaphore corporelle", "ses mains se délieraient", "Le geste créateur est imaginé comme une libération physique.", 14),
+        ]),
+        section("m3c", "Le mirage final rend la création possible", "L'artiste supporte le travail en cours parce qu'il imagine déjà l'oeuvre suivante, plus forte et définitive. Le mirage est faux, mais il rend la production possible.", "Le passage s'achève sur un paradoxe : l'illusion trompe l'artiste, mais sans elle il ne créerait plus.", [
+          figure("f28", "Antithèse temporelle", "travail en train / ce qu’il ferait ensuite", "Le présent est dévalorisé au profit d'une oeuvre future idéalisée.", 16, 18),
+          figure("f29", "Accumulation méliorative", "superbe et héroïque, inattaquable, indestructible", "Les adjectifs construisent l'image d'une oeuvre parfaite et invincible.", 18),
+          figure("f30", "Métaphore centrale", "Perpétuel mirage", "L'idéal artistique attire l'artiste tout en restant inaccessible.", 19),
+          figure("f31", "Métaphore tragique", "damnés de l’art", "Les artistes sont représentés comme condamnés par leur propre vocation.", 19),
+          figure("f32", "Paradoxe", "mensonge de tendresse et de pitié", "L'illusion est fausse, mais elle protège l'artiste de l'arrêt complet.", 19),
         ]),
       ]),
     ],
