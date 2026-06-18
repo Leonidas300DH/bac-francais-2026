@@ -8,3 +8,4 @@ npm-debug.log*
 # Raw photos, school notes, and unreviewed source material must stay private.
 content/raw/*
 !content/raw/.gitkeep
+Textes/
