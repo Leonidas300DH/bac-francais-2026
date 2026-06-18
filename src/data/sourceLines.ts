@@ -269,78 +269,112 @@ Nous avons respecté notre image en toi.
 
   mussetBlazius: toLines(`
 Une place devant le château.
-Le choeur annonce l'arrivée de maître Blazius.
-Doucement bercé sur sa mule fringante, messer Blazius s'avance dans les bluets fleuris.
-Comme un poupon sur l'oreiller, il se ballotte sur son ventre rebondi.
-Les yeux à demi fermés, il marmotte un Pater noster dans son triple menton.
+LE CHOEUR. - Doucement bercé sur sa mule fringante, messer Blazius s'avance dans les bluets fleuris, vêtu de neuf, l'écritoire au côté.
+Comme un poupon sur l'oreiller, il se ballotte sur son ventre rebondi, et les yeux à demi fermés, il marmotte un Pater noster dans son triple menton.
 Salut, maître Blazius ; vous arrivez au temps de la vendange, pareil à une amphore antique.
-Maître Blazius demande un verre de vin frais avant de parler.
-Le choeur lui apporte une grande écuelle.
-Maître Blazius annonce que le jeune Perdican vient d'atteindre sa majorité.
-Il revient au château, reçu docteur à Paris.
-Il a la bouche pleine de façons de parler si belles et si fleuries qu'on ne sait que lui répondre.
+MAÎTRE BLAZIUS. - Que ceux qui veulent apprendre une nouvelle d'importance m'apportent ici premièrement un verre de vin frais.
+LE CHOEUR. - Voilà notre plus grande écuelle ; buvez, maître Blazius ; le vin est bon ; vous parlerez après.
+MAÎTRE BLAZIUS. - Vous saurez, mes enfants, que le jeune Perdican, fils de notre seigneur, vient d'atteindre à sa majorité, et qu'il est reçu docteur à Paris.
+Il revient aujourd'hui même au château, la bouche toute pleine de façons de parler si belles et si fleuries, qu'on ne sait que lui répondre les trois quarts du temps.
 Toute sa gracieuse personne est un livre d'or.
-Il ne voit pas un brin d'herbe à terre sans dire comment cela s'appelle en latin.
-Blazius demande une chaise pour descendre de sa mule sans se casser le cou.
+Il ne voit pas un brin d'herbe à terre, qu'il ne vous dise comment cela s'appelle en latin.
+Et quand il fait du vent ou qu'il pleut, il vous dit tout clairement pourquoi.
+Vous ouvririez des yeux grands comme la porte que voilà, de le voir dérouler un des parchemins qu'il a coloriés d'encres de toutes couleurs, de ses propres mains et sans en rien dire à personne.
+Enfin c'est un diamant fin des pieds à la tête, et voilà ce que je viens annoncer à M. le baron.
+Vous sentez que cela me fait quelque honneur, à moi, qui suis son gouverneur depuis l'âge de quatre ans.
+Ainsi donc, mes bons amis, apportez une chaise, que je descende un peu de cette mule-ci sans me casser le cou.
+La bête est tant soit peu rétive, et je ne serais pas fâché de boire encore une gorgée avant d'entrer.
   `),
 
   mussetTiradeAmour: toLines(`
 PERDICAN. - Sais-tu ce que c'est que des nonnes, malheureuse fille ?
-Elles te représentent l'amour des hommes comme un mensonge.
-Savent-elles qu'il y a pis encore, le mensonge de l'amour divin ?
-Tu voulais partir sans me serrer la main.
+Elles qui te représentent l'amour des hommes comme un mensonge, savent-elles qu'il y a pis encore, le mensonge de l'amour divin ?
+Savent-elles que c'est un crime qu'elles font, de venir chuchoter à une vierge des paroles de femme ?
+Ah ! comme elles t'ont fait la leçon !
+Comme j'avais prévu tout cela quand tu t'es arrêtée devant le portrait de notre vieille tante !
+Tu voulais partir sans me serrer la main ; tu ne voulais revoir ni ce bois, ni cette pauvre petite fontaine qui nous regarde tout en larmes.
 Tu reniais les jours de ton enfance.
-Mais ton coeur a battu ; il a oublié sa leçon, lui qui ne sait pas lire.
-Adieu, Camille, retourne à ton couvent.
+Et le masque de plâtre que les nonnes t'ont plaqué sur les joues me refusait un baiser de frère.
+Mais ton cœur a battu ; il a oublié sa leçon, lui qui ne sait pas lire, et tu es revenue t'asseoir sur l'herbe où nous voilà.
+Eh bien ! Camille, ces femmes ont bien parlé ; elles t'ont mise dans le vrai chemin.
+Il pourra m'en coûter le bonheur de ma vie ; mais dis-leur cela de ma part : le ciel n'est pas pour elles.
+CAMILLE. - Ni pour moi, n'est-ce pas ?
+PERDICAN. - Adieu, Camille, retourne à ton couvent, et lorsqu'on te fera de ces récits hideux qui t'ont empoisonnée, réponds ce que je vais te dire :
 Tous les hommes sont menteurs, inconstants, faux, bavards, hypocrites, orgueilleux et lâches.
 Toutes les femmes sont perfides, artificieuses, vaniteuses, curieuses et dépravées.
-Le monde n'est qu'un égout sans fond.
-Mais il y a au monde une chose sainte et sublime.
-C'est l'union de deux de ces êtres si imparfaits et si affreux.
-On est souvent trompé en amour, souvent blessé et souvent malheureux.
-Mais on aime.
-Quand on est sur le bord de sa tombe, on se retourne pour regarder en arrière.
-On se dit : j'ai souffert souvent, je me suis trompé quelquefois, mais j'ai aimé.
+Le monde n'est qu'un égout sans fond où les phoques les plus informes rampent et se tordent sur des montagnes de fange.
+Mais il y a au monde une chose sainte et sublime, c'est l'union de deux de ces êtres si imparfaits et si affreux.
+On est souvent trompé en amour, souvent blessé et souvent malheureux ; mais on aime.
+Et quand on est sur le bord de sa tombe, on se retourne pour regarder en arrière.
+Et on se dit : J'ai souffert souvent, je me suis trompé quelquefois, mais j'ai aimé.
 C'est moi qui ai vécu, et non pas un être factice créé par mon orgueil et mon ennui.
+Il sort.
   `),
 
   mussetRosette: toLines(`
-Perdican, de manière que Camille l'entende : Je t'aime, Rosette.
-Toi seule au monde tu n'as rien oublié de nos beaux jours passés.
-Prends ta part de ma vie nouvelle : donne-moi ton coeur, chère enfant.
+Perdican, à haute voix, de manière que Camille l'entende - Je t'aime, Rosette ; toi seule au monde tu n'as rien oublié de nos beaux jours passés.
+Toi seule tu te souviens de la vie qui n'est plus.
+Prends ta part de ma vie nouvelle : donne-moi ton cœur, chère enfant ; voilà le gage de notre amour.
 Il lui pose sa chaîne sur le cou.
-Rosette demande : Vous me donnez votre chaîne en or ?
-Perdican lui montre la source et leur reflet.
+Rosette. - Vous me donnez votre chaîne en or ?
+Perdican. - Regarde à présent cette bague.
+Lève-toi, et approchons-nous de cette fontaine.
 Nous vois-tu tous les deux, dans la source, appuyés l'un sur l'autre ?
+Vois-tu tes beaux yeux près des miens, ta main dans la mienne ?
 Regarde tout cela s'effacer.
 Il jette la bague dans l'eau.
-Camille, à part : Il a jeté ma bague dans l'eau.
-Perdican décrit l'image qui disparaît puis revient peu à peu.
-Sais-tu ce que c'est que l'amour, Rosette ?
+Regarde comme notre image a disparu ; la voilà qui revient peu à peu.
+l'eau qui s'était troublée reprend son équilibre ; elle tremble encore ; de grands cercles noirs courent à sa surface.
+Patience, nous reparaissons ; déjà je distingue de nouveau tes bras enlacés dans les miens.
+Encore une minute, et il n'y aura plus une ride sur ton joli visage ; regarde !
+C'était une bague que m'avait donnée Camille.
+Camille, à part. - Il a jeté ma bague dans l'eau.
+Perdican. - Sais-tu ce que c'est que l'amour, Rosette ?
+Écoute ! le vent se tait ; la pluie du matin roule en perles sur les feuilles séchées que le soleil ranime.
 Par la lumière du ciel, par le soleil que voilà, je t'aime !
-Tu ne veux pas te faire religieuse ; te voilà jeune et belle dans les bras d'un jeune homme.
-Rosette répond : Hélas ! Monsieur le docteur, je vous aimerai comme je pourrai.
+Tu veux bien de moi, n'est-ce pas ?
+On n'a pas flétri ta jeunesse ; on n'a pas infiltré dans ton sang vermeil les restes d'un sang affadi ?
+Tu ne veux as te faire religieuse ; te voilà jeune et belle dans les bras d'un jeune homme.
+Ô Rosette ! sais-tu ce que c'est que l'amour ?
+Rosette. - Hélas ! Monsieur le docteur, je vous aimerai comme je pourrai.
   `),
 
   domJuanDeuxPaysannes: toLines(`
-Charlotte demande si Dom Juan lui a promis de l'épouser.
-Mathurine demande s'il lui a donné parole d'être son mari.
-Dom Juan répond bas à chacune et esquive la vérité.
-Charlotte et Mathurine veulent que Monsieur les mette d'accord.
-Dom Juan, embarrassé, leur dit qu'elles soutiennent toutes deux qu'il leur a promis le mariage.
-Il affirme que celle à qui il a vraiment promis n'a pas à se mettre en peine.
-Il dit que les discours n'avancent point les choses.
-Il faut faire et non pas dire, et les effets décident mieux que les paroles.
-Bas, à Mathurine : Laissez-lui croire ce qu'elle voudra.
-Bas, à Charlotte : Laissez-la se flatter dans son imagination.
-Bas, à Mathurine : Je vous adore.
-Bas, à Charlotte : Je suis tout à vous.
-Bas, à Mathurine : Tous les visages sont laids auprès du vôtre.
-Bas, à Charlotte : On ne peut plus souffrir les autres quand on vous a vue.
-Dom Juan annonce qu'il revient dans un quart d'heure.
-Charlotte affirme qu'elle est celle qu'il aime.
-Mathurine affirme qu'il l'épousera.
-Sganarelle prend pitié de leur innocence et leur conseille de demeurer dans leur village.
+Charlotte. - Est-ce, Monsieur, que vous lui avez promis de l'épouser ?
+Dom Juan, bas, à Charlotte. - Vous vous raillez de moi.
+Mathurine. - Est-il vrai, Monsieur, que vous lui avez donné parole d'être son mari ?
+Dom Juan, bas, à Mathurine. - Pouvez-vous avoir cette pensée ?
+Charlotte. - Vous voyez qu'al le soutient.
+Dom Juan, bas, à Charlotte. - Laissez-la faire.
+Mathurine. - Vous êtes témoin comme al l'assure.
+Dom Juan, bas, à Mathurine. - Laissez-la dire.
+Charlotte. - Non, non : il faut savoir la vérité.
+Mathurine. - Il est question de juger ça.
+Charlotte. - Oui, Mathurine, je veux que Monsieur vous montre votre bec jaune.
+Mathurine. - oui, Charlotte, je veux que Monsieur vous rende un peu camuse.
+Charlotte. - Monsieur, videz la querelle, s'il vous plaît.
+Mathurine. - Mettez-nous d'accord, Monsieur.
+Charlotte, à Mathurine. - Vous allez voir.
+Mathurine, à Charlotte. - Vous allez voir vous-même.
+Charlotte, à Dom Juan. - Dites.
+Mathurine, à Dom Juan. - Parlez.
+Dom Juan, embarrassé, leur dit à toutes deux : Que voulez-vous que je dise ? Vous soutenez également toutes deux que je vous ai promis de vous prendre pour femmes.
+Est-ce que chacune de vous ne sait pas ce qui en est, sans qu'il soit nécessaire que je m'explique davantage ?
+Pourquoi m'obliger là-dessus à des redites ?
+Celle à qui j'ai promis effectivement n'a-t-elle pas en elle-même de quoi se moquer des discours de l'autre, et doit-elle se mettre en peine, pourvu que j'accomplisse ma promesse ?
+Tous les discours n'avancent point les choses ; il faut faire et non pas dire, et les effets décident mieux que les paroles.
+Aussi n'est-ce rien que par-là que je vous veux mettre d'accord, et l'on verra, quand je me marierai, laquelle des deux a mon cœur.
+(Bas, à Mathurine) Laissez-lui croire ce qu'elle voudra.
+(Bas, à Charlotte) Laissez-la se flatter dans son imagination.
+(Bas, à Mathurine) Je vous adore.
+(Bas, à Charlotte) Je suis tout à vous.
+Bas, à Mathurine) Tous les visages sont laids auprès du vôtre.
+(Bas, à Charlotte) On ne peut plus souffrir les autres quand on vous a vue.
+J'ai un petit ordre à donner ; je viens vous retrouver dans un quart d'heure.
+Charlotte, à Mathurine. - Je suis celle qu'il aime, au moins.
+Mathurine. - C'est moi qu'il épousera.
+Sganarelle. - Ah ! pauvres filles que vous êtes, j'ai pitié de votre innocence, et je ne puis souffrir de vous voir courir à votre malheur.
+Croyez-moi l'une et l'autre : ne vous amusez point à tous les contes qu'on vous fait, et demeurez dans votre village.
   `),
 };
 

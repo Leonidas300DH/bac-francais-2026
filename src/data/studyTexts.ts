@@ -579,19 +579,19 @@ texts.push(
     recap: "Le choeur présente Blazius, le rend ridicule, puis l'information sérieuse arrive par un personnage comique.",
     opening: "On peut ouvrir sur le rôle du choeur antique, réinventé ici de façon fantaisiste.",
     movements: [
-      movement("m1", "I. Une entrée très théâtrale", 1, 6, ["choeur", "portrait", "comique"], [
+      movement("m1", "I. Une entrée très théâtrale", 1, 4, ["choeur", "portrait", "comique"], [
         section("m1a", "Blazius est un personnage caricatural", "Le choeur décrit son corps, sa mule et son attitude avec humour.", "Le spectateur rit avant de connaître l'intrigue.", [
-          figure("f1", "Comparaison", "Comme un poupon", "La comparaison ridiculise Blazius.", 4),
+          figure("f1", "Comparaison", "Comme un poupon", "La comparaison ridiculise Blazius.", 3),
         ]),
       ]),
-      movement("m2", "II. Une parole liée au vin", 7, 8, ["boire", "attente", "comique"], [
+      movement("m2", "II. Une parole liée au vin", 5, 6, ["boire", "attente", "comique"], [
         section("m2a", "L'annonce est retardée", "Blazius veut boire avant de parler : cela crée une attente comique.", "Le messager n'est pas noble, il est gourmand.", [
-          figure("f2", "Comique de caractère", "verre de vin frais", "Le personnage est défini par son appétit.", 7),
+          figure("f2", "Comique de caractère", "verre de vin frais", "Le personnage est défini par son appétit.", 5),
         ]),
       ]),
-      movement("m3", "III. Perdican est annoncé", 9, 14, ["Perdican", "savoir", "ironie"], [
+      movement("m3", "III. Perdican est annoncé", 7, 16, ["Perdican", "savoir", "ironie"], [
         section("m3a", "Un héros déjà moqué", "Perdican est brillant, mais le portrait insiste aussi sur son langage savant et excessif.", "La pièce se méfie des beaux discours.", [
-          figure("f3", "Hyperbole", "un livre d'or", "L'image valorise et ironise sur Perdican.", 12),
+          figure("f3", "Hyperbole", "un livre d'or", "L'image valorise et ironise sur Perdican.", 9),
         ]),
       ]),
     ],
@@ -608,19 +608,19 @@ texts.push(
     recap: "Il accuse les nonnes, généralise violemment sur les hommes et les femmes, puis sauve l'amour comme seule vérité.",
     opening: "On peut ouvrir sur le romantisme, qui valorise l'expérience intense même douloureuse.",
     movements: [
-      movement("m1", "I. L'accusation du couvent", 1, 7, ["religion", "enfance", "coeur"], [
+      movement("m1", "I. L'accusation du couvent", 1, 13, ["religion", "enfance", "coeur"], [
         section("m1a", "Perdican attaque l'éducation de Camille", "Il reproche aux nonnes d'avoir fabriqué sa peur de l'amour.", "Le coeur est opposé aux leçons apprises.", [
-          figure("f1", "Personnification", "ton coeur a battu", "Le coeur devient plus vrai que le discours.", 6),
+          figure("f1", "Personnification", "ton cœur a battu", "Le cœur devient plus vrai que le discours.", 9),
         ]),
       ]),
-      movement("m2", "II. Une vision noire du monde", 8, 10, ["généralisation", "violence", "dégoût"], [
+      movement("m2", "II. Une vision noire du monde", 14, 16, ["généralisation", "violence", "dégoût"], [
         section("m2a", "Un réquisitoire excessif", "Perdican accumule les défauts des hommes et des femmes : le monde paraît corrompu.", "L'excès prépare le retournement final.", [
-          figure("f2", "Énumération", "menteurs, inconstants, faux", "L'accumulation donne une force oratoire.", 8),
+          figure("f2", "Énumération", "menteurs, inconstants, faux", "L'accumulation donne une force oratoire.", 14),
         ]),
       ]),
-      movement("m3", "III. L'amour sauve la vie", 11, 17, ["amour", "souffrance", "vérité"], [
+      movement("m3", "III. L'amour sauve la vie", 17, 22, ["amour", "souffrance", "vérité"], [
         section("m3a", "Aimer vaut mieux que se protéger", "Même trompé et blessé, celui qui aime peut dire qu'il a vraiment vécu.", "Phrase clé : j'ai souffert, mais j'ai aimé.", [
-          figure("f3", "Antithèse", "vécu / être factice", "L'amour oppose la vraie vie à l'existence artificielle.", 17),
+          figure("f3", "Antithèse", "vécu / être factice", "L'amour oppose la vraie vie à l'existence artificielle.", 21),
         ]),
       ]),
     ],
@@ -642,14 +642,14 @@ texts.push(
           figure("f1", "Double énonciation", "de manière que Camille l'entende", "Le théâtre montre deux destinataires.", 1),
         ]),
       ]),
-      movement("m2", "II. Les objets symbolisent la rupture", 6, 11, ["source", "bague", "image"], [
+      movement("m2", "II. Les objets symbolisent la rupture", 6, 17, ["source", "bague", "image"], [
         section("m2a", "La bague effacée", "Perdican jette la bague de Camille dans l'eau : il met en scène une rupture.", "L'amour devient spectacle.", [
           figure("f2", "Symbole", "la bague dans l'eau", "La bague représente le lien avec Camille.", 9),
         ]),
       ]),
-      movement("m3", "III. Rosette reste naïve", 12, 15, ["innocence", "décalage", "cruauté"], [
+      movement("m3", "III. Rosette reste naïve", 18, 25, ["innocence", "décalage", "cruauté"], [
         section("m3a", "Une réponse simple face à un jeu complexe", "Rosette ne comprend pas totalement la stratégie et répond avec humilité.", "Le comique devient cruel.", [
-          figure("f3", "Antithèse", "Monsieur le docteur / comme je pourrai", "La simplicité de Rosette contraste avec les grands discours.", 15),
+          figure("f3", "Antithèse", "Monsieur le docteur / comme je pourrai", "La simplicité de Rosette contraste avec les grands discours.", 25),
         ]),
       ]),
     ],
@@ -666,19 +666,19 @@ texts.push(
     recap: "Les deux femmes demandent la vérité, Dom Juan esquive, puis Sganarelle avertit de la menace.",
     opening: "On peut ouvrir sur les autres scènes de séduction de Dom Juan, toujours fondées sur la parole.",
     movements: [
-      movement("m1", "I. Deux demandes de vérité", 1, 4, ["mariage", "rivalité", "vérité"], [
+      movement("m1", "I. Deux demandes de vérité", 1, 18, ["mariage", "rivalité", "vérité"], [
         section("m1a", "Les paysannes confrontent Dom Juan", "Charlotte et Mathurine veulent savoir laquelle dit vrai.", "Le comique naît de la situation impossible.", [
-          figure("f1", "Répétition", "promis / donné parole", "Les deux questions se répondent et enferment Dom Juan.", 1, 2),
+          figure("f1", "Répétition", "promis / donné parole", "Les deux questions se répondent et enferment Dom Juan.", 1, 3),
         ]),
       ]),
-      movement("m2", "II. L'esquive brillante de Dom Juan", 5, 15, ["mensonge", "double jeu", "parole"], [
+      movement("m2", "II. L'esquive brillante de Dom Juan", 19, 31, ["mensonge", "double jeu", "parole"], [
         section("m2a", "Dom Juan parle sans répondre", "Il produit un discours général et glisse des apartés contradictoires à chacune.", "Il maîtrise la parole pour éviter la vérité.", [
-          figure("f2", "Aparté", "Bas, à Mathurine / Bas, à Charlotte", "Le public entend la duplicité du personnage.", 9, 14),
+          figure("f2", "Aparté", "Bas, à Mathurine / Bas, à Charlotte", "Le public entend la duplicité du personnage.", 25, 30),
         ]),
       ]),
-      movement("m3", "III. L'avertissement de Sganarelle", 16, 18, ["innocence", "danger", "morale"], [
+      movement("m3", "III. L'avertissement de Sganarelle", 32, 35, ["innocence", "danger", "morale"], [
         section("m3a", "Le rire devient critique", "Sganarelle rappelle que les deux femmes risquent leur malheur.", "Molière fait rire, mais il dénonce aussi.", [
-          figure("f3", "Apostrophe", "pauvres filles", "Sganarelle prend pitié et moralise la scène.", 18),
+          figure("f3", "Apostrophe", "pauvres filles", "Sganarelle prend pitié et moralise la scène.", 34),
         ]),
       ]),
     ],

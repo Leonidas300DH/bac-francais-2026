@@ -41,4 +41,18 @@ describe("study content", () => {
       expect(text.memoryCard.oralChecklist.length).toBeGreaterThanOrEqual(4);
     }
   });
+
+  it("keeps exact theater source wording for T13 to T16", () => {
+    const expectedFragments = new Map([
+      ["blazius-arrive", "l'écritoire au côté"],
+      ["tirade-de-perdican", "le masque de plâtre que les nonnes t'ont plaqué sur les joues"],
+      ["perdican-rosette", "l'eau qui s'était troublée reprend son équilibre"],
+      ["dom-juan-charlotte-mathurine", "Vous voyez qu'al le soutient"],
+    ]);
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
 });
