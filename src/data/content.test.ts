@@ -20,4 +20,14 @@ describe("study content", () => {
     const errors = studyTexts.flatMap(validateStudyText);
     expect(errors).toEqual([]);
   });
+
+  it("replaces every placeholder with a usable revision fiche", () => {
+    for (const text of studyTexts) {
+      expect(text.status).not.toBe("draft");
+      expect(text.lines.length).toBeGreaterThanOrEqual(10);
+      expect(text.movements).toHaveLength(3);
+      expect(text.quiz.length).toBeGreaterThanOrEqual(4);
+      expect(text.recap).not.toMatch(/à compléter/i);
+    }
+  });
 });

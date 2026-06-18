@@ -10,3 +10,4 @@ content/raw/*
 !content/raw/.gitkeep
 Textes/
 .env*
+tmp/
