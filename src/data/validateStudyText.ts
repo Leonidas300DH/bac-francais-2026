@@ -11,6 +11,19 @@ export function validateStudyText(text: StudyText): string[] {
   if (!["draft", "review", "ready"].includes(text.status)) errors.push(`${prefix} invalid status`);
   if (!text.problematique) errors.push(`${prefix} missing problematique`);
   if (!text.recap) errors.push(`${prefix} missing recap`);
+  if (!text.memoryCard) errors.push(`${prefix} missing memoryCard`);
+  if (text.memoryCard && text.memoryCard.problem !== text.problematique) {
+    errors.push(`${prefix} memoryCard problem does not match problematique`);
+  }
+  if (text.memoryCard && text.memoryCard.plan.length !== text.movements.length) {
+    errors.push(`${prefix} memoryCard plan does not match movements`);
+  }
+  if (text.memoryCard && text.memoryCard.keyQuotes.length < Math.min(3, text.lines.length)) {
+    errors.push(`${prefix} memoryCard needs at least three key quotes`);
+  }
+  if (text.memoryCard && text.memoryCard.finalSentence !== text.recap) {
+    errors.push(`${prefix} memoryCard final sentence does not match recap`);
+  }
   if (text.lines.length === 0) errors.push(`${prefix} missing lines`);
   if (text.movements.length === 0) errors.push(`${prefix} missing movements`);
   if (text.quiz.length === 0) errors.push(`${prefix} missing quiz`);
@@ -32,6 +45,12 @@ export function validateStudyText(text: StudyText): string[] {
   text.quiz.forEach((item) => {
     if (item.choices && !item.choices.includes(item.answer)) {
       errors.push(`${prefix} quiz ${item.id} answer is not in choices`);
+    }
+  });
+
+  text.memoryCard?.keyQuotes.forEach((item, index) => {
+    if (!lineNumbers.has(item.range.start) || !lineNumbers.has(item.range.end)) {
+      errors.push(`${prefix} memoryCard quote ${index + 1} points to missing lines`);
     }
   });
 

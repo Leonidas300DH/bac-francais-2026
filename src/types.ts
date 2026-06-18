@@ -48,6 +48,22 @@ export type QuizItem = {
   explanation?: string;
 };
 
+export type MemoryQuote = {
+  quote: string;
+  reason: string;
+  range: LineRange;
+};
+
+export type MemoryCard = {
+  hook: string;
+  problem: string;
+  plan: string[];
+  keyQuotes: MemoryQuote[];
+  finalSentence: string;
+  traps: string[];
+  oralChecklist: string[];
+};
+
 export type StudyText = {
   slug: string;
   title: string;
@@ -61,6 +77,7 @@ export type StudyText = {
   conclusion: StudySection[];
   glossary: FigureDefinition[];
   recap: string;
+  memoryCard: MemoryCard;
   quiz: QuizItem[];
 };
 

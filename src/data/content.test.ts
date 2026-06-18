@@ -30,4 +30,15 @@ describe("study content", () => {
       expect(text.recap).not.toMatch(/à compléter/i);
     }
   });
+
+  it("provides a short oral memory card for every text", () => {
+    for (const text of studyTexts) {
+      expect(text.memoryCard.problem).toBe(text.problematique);
+      expect(text.memoryCard.plan).toHaveLength(3);
+      expect(text.memoryCard.keyQuotes.length).toBeGreaterThanOrEqual(3);
+      expect(text.memoryCard.finalSentence).toBe(text.recap);
+      expect(text.memoryCard.traps.length).toBeGreaterThanOrEqual(2);
+      expect(text.memoryCard.oralChecklist.length).toBeGreaterThanOrEqual(4);
+    }
+  });
 });

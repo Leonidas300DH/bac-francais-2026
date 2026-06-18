@@ -181,6 +181,7 @@ function StudyPage({ text }: { text: StudyText }) {
           ))}
           <a href="#conclusion">Conclusion</a>
           <a href="#glossaire">Figures</a>
+          <a href="#memo">Mémo</a>
           <a href="#quiz">Quiz</a>
           <button type="button" onClick={openAll}>Tout afficher</button>
           <button type="button" onClick={closeAll}>Tout fermer</button>
@@ -237,6 +238,8 @@ function StudyPage({ text }: { text: StudyText }) {
               </div>
             </Chapter>
 
+            <MemoryPanel text={text} onSelectRange={setSelectedRange} />
+
             <div className="recap">
               <strong>Fil directeur à mémoriser :</strong> {text.recap}
             </div>
@@ -276,6 +279,75 @@ function LibrarySidebar({ activeSlug }: { activeSlug: string }) {
         })}
       </nav>
     </aside>
+  );
+}
+
+function MemoryPanel({
+  text,
+  onSelectRange,
+}: {
+  text: StudyText;
+  onSelectRange: (range: LineRange) => void;
+}) {
+  return (
+    <section className="memo-panel" id="memo" aria-label="Mémo oral">
+      <div className="memo-heading">
+        <div>
+          <h2>Mémo oral</h2>
+          <p>Une fiche courte à savoir redire sans lire toute l'analyse.</p>
+        </div>
+        <span>2 min</span>
+      </div>
+
+      <div className="memo-grid">
+        <article className="memo-card memo-wide">
+          <h3>Accroche</h3>
+          <p>{text.memoryCard.hook}</p>
+        </article>
+        <article className="memo-card memo-wide">
+          <h3>Problématique</h3>
+          <p>{text.memoryCard.problem}</p>
+        </article>
+        <article className="memo-card">
+          <h3>Plan minute</h3>
+          <ol>
+            {text.memoryCard.plan.map((item) => <li key={item}>{item}</li>)}
+          </ol>
+        </article>
+        <article className="memo-card">
+          <h3>3 citations à placer</h3>
+          <div className="memo-quotes">
+            {text.memoryCard.keyQuotes.map((item) => (
+              <button
+                key={`${item.range.start}-${item.quote}`}
+                type="button"
+                className="quote-button"
+                onClick={() => onSelectRange(item.range)}
+              >
+                <q>{item.quote}</q>
+                <span>{item.reason}</span>
+              </button>
+            ))}
+          </div>
+        </article>
+        <article className="memo-card">
+          <h3>Pièges à éviter</h3>
+          <ul>
+            {text.memoryCard.traps.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </article>
+        <article className="memo-card">
+          <h3>Check oral</h3>
+          <ul>
+            {text.memoryCard.oralChecklist.map((item) => <li key={item}>{item}</li>)}
+          </ul>
+        </article>
+        <article className="memo-card memo-wide final-line">
+          <h3>Phrase de conclusion</h3>
+          <p>{text.memoryCard.finalSentence}</p>
+        </article>
+      </div>
+    </section>
   );
 }
 

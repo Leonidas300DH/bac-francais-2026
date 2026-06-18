@@ -267,7 +267,7 @@ h1, h2 {
 
 .study-main {
   min-width: 0;
-  width: min(1320px, calc(100vw - 28px));
+  width: min(1320px, calc(100vw - 278px));
   margin: 0 auto;
   padding: 28px 0 72px;
 }
@@ -345,7 +345,7 @@ h1, h2 {
   border-radius: 18px;
   background: var(--paper);
   box-shadow: var(--shadow);
-  scroll-margin-top: 86px;
+  scroll-margin-top: 132px;
 }
 
 .chapter > summary {
@@ -571,6 +571,94 @@ h1, h2 {
 }
 .recap strong { color: #f5cfc8; }
 
+.memo-panel {
+  margin-top: 18px;
+  scroll-margin-top: 132px;
+}
+.memo-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 12px;
+}
+.memo-heading h2 {
+  margin: 0;
+  color: var(--accent);
+}
+.memo-heading p {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+.memo-heading span {
+  flex: 0 0 auto;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: var(--simple);
+  color: #36573c;
+  font-weight: 850;
+}
+.memo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.memo-card {
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+}
+.memo-wide {
+  grid-column: 1 / -1;
+}
+.memo-card h3 {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 1rem;
+}
+.memo-card p,
+.memo-card ol,
+.memo-card ul {
+  margin: 0;
+}
+.memo-card ol,
+.memo-card ul {
+  padding-left: 1.2rem;
+}
+.memo-card li + li {
+  margin-top: 6px;
+}
+.memo-quotes {
+  display: grid;
+  gap: 8px;
+}
+.quote-button {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--figure-border);
+  border-radius: 10px;
+  background: var(--figure);
+  color: var(--ink);
+  text-align: left;
+}
+.quote-button q {
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+.quote-button span {
+  color: #665335;
+  font-size: 0.9rem;
+}
+.final-line {
+  background: var(--simple);
+  border-color: var(--simple-border);
+}
+
 .poem-card {
   position: sticky;
   top: 82px;
@@ -580,7 +668,7 @@ h1, h2 {
   border-radius: 18px;
   background: var(--paper);
   box-shadow: var(--shadow);
-  scroll-margin-top: 86px;
+  scroll-margin-top: 132px;
 }
 .poem-heading {
   padding: 17px 20px 14px;
@@ -637,7 +725,7 @@ h1, h2 {
   border-radius: 18px;
   background: var(--paper);
   box-shadow: var(--shadow);
-  scroll-margin-top: 86px;
+  scroll-margin-top: 132px;
 }
 .quiz-heading {
   display: flex;
@@ -747,6 +835,9 @@ h1, h2 {
   .library-link {
     min-width: 180px;
   }
+  .study-main {
+    width: min(1320px, calc(100vw - 28px));
+  }
 }
 
 @media (max-width: 980px) {
@@ -770,11 +861,13 @@ h1, h2 {
     width: min(calc(100vw - 18px), 1320px);
   }
   .dashboard-tools,
+  .memo-heading,
   .quiz-heading {
     align-items: stretch;
     flex-direction: column;
   }
   .text-grid,
+  .memo-grid,
   .quiz-grid,
   .glossary-grid {
     grid-template-columns: 1fr;

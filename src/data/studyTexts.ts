@@ -1,4 +1,15 @@
-import type { Figure, FigureDefinition, Movement, QuizItem, StudyLine, StudySection, StudyText, TextStatus } from "../types";
+import type {
+  Figure,
+  FigureDefinition,
+  MemoryCard,
+  MemoryQuote,
+  Movement,
+  QuizItem,
+  StudyLine,
+  StudySection,
+  StudyText,
+  TextStatus,
+} from "../types";
 import { sourceTexts } from "./sourceLines";
 
 const glossary: FigureDefinition[] = [
@@ -122,6 +133,62 @@ function quiz(input: TextInput): QuizItem[] {
   ];
 }
 
+function normalizePlanTitle(title: string): string {
+  return title.replace(/^[IVX]+\.\s*/, "").trim();
+}
+
+function keyQuotes(input: TextInput): MemoryQuote[] {
+  const quotes = input.movements
+    .map((item) => item.sections.flatMap((sectionItem) => sectionItem.figures ?? [])[0])
+    .filter((item): item is Figure => Boolean(item))
+    .map((item) => ({
+      quote: item.quote,
+      reason: `${item.name} : ${item.explanation}`,
+      range: item.range,
+    }));
+
+  if (quotes.length >= 3) {
+    return quotes.slice(0, 3);
+  }
+
+  const existingRanges = new Set(quotes.map((quoteItem) => quoteItem.range.start));
+  const fallbackQuotes = input.movements
+    .map((movementItem) => input.lines.find((line) => line.number === movementItem.range.start))
+    .filter((line): line is StudyLine => {
+      if (!line) return false;
+      return !existingRanges.has(line.number);
+    })
+    .map((line) => ({
+      quote: line.text,
+      reason: "Point d'appui pour situer le mouvement dans le texte.",
+      range: { start: line.number, end: line.number },
+    }));
+
+  return [...quotes, ...fallbackQuotes].slice(0, 3);
+}
+
+function memoryCard(input: TextInput): MemoryCard {
+  return {
+    hook: input.context,
+    problem: input.problematique,
+    plan: input.movements.map((item) => `${normalizePlanTitle(item.title)} : ${item.keywords.join(", ")}`),
+    keyQuotes: keyQuotes(input),
+    finalSentence: input.recap,
+    traps: [
+      "Ne pas raconter toute l'oeuvre : rester sur l'extrait et ses lignes.",
+      "Ne jamais citer seul : nommer le procédé, citer, puis expliquer l'effet.",
+      "Ne pas apprendre un bloc par coeur : mémoriser le mouvement logique.",
+    ],
+    oralChecklist: [
+      "Présenter auteur, oeuvre, date et contexte en une phrase claire.",
+      "Lire le passage en marquant les pauses et les oppositions.",
+      "Annoncer la problématique puis les trois mouvements.",
+      "Pour chaque mouvement : idée simple, citation courte, effet produit.",
+      "Conclure en répondant explicitement à la problématique.",
+    ],
+  };
+}
+
 function makeText(input: TextInput): StudyText {
   return {
     slug: input.slug,
@@ -136,6 +203,7 @@ function makeText(input: TextInput): StudyText {
     conclusion: conclusionSections(input),
     glossary,
     recap: input.recap,
+    memoryCard: memoryCard(input),
     quiz: quiz(input),
   };
 }
