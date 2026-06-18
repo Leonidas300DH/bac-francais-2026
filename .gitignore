@@ -9,3 +9,4 @@ npm-debug.log*
 content/raw/*
 !content/raw/.gitkeep
 Textes/
+.env*
