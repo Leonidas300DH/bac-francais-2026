@@ -12,13 +12,13 @@ export function toLines(raw: string): StudyLine[] {
 export const sourceTextsPartOne = {
   lesEffares: toLines(`
 Noirs dans la neige et dans la brume,
-Au grand soupirail qui s'allume,
+Au grand soupirail qui s’allume,
 Leurs culs en rond,
-A genoux, cinq petits, - misère ! -
+A genoux, cinq petits, - misère ! –
 Regardent le boulanger faire
-Le lourd pain blond...
+Le lourd pain blond…
 Ils voient le fort bras blanc qui tourne
-La pâte grise, et qui l'enfourne
+La pâte grise, et qui l’enfourne
 Dans un trou clair.
 Ils écoutent le bon pain cuire.
 Le boulanger au gras sourire
@@ -37,51 +37,51 @@ Ils ont leur âme si ravie
 Sous leurs haillons,
 Ils se ressentent si bien vivre,
 Les pauvres petits pleins de givre !
-- Qu'ils sont là, tous,
+- Qu’ils sont là, tous,
 Collant leurs petits museaux roses
 Au grillage, chantant des choses,
 Entre les trous.
-Mais bien bas, - comme une prière...
+Mais bien bas, - comme une prière…
 Repliés vers cette lumière
 Du ciel rouvert,
-- Si fort, qu'ils crèvent leur culotte,
+- Si fort, qu’ils crèvent leur culotte,
 - Et que leur lange blanc tremblote
-Au vent d'hiver...
+Au vent d’hiver…
   `),
 
   leMal: toLines(`
 Tandis que les crachats rouges de la mitraille
-Sifflent tout le jour par l'infini du ciel bleu ;
-Qu'écarlates ou verts, près du Roi qui les raille,
+Sifflent tout le jour par l’infini du ciel bleu ;
+Qu’écarlates ou verts, près du Roi qui les raille,
 Croulent les bataillons en masse dans le feu ;
-Tandis qu'une folie épouvantable broie
-Et fait de cent milliers d'hommes un tas fumant ;
-- Pauvres morts ! dans l'été, dans l'herbe, dans ta joie,
-Nature ! ô toi qui fis ces hommes saintement ! ...
+Tandis qu’une folie épouvantable broie
+Et fait de cent milliers d’hommes un tas fumant ;
+- Pauvres morts ! dans l’été, dans l’herbe, dans ta joie,
+Nature ! ô toi qui fis ces hommes saintement ! …
 - Il est un Dieu, qui rit aux nappes damassées
-Des autels, à l'encens, aux grands calices d'or ;
-Qui dans le bercement des hosannah s'endort,
+Des autels, à l’encens, aux grands calices d’or ;
+Qui dans le bercement des hosannah s’endort,
 Et se réveille, quand des mères, ramassées
-Dans l'angoisse, et pleurant sous leur vieux bonnet noir,
+Dans l’angoisse, et pleurant sous leur vieux bonnet noir,
 Lui donnent un gros sou lié dans leur mouchoir !
   `),
 
   revePourLHiver: toLines(`
-A... Elle.
-L'hiver, nous irons dans un petit wagon rose
+À… Elle.
+L’hiver, nous irons dans un petit wagon rose
 Avec des coussins bleus.
 Nous serons bien. Un nid de baisers fous repose
 Dans chaque coin moelleux.
-Tu fermeras l'oeil, pour ne point voir, par la glace,
+Tu fermeras l’œil, pour ne point voir, par la glace,
 Grimacer les ombres des soirs,
 Ces monstruosités hargneuses, populace
 De démons noirs et de loups noirs.
-Puis tu te sentiras la joue égratignée...
+Puis tu te sentiras la joue égratignée…
 Un petit baiser, comme une folle araignée,
-Te courra par le cou...
-Et tu me diras : "Cherche !" en inclinant la tête,
+Te courra par le cou…
+Et tu me diras : « Cherche ! » en inclinant la tête,
 - Et nous prendrons du temps à trouver cette bête
-- Qui voyage beaucoup...
+- Qui voyage beaucoup…
   `),
 
   familiale: toLines(`

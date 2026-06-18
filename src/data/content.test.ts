@@ -27,6 +27,37 @@ describe("study content", () => {
     expect(text?.conclusion.length).toBeGreaterThanOrEqual(2);
   });
 
+  it("keeps exact uploaded Rimbaud source wording for T1 to T3", () => {
+    const expected = new Map([
+      ["les-effares", { label: "Les Cahiers de Douai, 1893", fragment: "Au grand soupirail qui s’allume" }],
+      ["le-mal", { label: "Les Cahiers de Douai, 1893", fragment: "Nature ! ô toi qui fis ces hommes saintement ! …" }],
+      ["reve-pour-l-hiver", { label: "Les Cahiers de Douai, 1893", fragment: "Et tu me diras : « Cherche ! » en inclinant la tête" }],
+    ]);
+
+    for (const [slug, { label, fragment }] of expected) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.sourceLabel).toBe(label);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
+  it("provides dense analysis for the first Rimbaud sequence", () => {
+    const expectedMinimums = new Map([
+      ["les-effares", { sections: 9, figures: 25 }],
+      ["le-mal", { sections: 9, figures: 18 }],
+      ["reve-pour-l-hiver", { sections: 9, figures: 18 }],
+    ]);
+
+    for (const [slug, minimums] of expectedMinimums) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      const movementSections = text?.movements.flatMap((movement) => movement.sections) ?? [];
+      const figures = movementSections.flatMap((section) => section.figures ?? []);
+
+      expect(movementSections.length).toBeGreaterThanOrEqual(minimums.sections);
+      expect(figures.length).toBeGreaterThanOrEqual(minimums.figures);
+    }
+  });
+
   it("validates every publishable text shape", () => {
     const errors = studyTexts.flatMap(validateStudyText);
     expect(errors).toEqual([]);
@@ -60,6 +91,9 @@ describe("study content", () => {
     expect(allContent).not.toMatch(/pas avec une phrase trop savante/i);
     expect(allContent).not.toMatch(/Dire en une phrase/i);
     expect(allContent).not.toMatch(/Nommer le procédé, citer quelques mots/i);
+    expect(allContent).not.toMatch(/À apprendre/i);
+    expect(allContent).not.toMatch(/Phrase à retenir/i);
+    expect(allContent).not.toMatch(/Il faut apprendre seulement/i);
   });
 
   it("keeps exact theater source wording for T13 to T16", () => {
