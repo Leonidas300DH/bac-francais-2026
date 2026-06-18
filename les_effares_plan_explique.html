@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Plan interactif, explication simple et figures de style du poème Les Effarés d’Arthur Rimbaud.">
+  <title>Les Effarés — Plan, explications et figures de style</title>
+  <style>
+    :root {
+      --page: #f3efe8;
+      --paper: #fffdf9;
+      --ink: #272321;
+      --muted: #6c625c;
+      --accent: #7a302f;
+      --accent-dark: #55201f;
+      --accent-soft: #f4e4df;
+      --simple: #e9f1eb;
+      --simple-border: #7c9b84;
+      --figure: #f7eed8;
+      --figure-border: #bb8d37;
+      --line: #ded4ca;
+      --highlight: #ffe69b;
+      --shadow: 0 14px 34px rgba(62, 45, 35, .10);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 9% 0%, rgba(122, 48, 47, .10), transparent 30rem),
+        var(--page);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.55;
+    }
+
+    button, summary { font: inherit; }
+
+    .page {
+      width: min(1420px, calc(100% - 30px));
+      margin: 0 auto;
+      padding: 34px 0 72px;
+    }
+
+    .hero {
+      max-width: 1050px;
+      margin: 0 auto 22px;
+      text-align: center;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.35rem, 6vw, 4.6rem);
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .hero p {
+      margin: 11px 0 0;
+      color: var(--muted);
+      font-size: clamp(1rem, 2vw, 1.16rem);
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      display: flex;
+      justify-content: center;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+      padding: 10px;
+      border: 1px solid rgba(222, 212, 202, .9);
+      border-radius: 16px;
+      background: rgba(255, 253, 249, .94);
+      box-shadow: 0 8px 20px rgba(62, 45, 35, .07);
+      backdrop-filter: blur(9px);
+    }
+
+    .toolbar a,
+    .toolbar button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-size: .89rem;
+      font-weight: 780;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .toolbar a:hover,
+    .toolbar button:hover,
+    .toolbar a:focus-visible,
+    .toolbar button:focus-visible {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+      outline: none;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(390px, .7fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .analysis { min-width: 0; }
+
+    .chapter {
+      margin: 0 0 16px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      overflow: clip;
+      scroll-margin-top: 82px;
+    }
+
+    .chapter > summary {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 70px;
+      padding: 17px 20px;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.12rem, 2.15vw, 1.44rem);
+      font-weight: 700;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .chapter > summary::-webkit-details-marker,
+    .subpart > summary::-webkit-details-marker { display: none; }
+
+    .chapter > summary::before {
+      content: "+";
+      display: grid;
+      flex: 0 0 34px;
+      width: 34px;
+      height: 34px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      font-family: system-ui, sans-serif;
+      font-size: 1.35rem;
+      line-height: 1;
+    }
+
+    .chapter[open] > summary {
+      border-bottom: 1px solid var(--line);
+      background: #fff8f5;
+    }
+
+    .chapter[open] > summary::before { content: "−"; }
+    .chapter-body { padding: 18px 20px 23px; }
+
+    .labels {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 13px;
+    }
+
+    .label {
+      display: inline-block;
+      padding: 5px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: .83rem;
+      font-weight: 800;
+    }
+
+    .label.key {
+      background: #ece8e2;
+      color: #5e5751;
+    }
+
+    .verse-link,
+    .locate {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid var(--accent);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--accent-dark);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .verse-link {
+      margin: 0 0 14px;
+      padding: 8px 11px;
+      font-size: .9rem;
+    }
+
+    .verse-link::before { content: "↗"; }
+
+    .verse-link:hover,
+    .verse-link:focus-visible,
+    .locate:hover,
+    .locate:focus-visible {
+      background: var(--accent);
+      color: #fff;
+      outline: none;
+    }
+
+    .subpart {
+      margin: 11px 0;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #fdfbf8;
+      overflow: clip;
+    }
+
+    .subpart > summary {
+      position: relative;
+      padding: 14px 47px 14px 16px;
+      font-weight: 800;
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .subpart > summary::after {
+      content: "⌄";
+      position: absolute;
+      top: 50%;
+      right: 17px;
+      color: var(--accent);
+      font-size: 1.35rem;
+      transform: translateY(-56%);
+      transition: transform .18s ease;
+    }
+
+    .subpart[open] > summary {
+      color: var(--accent-dark);
+      background: var(--accent-soft);
+    }
+
+    .subpart[open] > summary::after {
+      transform: translateY(-44%) rotate(180deg);
+    }
+
+    .detail { padding: 15px 16px 17px; }
+
+    .simple-box {
+      margin: 0 0 14px;
+      padding: 13px 15px;
+      border-left: 5px solid var(--simple-border);
+      border-radius: 0 11px 11px 0;
+      background: var(--simple);
+    }
+
+    .simple-box h4,
+    .figures h4 {
+      margin: 0 0 7px;
+      font-size: .84rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .simple-box h4 { color: #365840; }
+    .simple-box p { margin: 0; }
+
+    .memory {
+      margin: 11px 0 0;
+      color: #4c4541;
+      font-size: .94rem;
+    }
+
+    .memory strong { color: var(--accent-dark); }
+
+    .figures {
+      padding: 13px 14px 14px;
+      border: 1px solid #e5d5b2;
+      border-radius: 12px;
+      background: var(--figure);
+    }
+
+    .figures h4 { color: #72531c; }
+
+    .figure-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .figure-item {
+      display: grid;
+      grid-template-columns: minmax(105px, .34fr) minmax(0, 1fr) auto;
+      gap: 10px;
+      align-items: start;
+      padding: 10px;
+      border: 1px solid rgba(187, 141, 55, .34);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, .66);
+    }
+
+    .figure-name {
+      color: #6d4d16;
+      font-weight: 850;
+    }
+
+    .figure-text { min-width: 0; }
+    .figure-text q {
+      color: var(--accent-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 700;
+    }
+
+    .figure-text p {
+      margin: 3px 0 0;
+      color: #51483d;
+      font-size: .92rem;
+    }
+
+    .locate {
+      min-width: 38px;
+      min-height: 34px;
+      padding: 6px 9px;
+      font-size: .78rem;
+      white-space: nowrap;
+    }
+
+    .problematic {
+      margin: 15px 0;
+      padding: 14px 16px;
+      border-left: 5px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      background: var(--accent-soft);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .intro-list,
+    .conclusion-list {
+      margin: 0;
+      padding-left: 1.25rem;
+    }
+
+    .intro-list li + li,
+    .conclusion-list li + li { margin-top: 7px; }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .glossary-card {
+      padding: 12px 13px;
+      border: 1px solid var(--line);
+      border-radius: 11px;
+      background: #fff;
+    }
+
+    .glossary-card strong {
+      display: block;
+      color: var(--accent-dark);
+      margin-bottom: 3px;
+    }
+
+    .recap {
+      margin: 22px 0 0;
+      padding: 17px 19px;
+      border-radius: 15px;
+      background: #2e2926;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .recap strong { color: #f5cfc8; }
+
+    .poem-card {
+      position: sticky;
+      top: 78px;
+      max-height: calc(100vh - 96px);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      scroll-margin-top: 82px;
+    }
+
+    .poem-heading {
+      padding: 17px 20px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #fff8f5;
+    }
+
+    .poem-heading h2 {
+      margin: 0;
+      color: var(--accent);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.45rem;
+    }
+
+    .poem-heading p {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .poem-scroll {
+      max-height: calc(100vh - 190px);
+      padding: 18px 20px 28px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+      scrollbar-color: var(--accent-soft) transparent;
+    }
+
+    .stanza {
+      margin: 0 0 17px;
+      scroll-margin-top: 12px;
+    }
+
+    .verse {
+      display: grid;
+      grid-template-columns: 2rem minmax(0, 1fr);
+      gap: 8px;
+      margin: 1px 0;
+      padding: 2px 5px;
+      border-radius: 5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      transition: background .2s ease, box-shadow .2s ease;
+    }
+
+    .line-number {
+      color: #a1978f;
+      font-family: system-ui, sans-serif;
+      font-size: .72rem;
+      line-height: 1.95;
+      text-align: right;
+      user-select: none;
+    }
+
+    .verse.active {
+      background: var(--highlight);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+
+    .citation {
+      margin: 24px 0 0;
+      padding-top: 15px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .88rem;
+      text-align: right;
+    }
+
+    footer {
+      margin-top: 25px;
+      color: var(--muted);
+      font-size: .88rem;
+      text-align: center;
+    }
+
+    @media (max-width: 1060px) {
+      .layout { grid-template-columns: 1fr; }
+      .poem-card {
+        position: static;
+        max-height: none;
+        order: -1;
+      }
+      .poem-scroll { max-height: none; }
+    }
+
+    @media (max-width: 680px) {
+      .page { width: min(100% - 18px, 1420px); padding-top: 23px; }
+      .toolbar { top: 4px; justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; }
+      .toolbar a, .toolbar button { white-space: nowrap; }
+      .chapter > summary { padding: 15px 14px; }
+      .chapter-body { padding: 15px 13px 18px; }
+      .figure-item { grid-template-columns: 1fr; }
+      .locate { justify-self: start; }
+      .glossary-grid { grid-template-columns: 1fr; }
+      .poem-scroll { padding: 16px 11px 25px; }
+      .verse { grid-template-columns: 1.65rem minmax(0, 1fr); font-size: .96rem; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .page { width: 100%; padding: 0; }
+      .toolbar { display: none; }
+      .layout { display: block; }
+      .chapter, .poem-card { box-shadow: none; break-inside: avoid; }
+      .poem-card { position: static; max-height: none; margin-top: 20px; }
+      .poem-scroll { max-height: none; overflow: visible; }
+      details > * { display: block !important; }
+      summary::before, summary::after { display: none !important; }
+      .verse-link, .locate { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <h1>Les Effarés</h1>
+      <p>Plan interactif, explications simples et figures de style</p>
+    </header>
+
+    <nav class="toolbar" aria-label="Navigation et commandes">
+      <a href="#poeme">Poème</a>
+      <a href="#introduction">Introduction</a>
+      <a href="#partie-1">Partie I</a>
+      <a href="#partie-2">Partie II</a>
+      <a href="#partie-3">Partie III</a>
+      <a href="#conclusion">Conclusion</a>
+      <a href="#glossaire">Figures à retenir</a>
+      <button type="button" id="openAll">Tout afficher</button>
+      <button type="button" id="closeAll">Tout fermer</button>
+    </nav>
+
+    <div class="layout">
+      <main class="analysis">
+        <details class="chapter" id="introduction">
+          <summary>Introduction</summary>
+          <div class="chapter-body">
+            <details class="subpart">
+              <summary>1. Le contexte</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Au XIX<sup>e</sup> siècle, l’industrie progresse, mais les inégalités restent très fortes. Rimbaud utilise la poésie pour montrer la misère et faire réagir le lecteur.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>2. L’auteur et la scène présentée</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Arthur Rimbaud est encore adolescent lorsqu’il écrit ce poème en 1870. Il montre cinq enfants pauvres, dehors en plein hiver, qui regardent un boulanger préparer du pain.</p>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>3. La forme et le but du poème</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Le poème contient douze tercets. Chaque strophe se termine par un vers court, qui donne du rythme et met certains mots en valeur. Le but est de faire ressentir la faim, le froid et l’exclusion des enfants.</p>
+                </div>
+              </div>
+            </details>
+
+            <div class="problematic">Comment Rimbaud transforme-t-il la scène de cinq enfants regardant du pain en une dénonciation de leur misère ?</div>
+
+            <details class="subpart">
+              <summary>4. Annonce du plan</summary>
+              <div class="detail">
+                <ol class="intro-list">
+                  <li>Vers 1 à 6 : le décor froid et le portrait des enfants.</li>
+                  <li>Vers 7 à 21 : la fabrication du pain devient un spectacle fascinant.</li>
+                  <li>Vers 22 à 36 : le bonheur très court des enfants, puis le retour à la misère.</li>
+                </ol>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter" id="partie-1">
+          <summary>I. La mise en place du contexte et le portrait des enfants</summary>
+          <div class="chapter-body">
+            <div class="labels">
+              <span class="label">Vers 1 à 6</span>
+              <span class="label key">Froid — contraste — misère</span>
+            </div>
+            <button class="verse-link" type="button" data-start="1" data-end="6">Voir et surligner les vers 1 à 6</button>
+
+            <details class="subpart">
+              <summary>A. Un décor hivernal inquiétant</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Rimbaud place les enfants dehors, dans la neige, la brume et l’obscurité. Dès le premier vers, ils paraissent seuls, fragiles et en danger.</p>
+                  <p class="memory"><strong>À retenir :</strong> le décor fait immédiatement ressentir le froid et la souffrance.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Antithèse</div>
+                      <div class="figure-text">
+                        <q>Noirs dans la neige</q>
+                        <p>Le noir des enfants s’oppose au blanc de la neige. Ils ressortent dans le paysage et semblent encore plus isolés.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="1" data-end="1">Vers 1</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Champ lexical</div>
+                      <div class="figure-text">
+                        <q>neige</q>, <q>brume</q>
+                        <p>Ces mots construisent un décor d’hiver froid, humide et peu rassurant.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="1" data-end="1">Vers 1</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Mise en relief</div>
+                      <div class="figure-text">
+                        <q>Noirs</q>
+                        <p>L’adjectif placé tout au début du poème attire immédiatement l’attention sur les enfants.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="1" data-end="1">Vers 1</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>B. L’opposition entre la rue et la boulangerie</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Dehors, les enfants ont froid et vivent dans l’obscurité. À l’intérieur, la boulangerie est éclairée, chaude et pleine de nourriture. Ils sont tout près du pain, mais une séparation les empêche d’y accéder.</p>
+                  <p class="memory"><strong>À retenir :</strong> l’extérieur représente la misère ; l’intérieur représente le confort et l’abondance.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Antithèse</div>
+                      <div class="figure-text">
+                        <q>neige</q> / <q>soupirail qui s’allume</q>
+                        <p>Le froid et l’obscurité de la rue s’opposent à la lumière de la boulangerie.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="1" data-end="2">Vers 1-2</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Symbole</div>
+                      <div class="figure-text">
+                        <q>le soupirail</q>
+                        <p>Cette petite ouverture montre le pain aux enfants, mais elle marque aussi la frontière entre les pauvres et ceux qui ont de quoi manger.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="2" data-end="2">Vers 2</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>C. Un portrait humiliant et pathétique des enfants</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Les enfants sont à genoux, serrés les uns contre les autres. Leur position est humiliante. Ils ne peuvent rien faire : ils regardent seulement le pain qu’ils voudraient manger.</p>
+                  <p class="memory"><strong>À retenir :</strong> Rimbaud veut provoquer la pitié et l’indignation du lecteur.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Langage trivial</div>
+                      <div class="figure-text">
+                        <q>Leurs culs en rond</q>
+                        <p>Ce vocabulaire très direct montre leur corps sans l’embellir. La misère est présentée de façon crue.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="3" data-end="3">Vers 3</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Incise exclamative</div>
+                      <div class="figure-text">
+                        <q>– misère ! –</q>
+                        <p>Le poète interrompt la phrase pour exprimer directement sa compassion.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="4" data-end="4">Vers 4</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Enjambement</div>
+                      <div class="figure-text">
+                        <q>À genoux, cinq petits… / Regardent</q>
+                        <p>La phrase continue au vers suivant. Le verbe « regardent » est ainsi mis en valeur et rappelle leur passivité.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="4" data-end="5">Vers 4-5</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Adjectifs valorisants</div>
+                      <div class="figure-text">
+                        <q>lourd pain blond</q>
+                        <p>Le pain paraît beau, riche et précieux. Cela augmente le désir des enfants.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="6" data-end="6">Vers 6</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter" id="partie-2">
+          <summary>II. La préparation du pain, un spectacle fascinant</summary>
+          <div class="chapter-body">
+            <div class="labels">
+              <span class="label">Vers 7 à 21</span>
+              <span class="label key">Boulanger — sensations — désir</span>
+            </div>
+            <button class="verse-link" type="button" data-start="7" data-end="21">Voir et surligner les vers 7 à 21</button>
+
+            <details class="subpart">
+              <summary>A. Le boulanger observé par les enfants</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Les enfants regardent surtout le bras du boulanger. Il paraît fort, propre et bien nourri. Il travaille et chante tranquillement, sans sembler voir leur souffrance.</p>
+                  <p class="memory"><strong>À retenir :</strong> sa force et son confort s’opposent à la faiblesse des enfants.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Métonymie</div>
+                      <div class="figure-text">
+                        <q>le fort bras blanc</q>
+                        <p>Une partie du corps, le bras, représente le boulanger entier. L’image insiste sur sa force.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="7" data-end="7">Vers 7</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Contraste</div>
+                      <div class="figure-text">
+                        <q>fort</q>, <q>blanc</q> / enfants noirs et faibles
+                        <p>Le boulanger semble puissant et protégé, contrairement aux enfants restés dehors.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="1" data-end="7">Vers 1-7</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Connotation</div>
+                      <div class="figure-text">
+                        <q>gras sourire</q>
+                        <p>Le mot « gras » suggère l’abondance et le confort. Le boulanger ne connaît pas la faim des enfants.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="11" data-end="12">Vers 11-12</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>B. Tous les sens des enfants sont éveillés</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Les enfants voient la pâte, entendent le pain cuire et sentent la chaleur du four. La boulangerie leur apporte presque tout ce qui leur manque : de la nourriture, de la chaleur et une impression de protection.</p>
+                  <p class="memory"><strong>À retenir :</strong> ils ne mangent pas le pain, mais ils le vivent avec tous leurs sens.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Anaphore</div>
+                      <div class="figure-text">
+                        <q>Ils voient</q>, <q>Ils écoutent</q>, <q>Ils sont</q>
+                        <p>La répétition de « Ils » au début de plusieurs strophes place toute la scène du point de vue des enfants.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="7" data-end="13">Vers 7-13</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Accumulation sensorielle</div>
+                      <div class="figure-text">
+                        <q>voient</q>, <q>écoutent</q>, <q>souffle</q>
+                        <p>La vue, l’ouïe et le toucher s’enchaînent. Leur fascination devient très forte.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="7" data-end="14">Vers 7-14</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Comparaison</div>
+                      <div class="figure-text">
+                        <q>Chaud comme un sein</q>
+                        <p>La chaleur du four est comparée au sein d’une mère. Elle évoque la nourriture, la protection et l’affection.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="15" data-end="15">Vers 15</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Image maternelle</div>
+                      <div class="figure-text">
+                        <q>souffle du soupirail rouge</q>
+                        <p>La boulangerie semble remplacer la mère absente : elle donne un peu de chaleur, mais pas réellement de pain.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="14" data-end="15">Vers 14-15</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>C. Une fascination de plus en plus forte</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Le moment où le pain sort du four devient presque magique. Sa couleur, son odeur et le bruit de sa croûte attirent complètement les enfants. Leur désir atteint son maximum.</p>
+                  <p class="memory"><strong>À retenir :</strong> le pain est décrit comme un objet vivant et merveilleux.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Anaphore</div>
+                      <div class="figure-text">
+                        <q>Et quand</q>, <q>Quand</q>, <q>Quand</q>
+                        <p>La répétition de « quand » retarde le résultat et fait monter l’attente.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="16" data-end="22">Vers 16-22</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Accumulation</div>
+                      <div class="figure-text">
+                        <q>façonné, pétillant et jaune</q>
+                        <p>Les trois adjectifs donnent une image très appétissante et lumineuse du pain.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="17" data-end="17">Vers 17</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Personnification</div>
+                      <div class="figure-text">
+                        <q>Chantent les croûtes</q>
+                        <p>Les croûtes semblent capables de chanter. Le pain paraît vivant.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="20" data-end="20">Vers 20</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Synesthésie</div>
+                      <div class="figure-text">
+                        <q>Chantent les croûtes parfumées</q>
+                        <p>Rimbaud mélange l’ouïe (« chantent ») et l’odorat (« parfumées »). Toutes les sensations se rejoignent.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="20" data-end="20">Vers 20</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter" id="partie-3">
+          <summary>III. L’impact dramatique du spectacle sur les enfants</summary>
+          <div class="chapter-body">
+            <div class="labels">
+              <span class="label">Vers 22 à 36</span>
+              <span class="label key">Bonheur bref — réalité — abandon</span>
+            </div>
+            <button class="verse-link" type="button" data-start="22" data-end="36">Voir et surligner les vers 22 à 36</button>
+
+            <details class="subpart">
+              <summary>A. Une extase très courte</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>La chaleur et l’odeur du pain donnent aux enfants l’impression de revivre. Pendant un instant, ils sont heureux. Mais le mot « haillons » rappelle tout de suite qu’ils restent pauvres et dehors.</p>
+                  <p class="memory"><strong>À retenir :</strong> leur bonheur est seulement une illusion passagère.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Métaphore</div>
+                      <div class="figure-text">
+                        <q>ce trou chaud souffle la vie</q>
+                        <p>La chaleur du four est présentée comme une force capable de redonner la vie.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="22" data-end="22">Vers 22</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Personnification</div>
+                      <div class="figure-text">
+                        <q>ce trou chaud souffle</q>
+                        <p>Le soupirail agit comme un être vivant qui respire et aide les enfants.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="22" data-end="22">Vers 22</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Contraste</div>
+                      <div class="figure-text">
+                        <q>âme si ravie</q> / <q>haillons</q>
+                        <p>Le bonheur de leur esprit s’oppose à la pauvreté visible de leurs vêtements.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="23" data-end="24">Vers 23-24</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>B. Le retour brutal à la misère</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Le poème revient au froid et aux corps des enfants. Ils collent leur visage contre le grillage comme de petits animaux. Cette image montre à la fois leur faim, leur faiblesse et leur exclusion.</p>
+                  <p class="memory"><strong>À retenir :</strong> le grillage les sépare physiquement du pain et symboliquement du reste de la société.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Exclamation pathétique</div>
+                      <div class="figure-text">
+                        <q>Les pauvres petits pleins de givre !</q>
+                        <p>L’exclamation exprime la pitié et la révolte du poète.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="26" data-end="26">Vers 26</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Animalisation</div>
+                      <div class="figure-text">
+                        <q>leurs petits museaux roses</q>
+                        <p>Le mot « museaux » rapproche les enfants de petits animaux. Leur dignité humaine semble leur être retirée.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="28" data-end="28">Vers 28</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Termes affectueux</div>
+                      <div class="figure-text">
+                        <q>pauvres petits</q>, <q>petits museaux roses</q>
+                        <p>Les mots « petits » et « roses » insistent sur leur jeunesse et leur fragilité.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="26" data-end="28">Vers 26-28</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Symbole</div>
+                      <div class="figure-text">
+                        <q>le grillage</q>
+                        <p>Il représente la barrière qui sépare les enfants de la nourriture, de la chaleur et de la société.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="29" data-end="30">Vers 29-30</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>C. Une prière sans réponse et une fin tragique</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Les enfants chantent très doucement, comme s’ils priaient devant la lumière. Pourtant, personne ne vient les aider. Le poème se termine sur leurs vêtements abîmés et le vent d’hiver : leur situation n’a pas changé.</p>
+                  <p class="memory"><strong>À retenir :</strong> l’espoir disparaît ; les enfants restent seuls face au froid.</p>
+                </div>
+
+                <div class="figures">
+                  <h4>Figures de style et procédés</h4>
+                  <div class="figure-list">
+                    <div class="figure-item">
+                      <div class="figure-name">Comparaison</div>
+                      <div class="figure-text">
+                        <q>comme une prière</q>
+                        <p>Le chant des enfants ressemble à un appel au secours adressé au ciel.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="31" data-end="31">Vers 31</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Métaphore religieuse</div>
+                      <div class="figure-text">
+                        <q>cette lumière / Du ciel rouvert</q>
+                        <p>La lumière de la boulangerie ressemble à l’ouverture du ciel. Elle représente un espoir de secours.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="32" data-end="33">Vers 32-33</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Hyperbole</div>
+                      <div class="figure-text">
+                        <q>qu’ils crèvent leur culotte</q>
+                        <p>L’exagération montre qu’ils se pressent très fortement contre le grillage.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="34" data-end="34">Vers 34</button>
+                    </div>
+                    <div class="figure-item">
+                      <div class="figure-name">Points de suspension</div>
+                      <div class="figure-text">
+                        <q>Au vent d’hiver…</q>
+                        <p>La fin reste ouverte et sans solution. Le lecteur comprend que la souffrance continue.</p>
+                      </div>
+                      <button class="locate" type="button" data-start="36" data-end="36">Vers 36</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter" id="conclusion">
+          <summary>Conclusion</summary>
+          <div class="chapter-body">
+            <details class="subpart">
+              <summary>1. Bilan</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>Rimbaud montre cinq enfants affamés qui peuvent voir et sentir le pain, mais pas le manger. Il rend la scène très émouvante grâce aux contrastes, aux sensations et aux images poétiques. Le poème dénonce une société qui laisse des enfants vivre dans le froid et la faim.</p>
+                </div>
+                <ul class="conclusion-list">
+                  <li>Le décor froid crée la pitié.</li>
+                  <li>Le pain devient vivant et merveilleux.</li>
+                  <li>La fin rappelle brutalement la pauvreté et l’abandon.</li>
+                </ul>
+              </div>
+            </details>
+
+            <details class="subpart">
+              <summary>2. Ouverture</summary>
+              <div class="detail">
+                <div class="simple-box">
+                  <h4>En mots simples</h4>
+                  <p>On peut rapprocher ce poème des <em>Misérables</em> de Victor Hugo. Avec Cosette et Gavroche, Hugo dénonce lui aussi la souffrance et l’abandon des enfants pauvres.</p>
+                </div>
+              </div>
+            </details>
+          </div>
+        </details>
+
+        <details class="chapter" id="glossaire">
+          <summary>Fiche express : les figures de style à retenir</summary>
+          <div class="chapter-body">
+            <div class="glossary-grid">
+              <div class="glossary-card"><strong>Antithèse</strong>Opposition forte entre deux idées ou deux images.</div>
+              <div class="glossary-card"><strong>Anaphore</strong>Répétition d’un même mot au début de plusieurs phrases ou vers.</div>
+              <div class="glossary-card"><strong>Métonymie</strong>Un élément représente un ensemble : le « bras » représente le boulanger.</div>
+              <div class="glossary-card"><strong>Comparaison</strong>Rapprochement avec un outil comme « comme ».</div>
+              <div class="glossary-card"><strong>Métaphore</strong>Comparaison sans outil : une image remplace directement une autre idée.</div>
+              <div class="glossary-card"><strong>Personnification</strong>On donne à une chose une action ou une qualité d’être vivant.</div>
+              <div class="glossary-card"><strong>Synesthésie</strong>Mélange de plusieurs sens, par exemple l’ouïe et l’odorat.</div>
+              <div class="glossary-card"><strong>Enjambement</strong>La phrase continue après la fin du vers.</div>
+              <div class="glossary-card"><strong>Hyperbole</strong>Exagération destinée à produire un effet fort.</div>
+              <div class="glossary-card"><strong>Animalisation</strong>Un être humain est décrit avec des mots associés aux animaux.</div>
+            </div>
+          </div>
+        </details>
+
+        <div class="recap">
+          <strong>Fil directeur à mémoriser :</strong> les enfants sont d’abord montrés dans le froid, puis fascinés par le pain, avant d’être ramenés brutalement à leur misère et à leur abandon.
+        </div>
+      </main>
+
+      <aside class="poem-card" id="poeme" aria-label="Texte intégral du poème">
+        <div class="poem-heading">
+          <h2>Les Effarés</h2>
+          <p>Arthur Rimbaud — cliquez sur les boutons de l’analyse pour retrouver les vers.</p>
+        </div>
+        <div class="poem-scroll" id="poemScroll">
+          <div class="stanza" id="v1">
+            <div class="verse" data-line="1"><span class="line-number">1</span><span>Noirs dans la neige et dans la brume,</span></div>
+            <div class="verse" data-line="2"><span class="line-number">2</span><span>Au grand soupirail qui s’allume,</span></div>
+            <div class="verse" data-line="3"><span class="line-number">3</span><span>Leurs culs en rond,</span></div>
+          </div>
+
+          <div class="stanza" id="v4">
+            <div class="verse" data-line="4"><span class="line-number">4</span><span>À genoux, cinq petits, – misère ! –</span></div>
+            <div class="verse" data-line="5"><span class="line-number">5</span><span>Regardent le boulanger faire</span></div>
+            <div class="verse" data-line="6"><span class="line-number">6</span><span>Le lourd pain blond…</span></div>
+          </div>
+
+          <div class="stanza" id="v7">
+            <div class="verse" data-line="7"><span class="line-number">7</span><span>Ils voient le fort bras blanc qui tourne</span></div>
+            <div class="verse" data-line="8"><span class="line-number">8</span><span>La pâte grise, et qui l’enfourne</span></div>
+            <div class="verse" data-line="9"><span class="line-number">9</span><span>Dans un trou clair.</span></div>
+          </div>
+
+          <div class="stanza" id="v10">
+            <div class="verse" data-line="10"><span class="line-number">10</span><span>Ils écoutent le bon pain cuire.</span></div>
+            <div class="verse" data-line="11"><span class="line-number">11</span><span>Le boulanger au gras sourire</span></div>
+            <div class="verse" data-line="12"><span class="line-number">12</span><span>Chante un vieil air.</span></div>
+          </div>
+
+          <div class="stanza" id="v13">
+            <div class="verse" data-line="13"><span class="line-number">13</span><span>Ils sont blottis, pas un ne bouge,</span></div>
+            <div class="verse" data-line="14"><span class="line-number">14</span><span>Au souffle du soupirail rouge,</span></div>
+            <div class="verse" data-line="15"><span class="line-number">15</span><span>Chaud comme un sein.</span></div>
+          </div>
+
+          <div class="stanza" id="v16">
+            <div class="verse" data-line="16"><span class="line-number">16</span><span>Et quand, pendant que minuit sonne,</span></div>
+            <div class="verse" data-line="17"><span class="line-number">17</span><span>Façonné, pétillant et jaune,</span></div>
+            <div class="verse" data-line="18"><span class="line-number">18</span><span>On sort le pain ;</span></div>
+          </div>
+
+          <div class="stanza" id="v19">
+            <div class="verse" data-line="19"><span class="line-number">19</span><span>Quand, sous les poutres enfumées,</span></div>
+            <div class="verse" data-line="20"><span class="line-number">20</span><span>Chantent les croûtes parfumées,</span></div>
+            <div class="verse" data-line="21"><span class="line-number">21</span><span>Et les grillons ;</span></div>
+          </div>
+
+          <div class="stanza" id="v22">
+            <div class="verse" data-line="22"><span class="line-number">22</span><span>Quand ce trou chaud souffle la vie ;</span></div>
+            <div class="verse" data-line="23"><span class="line-number">23</span><span>Ils ont leur âme si ravie</span></div>
+            <div class="verse" data-line="24"><span class="line-number">24</span><span>Sous leurs haillons,</span></div>
+          </div>
+
+          <div class="stanza" id="v25">
+            <div class="verse" data-line="25"><span class="line-number">25</span><span>Ils se ressentent si bien vivre,</span></div>
+            <div class="verse" data-line="26"><span class="line-number">26</span><span>Les pauvres petits pleins de givre !</span></div>
+            <div class="verse" data-line="27"><span class="line-number">27</span><span>– Qu’ils sont là, tous,</span></div>
+          </div>
+
+          <div class="stanza" id="v28">
+            <div class="verse" data-line="28"><span class="line-number">28</span><span>Collant leurs petits museaux roses</span></div>
+            <div class="verse" data-line="29"><span class="line-number">29</span><span>Au grillage, chantant des choses,</span></div>
+            <div class="verse" data-line="30"><span class="line-number">30</span><span>Entre les trous,</span></div>
+          </div>
+
+          <div class="stanza" id="v31">
+            <div class="verse" data-line="31"><span class="line-number">31</span><span>Mais bien bas, – comme une prière…</span></div>
+            <div class="verse" data-line="32"><span class="line-number">32</span><span>Repliés vers cette lumière</span></div>
+            <div class="verse" data-line="33"><span class="line-number">33</span><span>Du ciel rouvert,</span></div>
+          </div>
+
+          <div class="stanza" id="v34">
+            <div class="verse" data-line="34"><span class="line-number">34</span><span>– Si fort, qu’ils crèvent leur culotte,</span></div>
+            <div class="verse" data-line="35"><span class="line-number">35</span><span>– Et que leur lange blanc tremblotte</span></div>
+            <div class="verse" data-line="36"><span class="line-number">36</span><span>Au vent d’hiver…</span></div>
+          </div>
+
+          <p class="citation">Arthur Rimbaud, <em>Recueil de Douai</em>, 1870</p>
+        </div>
+      </aside>
+    </div>
+
+    <footer>Ouvrez une partie, puis une sous-partie. Les boutons « Vers » surlignent directement le passage étudié dans le poème.</footer>
+  </div>
+
+  <script>
+    const allDetails = [...document.querySelectorAll('details')];
+    const verses = [...document.querySelectorAll('.verse')];
+    const poemScroll = document.getElementById('poemScroll');
+    const poemCard = document.getElementById('poeme');
+
+    function highlightRange(start, end) {
+      verses.forEach(verse => {
+        const line = Number(verse.dataset.line);
+        verse.classList.toggle('active', line >= start && line <= end);
+      });
+
+      const firstLine = document.querySelector(`.verse[data-line="${start}"]`);
+      if (!firstLine) return;
+
+      if (window.matchMedia('(min-width: 1061px)').matches) {
+        poemScroll.scrollTo({
+          top: Math.max(0, firstLine.offsetTop - poemScroll.offsetTop - 12),
+          behavior: 'smooth'
+        });
+      } else {
+        poemCard.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        setTimeout(() => firstLine.scrollIntoView({ behavior: 'smooth', block: 'center' }), 260);
+      }
+    }
+
+    document.querySelectorAll('[data-start][data-end]').forEach(button => {
+      button.addEventListener('click', () => {
+        highlightRange(Number(button.dataset.start), Number(button.dataset.end));
+      });
+    });
+
+    document.getElementById('openAll').addEventListener('click', () => {
+      allDetails.forEach(section => { section.open = true; });
+    });
+
+    document.getElementById('closeAll').addEventListener('click', () => {
+      allDetails.forEach(section => { section.open = false; });
+      verses.forEach(verse => verse.classList.remove('active'));
+    });
+  </script>
+</body>
+</html>
