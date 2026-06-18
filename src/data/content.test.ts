@@ -186,4 +186,40 @@ describe("study content", () => {
       expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
     }
   });
+
+  it("keeps exact argumentation source wording for T9 to T12", () => {
+    const expectedFragments = [
+      ["pauvres-peuples-insenses", "piller vos champs, voler et dépouiller vos maisons"],
+      ["pauvres-peuples-insenses", "qu’il les conduise à la boucherie"],
+      ["les-ruses-du-tyran", "les appâts de la servitude, le prix de leur liberté, les outils de la tyrannie"],
+      ["les-ruses-du-tyran", "les images brillantes des livres enluminés"],
+      ["satire-des-favoris", "les pirates ciliens s’assemblèrent en si grand nombre"],
+      ["satire-des-favoris", "il faut les coins du bois même"],
+      ["discours-du-vieux-tahitien", "le vol de toute une contrée"],
+      ["discours-du-vieux-tahitien", "Nous avons respecté notre image en toi"],
+    ] as const;
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
+  it("provides dense analysis for the argumentation sequence", () => {
+    const expectedMinimums = new Map([
+      ["pauvres-peuples-insenses", { sections: 8, figures: 25 }],
+      ["les-ruses-du-tyran", { sections: 8, figures: 25 }],
+      ["satire-des-favoris", { sections: 8, figures: 25 }],
+      ["discours-du-vieux-tahitien", { sections: 9, figures: 30 }],
+    ]);
+
+    for (const [slug, minimums] of expectedMinimums) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      const movementSections = text?.movements.flatMap((movement) => movement.sections) ?? [];
+      const figures = movementSections.flatMap((section) => section.figures ?? []);
+
+      expect(movementSections.length).toBeGreaterThanOrEqual(minimums.sections);
+      expect(figures.length).toBeGreaterThanOrEqual(minimums.figures);
+    }
+  });
 });

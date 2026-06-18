@@ -772,24 +772,59 @@ const texts: StudyText[] = [
     sourceLabel: "Discours de la servitude volontaire, 1548",
     lines: sourceTexts.laboetiePeuples,
     context: "La Boétie s'adresse directement aux peuples pour leur montrer qu'ils participent eux-mêmes au pouvoir du tyran.",
-    quizFocus: "Le discours veut réveiller le peuple : le tyran n'est fort que parce qu'on le soutient.",
+    quizFocus: "Le discours accuse les peuples de fournir eux-mêmes au tyran les richesses, les corps et le pouvoir qui les écrasent.",
     problematique: "Comment La Boétie pousse-t-il le peuple à refuser la servitude ?",
-    recap: "Le peuple est accusé, le tyran est démystifié, puis la liberté apparaît comme un simple refus de servir.",
+    recap: "La Boétie réveille le peuple par l'apostrophe, démonte le pouvoir du tyran en montrant qu'il vient des dominés, puis fait de la liberté un retrait volontaire du soutien collectif.",
     opening: "On peut ouvrir sur Diderot, qui défend aussi la liberté contre la domination.",
     movements: [
       movement("m1", "I. Un réveil brutal du peuple", 1, 7, ["apostrophe", "accusation", "perte"], [
-        section("m1a", "Le peuple est secoué", "Les insultes et exclamations cherchent à provoquer une prise de conscience.", "La Boétie ne console pas : il réveille.", [
-          figure("f1", "Apostrophe", "Pauvres et misérables peuples", "L'adresse directe rend le discours vivant et agressif.", 1),
+        section("m1a", "Une apostrophe qui secoue les dominés", "La Boétie commence par parler directement aux peuples. Il ne les présente pas comme de simples victimes : il les accuse d'être obstinés dans leur propre malheur.", "L'entrée du texte a une fonction de choc : rendre insupportable une servitude devenue habituelle.", [
+          figure("f1", "Apostrophe", "Pauvres et misérables peuples insensés", "L'adresse directe transforme le passage en discours d'alerte.", 1),
+          figure("f2", "Accumulation dépréciative", "pauvres / misérables / insensés / opiniâtres / aveugles", "La série d'adjectifs construit un portrait sévère du peuple soumis.", 1),
+          figure("f3", "Antithèse", "votre mal / votre bien", "L'opposition montre que le peuple persiste contre son propre intérêt.", 1),
+        ]),
+        section("m1b", "La domination est d'abord un pillage", "La tyrannie est présentée comme une confiscation concrète : revenus, champs, maisons, meubles des ancêtres. La liberté n'est donc pas une idée abstraite, elle touche les biens et les vies.", "La Boétie fait sentir matériellement le coût de la servitude.", [
+          figure("f4", "Énumération", "piller vos champs, voler et dépouiller vos maisons", "La liste donne au pouvoir tyrannique la forme d'un vol organisé.", 2),
+          figure("f5", "Formule visuelle", "sous vos yeux", "Le peuple assiste à sa propre dépossession sans réagir.", 2),
+          figure("f6", "Hyperbole de dépossession", "rien ne soit à vous", "La formule radicalise la perte : même la propriété devient illusion.", 3),
+          figure("f7", "Image sociale", "simples locataires de vos biens, vos familles et vos vies", "La phrase étend la dépossession aux familles et à l'existence même.", 3),
+        ]),
+        section("m1c", "L'ennemi est fabriqué par ceux qu'il domine", "La Boétie renverse l'explication habituelle : le malheur ne vient pas d'ennemis extérieurs mais de l'ennemi que les peuples agrandissent eux-mêmes.", "Le coeur de l'argument apparaît déjà : le tyran dépend de la participation des dominés.", [
+          figure("f8", "Correction polémique", "non pas des ennemis, mais... de l’ennemi", "Le singulier concentre la responsabilité sur le tyran, mais aussi sur ceux qui le rendent puissant.", 4),
+          figure("f9", "Subordonnée accusatrice", "celui que vous faites si grand", "Le peuple est présenté comme l'artisan de la grandeur du tyran.", 5),
+          figure("f10", "Restriction démystifiante", "n’a que deux yeux, n’a que deux mains, n’a qu’un corps", "Le tyran est ramené à un homme ordinaire.", 6),
+          figure("f11", "Opposition", "moindre des hommes / nombre infini de vos villes", "La faiblesse physique du tyran contraste avec la masse des peuples.", 7),
         ]),
       ]),
-      movement("m2", "II. Le tyran est faible sans le peuple", 8, 15, ["questions", "complicité", "pouvoir"], [
-        section("m2a", "Le pouvoir vient des dominés", "Les questions montrent que les yeux, mains et pieds du tyran viennent du peuple lui-même.", "Idée clé : le peuple fabrique la force du tyran.", [
-          figure("f2", "Question rhétorique", "D'où a-t-il pris", "Les questions guident le raisonnement.", 8, 10),
+      movement("m2", "II. Le tyran est faible sans le peuple", 8, 18, ["questions", "complicité", "pouvoir"], [
+        section("m2a", "Les questions démontent le pouvoir tyrannique", "La série de questions rhétoriques oblige à reconnaître que le tyran n'a ni yeux, ni mains, ni pieds qui ne viennent des peuples eux-mêmes.", "Le raisonnement est implacable : le pouvoir du tyran est emprunté aux dominés.", [
+          figure("f12", "Questions rhétoriques", "D’où a-t-il pris / Comment a-t-il / d’où les a-t-il", "Les questions guident le lecteur vers une seule réponse : le peuple fournit tout.", 8, 10),
+          figure("f13", "Métonymies du pouvoir", "yeux / mains / pieds", "Les parties du corps représentent l'espionnage, la violence et l'occupation du territoire.", 8, 10),
+          figure("f14", "Formule synthétique", "que par vous", "La brièveté de l'expression concentre toute la thèse de La Boétie.", 11),
+        ]),
+        section("m2b", "La victime devient complice", "La Boétie va plus loin que la plainte : il accuse les peuples d'être receleurs, complices, traîtres à eux-mêmes. Le vocabulaire judiciaire transforme la servitude en faute collective.", "La dénonciation est violente parce qu'elle vise à provoquer une réaction.", [
+          figure("f15", "Champ lexical judiciaire", "receleurs / complices / traîtres", "Les peuples ne sont plus seulement victimes : ils sont associés au crime tyrannique.", 13),
+          figure("f16", "Parallélisme", "qui vous pille / qui vous tue", "Les deux relatives donnent au tyran les figures du voleur et du meurtrier.", 13),
+          figure("f17", "Apostrophe implicite", "vous-mêmes", "La formule referme l'accusation sur les peuples : ils agissent contre eux-mêmes.", 13),
+        ]),
+        section("m2c", "Le peuple nourrit la machine qui le détruit", "Les phrases répétées montrent que tout ce que les peuples produisent est retourné contre eux : récoltes, maisons, filles, enfants, travail, force physique.", "La servitude est décrite comme un système d'auto-destruction.", [
+          figure("f18", "Anaphore", "Vous semez / Vous nourrissez / Vous vous rompez / Vous vous affaiblissez", "La répétition place le peuple au début de chaque action : il alimente lui-même le pouvoir.", 14, 18),
+          figure("f19", "Champ lexical économique et domestique", "fruits / maisons / filles / enfants", "La domination envahit toute la vie matérielle et familiale.", 14, 16),
+          figure("f20", "Métaphore sanglante", "la boucherie", "La guerre est réduite à un massacre d'enfants envoyés par le tyran.", 16),
+          figure("f21", "Antithèse de force", "vous vous affaiblissez / le rendre plus fort", "La puissance du tyran augmente à mesure que le peuple se diminue.", 18),
         ]),
       ]),
-      movement("m3", "III. La liberté tient à un refus", 16, 18, ["volonté", "liberté", "colosse"], [
-        section("m3a", "Ne plus soutenir le tyran", "Il ne faut pas vaincre par la force : il suffit de ne plus servir.", "La formule « Soyez résolus de ne plus servir » donne à la liberté la forme d'un retrait collectif.", [
-          figure("f3", "Comparaison", "grand colosse", "Le tyran paraît immense mais s'effondre si sa base disparaît.", 18),
+      movement("m3", "III. La liberté tient à un refus", 19, 22, ["volonté", "liberté", "colosse"], [
+        section("m3a", "La libération commence par une volonté", "La Boétie affirme que la sortie de la servitude ne demande pas d'abord une bataille, mais une décision : vouloir ne plus soutenir le tyran.", "La liberté est rendue accessible parce qu'elle dépend d'un refus collectif.", [
+          figure("f22", "Correction argumentative", "non pas de vous en délivrer, mais seulement de vouloir le faire", "La phrase réduit l'obstacle : la première victoire est dans la volonté.", 19),
+          figure("f23", "Impératif", "Soyez résolus de ne plus servir", "L'ordre transforme l'analyse en appel à l'action.", 20),
+          figure("f24", "Présent immédiat", "vous voilà libres", "La liberté est présentée comme la conséquence directe du refus.", 20),
+        ]),
+        section("m3b", "Le tyran s'effondre quand on cesse de le porter", "La fin refuse l'image d'une révolution violente : il suffit de ne plus soutenir le tyran. Sa chute vient alors de son propre poids.", "L'image finale rend visible une idée politique : le pouvoir ne tient que par sa base.", [
+          figure("f25", "Négation de la violence", "Je ne veux pas que vous le poussiez ou l’ébranliez", "La Boétie distingue la libération de l'affrontement direct.", 21),
+          figure("f26", "Restriction décisive", "mais seulement ne le soutenez plus", "Toute la stratégie tient dans le retrait du soutien.", 21),
+          figure("f27", "Comparaison", "comme un grand colosse", "Le tyran paraît monumental mais dépend d'une base fragile.", 22),
+          figure("f28", "Métaphore architecturale", "dérobé la base", "Sans appui populaire, la puissance tyrannique s'effondre mécaniquement.", 22),
         ]),
       ]),
     ],
@@ -801,24 +836,60 @@ const texts: StudyText[] = [
     sourceLabel: "Discours de la servitude volontaire, 1548",
     lines: sourceTexts.laboetieRuses,
     context: "La Boétie explique comment le tyran détourne le peuple de la liberté par les distractions.",
-    quizFocus: "Le tyran maintient l'obéissance en endormant le peuple par les plaisirs.",
+    quizFocus: "Le tyran maintient l'obéissance en transformant les divertissements en instruments politiques : le plaisir devient une garnison plus efficace que l'armée.",
     problematique: "Comment La Boétie dénonce-t-il les divertissements comme instruments de domination ?",
-    recap: "L'exemple de Cyrus montre la ruse, puis les jeux deviennent des appâts qui habituent à servir.",
+    recap: "La Boétie part de l'exemple de Cyrus, généralise la naïveté politique du peuple, puis assimile les spectacles à des appâts qui endorment les sujets sous le joug.",
     opening: "On peut penser aux débats modernes sur les médias et les distractions politiques.",
     movements: [
       movement("m1", "I. L'exemple de Cyrus", 1, 7, ["exemple", "stratagème", "obéissance"], [
-        section("m1a", "Une domination sans épée", "Cyrus calme la révolte non par la violence, mais par les loisirs obligatoires.", "La ruse est plus efficace que la force.", [
-          figure("f1", "Exemple historique", "Cyrus fit aux Lydiens", "L'histoire donne une preuve concrète.", 1),
+        section("m1a", "Une ruse présentée comme un cas exemplaire", "La Boétie annonce que l'histoire de Cyrus rend la ruse tyrannique parfaitement visible. L'exemple sert de preuve concrète à une théorie politique.", "Le récit historique rend l'argument plus facile à retenir : dominer peut consister à distraire.", [
+          figure("f1", "Exemple historique", "ce que Cyrus fit aux Lydiens", "La référence donne une autorité concrète à l'analyse.", 1),
+          figure("f2", "Infinitif dégradant", "abêtir leurs sujets", "Le verbe montre que le but du tyran est de diminuer l'intelligence politique du peuple.", 1),
+          figure("f3", "Superlatif d'évidence", "plus clairement", "La Boétie présente son exemple comme une démonstration limpide.", 1),
+        ]),
+        section("m1b", "La force militaire est remplacée par le divertissement", "Cyrus pourrait écraser les révoltés, mais il choisit une solution plus durable : installer des plaisirs publics et obligatoires. Le loisir devient un outil de maintien de l'ordre.", "Le texte oppose la domination visible de l'armée à la domination plus discrète des plaisirs.", [
+          figure("f4", "Champ lexical militaire", "soumis / poigne / armée / garder", "Le début rappelle la solution brutale que Cyrus aurait pu employer.", 2, 3),
+          figure("f5", "Mot stratégique", "stratagème", "La domination est pensée comme une manœuvre calculée.", 3),
+          figure("f6", "Énumération", "bordels, tavernes et jeux publics", "La liste associe plaisirs du corps, boisson et jeux dans un même système de contrôle.", 4),
+          figure("f7", "Obligation paradoxale", "obligés de s’en servir", "Même le plaisir devient une contrainte politique.", 4),
+        ]),
+        section("m1c", "Le plaisir devient une garnison", "La Boétie souligne l'efficacité de la méthode : plus besoin d'épée contre les Lydiens. Le divertissement tient lieu de présence militaire.", "La ruse est redoutable parce qu'elle transforme les dominés en gardiens de leur propre servitude.", [
+          figure("f8", "Métaphore politique", "cette garnison", "Les loisirs remplacent les soldats dans la fonction de contrôle.", 5),
+          figure("f9", "Négation de la violence", "jamais il ne fallut tirer un coup d’épée", "La domination réussit sans combat visible.", 5),
+          figure("f10", "Expression péjorative", "Ces pauvres et misérables gens", "La pitié se mêle au mépris devant la facilité avec laquelle le peuple se laisse distraire.", 6),
+          figure("f11", "Étymologie argumentative", "passe-temps / lude / de Lydie", "La référence au mot latin donne au récit une portée culturelle et mémorable.", 7),
         ]),
       ]),
-      movement("m2", "II. Une méthode générale", 8, 11, ["peuple", "naïveté", "servitude"], [
-        section("m2a", "Le peuple se laisse tromper", "La Boétie généralise : les tyrans savent rendre les peuples naïfs.", "La servitude peut devenir agréable.", [
-          figure("f2", "Comparaison", "oiseau / poisson", "Le peuple est assimilé à une proie facile.", 11),
+      movement("m2", "II. Une méthode générale", 8, 14, ["peuple", "naïveté", "servitude"], [
+        section("m2a", "Cyrus révèle une pratique commune des tyrans", "La Boétie généralise l'exemple : tous les tyrans n'avouent pas aussi clairement leur intention, mais beaucoup recherchent discrètement le même résultat.", "L'exemple n'est pas une exception ; il révèle une règle de domination.", [
+          figure("f12", "Opposition", "déclaré expressément / recherché discrètement", "La ruse change de forme mais conserve le même objectif.", 8, 9),
+          figure("f13", "Adverbes de manière", "formellement / discrètement", "Les adverbes opposent l'ordre visible et la manipulation cachée.", 9),
+          figure("f14", "Verbe affaiblissant", "effeminer leurs gens", "Dans la langue de l'époque, le terme signifie affaiblir moralement et politiquement.", 8),
+        ]),
+        section("m2b", "Le peuple est vulnérable à celui qui le trompe", "La Boétie décrit une contradiction : le peuple se méfie de celui qui l'aime et croit celui qui le trompe. La servitude repose donc sur une erreur de jugement.", "La critique vise autant le tyran manipulateur que la crédulité collective.", [
+          figure("f15", "Antithèse", "soupçonneux... celui qui l’aime / naïf... celui qui le trompe", "L'opposition résume le renversement politique dénoncé.", 11),
+          figure("f16", "Généralisation", "le naturel du menu peuple", "La Boétie transforme l'exemple historique en observation sur les comportements collectifs.", 10),
+          figure("f17", "Lexique de la tromperie", "trompe / naïf", "Le vocabulaire met l'accent sur une domination par illusion.", 11),
+        ]),
+        section("m2c", "La servitude fonctionne comme un piège appétissant", "Les comparaisons animales montrent que le peuple est attiré vers sa propre capture. L'image de l'appât explique comment le plaisir rend l'obéissance désirable.", "Le piège politique marche parce qu'il se présente comme un plaisir immédiat.", [
+          figure("f18", "Comparaison animale", "oiseau... au piège / poisson... à l’hameçon", "Le peuple est assimilé à une proie facile à capturer.", 12),
+          figure("f19", "Métaphore de l'appât", "friandise du ver", "Ce qui attire le poisson correspond aux plaisirs qui attirent le peuple.", 12),
+          figure("f20", "Verbe sensoriel", "s’allèchent", "La servitude passe par le désir et non par la contrainte frontale.", 13),
+          figure("f21", "Image légère", "la moindre plume... sous la bouche", "Il suffit d'un plaisir minime pour attirer les peuples vers l'obéissance.", 13),
+          figure("f22", "Métaphore tactile", "dès lors qu’on les chatouille", "La manipulation paraît douce, mais elle produit l'asservissement.", 14),
         ]),
       ]),
-      movement("m3", "III. Les loisirs comme pièges", 12, 15, ["spectacles", "appâts", "habitude"], [
-        section("m3a", "Les divertissements endorment", "Les jeux et spectacles sont appelés appâts : ils font oublier la liberté.", "Le danger vient de ce qui semble agréable.", [
-          figure("f3", "Métaphore", "appâts de la servitude", "Le plaisir devient un piège politique.", 12),
+      movement("m3", "III. Les loisirs comme pièges", 15, 17, ["spectacles", "appâts", "habitude"], [
+        section("m3a", "Les spectacles forment un système complet de domination", "La longue liste des divertissements montre que la tyrannie multiplie les plaisirs pour occuper le regard et l'esprit du peuple.", "La distraction devient une politique organisée.", [
+          figure("f23", "Accumulation", "théâtres, jeux, farces, spectacles, gladiateurs", "La profusion donne l'image d'un peuple saturé de divertissements.", 15),
+          figure("f24", "Métaphore", "appâts de la servitude", "Les plaisirs sont des pièges qui conduisent à l'obéissance.", 15),
+          figure("f25", "Antithèse", "prix de leur liberté / outils de la tyrannie", "Ce que les peuples prennent pour un gain est en réalité la perte de leur liberté.", 15),
+        ]),
+        section("m3b", "Le peuple est endormi sous le joug", "La Boétie insiste sur l'habitude : les sujets s'accoutument à servir parce que leur attention est captée par des images et des plaisirs.", "La servitude devient durable quand elle se transforme en habitude agréable.", [
+          figure("f26", "Verbe d'assoupissement", "endormir leurs sujets", "La domination agit en diminuant la vigilance politique.", 16),
+          figure("f27", "Métaphore de l'asservissement", "sous leur joug", "Le joug rappelle la soumission animale et la perte de liberté.", 16),
+          figure("f28", "Comparaison finale", "comme les petits enfants", "Les peuples sont infantilisés par leur attrait pour les images brillantes.", 17),
+          figure("f29", "Antithèse implicite", "beaux ces passe-temps / s’accoutumaient à servir", "La beauté du spectacle masque la réalité de l'obéissance.", 17),
         ]),
       ]),
     ],
@@ -833,24 +904,59 @@ texts.push(
     sourceLabel: "Discours de la servitude volontaire, 1548",
     lines: sourceTexts.laboetieFavoris,
     context: "La Boétie explique que le tyran est soutenu par des favoris intéressés.",
-    quizFocus: "La tyrannie fonctionne grâce à une chaîne de complices qui profitent du pouvoir.",
+    quizFocus: "La tyrannie fonctionne parce qu'elle distribue du profit : autour du tyran se forme une chaîne de complices qui vivent du butin et participent à l'asservissement.",
     problematique: "Comment La Boétie montre-t-il que la tyrannie repose sur des complicités ?",
-    recap: "Les ambitieux se regroupent autour du tyran, partagent le butin et deviennent de petits tyrans.",
+    recap: "La Boétie montre que la tyrannie attire les ambitieux comme une maladie attire la corruption, compare les favoris à une bande de voleurs, puis révèle que le tyran asservit les sujets par d'autres sujets.",
     opening: "On peut ouvrir sur les critiques modernes de la corruption et du clientélisme.",
     movements: [
-      movement("m1", "I. Les profiteurs de la tyrannie", 1, 5, ["profit", "ambition", "avarice"], [
-        section("m1a", "Le pouvoir attire les mauvais intérêts", "Ceux qui espèrent gagner quelque chose soutiennent le tyran.", "La tyrannie tient aussi parce qu'elle enrichit certains.", [
-          figure("f1", "Métaphore médicale", "partie véreuse", "Le royaume malade attire ce qui est corrompu.", 2, 3),
+      movement("m1", "I. Les profiteurs de la tyrannie", 1, 4, ["profit", "ambition", "avarice"], [
+        section("m1a", "La tyrannie devient profitable", "La Boétie commence par une idée scandaleuse : autant de gens trouvent la tyrannie avantageuse que d'autres trouveraient la liberté désirable. La domination tient donc aussi par intérêt.", "Le texte déplace l'analyse : le tyran n'est pas seul, il a des bénéficiaires.", [
+          figure("f1", "Antithèse politique", "tyrannie semble profitable / liberté serait agréable", "L'opposition montre que l'intérêt matériel peut l'emporter sur le goût de la liberté.", 1),
+          figure("f2", "Polyptote économique", "faveurs / sous-faveurs / gains / regains", "La répétition des mots de profit donne l'image d'un système de redistribution corrupteur.", 1),
+          figure("f3", "Généralisation", "autant de gens", "La formule élargit le phénomène : la complicité n'est pas marginale.", 1),
+        ]),
+        section("m1b", "Le royaume malade attire la corruption", "La comparaison médicale explique le regroupement des mauvais intérêts autour du pouvoir tyrannique. Le tyran agit comme une zone malade vers laquelle se dirigent les éléments corrompus.", "La satire présente la tyrannie comme une infection du corps politique.", [
+          figure("f4", "Comparaison médicale", "De même que les médecins disent", "Le raisonnement prend l'apparence d'une observation scientifique.", 2),
+          figure("f5", "Métaphore corporelle", "quelque chose de gâté dans notre corps", "La corruption politique est pensée comme une maladie organique.", 2),
+          figure("f6", "Expression dépréciative", "cette partie véreuse", "L'image du ver rend la corruption répugnante.", 2),
+          figure("f7", "Métaphore sociale", "toute la lie du royaume", "Les favoris sont assimilés au dépôt le plus bas et le plus impur.", 3),
+        ]),
+        section("m1c", "Les ambitieux se regroupent pour le butin", "La Boétie précise le profil des complices : ambition et avarice. Ils soutiennent le tyran pour obtenir une part du butin et devenir eux-mêmes de petits tyrans.", "La tyrannie se reproduit parce qu'elle offre à certains un pouvoir subalterne.", [
+          figure("f8", "Champ lexical moral", "ardente ambition / notable avarice", "Les deux défauts expliquent l'adhésion au tyran.", 4),
+          figure("f9", "Verbe de regroupement", "s’amassent autour de lui", "L'image montre l'attraction exercée par le pouvoir corrompu.", 4),
+          figure("f10", "Lexique du pillage", "part au butin", "La politique est ramenée à un partage de vol.", 4),
+          figure("f11", "Diminutif ironique", "tyranneaux", "Les favoris imitent le tyran à leur échelle.", 4),
         ]),
       ]),
-      movement("m2", "II. Une bande organisée", 6, 10, ["voleurs", "hiérarchie", "butin"], [
-        section("m2a", "Les favoris ressemblent à des brigands", "La comparaison avec les voleurs rend les courtisans moralement condamnables.", "La satire rabaisse les puissants.", [
-          figure("f2", "Comparaison", "grands voleurs", "Les proches du tyran sont assimilés à des criminels.", 6),
+      movement("m2", "II. Une bande organisée", 5, 10, ["voleurs", "hiérarchie", "butin"], [
+        section("m2a", "Les favoris sont assimilés à des criminels", "La comparaison avec les voleurs et les corsaires rabaisse les puissants. Les proches du tyran ne sont pas des serviteurs de l'État, mais une organisation de prédation.", "La satire enlève toute noblesse aux courtisans.", [
+          figure("f12", "Comparaison criminelle", "grands voleurs et les fameux corsaires", "Les favoris sont assimilés à des pillards.", 5),
+          figure("f13", "Parallélisme", "les uns... les autres", "La répétition organise la description comme une bande où chacun a son rôle.", 6),
+          figure("f14", "Champ lexical du crime", "persécutent / embuscade / massacrent / dépouillent", "Les actions attribuées aux favoris relèvent de la violence et du vol.", 6),
+        ]),
+        section("m2b", "La hiérarchie ne change pas la complicité", "La Boétie reconnaît qu'il existe des rangs dans cette bande, mais tous participent au pillage. Même les subalternes appartiennent au système.", "La tyrannie repose sur une chaîne complète, pas seulement sur quelques chefs.", [
+          figure("f15", "Concession", "bien qu’il y ait entre eux des prééminences", "La phrase admet les différences de rang pour mieux montrer la complicité commune.", 7),
+          figure("f16", "Antithèse hiérarchique", "valets / chefs de l’assemblée", "Les deux extrêmes de la hiérarchie sont inclus dans le même système.", 7),
+          figure("f17", "Négation généralisante", "il n’y en a pas un", "Personne n'est innocent dans la chaîne de profit.", 7),
+          figure("f18", "Répétition du butin", "principal butin / recherche", "Même ceux qui ne reçoivent pas le plus gros profit participent à sa quête.", 7),
+        ]),
+        section("m2c", "L'exemple des pirates élargit la critique", "La référence aux pirates ciliens montre que les systèmes de pillage peuvent attirer des villes entières. La complicité devient politique et territoriale.", "La Boétie donne à la corruption une ampleur collective.", [
+          figure("f19", "Exemple historique", "pirates ciliens", "L'exemple renforce l'idée d'une organisation criminelle étendue.", 8),
+          figure("f20", "Hyperbole de nombre", "en si grand nombre", "La masse des pirates donne l'image d'un système puissant.", 8),
+          figure("f21", "Alliance corruptrice", "attirèrent dans leur alliance plusieurs belles villes", "Même des cités peuvent entrer dans le réseau du butin.", 9),
+          figure("f22", "Échange intéressé", "pour récompense... une part du butin", "La protection et le profit fondent l'alliance avec les criminels.", 10),
         ]),
       ]),
-      movement("m3", "III. Les sujets asservissent les sujets", 11, 13, ["système", "bois", "complicité"], [
-        section("m3a", "La tyrannie vient de l'intérieur", "Le tyran utilise les sujets contre les sujets, comme un coin de bois fend le bois.", "L'image du bois montre que le pouvoir tyrannique utilise la matière même du peuple pour le diviser.", [
-          figure("f3", "Proverbe imagé", "les coins du bois même", "L'image résume le mécanisme de domination.", 13),
+      movement("m3", "III. Les sujets asservissent les sujets", 11, 12, ["système", "bois", "complicité"], [
+        section("m3a", "Le tyran gouverne par intermédiaires", "La conclusion formule clairement le mécanisme : les sujets sont asservis par d'autres sujets. Le tyran est gardé par ceux dont il devrait se méfier.", "La force du tyran vient d'un réseau intérieur de relais et de bénéficiaires.", [
+          figure("f23", "Formule synthétique", "les sujets les uns par le moyen des autres", "La phrase résume toute la mécanique de domination indirecte.", 11),
+          figure("f24", "Paradoxe politique", "gardé par ceux dont il devrait se méfier", "Ceux qui pourraient renverser le tyran deviennent ses protecteurs.", 11),
+          figure("f25", "Condition méprisante", "s’ils valaient quelque chose", "La Boétie condamne moralement les complices du pouvoir.", 11),
+        ]),
+        section("m3b", "L'image du bois résume la servitude volontaire", "Le proverbe final donne une image simple et forte : on fend le bois avec des coins du même bois. Le tyran divise donc le peuple avec des membres du peuple.", "L'image finale rend mémorisable l'idée centrale du passage : la tyrannie utilise le peuple contre lui-même.", [
+          figure("f26", "Proverbe imagé", "pour fendre le bois", "La sagesse proverbiale donne à la conclusion une force évidente.", 12),
+          figure("f27", "Métaphore", "les coins du bois même", "Le pouvoir tyrannique utilise la matière même qu'il détruit.", 12),
+          figure("f28", "Dernier mot implicite", "même", "Le mot insiste sur l'origine interne de la domination.", 12),
         ]),
       ]),
     ],
@@ -862,24 +968,67 @@ texts.push(
     sourceLabel: "Supplément au voyage de Bougainville, 1772",
     lines: sourceTexts.diderotTahitien,
     context: "Diderot donne la parole à un Tahitien qui accuse les Européens de voler, corrompre et asservir.",
-    quizFocus: "Le discours inverse le regard colonial : le prétendu civilisé devient l'agresseur.",
+    quizFocus: "Le discours inverse le regard colonial : Bougainville est jugé par le Tahitien, et la conquête européenne apparaît comme un vol, une corruption et une menace d'esclavage.",
     problematique: "Comment Diderot critique-t-il la colonisation à travers la voix du vieux Tahitien ?",
-    recap: "Le Tahitien chasse Bougainville, oppose nature et propriété, puis affirme l'égalité des peuples.",
+    recap: "Diderot critique la colonisation en donnant au Tahitien une parole d'accusation, en ridiculisant la propriété fondée sur la force, puis en affirmant une fraternité naturelle qui rend l'esclavage illégitime.",
     opening: "On peut ouvrir sur Montaigne, qui remet aussi en question l'ethnocentrisme européen.",
     movements: [
-      movement("m1", "I. Un rejet violent des Européens", 1, 7, ["accusation", "bonheur", "corruption"], [
-        section("m1a", "Bougainville est traité en brigand", "Le vieux Tahitien inverse les rôles : les Européens ne sont pas héros mais voleurs.", "La force du texte vient de l'adresse directe.", [
-          figure("f1", "Apostrophe", "chef des brigands", "L'expression attaque directement Bougainville.", 1),
+      movement("m1", "I. Un rejet violent des Européens", 1, 10, ["accusation", "bonheur", "corruption"], [
+        section("m1a", "Bougainville est traité en brigand", "Le discours s'ouvre par une apostrophe violente. Diderot inverse le récit héroïque de l'exploration : le navigateur européen devient le chef d'une bande de voleurs.", "Le point de vue colonisé juge le colonisateur.", [
+          figure("f1", "Apostrophe", "Et toi", "L'adresse directe donne au discours une force de confrontation.", 1),
+          figure("f2", "Périphrase accusatrice", "chef des brigands", "Bougainville n'est plus explorateur, mais responsable d'une violence collective.", 1),
+          figure("f3", "Impératif", "écarte promptement ton vaisseau", "Le Tahitien chasse l'Européen de son territoire.", 1),
+        ]),
+        section("m1b", "Le bonheur tahitien est opposé à la nuisance européenne", "Le Tahitien présente son peuple comme innocent, heureux et proche de la nature. La présence européenne ne peut qu'abîmer cet équilibre.", "La critique de la colonisation passe par un contraste entre harmonie naturelle et corruption importée.", [
+          figure("f4", "Parallélisme", "Nous sommes innocents, nous sommes heureux", "La répétition donne une image simple et stable de la société tahitienne.", 2),
+          figure("f5", "Restriction accusatrice", "tu ne peux que nuire", "L'Européen est réduit à une puissance de destruction.", 2),
+          figure("f6", "Lexique de la nature", "pur instinct de la nature", "La nature sert de référence morale contre la civilisation européenne.", 3),
+          figure("f7", "Verbe destructeur", "effacer de nos âmes", "La colonisation menace l'identité profonde du peuple tahitien.", 3),
+        ]),
+        section("m1c", "L'Europe introduit propriété, jalousie et violence", "Le discours accuse Bougainville d'avoir importé la propriété, la jalousie sexuelle, la haine et le sang. La colonisation est donc décrite comme une corruption morale et sociale.", "Diderot ne critique pas seulement la prise de territoire : il critique les effets humains de la domination.", [
+          figure("f8", "Antithèse sociale", "tout est à tous / tien et du mien", "La propriété européenne s'oppose à la communauté tahitienne.", 4),
+          figure("f9", "Champ lexical de la passion destructrice", "fureurs / folles / féroce / haïr / égorgés / sang", "La rencontre avec les Européens transforme les relations en violence.", 6, 8),
+          figure("f10", "Parallélisme accusateur", "Elles sont devenues... tu es devenu...", "La construction met en miroir la corruption des femmes et la férocité de l'Européen.", 7),
+          figure("f11", "Métaphore juridique", "le titre de notre futur esclavage", "L'écrit européen devient l'instrument légal d'une domination à venir.", 9),
+          figure("f12", "Question rhétorique", "qui es-tu donc, pour faire des esclaves ?", "La question refuse toute légitimité à Bougainville.", 10),
         ]),
       ]),
-      movement("m2", "II. La critique de la propriété", 8, 12, ["liberté", "terre", "possession"], [
-        section("m2a", "La possession européenne est absurde", "Diderot montre l'absurdité de dire qu'un pays appartient à quelqu'un parce qu'il y a posé le pied.", "Le texte fait réfléchir au droit et à la force.", [
-          figure("f2", "Question rhétorique", "et pourquoi ?", "La question démonte la logique coloniale.", 10),
+      movement("m2", "II. La critique de la propriété coloniale", 11, 17, ["liberté", "terre", "possession"], [
+        section("m2a", "Le titre de propriété est rendu absurde", "Orou traduit l'inscription européenne : le pays serait à Bougainville. La réponse du Tahitien ridiculise immédiatement ce droit fondé sur un simple passage.", "Diderot attaque la fiction juridique qui transforme la présence en possession.", [
+          figure("f13", "Mise en scène de traduction", "Orou ! toi qui entends la langue", "L'interprète rend visible la rencontre entre deux systèmes de pensée.", 11),
+          figure("f14", "Objet symbolique", "cette lame de métal", "Le métal représente l'inscription coloniale, froide et artificielle.", 11),
+          figure("f15", "Phrase de possession", "Ce pays est à nous", "La formule résume brutalement la prétention coloniale.", 11),
+          figure("f16", "Question rhétorique", "et pourquoi ? parce que tu y as mis le pied ?", "La question dénonce l'absurdité d'un droit fondé sur la simple arrivée.", 12),
+        ]),
+        section("m2b", "Le renversement imaginaire démonte l'injustice", "Le Tahitien imagine la situation inverse : si un Tahitien déclarait posséder une côte européenne, les Européens jugeraient cette prétention scandaleuse.", "Le raisonnement par inversion oblige le lecteur européen à appliquer à lui-même ce qu'il impose aux autres.", [
+          figure("f17", "Hypothèse argumentative", "Si un Tahitien débarquait un jour sur vos côtes", "Le scénario inverse la relation coloniale pour révéler son injustice.", 13),
+          figure("f18", "Question directe", "qu’en penserais-tu ?", "Le Tahitien place Bougainville devant sa contradiction.", 13),
+          figure("f19", "Symétrie", "vos côtes / habitants de Tahiti", "La symétrie met les peuples sur un pied d'égalité.", 13),
+        ]),
+        section("m2c", "La force ne crée pas le droit", "Le Tahitien admet la supériorité matérielle de l'Européen, mais refuse qu'elle donne un droit moral. Il accuse ensuite Bougainville de punir un petit vol tout en préparant un vol immense.", "La critique oppose la puissance de fait à la justice.", [
+          figure("f20", "Exclamation", "Tu es le plus fort !", "La force est reconnue mais immédiatement contestée.", 14),
+          figure("f21", "Question brève", "Et qu’est-ce que cela fait ?", "La question annule la prétention morale de la force.", 14),
+          figure("f22", "Antithèse de proportion", "méprisables bagatelles / le vol de toute une contrée", "Le petit vol reproché aux Tahitiens contraste avec le vol colonial d'un pays entier.", 15, 17),
+          figure("f23", "Métaphore intérieure", "au fond de ton cœur", "La conquête est présentée comme une intention secrète et coupable.", 17),
         ]),
       ]),
-      movement("m3", "III. L'égalité naturelle", 13, 16, ["fraternité", "nature", "droit"], [
-        section("m3a", "Le colonisé est un frère", "Le Tahitien rappelle que tous sont enfants de la nature : aucun peuple n'a naturellement le droit d'asservir l'autre.", "Idée clé : la force ne crée pas le droit.", [
-          figure("f3", "Antithèse", "Tu n'es pas esclave / tu veux nous asservir", "La contradiction européenne est dénoncée.", 13),
+      movement("m3", "III. L'égalité naturelle contre l'esclavage", 18, 23, ["fraternité", "nature", "droit"], [
+        section("m3a", "L'Européen est pris dans sa contradiction", "Bougainville refuse pour lui-même l'esclavage, mais veut l'imposer aux Tahitiens. Le discours révèle l'incohérence morale du colonisateur.", "Le Tahitien transforme la liberté européenne en argument contre la colonisation.", [
+          figure("f24", "Antithèse", "Tu n’es pas esclave / tu veux nous asservir", "La contradiction européenne est formulée de façon nette.", 18),
+          figure("f25", "Hyperbole morale", "tu souffrirais la mort plutôt que de l’être", "La phrase rappelle que la liberté vaut plus que la vie pour Bougainville lui-même.", 18),
+          figure("f26", "Question rhétorique", "ne sait pas défendre sa liberté et mourir ?", "Le Tahitien revendique la même dignité guerrière et morale.", 19),
+        ]),
+        section("m3b", "La fraternité naturelle fonde l'égalité", "Le Tahitien refuse d'être traité comme une bête et affirme une fraternité naturelle entre les peuples. Aucun droit de domination ne peut naître d'une différence de force.", "La nature sert ici à fonder l'égalité, pas l'infériorité.", [
+          figure("f27", "Comparaison dégradante", "comme de la brute", "La formule dénonce la déshumanisation coloniale.", 20),
+          figure("f28", "Déclaration fraternelle", "le Tahitien est ton frère", "La phrase affirme une égalité humaine directe.", 20),
+          figure("f29", "Métaphore familiale", "deux enfants de la nature", "Les deux peuples sont rattachés à une même origine.", 21),
+          figure("f30", "Question de droit", "quel droit as-tu sur lui qu’il n’ait pas sur toi ?", "La question formule le principe d'égalité réciproque.", 21),
+        ]),
+        section("m3c", "Les questions finales prouvent la supériorité morale tahitienne", "Le vieux Tahitien rappelle que son peuple n'a ni attaqué Bougainville, ni pillé son vaisseau, ni réduit les Européens à l'état d'animaux. La conclusion oppose le respect tahitien à la violence coloniale.", "Diderot achève la critique en donnant la leçon morale au peuple prétendument civilisé.", [
+          figure("f31", "Anaphore interrogative", "avons-nous / T’avons-nous / T’avons-nous", "La répétition énumère tout ce que les Tahitiens n'ont pas fait.", 22, 23),
+          figure("f32", "Champ lexical de la violence refusée", "jetés / pillé / saisi / exposé", "Les verbes décrivent les violences que les Tahitiens auraient pu commettre mais n'ont pas commises.", 22, 23),
+          figure("f33", "Antithèse implicite", "travail de nos animaux / notre image en toi", "Le texte oppose la réduction en bête et la reconnaissance de l'humanité.", 23),
+          figure("f34", "Formule finale humaniste", "Nous avons respecté notre image en toi", "Le Tahitien reconnaît dans l'Européen un semblable, là où l'Européen veut dominer.", 23),
         ]),
       ]),
     ],
