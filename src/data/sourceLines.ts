@@ -28,10 +28,10 @@ Au souffle du soupirail rouge,
 Chaud comme un sein.
 Et quand, pendant que minuit sonne,
 Façonné, pétillant et jaune,
-On sort le pain ;
+On sort le pain,
 Quand, sous les poutres enfumées,
 Chantent les croûtes parfumées,
-Et les grillons ;
+Et les grillons,
 Quand ce trou chaud souffle la vie
 Ils ont leur âme si ravie
 Sous leurs haillons,

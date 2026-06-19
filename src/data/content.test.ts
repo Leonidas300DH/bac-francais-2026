@@ -41,6 +41,13 @@ describe("study content", () => {
     }
   });
 
+  it("keeps exact uploaded punctuation for Les Effarés key lines", () => {
+    const text = studyTexts.find((item) => item.slug === "les-effares");
+
+    expect(text?.lines.find((line) => line.number === 18)?.text).toBe("On sort le pain,");
+    expect(text?.lines.find((line) => line.number === 21)?.text).toBe("Et les grillons,");
+  });
+
   it("provides dense analysis for the first Rimbaud sequence", () => {
     const expectedMinimums = new Map([
       ["les-effares", { sections: 9, figures: 25 }],
