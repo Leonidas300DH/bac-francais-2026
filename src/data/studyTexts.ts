@@ -572,57 +572,68 @@ const texts: StudyText[] = [
     author: "Honoré de Balzac",
     sourceLabel: "La Peau de chagrin, 1831",
     lines: sourceTexts.portraitRaphael,
-    context: "Au début de La Peau de chagrin, Raphaël de Valentin entre dans un lieu de jeu après avoir envisagé le suicide. Balzac le présente d'abord à travers le regard des joueurs, qui lisent sur son visage une histoire de souffrance.",
-    quizFocus: "Le portrait transforme le visage de Raphaël en signe visible d'une énergie déjà consumée par la débauche, l'étude, la maladie et surtout la passion.",
-    problematique: "Comment Balzac fait-il du portrait de Raphaël l'annonce d'une destruction intérieure ?",
-    recap: "Balzac donne d'abord au visage de Raphaël une aura mystérieuse, multiplie ensuite les signes physiques de dégradation, puis fait reconnaître en lui une grandeur sombre par les joueurs.",
-    opening: "On peut ouvrir sur le thème balzacien de l'énergie vitale qui se consume.",
+    context: "Au début de La Peau de chagrin, Raphaël entre dans une maison de jeu parisienne après avoir envisagé le suicide. Le lecteur ignore encore son identité : il le découvre à travers le regard des joueurs.",
+    quizFocus: "Le portrait donne déjà les clés du roman : échec social, ambivalence du personnage, énergie vitale consumée et passion destructrice.",
+    problematique: "En quoi ce portrait dépeint-il le drame intérieur qui déchire le personnage au long de l'oeuvre et préfigure son dénouement funeste ?",
+    recap: "Balzac fait du visage de Raphaël un portrait programmatique : l'énigme attire le regard, la dégradation physique révèle une crise morale, puis la comparaison infernale annonce une destinée funeste.",
+    opening: "On peut ouvrir sur la fin du roman, où le désir amoureux achève de consumer la vie de Raphaël.",
+    introduction: [
+      section("intro1", "L'oeuvre", "La Peau de chagrin, roman publié par Honoré de Balzac en 1831, raconte l'histoire de Raphaël de Valentin, qui entre en possession d'un objet magique capable d'accomplir ses désirs au prix de sa vie.", undefined, []),
+      section("intro2", "La situation du passage", "L'extrait se situe au début du roman. Raphaël vient d'entrer dans une maison de jeu parisienne ; son identité reste encore inconnue du lecteur.", undefined, []),
+      section("intro3", "Le type de portrait", "Balzac propose un portrait physique programmatique : le visage du personnage donne des impressions contradictoires et laisse deviner son drame intérieur.", undefined, []),
+      section("intro4", "Annonce du plan", "Le passage présente d'abord un personnage énigmatique, esquisse ensuite son portrait moral, puis le place sous le signe d'une passion destructrice.", undefined, []),
+    ],
     movements: [
-      movement("m1", "I. Un visage mystérieux", 1, 5, ["portrait", "mystère", "souffrance"], [
-        section("m1a", "Un portrait vu par les joueurs", "Raphaël n'est pas présenté directement par un narrateur neutre : ce sont les joueurs qui lisent son visage. Le personnage apparaît donc comme une énigme offerte au regard.", undefined, [
+      movement("m1", "I. Le portrait d'un personnage énigmatique", 1, 6, ["énigme", "visage", "contraste"], [
+        section("m1a", "Une entrée par le regard des joueurs", "Raphaël apparaît d'abord comme un inconnu. Le lecteur est placé avec les joueurs : il découvre le personnage de l'extérieur, sans connaître son histoire.", undefined, [
           figure("f1", "Focalisation collective", "les joueurs lurent", "Le regard du groupe transforme le visage en texte à déchiffrer.", 1),
-          figure("f2", "Métaphore de la lecture", "lurent sur le visage", "Le visage devient un document où s'inscrit le passé du personnage.", 1),
+          figure("f2", "Focalisation externe", "Au premier coup d’œil", "L'observation passe par une première impression immédiate et partielle.", 1),
         ]),
-        section("m1b", "Un mystère inquiétant", "Dès la première phrase, le portrait associe jeunesse et horreur. Raphaël attire parce qu'il semble porter un secret grave.", undefined, [
+        section("m1b", "Un visage qui cache une histoire", "Le portrait physique insiste sur le visage et sur ce qu'il semble dissimuler. Raphaël est moins décrit comme un individu connu que comme une énigme à interpréter.", undefined, [
           figure("f3", "Expression hyperbolique", "quelque horrible mystère", "L'adjectif horrible dramatise immédiatement le portrait.", 1),
-          figure("f4", "Contraste", "jeunes traits / horrible mystère", "La jeunesse du personnage s'oppose à la gravité de ce qu'il porte.", 1, 2),
+          figure("f4", "Champ lexical du visage", "visage / traits / regard / front / bouche", "Le corps devient le lieu visible du drame intérieur.", 1, 4),
         ]),
-        section("m1c", "Une beauté déjà abîmée", "La grâce de Raphaël reste présente, mais elle est brouillée par l'échec et le désespoir. Balzac construit un héros séduisant et détruit à la fois.", undefined, [
+        section("m1c", "Une ambivalence dès le début", "Balzac associe beauté et malaise. Le personnage semble à la fois noble, séduisant et déjà abîmé, ce qui annonce son déchirement intérieur.", undefined, [
           figure("f5", "Oxymore discret", "grâce nébuleuse", "La beauté est associée au flou et à l'obscurcissement.", 2),
-          figure("f6", "Accumulation", "efforts trahis, mille espérances trompées", "Les échecs répétés donnent une profondeur biographique au visage.", 2),
+          figure("f6", "Hyperbole", "mille espérances trompées", "L'exagération souligne la puissance de la déception du personnage.", 2),
         ]),
       ]),
-      movement("m2", "II. Les causes de la dégradation", 6, 10, ["débauche", "étude", "passion"], [
-        section("m2a", "Une dégradation physique précise", "Le portrait devient presque médical : pâleur, cercle jaune, rougeur des joues. Le corps porte les marques d'une usure avancée.", undefined, [
-          figure("f7", "Champ lexical médical", "pâleur / maladive / lésions", "Les termes donnent au portrait une dimension clinique.", 3, 7),
-          figure("f8", "Détails corporels", "paupières / joues", "Balzac localise les signes du mal dans le visage.", 7),
+      movement("m2", "II. Esquisse d'un portrait moral", 6, 10, ["maladie", "excès", "passion"], [
+        section("m2a", "Plusieurs explications possibles", "Le narrateur accumule les hypothèses : débauche, maladie, étude, génie. Le portrait physique devient une enquête morale.", undefined, [
+          figure("f7", "Question rhétorique", "Était-ce la débauche", "La question dramatise l'origine du mal sans la résoudre immédiatement.", 6),
+          figure("f8", "Antithèse temporelle", "jadis pure et brûlante, maintenant dégradée", "Le portrait oppose la noblesse passée à la ruine présente.", 6),
         ]),
-        section("m2b", "Plusieurs causes possibles", "Balzac fait hésiter l'interprétation : débauche, maladie, étude, génie. Raphaël semble avoir été abîmé par toutes les formes d'excès.", undefined, [
-          figure("f9", "Question rhétorique", "Était-ce la débauche", "La question dramatise l'origine du mal sans la résoudre immédiatement.", 6),
-          figure("f10", "Antithèse temporelle", "jadis pure et brûlante, maintenant dégradée", "Le portrait oppose la noblesse passée à la ruine présente.", 6),
-          figure("f11", "Parallélisme", "Les médecins / Les poètes", "Deux types d'interprétation se répondent : le corps malade et l'esprit consumé.", 7, 8),
+        section("m2b", "Le corps comme symptôme", "La lecture médicale et la lecture poétique se répondent. Toutes deux montrent que le corps de Raphaël porte les traces d'une vie d'excès.", undefined, [
+          figure("f9", "Parallélisme", "Les médecins / Les poètes", "Deux types d'interprétation se répondent : le corps malade et l'esprit consumé.", 7, 8),
+          figure("f10", "Champ lexical médical", "lésions / cercle jaune / rougeur", "Les signes physiques donnent au portrait une dimension clinique.", 7),
         ]),
-        section("m2c", "La passion plus destructrice que tout", "La cause profonde dépasse la maladie et l'étude : Balzac désigne une passion mortelle qui tord le cœur et les muscles.", undefined, [
+        section("m2c", "La passion comme vrai mal", "Le passage finit par dépasser les hypothèses. La passion apparaît comme une maladie plus profonde, capable d'altérer le visage et de déformer le corps.", undefined, [
           figure("f12", "Comparatif d'intensité", "plus mortelle que la maladie", "La passion est présentée comme une force plus dangereuse que le mal physique.", 9),
           figure("f13", "Personnification violente", "tordait ce cœur", "La passion agit comme une force qui déforme le corps de l'intérieur.", 10),
-          figure("f14", "Accumulation", "orgies, l’étude et la maladie", "Les différentes dépenses d'énergie convergent vers la destruction.", 10),
+          figure("f14", "Gradation verbale", "altéraient / contractaient / tordaient", "Les verbes donnent l'impression d'une destruction progressive.", 9, 10),
         ]),
       ]),
-      movement("m3", "III. Une grandeur sombre", 11, 13, ["démons", "respect", "misère"], [
-        section("m3a", "Une comparaison inquiétante", "Balzac compare l'arrivée de Raphaël à celle d'un grand criminel accueilli par des condamnés. Le personnage est donc valorisé et inquiétant à la fois.", undefined, [
-          figure("f15", "Comparaison", "Comme, lorsqu’un célèbre criminel arrive au bagne", "La comparaison donne à Raphaël une aura de danger et d'exception.", 11),
-          figure("f16", "Champ lexical du crime", "criminel / bagne / condamnés", "Le jeu est rapproché d'un univers moralement sombre.", 11),
+      movement("m3", "III. Un personnage condamné, victime d'une passion destructrice", 10, 13, ["enfer", "condamnation", "échec"], [
+        section("m3a", "Un univers infernal", "La comparaison avec le bagne et les condamnés place Raphaël dans un imaginaire de faute et d'enfermement. Il semble déjà prisonnier de sa passion.", undefined, [
+          figure("f15", "Comparaison", "Comme, lorsqu'un célèbre criminel arrive au bagne", "La comparaison donne à Raphaël une aura de danger et d'exception.", 11),
+          figure("f16", "Champ lexical du crime", "criminel / bagne / condamnés", "Le jeu est rapproché d'un univers carcéral et moralement sombre.", 11),
         ]),
-        section("m3b", "Les joueurs comme experts de la souffrance", "Les joueurs reconnaissent chez Raphaël une douleur supérieure à la leur. Leur regard fonctionne comme un jugement d'initiés.", undefined, [
+        section("m3b", "Les joueurs reconnaissent un des leurs", "Les joueurs comprennent Raphaël parce qu'ils appartiennent au même monde de désillusion et de souffrance. Leur regard fait de lui un miroir de leur propre société.", undefined, [
           figure("f17", "Métaphore diabolique", "démons humains", "Les joueurs sont présentés comme des êtres corrompus et lucides.", 12),
           figure("f18", "Hyperbole", "une douleur inouïe", "La souffrance de Raphaël dépasse l'expérience ordinaire.", 12),
           figure("f19", "Métaphore médicale", "une blessure profonde que sondait leur regard", "Le regard des joueurs pénètre la douleur comme une sonde.", 12),
         ]),
-        section("m3c", "Une majesté dans la misère", "La fin du portrait donne à Raphaël une noblesse paradoxale : ses vêtements sont misérables, mais son ironie et son allure le font reconnaître comme un prince.", undefined, [
-          figure("f20", "Métaphore sociale", "un de leurs princes", "Raphaël devient le souverain d'un monde de perdants et de joueurs.", 13),
+        section("m3c", "Grandeur et déchéance", "Le portrait se ferme sur une ambivalence forte : Raphaël est misérable, mais il conserve une majesté. Cette contradiction annonce un héros voué à l'échec social et au dénouement funeste.", undefined, [
+          figure("f20", "Métaphore sociale", "un de leurs princes", "Raphaël devient le souverain paradoxal d'un monde de perdants.", 13),
           figure("f21", "Oxymore", "élégante misère", "La pauvreté se mêle à une forme de distinction aristocratique.", 13),
+          figure("f22", "Expression morale", "majesté de sa muette ironie", "La noblesse du personnage se lit dans son silence et dans son amertume.", 13),
         ]),
       ]),
+    ],
+    conclusion: [
+      section("concl1", "Bilan", "Dès ce portrait, le lecteur possède les clés du drame : Raphaël est placé sous le signe de l'échec social, de l'ambivalence et de la passion destructrice.", undefined, []),
+      section("concl2", "Réponse à la problématique", "Le visage devient le miroir visible d'un mal intérieur : la vitalité du personnage est déjà ravagée avant même que le talisman n'entre pleinement en jeu.", undefined, []),
+      section("concl3", "Ouverture", "La suite du roman confirmera cette annonce : Raphaël préférera vivre intensément, ce qui le mènera à sa perte.", undefined, []),
     ],
   }),
   makeText({
@@ -631,58 +642,69 @@ const texts: StudyText[] = [
     author: "Honoré de Balzac",
     sourceLabel: "La Peau de chagrin, 1831",
     lines: sourceTexts.antiquaire,
-    context: "Dans la boutique de l'antiquaire, Raphaël découvre la Peau de chagrin, un talisman qui promet d'accomplir ses désirs. Le vieillard transforme cette tentation romanesque en leçon philosophique sur l'énergie humaine.",
-    quizFocus: "La scène oppose la curiosité de Raphaël au savoir de l'antiquaire : vouloir et pouvoir consument l'existence, tandis que savoir permet de conserver sa vie.",
-    problematique: "Comment l'antiquaire fait-il du talisman une leçon sur le désir, le pouvoir et la maîtrise de soi ?",
-    recap: "L'antiquaire constate d'abord que Raphaël est repris par le désir, refuse ensuite l'expérience du talisman, puis formule la loi du roman : VOULOIR brûle, POUVOIR détruit, SAVOIR apaise.",
-    opening: "On peut ouvrir sur le mythe de Faust : obtenir un pouvoir en échange de sa vie.",
+    context: "Après avoir tenté de se jeter dans la Seine, Raphaël découvre un étrange magasin d'antiquités. Il y rencontre un vieil homme qui lui présente une peau de chagrin au pouvoir mystérieux et redoutable.",
+    quizFocus: "La rencontre étrange permet à Balzac d'exposer sa philosophie : volonté et puissance détruisent l'homme, tandis que la connaissance lui permet de vivre.",
+    problematique: "Comment, à partir de cette rencontre étrange, Balzac parvient-il à exposer sa philosophie de la vie ?",
+    recap: "La scène installe d'abord une atmosphère fantastique, donne ensuite la parole à l'antiquaire comme figure de sagesse, puis condense la philosophie du roman dans l'opposition VOULOIR, POUVOIR, SAVOIR.",
+    opening: "On peut ouvrir sur la suite du roman : Raphaël ne suivra pas la sagesse du vieillard et choisira de conclure le pacte avec la Peau.",
+    introduction: [
+      section("intro1", "L'oeuvre", "La Peau de chagrin, roman publié par Honoré de Balzac en 1831, raconte l'histoire de Raphaël de Valentin, qui entre en possession d'une peau capable d'accomplir ses désirs au prix de sa vie.", undefined, []),
+      section("intro2", "La situation du passage", "Avant cet extrait, Raphaël a tenté de se suicider. Il découvre ensuite un magasin d'antiquités et rencontre un vieil homme qui lui montre la peau de chagrin.", undefined, []),
+      section("intro3", "L'enjeu du passage", "Le passage transforme une rencontre fantastique en réflexion philosophique : il pose la question du désir, de la puissance et de la durée de la vie.", undefined, []),
+      section("intro4", "Annonce du plan", "Balzac met d'abord en place une rencontre fantastique, puis donne au vieillard le rôle d'un maître de sagesse, avant de formuler une philosophie de la vie.", undefined, []),
+    ],
     movements: [
-      movement("m1", "I. Un objet dangereux attire Raphaël", 1, 6, ["mystère", "ironie", "fatalité"], [
-        section("m1a", "Le regard lucide de l'antiquaire", "Le vieux marchand comprend immédiatement que Raphaël, venu pour mourir, est déjà distrait par le mystère du talisman.", undefined, [
-          figure("f1", "Regard interprétatif", "un regard empreint d’une froide ironie", "L'antiquaire voit plus clair que Raphaël sur son désir naissant.", 1),
+      movement("m1", "I. Une rencontre fantastique", 1, 10, ["étrangeté", "mystère", "curiosité"], [
+        section("m1a", "Une atmosphère étrange", "La scène commence par un geste banal, mais l'attitude du vieillard crée une ambiance inquiétante. Son regard semble connaître Raphaël mieux que Raphaël ne se connaît lui-même.", undefined, [
+          figure("f1", "Regard interprétatif", "un regard empreint d'une froide ironie", "L'antiquaire voit plus clair que Raphaël sur son désir naissant.", 1),
           figure("f2", "Discours indirect libre", "Il ne pense déjà plus à mourir", "La pensée attribuée au regard révèle que la curiosité a remplacé le suicide.", 1),
         ]),
-        section("m1b", "Raphaël entre dans le mystère", "La question du jeune homme oscille entre plaisanterie et mystère. Il ne sait pas encore si le talisman relève du jeu, du surnaturel ou du danger.", undefined, [
+        section("m1b", "Le passage au discours direct", "Le dialogue fait entrer le lecteur dans la rencontre. Raphaël pose des questions parce que l'objet échappe aux explications ordinaires.", undefined, [
           figure("f3", "Alternative interrogative", "plaisanterie / mystère", "La question met en balance rationalité et fantastique.", 2),
-          figure("f4", "Discours direct", "demanda le jeune inconnu", "La parole immédiate montre le trouble de Raphaël.", 2),
+          figure("f4", "Récit de vivacité", "demanda le jeune inconnu", "Le discours direct rend la curiosité de Raphaël plus immédiate.", 2),
         ]),
-        section("m1c", "Un contrat fatal refusé par les autres", "L'antiquaire explique que des hommes plus énergiques que Raphaël ont refusé le talisman. L'objet est présenté comme une puissance dangereuse.", undefined, [
-          figure("f5", "Lexique de la fatalité", "terrible pouvoir / contrat fatalement proposé", "Le vocabulaire associe le talisman à une menace pour la destinée.", 4, 5),
-          figure("f6", "Opposition implicite", "plus d’énergie que vous", "Raphaël est placé en position de faiblesse face à d'autres hommes plus forts.", 4),
-          figure("f7", "Accumulation de refus", "j’ai douté, je me suis abstenu", "La sagesse du vieillard se manifeste par le retrait plutôt que par l'action.", 6),
+        section("m1c", "La réponse solennelle du vieillard", "Le vieillard refuse de donner une explication simple. Il compare Raphaël à des hommes plus énergiques que lui et maintient le mystère autour de l'objet.", undefined, [
+          figure("f5", "Adverbe solennel", "gravement", "Le ton du vieillard annonce un enjeu sérieux.", 3),
+          figure("f6", "Lexique de la fatalité", "terrible pouvoir / contrat fatalement proposé", "Le vocabulaire associe le talisman à une menace pour la destinée.", 4, 5),
+          figure("f7", "Comparaison implicite", "plus d'énergie que vous", "Raphaël apparaît comme plus fragile et plus tenté que les autres.", 4),
         ]),
       ]),
-      movement("m2", "II. Le vieillard refuse l'expérience", 7, 12, ["prudence", "mort", "limite"], [
-        section("m2a", "Une interruption qui révèle l'impatience de Raphaël", "Raphaël coupe le vieillard pour demander s'il a essayé. Cette impatience montre déjà sa tentation de l'expérience.", undefined, [
-          figure("f8", "Interruption", "en l’interrompant", "Raphaël rompt le discours sage par une réaction de curiosité.", 7),
-          figure("f9", "Exclamation", "Essayer !", "La reprise exclamative du vieillard transforme la question en absurdité.", 8),
+      movement("m2", "II. La prise de parole de l'antiquaire sur l'idée de sagesse", 11, 18, ["raisonnement", "sagesse", "limites"], [
+        section("m2a", "Une supériorité d'expérience", "Le vieillard parle à partir de sa propre vie. Son âge, sa fortune et son passé lui donnent l'autorité d'un maître face à Raphaël.", undefined, [
+          figure("f8", "Apostrophe", "Enfant !", "Le vieillard rabaisse Raphaël et affirme son autorité d'expérience.", 12),
+          figure("f9", "Récit autobiographique", "j'ai mendié mon pain", "Le vieillard transforme sa vie en preuve.", 15),
         ]),
-        section("m2b", "Essayer serait choisir la mort", "L'antiquaire compare l'expérience du talisman à un saut depuis la colonne Vendôme. Le pouvoir est donc immédiatement associé à une chute mortelle.", undefined, [
-          figure("f10", "Comparaison hypothétique", "sur la colonne de la place Vendôme", "L'image rend concrète la folie de l'essai.", 9),
+        section("m2b", "Essayer serait se détruire", "L'antiquaire répond à la curiosité de Raphaël par une série de questions. Elles montrent que vouloir éprouver le pouvoir de la Peau revient à courir vers la mort.", undefined, [
+          figure("f10", "Exclamation", "Essayer !", "La reprise exclamative transforme la question de Raphaël en absurdité.", 8),
           figure("f11", "Question rhétorique", "essaieriez-vous de vous jeter dans les airs ?", "La question impose la réponse : essayer serait se détruire.", 9),
+          figure("f12", "Questions philosophiques", "Peut-on arrêter le cours de la vie ? L'homme a-t-il jamais pu scinder la mort ?", "Le discours élargit la scène à une réflexion sur les limites humaines.", 10),
         ]),
-        section("m2c", "La limite humaine rappelée", "Le vieillard passe du cas particulier au principe général : on ne maîtrise ni le cours de la vie ni la mort.", undefined, [
-          figure("f12", "Questions rhétoriques", "Peut-on arrêter le cours de la vie ? L’homme a-t-il jamais pu scinder la mort ?", "Les questions rappellent les limites infranchissables de l'existence humaine.", 10),
-          figure("f13", "Apostrophe", "Enfant !", "Le vieillard rabaisse Raphaël et affirme son autorité d'expérience.", 12),
-          figure("f14", "Antithèse", "mourir / énigme plus intéressante", "Le mystère de la vie remplace l'idée de suicide.", 11, 12),
+        section("m2c", "Un raisonnement par paradoxes", "Le vieillard oppose les contraires pour montrer que la sagesse vient de l'expérience. Il affirme que la vie ne se domine pas par la puissance, mais par la connaissance.", undefined, [
+          figure("f13", "Antithèse", "mourir / énigme plus intéressante", "Le mystère de la vie remplace l'idée de suicide.", 11, 12),
+          figure("f14", "Paradoxes", "le malheur m'a donné la fortune, l'ignorance m'a instruit", "Les contraires montrent que la sagesse naît de l'épreuve.", 16),
+          figure("f15", "Annonce solennelle", "un grand mystère de la vie humaine", "La formule prépare la maxime philosophique finale.", 17),
         ]),
       ]),
-      movement("m3", "III. La formule du roman", 13, 21, ["vouloir", "pouvoir", "savoir"], [
-        section("m3a", "L'autorité d'une longue expérience", "L'antiquaire fonde sa leçon sur sa propre vie : pauvreté, vieillesse, fortune. Son discours tire sa force de l'expérience accumulée.", undefined, [
-          figure("f15", "Récit autobiographique", "j’ai mendié mon pain", "Le vieillard transforme sa vie en preuve.", 15),
-          figure("f16", "Antithèse paradoxale", "le malheur m’a donné la fortune, l’ignorance m’a instruit", "Les contraires montrent que la sagesse vient de l'épreuve.", 16),
+      movement("m3", "III. La philosophie de la vie", 18, 21, ["vouloir", "pouvoir", "savoir"], [
+        section("m3a", "L'énergie humaine menacée", "Le vieillard explique que l'homme s'épuise par deux actes instinctifs. Le vocabulaire de la source tarie fait de la vie une énergie limitée.", undefined, [
+          figure("f16", "Métaphore vitale", "tarissent les sources de son existence", "La vie est représentée comme une source que le désir épuise.", 18),
+          figure("f17", "Présent de vérité générale", "L'homme s'épuise", "Le discours formule une loi valable pour tous.", 18),
         ]),
-        section("m3b", "Le grand mystère de la vie humaine", "Le vieillard formule une loi générale : l'homme s'épuise par vouloir et pouvoir. Le talisman devient le symbole de cette dépense d'énergie.", undefined, [
-          figure("f17", "Annonce solennelle", "un grand mystère de la vie humaine", "La phrase donne au discours une portée philosophique.", 17),
-          figure("f18", "Métaphore vitale", "tarissent les sources de son existence", "La vie est représentée comme une source que le désir épuise.", 18),
-          figure("f19", "Majuscules symboliques", "VOULOIR et POUVOIR", "Les verbes deviennent des forces abstraites et centrales.", 19),
+        section("m3b", "Vouloir et pouvoir détruisent", "Les verbes écrits en majuscules deviennent des forces abstraites. Vouloir et pouvoir résument les deux formes de dépense qui consument l'existence.", undefined, [
+          figure("f18", "Majuscules symboliques", "VOULOIR et POUVOIR", "Les verbes deviennent des forces abstraites et centrales.", 19),
+          figure("f19", "Verbes violents", "brûle / détruit", "Les mots associent désir et puissance à une destruction physique.", 21),
         ]),
-        section("m3c", "La sagesse contre la dépense d'énergie", "La formule finale oppose trois verbes. Vouloir et pouvoir consument la vie ; savoir maintient le calme et la durée.", undefined, [
+        section("m3c", "Savoir permet de vivre", "Le dernier verbe oppose la connaissance aux deux forces destructrices. La sagesse consiste à comprendre la vie plutôt qu'à chercher à tout posséder.", undefined, [
           figure("f20", "Triade philosophique", "VOULOIR / POUVOIR / SAVOIR", "Les trois verbes résument l'opposition entre dépense et maîtrise de soi.", 19, 21),
           figure("f21", "Antithèse", "brûle / détruit / calme", "Les verbes opposent la violence du désir à l'apaisement du savoir.", 21),
-          figure("f22", "Présent de vérité générale", "Vouloir nous brûle et Pouvoir nous détruit", "La phrase énonce une loi valable pour tous les hommes.", 21),
+          figure("f22", "Formule morale", "SAVOIR laisse notre faible organisation dans un perpétuel état de calme", "La connaissance devient la seule voie de durée et de sérénité.", 21),
         ]),
       ]),
+    ],
+    conclusion: [
+      section("concl1", "Bilan", "Ce passage détourne Raphaël du désespoir en lui révélant une vérité essentielle : volonté et puissance détruisent l'homme, tandis que connaissance lui permet de vivre.", undefined, []),
+      section("concl2", "Réponse à la problématique", "La rencontre fantastique sert donc de cadre à une leçon philosophique : le talisman symbolise le choix entre dominer la vie ou apprendre à la comprendre.", undefined, []),
+      section("concl3", "Ouverture", "On sait pourtant que Raphaël ne fera pas le choix sage : il conclura le pacte avec la Peau et préférera vivre intensément, ce qui le mènera à sa perte.", undefined, []),
     ],
   }),
   makeText({

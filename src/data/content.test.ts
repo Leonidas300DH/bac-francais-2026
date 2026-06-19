@@ -123,6 +123,34 @@ describe("study content", () => {
     expect(text?.conclusion.some((section) => section.simple.includes("Dormeur du val"))).toBe(true);
   });
 
+  it("integrates the handwritten T5 and T6 oral plans", () => {
+    const portrait = studyTexts.find((item) => item.slug === "portrait-de-raphael");
+    const antiquaire = studyTexts.find((item) => item.slug === "chez-l-antiquaire");
+
+    expect(portrait?.problematique).toBe(
+      "En quoi ce portrait dépeint-il le drame intérieur qui déchire le personnage au long de l'oeuvre et préfigure son dénouement funeste ?",
+    );
+    expect(portrait?.introduction).toHaveLength(4);
+    expect(portrait?.conclusion).toHaveLength(3);
+    expect(portrait?.movements.map((movement) => movement.title)).toEqual([
+      "I. Le portrait d'un personnage énigmatique",
+      "II. Esquisse d'un portrait moral",
+      "III. Un personnage condamné, victime d'une passion destructrice",
+    ]);
+
+    expect(antiquaire?.problematique).toBe(
+      "Comment, à partir de cette rencontre étrange, Balzac parvient-il à exposer sa philosophie de la vie ?",
+    );
+    expect(antiquaire?.introduction).toHaveLength(4);
+    expect(antiquaire?.conclusion).toHaveLength(3);
+    expect(antiquaire?.movements.map((movement) => movement.title)).toEqual([
+      "I. Une rencontre fantastique",
+      "II. La prise de parole de l'antiquaire sur l'idée de sagesse",
+      "III. La philosophie de la vie",
+    ]);
+    expect(antiquaire?.conclusion.some((section) => section.simple.includes("Raphaël ne fera pas le choix sage"))).toBe(true);
+  });
+
   it("keeps uploaded sentence links for Balzac and argumentative prose", () => {
     const expectedFragments = [
       ["portrait-de-raphael", "mystère, ses jeunes traits"],
