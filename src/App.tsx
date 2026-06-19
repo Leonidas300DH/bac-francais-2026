@@ -533,14 +533,29 @@ function StudyPage({ text }: { text: StudyText }) {
   }, [requestedRange, text.slug, text.movements]);
 
   useEffect(() => {
-    if (!location.hash) return;
+    function scrollToCurrentHash() {
+      const rawHash = window.location.hash || location.hash;
+      if (!rawHash) return;
 
-    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
-    if (!target) return;
+      const target = document.getElementById(decodeURIComponent(rawHash.slice(1)));
+      if (!target) return;
 
-    window.requestAnimationFrame(() => {
-      target.scrollIntoView({ block: "start" });
-    });
+      const scrollToTarget = () => {
+        if (window.navigator.userAgent.toLowerCase().includes("jsdom")) return;
+
+        const top = target.getBoundingClientRect().top + window.scrollY - 8;
+        window.scrollTo({ top, behavior: "auto" });
+      };
+
+      window.requestAnimationFrame(scrollToTarget);
+      window.setTimeout(scrollToTarget, 80);
+      window.setTimeout(scrollToTarget, 240);
+    }
+
+    scrollToCurrentHash();
+    window.addEventListener("hashchange", scrollToCurrentHash);
+
+    return () => window.removeEventListener("hashchange", scrollToCurrentHash);
   }, [location.hash, text.slug]);
 
   function openAll() {
