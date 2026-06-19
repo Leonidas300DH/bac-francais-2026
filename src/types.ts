@@ -81,6 +81,15 @@ export type StudyText = {
   quiz: QuizItem[];
 };
 
+export type FigureIndexEntry = Figure & {
+  textSlug: string;
+  textTitle: string;
+  author: string;
+  sourceLabel: string;
+  movementTitle: string;
+  sectionTitle: string;
+};
+
 export type TextProgress = {
   completedSections: Record<string, boolean>;
   quizAnswers: Record<string, string>;

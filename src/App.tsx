@@ -6,17 +6,19 @@ import {
   Circle,
   FileText,
   GraduationCap,
+  Layers3,
   ListChecks,
   Search,
   Sparkles,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, Navigate, Route, Routes, useParams } from "react-router-dom";
+import { Link, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
 import { findStudyText, studyTexts } from "./data/studyTexts";
+import { buildFigureIndex, filterFigureIndex, getFigureNameCounts } from "./lib/figures";
 import { formatRange, isLineInRange } from "./lib/ranges";
 import { computeCompletionPercent, readProgress, writeProgress } from "./lib/progress";
 import { computeQuizScore, updateFlashcardKnowledge } from "./lib/quiz";
-import type { Figure, LineRange, Movement, QuizItem, StudySection, StudyText, TextProgress } from "./types";
+import type { Figure, FigureIndexEntry, LineRange, Movement, QuizItem, StudySection, StudyText, TextProgress } from "./types";
 
 function getSectionIds(text: StudyText): string[] {
   return [
@@ -53,6 +55,26 @@ function getFigureGroups(text: StudyText) {
       })),
     ),
   }));
+}
+
+function formatRangeParam(range: LineRange) {
+  return range.start === range.end ? String(range.start) : `${range.start}-${range.end}`;
+}
+
+function parseRangeParam(value: string | null): LineRange | null {
+  if (!value) return null;
+
+  const match = value.match(/^(\d+)(?:-(\d+))?$/);
+  if (!match) return null;
+
+  const start = Number(match[1]);
+  const end = Number(match[2] ?? match[1]);
+
+  if (!Number.isInteger(start) || !Number.isInteger(end) || start <= 0 || end < start) {
+    return null;
+  }
+
+  return { start, end };
 }
 
 function Dashboard() {
@@ -140,7 +162,22 @@ function Dashboard() {
           <Link className="primary-action" to={`/textes/${nextText.slug}`}>
             Prochain texte
           </Link>
+          <Link className="secondary-action" to="/figures">
+            Figures
+          </Link>
         </div>
+      </section>
+
+      <section className="figure-hub-teaser" aria-label="Révision transversale des figures">
+        <div>
+          <span>Révision transversale</span>
+          <strong>Figures de style dans les 16 textes</strong>
+          <p>Retrouver un procédé, revoir une citation, puis ouvrir directement la fiche avec les lignes utiles.</p>
+        </div>
+        <Link className="secondary-action" to="/figures">
+          <Layers3 aria-hidden="true" />
+          Ouvrir l'atelier
+        </Link>
       </section>
 
       <section className="dashboard-tools" aria-label="Recherche des textes">
@@ -178,6 +215,147 @@ function Dashboard() {
   );
 }
 
+function FigureHub() {
+  const [query, setQuery] = useState("");
+  const [selectedName, setSelectedName] = useState("all");
+  const entries = useMemo(() => buildFigureIndex(studyTexts), []);
+  const nameCounts = useMemo(() => getFigureNameCounts(entries), [entries]);
+  const filteredEntries = useMemo(
+    () => filterFigureIndex(entries, query, selectedName),
+    [entries, query, selectedName],
+  );
+  const coveredTextCount = new Set(entries.map((entry) => entry.textSlug)).size;
+  const topNames = nameCounts.slice(0, 12);
+
+  return (
+    <main className="figure-hub">
+      <header className="figure-hub-header">
+        <Link className="back-link" to="/">
+          <ChevronLeft aria-hidden="true" />
+          Accueil
+        </Link>
+        <div>
+          <div className="brand-line">
+            <Layers3 aria-hidden="true" />
+            <span>Atelier figures</span>
+          </div>
+          <h1>Réviser les figures de style</h1>
+          <p>Tous les procédés repérés dans les fiches, avec citation, effet produit et retour vers le texte.</p>
+        </div>
+      </header>
+
+      <section className="figure-hub-stats" aria-label="Synthèse des figures">
+        <article>
+          <span>Exemples</span>
+          <strong>{entries.length}</strong>
+        </article>
+        <article>
+          <span>Procédés</span>
+          <strong>{nameCounts.length}</strong>
+        </article>
+        <article>
+          <span>Textes couverts</span>
+          <strong>{coveredTextCount}/16</strong>
+        </article>
+      </section>
+
+      <section className="figure-hub-tools" aria-label="Filtres des figures">
+        <label className="search-field">
+          <Search aria-hidden="true" />
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Chercher un procédé, une citation, un texte..."
+          />
+        </label>
+        <label className="select-field">
+          <span>Procédé</span>
+          <select value={selectedName} onChange={(event) => setSelectedName(event.target.value)}>
+            <option value="all">Tous les procédés</option>
+            {nameCounts.map(({ name, count }) => (
+              <option key={name} value={name}>
+                {name} ({count})
+              </option>
+            ))}
+          </select>
+        </label>
+      </section>
+
+      <div className="figure-hub-layout">
+        <aside className="figure-name-panel" aria-label="Procédés fréquents">
+          <h2>Procédés fréquents</h2>
+          <div className="figure-chip-list">
+            <button
+              type="button"
+              className={selectedName === "all" ? "figure-chip active" : "figure-chip"}
+              onClick={() => setSelectedName("all")}
+            >
+              Tous
+              <span>{entries.length}</span>
+            </button>
+            {topNames.map(({ name, count }) => (
+              <button
+                type="button"
+                key={name}
+                className={selectedName === name ? "figure-chip active" : "figure-chip"}
+                onClick={() => setSelectedName(name)}
+              >
+                {name}
+                <span>{count}</span>
+              </button>
+            ))}
+          </div>
+        </aside>
+
+        <section className="figure-result-panel" aria-label="Résultats des figures">
+          <div className="figure-result-heading">
+            <h2>{filteredEntries.length} exemples</h2>
+            <p>{selectedName === "all" ? "Tous procédés confondus" : selectedName}</p>
+          </div>
+
+          {filteredEntries.length ? (
+            <div className="figure-result-list">
+              {filteredEntries.map((entry) => (
+                <FigureResultCard key={`${entry.textSlug}-${entry.id}-${entry.range.start}`} entry={entry} />
+              ))}
+            </div>
+          ) : (
+            <div className="empty-state">
+              <strong>Aucun exemple trouvé</strong>
+              <p>Essaie un autre mot du texte, un titre ou un procédé.</p>
+            </div>
+          )}
+        </section>
+      </div>
+    </main>
+  );
+}
+
+function FigureResultCard({ entry }: { entry: FigureIndexEntry }) {
+  return (
+    <article className="figure-result-card">
+      <div className="figure-result-topline">
+        <span>{entry.name}</span>
+        <small>{formatRange(entry.range)}</small>
+      </div>
+      <q>{entry.quote}</q>
+      <p>{entry.explanation}</p>
+      <div className="figure-result-footer">
+        <div>
+          <strong>{entry.textTitle}</strong>
+          <span>{entry.author} - {entry.movementTitle}</span>
+        </div>
+        <Link
+          className="secondary-action"
+          to={`/textes/${entry.textSlug}?ligne=${formatRangeParam(entry.range)}#texte-source`}
+        >
+          Ouvrir
+        </Link>
+      </div>
+    </article>
+  );
+}
+
 function StudyRoute() {
   const { slug } = useParams();
   const text = findStudyText(slug);
@@ -190,7 +368,11 @@ function StudyRoute() {
 }
 
 function StudyPage({ text }: { text: StudyText }) {
-  const [selectedRange, setSelectedRange] = useState<LineRange | null>(text.movements[0]?.range ?? null);
+  const location = useLocation();
+  const requestedRange = useMemo(() => parseRangeParam(new URLSearchParams(location.search).get("ligne")), [location.search]);
+  const [selectedRange, setSelectedRange] = useState<LineRange | null>(
+    requestedRange ?? text.movements[0]?.range ?? null,
+  );
   const [detailsKey, setDetailsKey] = useState(0);
   const [defaultOpen, setDefaultOpen] = useState(false);
   const { progress, update } = useTextProgress(text.slug);
@@ -200,6 +382,10 @@ function StudyPage({ text }: { text: StudyText }) {
   useEffect(() => {
     window.localStorage.setItem("bac-francais-2026:last-opened", text.slug);
   }, [text.slug]);
+
+  useEffect(() => {
+    setSelectedRange(requestedRange ?? text.movements[0]?.range ?? null);
+  }, [requestedRange, text.slug, text.movements]);
 
   function toggleSectionDone(sectionId: string) {
     update({
@@ -252,6 +438,7 @@ function StudyPage({ text }: { text: StudyText }) {
           <a href="#glossaire">Figures</a>
           <a href="#memo">Mémo</a>
           <a href="#quiz">Quiz</a>
+          <Link to="/figures">Atelier figures</Link>
           <button type="button" onClick={openAll}>Tout afficher</button>
           <button type="button" onClick={closeAll}>Tout fermer</button>
         </nav>
@@ -783,6 +970,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
+      <Route path="/figures" element={<FigureHub />} />
       <Route path="/textes/:slug" element={<StudyRoute />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
