@@ -8,6 +8,7 @@ import {
   GraduationCap,
   Layers3,
   ListChecks,
+  NotebookTabs,
   Search,
   Sparkles,
 } from "lucide-react";
@@ -26,6 +27,7 @@ function getSectionIds(text: StudyText): string[] {
     ...text.movements.flatMap((movement) => movement.sections.map((section) => section.id)),
     ...text.conclusion.map((section) => section.id),
     "glossaire",
+    "memo",
     "quiz",
   ];
 }
@@ -162,10 +164,25 @@ function Dashboard() {
           <Link className="primary-action" to={`/textes/${nextText.slug}`}>
             Prochain texte
           </Link>
+          <Link className="secondary-action" to="/memo">
+            Mémo oral
+          </Link>
           <Link className="secondary-action" to="/figures">
             Figures
           </Link>
         </div>
+      </section>
+
+      <section className="memo-hub-teaser" aria-label="Révision express des mémos oraux">
+        <div>
+          <span>Révision express</span>
+          <strong>Les 16 plans à savoir redire</strong>
+          <p>Problématique, plan, citations et réponse finale sur une seule page.</p>
+        </div>
+        <Link className="secondary-action" to="/memo">
+          <NotebookTabs aria-hidden="true" />
+          Ouvrir les mémos
+        </Link>
       </section>
 
       <section className="figure-hub-teaser" aria-label="Révision transversale des figures">
@@ -212,6 +229,159 @@ function Dashboard() {
         })}
       </section>
     </main>
+  );
+}
+
+function MemoHub() {
+  const [query, setQuery] = useState("");
+  const [showOnlyReview, setShowOnlyReview] = useState(false);
+  const [progressVersion, setProgressVersion] = useState(0);
+
+  const memoEntries = studyTexts.map((text) => {
+    const progress = readProgress(text.slug);
+    const known = Boolean(progress.completedSections.memo);
+    return { text, progress, known };
+  });
+  const knownCount = memoEntries.filter((entry) => entry.known).length;
+  const textCount = studyTexts.length;
+  const filteredEntries = memoEntries.filter(({ text, known }) => {
+    const haystack = `${text.title} ${text.author} ${text.sourceLabel} ${text.memoryCard.problem}`.toLowerCase();
+    const matchesQuery = haystack.includes(query.trim().toLowerCase());
+    const matchesStatus = !showOnlyReview || !known;
+    return matchesQuery && matchesStatus;
+  });
+
+  function toggleMemo(text: StudyText, known: boolean) {
+    const progress = readProgress(text.slug);
+    writeProgress(text.slug, {
+      ...progress,
+      completedSections: {
+        ...progress.completedSections,
+        memo: !known,
+      },
+    });
+    setProgressVersion((version) => version + 1);
+  }
+
+  return (
+    <main className="memo-hub" data-progress-version={progressVersion}>
+      <header className="memo-hub-header">
+        <Link className="back-link" to="/">
+          <ChevronLeft aria-hidden="true" />
+          Accueil
+        </Link>
+        <div>
+          <div className="brand-line">
+            <NotebookTabs aria-hidden="true" />
+            <span>Révision express</span>
+          </div>
+          <h1>Mémos d'oral</h1>
+          <p>Une page pour revoir les 16 problématiques, plans et citations sans ouvrir chaque analyse.</p>
+        </div>
+      </header>
+
+      <section className="memo-hub-stats" aria-label="Synthèse des mémos">
+        <article>
+          <span>Mémos prêts</span>
+          <strong>{knownCount}/{textCount}</strong>
+        </article>
+        <article>
+          <span>À revoir</span>
+          <strong>{textCount - knownCount}</strong>
+        </article>
+        <article>
+          <span>Format</span>
+          <strong>2 min</strong>
+        </article>
+      </section>
+
+      <section className="memo-hub-tools" aria-label="Filtres des mémos">
+        <label className="search-field">
+          <Search aria-hidden="true" />
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Chercher un texte, un auteur, une problématique..."
+          />
+        </label>
+        <button
+          type="button"
+          className={showOnlyReview ? "memo-filter active" : "memo-filter"}
+          onClick={() => setShowOnlyReview((value) => !value)}
+        >
+          {showOnlyReview ? "Tous les mémos" : "À revoir seulement"}
+        </button>
+      </section>
+
+      <section className="memo-hub-list" aria-label="Liste des mémos oraux">
+        {filteredEntries.map(({ text, known }) => (
+          <MemoHubCard key={text.slug} text={text} known={known} onToggle={() => toggleMemo(text, known)} />
+        ))}
+      </section>
+    </main>
+  );
+}
+
+function MemoHubCard({
+  text,
+  known,
+  onToggle,
+}: {
+  text: StudyText;
+  known: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <article className={known ? "memo-hub-card known" : "memo-hub-card"}>
+      <div className="memo-hub-card-header">
+        <div>
+          <span>{text.author}</span>
+          <h2>{text.title}</h2>
+        </div>
+        <button type="button" className={known ? "memo-known-toggle known" : "memo-known-toggle"} onClick={onToggle}>
+          {known ? "Mémo su" : "À revoir"}
+        </button>
+      </div>
+
+      <div className="memo-hub-problem">
+        <strong>Problématique</strong>
+        <p>{text.memoryCard.problem}</p>
+      </div>
+
+      <div className="memo-hub-columns">
+        <div>
+          <h3>Plan</h3>
+          <ol>
+            {text.memoryCard.plan.map((item) => <li key={item}>{item}</li>)}
+          </ol>
+        </div>
+        <div>
+          <h3>Citations</h3>
+          <div className="memo-hub-quotes">
+            {text.memoryCard.keyQuotes.slice(0, 3).map((quote) => (
+              <Link
+                key={`${quote.range.start}-${quote.quote}`}
+                to={`/textes/${text.slug}?ligne=${formatRangeParam(quote.range)}#texte-source`}
+              >
+                <q>{quote.quote}</q>
+                <span>{formatRange(quote.range)}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="memo-hub-answer">
+        <strong>Réponse finale</strong>
+        <p>{text.memoryCard.finalSentence}</p>
+      </div>
+
+      <div className="memo-hub-actions">
+        <Link className="secondary-action" to={`/textes/${text.slug}#memo`}>
+          Ouvrir la fiche
+        </Link>
+      </div>
+    </article>
   );
 }
 
@@ -439,6 +609,7 @@ function StudyPage({ text }: { text: StudyText }) {
           <a href="#memo">Mémo</a>
           <a href="#quiz">Quiz</a>
           <Link to="/figures">Atelier figures</Link>
+          <Link to="/memo">Mémos</Link>
           <button type="button" onClick={openAll}>Tout afficher</button>
           <button type="button" onClick={closeAll}>Tout fermer</button>
         </nav>
@@ -970,6 +1141,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/" element={<Dashboard />} />
+      <Route path="/memo" element={<MemoHub />} />
       <Route path="/figures" element={<FigureHub />} />
       <Route path="/textes/:slug" element={<StudyRoute />} />
       <Route path="*" element={<Navigate to="/" replace />} />

@@ -19,6 +19,48 @@ describe("study app interface", () => {
     expect(screen.getByText("Reprise rapide")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Prochain texte" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Ouvrir l'atelier/i })).toHaveAttribute("href", "/figures");
+    expect(screen.getByRole("link", { name: /Ouvrir les mémos/i })).toHaveAttribute("href", "/memo");
+  });
+
+  it("renders global oral memo cards", () => {
+    render(
+      <MemoryRouter initialEntries={["/memo"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("heading", { name: "Mémos d'oral" })).toBeInTheDocument();
+    expect(screen.getByText("Mémos prêts")).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: "À revoir" })).toHaveLength(16);
+    expect(screen.getAllByRole("link", { name: "Ouvrir la fiche" })).toHaveLength(16);
+  });
+
+  it("persists oral memo knowledge locally", () => {
+    render(
+      <MemoryRouter initialEntries={["/memo"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    fireEvent.click(screen.getAllByRole("button", { name: "À revoir" })[0]);
+
+    expect(screen.getByText("1/16")).toBeInTheDocument();
+    expect(JSON.parse(window.localStorage.getItem("bac-francais-2026:les-effares") ?? "{}")).toMatchObject({
+      completedSections: { memo: true },
+    });
+  });
+
+  it("links memo quotes to highlighted source lines", () => {
+    render(
+      <MemoryRouter initialEntries={["/memo"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getAllByRole("link", { name: /Noirs dans la neige/i })[0]).toHaveAttribute(
+      "href",
+      "/textes/les-effares?ligne=1#texte-source",
+    );
   });
 
   it("renders a global figure revision workshop", () => {
@@ -56,6 +98,7 @@ describe("study app interface", () => {
     expect(screen.getByText(/procédés repérés dans cette fiche/)).toBeInTheDocument();
     expect(screen.getAllByRole("button", { name: /Champ lexical du froid/i }).length).toBeGreaterThan(0);
     expect(screen.getByRole("link", { name: "Atelier figures" })).toHaveAttribute("href", "/figures");
+    expect(screen.getByRole("link", { name: "Mémos" })).toHaveAttribute("href", "/memo");
   });
 
   it("can open a study fiche with a requested source line highlighted", () => {
