@@ -52,6 +52,7 @@ a { color: inherit; }
 .library-title,
 .status-legend,
 .primary-action,
+.secondary-action,
 .back-link,
 .toolbar a,
 .toolbar button {
@@ -106,6 +107,90 @@ h1, h2 {
   color: #fff;
   font-weight: 850;
   text-decoration: none;
+}
+
+.secondary-action {
+  min-height: 42px;
+  padding: 10px 15px;
+  border: 1px solid var(--accent);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--accent-dark);
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.dashboard-summary {
+  display: grid;
+  grid-template-columns: minmax(260px, 1.7fr) repeat(3, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 8px 0 14px;
+}
+
+.summary-card {
+  min-width: 0;
+  padding: 15px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.summary-card span,
+.resume-strip span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.summary-card strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.main-summary strong {
+  font-size: 2.45rem;
+}
+
+.resume-strip {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  margin: 0 0 20px;
+  padding: 17px 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--paper-strong);
+  box-shadow: 0 10px 24px rgba(62, 45, 35, 0.07);
+}
+
+.resume-strip strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  line-height: 1.15;
+}
+
+.resume-strip p {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.resume-actions {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 8px;
+  align-items: center;
 }
 
 .dashboard-tools {
@@ -391,60 +476,6 @@ h1, h2 {
 .chapter[open] > summary::before { content: "-"; }
 .chapter-body { padding: 18px 20px 23px; }
 
-.method-panel {
-  margin: 0 0 16px;
-  padding: 18px 20px 20px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--paper);
-  box-shadow: var(--shadow);
-  scroll-margin-top: 132px;
-}
-.method-heading {
-  display: flex;
-  gap: 12px;
-  align-items: start;
-  margin-bottom: 14px;
-}
-.method-heading svg {
-  flex: 0 0 auto;
-  width: 28px;
-  height: 28px;
-  color: var(--accent);
-}
-.method-heading h2 {
-  margin: 0;
-  color: var(--accent);
-  font-size: 1.4rem;
-}
-.method-heading p {
-  margin: 2px 0 0;
-  color: var(--muted);
-}
-.method-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
-}
-.method-grid article {
-  padding: 13px 14px;
-  border: 1px solid var(--line);
-  border-radius: 11px;
-  background: #fff;
-}
-.method-grid h3 {
-  margin: 0 0 7px;
-  color: var(--accent-dark);
-  font-size: 1rem;
-}
-.method-grid ul {
-  margin: 0;
-  padding-left: 1.15rem;
-}
-.method-grid li + li {
-  margin-top: 4px;
-}
-
 .labels {
   display: flex;
   flex-wrap: wrap;
@@ -626,16 +657,94 @@ h1, h2 {
   background: var(--simple);
 }
 
-.glossary-grid {
+.figure-review {
+  display: grid;
+  gap: 16px;
+}
+
+.figure-review-intro {
+  padding: 14px 16px;
+  border-left: 5px solid var(--figure-border);
+  border-radius: 0 11px 11px 0;
+  background: var(--figure);
+}
+
+.figure-review-intro strong {
+  display: block;
+  color: #6d4d16;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.16rem;
+}
+
+.figure-review-intro p {
+  margin: 4px 0 0;
+  color: #51483d;
+}
+
+.figure-review-groups {
+  display: grid;
+  gap: 14px;
+}
+
+.figure-review-group h3 {
+  margin: 0 0 8px;
+  color: var(--accent-dark);
+  font-size: 1rem;
+}
+
+.figure-review-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  gap: 9px;
+}
+
+.figure-review-item {
+  display: grid;
+  gap: 5px;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid #e5d5b2;
+  border-radius: 10px;
+  background: #fffdfa;
+  color: var(--ink);
+  text-align: left;
+}
+
+.figure-review-item:hover {
+  border-color: var(--figure-border);
+  background: var(--figure);
+}
+
+.figure-review-meta {
+  color: #735620;
+  font-size: 0.78rem;
+  font-weight: 850;
+  text-transform: uppercase;
+}
+
+.figure-review-item q {
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+.figure-review-item > span:last-child {
+  color: #51483d;
+  font-size: 0.92rem;
+}
+
+.glossary-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
 }
 .glossary-card {
-  padding: 12px 13px;
+  padding: 10px 11px;
   border: 1px solid var(--line);
   border-radius: 11px;
   background: #fff;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 .glossary-card strong {
   display: block;
@@ -896,7 +1005,11 @@ h1, h2 {
 .quiz-save { margin-top: 14px; }
 
 @media (max-width: 1180px) {
-  .text-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .text-grid,
+  .dashboard-summary {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .main-summary { grid-column: 1 / -1; }
   .study-shell { grid-template-columns: 1fr; }
   .library-sidebar {
     position: static;
@@ -928,6 +1041,13 @@ h1, h2 {
   .study-layout {
     grid-template-columns: 1fr;
   }
+  .resume-strip {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .resume-actions {
+    flex-wrap: wrap;
+  }
   .poem-card {
     position: static;
     max-height: none;
@@ -951,9 +1071,18 @@ h1, h2 {
   .text-grid,
   .memo-grid,
   .quiz-grid,
-  .glossary-grid,
-  .method-grid {
+  .figure-review-list,
+  .glossary-strip,
+  .dashboard-summary {
     grid-template-columns: 1fr;
+  }
+  .main-summary { grid-column: auto; }
+  .resume-actions,
+  .resume-actions a {
+    width: 100%;
+  }
+  .resume-actions a {
+    justify-content: center;
   }
   .figure-item {
     grid-template-columns: 1fr;
@@ -961,7 +1090,6 @@ h1, h2 {
   .figure-item .locate {
     justify-self: start;
   }
-  .method-panel,
   .chapter,
   .poem-card,
   .quiz-panel,

@@ -826,6 +826,11 @@ const texts: StudyText[] = [
           figure("f27", "Comparaison", "comme un grand colosse", "Le tyran paraît monumental mais dépend d'une base fragile.", 22),
           figure("f28", "Métaphore architecturale", "dérobé la base", "Sans appui populaire, la puissance tyrannique s'effondre mécaniquement.", 22),
         ]),
+        section("m3c", "L'image finale rend la liberté mémorable", "Le colosse semble immense, mais il tombe dès que sa base disparaît. La Boétie donne ainsi une forme concrète à son idée : le tyran n'est fort que parce qu'on le porte.", "La conclusion transforme le raisonnement politique en image simple : retirer le soutien, c'est déjà faire tomber le pouvoir.", [
+          figure("f29", "Verbe de chute", "tombera de son propre poids", "La chute vient du tyran lui-même dès que le peuple cesse de le soutenir.", 22),
+          figure("f30", "Effondrement mécanique", "se rompra", "Le pouvoir tyrannique est figuré comme une construction qui casse faute d'appui.", 22),
+          figure("f31", "Opposition architecturale", "base / poids", "La relation entre soutien et masse résume la dépendance du tyran envers les dominés.", 22),
+        ]),
       ]),
     ],
   }),
@@ -890,6 +895,11 @@ const texts: StudyText[] = [
           figure("f27", "Métaphore de l'asservissement", "sous leur joug", "Le joug rappelle la soumission animale et la perte de liberté.", 16),
           figure("f28", "Comparaison finale", "comme les petits enfants", "Les peuples sont infantilisés par leur attrait pour les images brillantes.", 17),
           figure("f29", "Antithèse implicite", "beaux ces passe-temps / s’accoutumaient à servir", "La beauté du spectacle masque la réalité de l'obéissance.", 17),
+        ]),
+        section("m3c", "Les images brillantes remplacent le jugement politique", "La dernière comparaison insiste sur la fascination visuelle. Les peuples ressemblent à des enfants captivés par les enluminures : ils regardent ce qui brille et oublient la domination qui les encadre.", "La critique porte sur l'effet des spectacles : ils occupent l'imagination et rendent l'obéissance presque naturelle.", [
+          figure("f30", "Champ lexical visuel", "images brillantes", "Le pouvoir agit par attraction du regard.", 17),
+          figure("f31", "Objet culturel", "livres enluminés", "L'image donne aux divertissements une apparence séduisante et colorée.", 17),
+          figure("f32", "Verbe d'habitude", "s’accoutumaient à servir", "La domination réussit quand elle devient une habitude quotidienne.", 17),
         ]),
       ]),
     ],
@@ -957,6 +967,11 @@ texts.push(
           figure("f26", "Proverbe imagé", "pour fendre le bois", "La sagesse proverbiale donne à la conclusion une force évidente.", 12),
           figure("f27", "Métaphore", "les coins du bois même", "Le pouvoir tyrannique utilise la matière même qu'il détruit.", 12),
           figure("f28", "Dernier mot implicite", "même", "Le mot insiste sur l'origine interne de la domination.", 12),
+        ]),
+        section("m3c", "La conclusion déplace la responsabilité vers le système", "Le proverbe ne désigne pas seulement quelques favoris : il montre une logique générale. La tyrannie prospère lorsqu'elle transforme une partie du peuple en instrument contre le reste du peuple.", "La satire des favoris aboutit donc à une thèse politique : le pouvoir tyrannique tient par relais, intérêts et divisions internes.", [
+          figure("f29", "Formule généralisante", "ainsi le tyran", "La conclusion tire de l'image du bois une loi politique.", 12),
+          figure("f30", "Métaphore de l'instrument", "coins", "Les complices deviennent des outils utilisés pour briser le corps social.", 12),
+          figure("f31", "Répétition de la matière", "bois même", "La domination est interne : elle exploite les ressources du groupe dominé.", 12),
         ]),
       ]),
     ],
@@ -1072,6 +1087,11 @@ texts.push(
           figure("f13", "Objet comique", "notre plus grande écuelle", "Le récipient accentue le caractère gourmand et rustique de la scène.", 6),
           figure("f14", "Impératif", "buvez, maître Blazius", "Le choeur encourage le défaut du personnage.", 6),
           figure("f15", "Chute temporelle", "vous parlerez après", "La parole sérieuse est repoussée au second plan.", 6),
+        ]),
+        section("m2c", "Le vin règle le rythme de l'exposition", "La scène ne livre pas l'information d'un seul coup : elle organise une attente comique. Le vin devient le passage obligé entre l'arrivée spectaculaire de Blazius et l'annonce de Perdican.", "Musset transforme une fonction classique d'exposition en jeu de scène : le public apprend, mais après un détour burlesque.", [
+          figure("f15a", "Répétition du titre", "maître Blazius", "L'adresse maintient une solennité comique autour d'un personnage dominé par sa gourmandise.", 6),
+          figure("f15b", "Suspension de la parole", "après", "Le mot retarde l'information et crée le rythme de la scène.", 6),
+          figure("f15c", "Contraste de registres", "écuelle / parlerez", "L'objet rustique précède la parole savante : l'exposition passe par le corps et le comique.", 6),
         ]),
       ]),
       movement("m3", "III. Perdican est annoncé", 7, 16, ["Perdican", "savoir", "ironie"], [

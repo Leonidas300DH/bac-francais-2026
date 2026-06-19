@@ -136,6 +136,15 @@ describe("study content", () => {
     }
   });
 
+  it("keeps three concrete subparts for every major movement", () => {
+    for (const text of studyTexts) {
+      for (const movement of text.movements) {
+        expect(`${text.slug} - ${movement.title}`).toBeTruthy();
+        expect(movement.sections).toHaveLength(3);
+      }
+    }
+  });
+
   it("provides a short oral memory card for every text", () => {
     for (const text of studyTexts) {
       expect(text.memoryCard.problem).toBe(text.problematique);
@@ -157,6 +166,8 @@ describe("study content", () => {
     expect(allContent).not.toMatch(/À apprendre/i);
     expect(allContent).not.toMatch(/Phrase à retenir/i);
     expect(allContent).not.toMatch(/Il faut apprendre seulement/i);
+    expect(allContent).not.toMatch(/En mots simples/i);
+    expect(allContent).not.toMatch(/Toujours repérer/i);
   });
 
   it("keeps exact theater source wording for T13 to T16", () => {

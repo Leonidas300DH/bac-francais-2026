@@ -43,10 +43,42 @@ function useTextProgress(slug: string) {
   return { progress, update };
 }
 
+function getFigureGroups(text: StudyText) {
+  return text.movements.map((movement) => ({
+    movement,
+    figures: movement.sections.flatMap((section) =>
+      (section.figures ?? []).map((figure) => ({
+        ...figure,
+        sectionTitle: section.title,
+      })),
+    ),
+  }));
+}
+
 function Dashboard() {
   const [query, setQuery] = useState("");
+  const [lastOpenedSlug] = useState<string | null>(() =>
+    typeof window === "undefined" ? null : window.localStorage.getItem("bac-francais-2026:last-opened"),
+  );
 
-  const filteredTexts = studyTexts.filter((text) => {
+  const progressSummaries = studyTexts.map((text) => {
+    const progress = readProgress(text.slug);
+    const percent = computeCompletionPercent(progress, getSectionIds(text));
+    return { text, progress, percent };
+  });
+  const overallPercent = Math.round(
+    progressSummaries.reduce((total, item) => total + item.percent, 0) / progressSummaries.length,
+  );
+  const completedCount = progressSummaries.filter((item) => item.percent === 100).length;
+  const startedCount = progressSummaries.filter((item) => item.percent > 0).length;
+  const quizAttempts = progressSummaries.reduce((total, item) => total + item.progress.quizHistory.length, 0);
+  const lastOpenedText = studyTexts.find((text) => text.slug === lastOpenedSlug);
+  const nextText =
+    progressSummaries.find((item) => item.percent > 0 && item.percent < 100)?.text ??
+    progressSummaries.find((item) => item.percent === 0)?.text ??
+    studyTexts[0];
+
+  const filteredTexts = progressSummaries.filter(({ text }) => {
     const haystack = `${text.title} ${text.author} ${text.sourceLabel}`.toLowerCase();
     return haystack.includes(query.trim().toLowerCase());
   });
@@ -61,7 +93,7 @@ function Dashboard() {
           </div>
           <h1>Réviser les 16 textes sans se perdre dans ses notes</h1>
           <p>
-            Fiches à tiroirs, texte source synchronisé, figures à retenir et quiz pour préparer
+            Fiches à tiroirs, texte source synchronisé, figures de style et quiz pour préparer
             l'explication linéaire à l'oral.
           </p>
         </div>
@@ -69,6 +101,46 @@ function Dashboard() {
           <BookOpen aria-hidden="true" />
           Commencer
         </Link>
+      </section>
+
+      <section className="dashboard-summary" aria-label="Pilotage de la révision">
+        <article className="summary-card main-summary">
+          <span>Progression globale</span>
+          <strong>{overallPercent}%</strong>
+          <div className="progress-bar" aria-label={`${overallPercent}% terminé sur l'ensemble des textes`}>
+            <i style={{ width: `${overallPercent}%` }} />
+          </div>
+        </article>
+        <article className="summary-card">
+          <span>Textes commencés</span>
+          <strong>{startedCount}/16</strong>
+        </article>
+        <article className="summary-card">
+          <span>Textes terminés</span>
+          <strong>{completedCount}/16</strong>
+        </article>
+        <article className="summary-card">
+          <span>Quiz enregistrés</span>
+          <strong>{quizAttempts}</strong>
+        </article>
+      </section>
+
+      <section className="resume-strip" aria-label="Reprise rapide">
+        <div>
+          <span>Reprise rapide</span>
+          <strong>{lastOpenedText ? lastOpenedText.title : "Aucun texte ouvert pour l'instant"}</strong>
+          <p>{lastOpenedText ? `${lastOpenedText.author} - ${lastOpenedText.sourceLabel}` : "Commence par une fiche, puis ce raccourci gardera le dernier texte consulté."}</p>
+        </div>
+        <div className="resume-actions">
+          {lastOpenedText ? (
+            <Link className="secondary-action" to={`/textes/${lastOpenedText.slug}`}>
+              Reprendre
+            </Link>
+          ) : null}
+          <Link className="primary-action" to={`/textes/${nextText.slug}`}>
+            Prochain texte
+          </Link>
+        </div>
       </section>
 
       <section className="dashboard-tools" aria-label="Recherche des textes">
@@ -88,10 +160,7 @@ function Dashboard() {
       </section>
 
       <section className="text-grid" aria-label="Liste des textes">
-        {filteredTexts.map((text) => {
-          const progress = readProgress(text.slug);
-          const percent = computeCompletionPercent(progress, getSectionIds(text));
-
+        {filteredTexts.map(({ text, percent }) => {
           return (
             <Link className="text-card" to={`/textes/${text.slug}`} key={text.slug}>
               <span className={`status-dot ${text.status}`}>{statusLabel(text.status)}</span>
@@ -175,7 +244,6 @@ function StudyPage({ text }: { text: StudyText }) {
 
         <nav className="toolbar" aria-label="Navigation de la fiche">
           <a href="#texte-source">Texte</a>
-          <a href="#methode">Méthode</a>
           <a href="#introduction">Introduction</a>
           {text.movements.map((movement, index) => (
             <a key={movement.id} href={`#${movement.id}`}>Mouvement {index + 1}</a>
@@ -190,8 +258,6 @@ function StudyPage({ text }: { text: StudyText }) {
 
         <div className="study-layout">
           <section className="analysis-column" key={detailsKey}>
-            <MethodPanel />
-
             <Chapter id="introduction" title="Introduction" defaultOpen={defaultOpen}>
               {text.introduction.map((section) => (
                 <SectionDrawer
@@ -237,16 +303,7 @@ function StudyPage({ text }: { text: StudyText }) {
               ))}
             </Chapter>
 
-            <Chapter id="glossaire" title="Fiche express : les figures à retenir" defaultOpen={defaultOpen}>
-              <div className="glossary-grid">
-                {text.glossary.map((item) => (
-                  <article className="glossary-card" key={item.name}>
-                    <strong>{item.name}</strong>
-                    {item.definition}
-                  </article>
-                ))}
-              </div>
-            </Chapter>
+            <FigureReviewChapter text={text} defaultOpen={defaultOpen} onSelectRange={setSelectedRange} />
 
             <MemoryPanel text={text} onSelectRange={setSelectedRange} />
 
@@ -289,54 +346,6 @@ function LibrarySidebar({ activeSlug }: { activeSlug: string }) {
         })}
       </nav>
     </aside>
-  );
-}
-
-function MethodPanel() {
-  return (
-    <section className="method-panel" id="methode" aria-label="Méthode officielle de l'analyse linéaire">
-      <div className="method-heading">
-        <ListChecks aria-hidden="true" />
-        <div>
-          <h2>Méthode de l'analyse linéaire</h2>
-          <p>Structure attendue de l'exposé oral, d'après les consignes officielles de préparation.</p>
-        </div>
-      </div>
-
-      <div className="method-grid">
-        <article>
-          <h3>Introduction</h3>
-          <ul>
-            <li>Présentation de l'auteur et de l'oeuvre.</li>
-            <li>Situation du passage dans l'oeuvre et caractérisation de l'extrait.</li>
-            <li>Problématique et annonce des mouvements.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Analyse linéaire</h3>
-          <ul>
-            <li>Passage explicite d'un mouvement à l'autre.</li>
-            <li>Références régulières au texte avec les lignes.</li>
-            <li>Identification et interprétation des procédés.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Conclusion</h3>
-          <ul>
-            <li>Bilan de la lecture proposée.</li>
-            <li>Ouverture si elle éclaire réellement le texte.</li>
-          </ul>
-        </article>
-        <article>
-          <h3>Temps de l'exposé</h3>
-          <ul>
-            <li>12 minutes au total.</li>
-            <li>Jusqu'à 2 minutes pour la lecture à voix haute.</li>
-            <li>8 minutes pour l'explication linéaire, puis 2 minutes pour la grammaire.</li>
-          </ul>
-        </article>
-      </div>
-    </section>
   );
 }
 
@@ -406,6 +415,63 @@ function MemoryPanel({
         </article>
       </div>
     </section>
+  );
+}
+
+function FigureReviewChapter({
+  text,
+  defaultOpen,
+  onSelectRange,
+}: {
+  text: StudyText;
+  defaultOpen: boolean;
+  onSelectRange: (range: LineRange) => void;
+}) {
+  const figureGroups = getFigureGroups(text);
+  const allFigures = figureGroups.flatMap((group) => group.figures);
+
+  return (
+    <Chapter id="glossaire" title="Réviser les figures de style" defaultOpen={defaultOpen}>
+      <div className="figure-review">
+        <div className="figure-review-intro">
+          <strong>{allFigures.length} procédés repérés dans cette fiche</strong>
+          <p>Chaque entrée associe le procédé, la citation, les lignes et l'effet produit dans l'analyse.</p>
+        </div>
+
+        <div className="figure-review-groups">
+          {figureGroups.map(({ movement, figures }) => (
+            <section className="figure-review-group" key={movement.id}>
+              <h3>{movement.title}</h3>
+              <div className="figure-review-list">
+                {figures.map((figure) => (
+                  <button
+                    type="button"
+                    className="figure-review-item"
+                    key={figure.id}
+                    onClick={() => onSelectRange(figure.range)}
+                  >
+                    <span className="figure-review-meta">
+                      {figure.name} · {figure.sectionTitle} · {formatRange(figure.range)}
+                    </span>
+                    <q>{figure.quote}</q>
+                    <span>{figure.explanation}</span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          ))}
+        </div>
+
+        <div className="glossary-strip" aria-label="Définitions utiles">
+          {text.glossary.map((item) => (
+            <article className="glossary-card" key={item.name}>
+              <strong>{item.name}</strong>
+              {item.definition}
+            </article>
+          ))}
+        </div>
+      </div>
+    </Chapter>
   );
 }
 
