@@ -1317,6 +1317,12 @@ texts.push(
     problematique: "Comment Musset ouvre-t-il sa pièce de manière originale et comique ?",
     recap: "Musset ouvre sa pièce de manière originale en mêlant choeur, récit et dialogue, puis il rend Blazius burlesque avant de faire annoncer Perdican par une parole savante mais déjà ironisée.",
     opening: "On peut ouvrir sur le rôle du choeur antique, réinventé ici de façon fantaisiste.",
+    introduction: [
+      section("intro1", "L'oeuvre", "On ne badine pas avec l'amour est une pièce d'Alfred de Musset publiée en 1834. Elle mêle comédie, fantaisie et gravité autour des jeux du coeur et de la parole.", undefined, []),
+      section("intro2", "La situation du passage", "L'extrait ouvre la pièce : le choeur présente l'arrivée de maître Blazius, gouverneur de Perdican, devant le château.", undefined, []),
+      section("intro3", "L'enjeu de l'ouverture", "Cette scène doit informer le spectateur, mais Musset refuse une exposition solennelle : il passe par un personnage grotesque, le vin et une parole très théâtrale.", undefined, []),
+      section("intro4", "Annonce du plan", "L'ouverture présente d'abord une entrée spectaculaire, puis retarde l'information par le comique du vin, avant d'annoncer le retour de Perdican.", undefined, []),
+    ],
     movements: [
       movement("m1", "I. Une entrée très théâtrale", 1, 4, ["choeur", "portrait", "comique"], [
         section("m1a", "Un choeur pour ouvrir la scène", "Musset commence par un dispositif théâtral inhabituel : le choeur décrit l'arrivée de Blazius avant que celui-ci ne parle. L'ouverture tient donc du récit autant que du dialogue.", "L'originalité vient de cette voix collective qui installe le décor et guide le regard du spectateur.", [
@@ -1372,6 +1378,11 @@ texts.push(
         ]),
       ]),
     ],
+    conclusion: [
+      section("concl1", "Bilan", "Cette ouverture remplit bien sa fonction d'exposition : elle annonce le retour de Perdican et installe l'univers du château.", undefined, []),
+      section("concl2", "Réponse à la problématique", "Elle est originale et comique parce qu'elle confie l'information à un choeur fantaisiste et à un messager burlesque, dont le corps et le goût du vin détournent la solennité théâtrale.", undefined, []),
+      section("concl3", "Ouverture", "Le choeur continuera de jouer un rôle particulier dans la pièce : il observe, commente et donne à l'action une dimension à la fois villageoise et théâtrale.", undefined, []),
+    ],
   }),
   makeText({
     slug: "tirade-de-perdican",
@@ -1384,6 +1395,12 @@ texts.push(
     problematique: "Comment Perdican transforme-t-il une dispute amoureuse en éloge de la vie ?",
     recap: "Perdican transforme la dispute en éloge de la vie en accusant les nonnes d'avoir fabriqué un être factice, en assumant la corruption du monde, puis en affirmant que l'amour, même blessant, prouve qu'on a vraiment vécu.",
     opening: "On peut ouvrir sur le romantisme, qui valorise l'expérience intense même douloureuse.",
+    introduction: [
+      section("intro1", "L'oeuvre", "On ne badine pas avec l'amour est une pièce d'Alfred de Musset publiée en 1834. Elle interroge les jeux du coeur et de la parole, mais aussi leurs dangers.", undefined, []),
+      section("intro2", "La situation du passage", "Perdican répond à Camille après son retour du couvent. La dispute amoureuse devient une tirade contre l'éducation religieuse qu'elle a reçue.", undefined, []),
+      section("intro3", "L'enjeu de la tirade", "Perdican oppose les discours qui méprisent l'amour à l'expérience réelle de la vie. Il ne nie pas la souffrance, mais refuse qu'elle conduise à renoncer à aimer.", undefined, []),
+      section("intro4", "Annonce du plan", "La tirade accuse d'abord le couvent, développe ensuite une vision noire du monde, puis sauve l'amour comme preuve d'une vie authentique.", undefined, []),
+    ],
     movements: [
       movement("m1", "I. L'accusation du couvent", 1, 13, ["religion", "enfance", "coeur"], [
         section("m1a", "Une attaque frontale contre les nonnes", "Perdican commence par interroger Camille, mais ses questions visent surtout les nonnes. Il accuse leur discours de transformer l'amour en mensonge et de détourner Camille de la vie.", "Le conflit amoureux devient un procès de l'éducation reçue.", [
@@ -1443,6 +1460,11 @@ texts.push(
         ]),
       ]),
     ],
+    conclusion: [
+      section("concl1", "Bilan", "La tirade part d'une dispute intime, mais elle prend rapidement une portée plus générale : Perdican défend l'expérience contre l'existence artificielle.", undefined, []),
+      section("concl2", "Réponse à la problématique", "Il transforme la dispute en éloge de la vie parce qu'il accepte la souffrance amoureuse comme le prix d'une existence vraiment vécue.", undefined, []),
+      section("concl3", "Ouverture", "La formule finale éclaire le titre de la pièce : jouer avec l'amour revient à jouer avec ce qui donne à la vie son intensité.", undefined, []),
+    ],
   }),
   makeText({
     slug: "perdican-rosette",
@@ -1455,6 +1477,12 @@ texts.push(
     problematique: "Comment cette déclaration amoureuse devient-elle une manipulation ?",
     recap: "La déclaration devient manipulation parce que Perdican organise une double adresse, met en scène la chaîne et la bague pour blesser Camille, puis oppose la nature et la jeunesse de Rosette à l'éducation religieuse de Camille.",
     opening: "On peut ouvrir sur le titre de la pièce : on ne joue pas sans danger avec l'amour.",
+    introduction: [
+      section("intro1", "L'oeuvre", "On ne badine pas avec l'amour est une pièce d'Alfred de Musset publiée en 1834. Les personnages y utilisent souvent la parole amoureuse comme une arme.", undefined, []),
+      section("intro2", "La situation du passage", "Dans cet extrait, Perdican s'adresse à Rosette, mais il parle assez fort pour que Camille l'entende. La scène repose donc sur une double adresse.", undefined, []),
+      section("intro3", "L'enjeu de la scène", "La déclaration semble amoureuse, mais elle sert surtout à atteindre Camille. Rosette devient l'instrument d'une vengeance sentimentale.", undefined, []),
+      section("intro4", "Annonce du plan", "La scène montre d'abord une déclaration destinée à Camille, puis des objets qui symbolisent la rupture, avant de révéler la naïveté de Rosette.", undefined, []),
+    ],
     movements: [
       movement("m1", "I. Une déclaration destinée à Camille", 1, 5, ["double adresse", "Rosette", "Camille"], [
         section("m1a", "La parole est organisée pour être entendue", "La didascalie précise que Perdican parle à haute voix pour Camille. Le spectateur sait donc que Rosette n'est pas la seule destinataire.", "La manipulation commence avant même le contenu de la déclaration : elle est dans la situation d'énonciation.", [
@@ -1515,6 +1543,11 @@ texts.push(
         ]),
       ]),
     ],
+    conclusion: [
+      section("concl1", "Bilan", "La scène détourne tous les codes de la déclaration amoureuse : parole tendre, objets symboliques, décor naturel et serment lyrique.", undefined, []),
+      section("concl2", "Réponse à la problématique", "Elle devient manipulation parce que Perdican ne parle pas seulement à Rosette : il met en scène son amour pour blesser Camille, tandis que Rosette ne maîtrise pas le jeu dans lequel elle est prise.", undefined, []),
+      section("concl3", "Ouverture", "Cette scène annonce la portée tragique du titre : les jeux de parole autour de l'amour peuvent détruire ceux qui y croient sincèrement.", undefined, []),
+    ],
   }),
   makeText({
     slug: "dom-juan-charlotte-mathurine",
@@ -1527,6 +1560,12 @@ texts.push(
     problematique: "Comment Molière fait-il rire tout en dénonçant le mensonge de Dom Juan ?",
     recap: "Molière fait rire par la symétrie des deux paysannes et les apartés contradictoires de Dom Juan, puis il dénonce le mensonge lorsque Sganarelle rappelle que les victimes courent à leur malheur.",
     opening: "On peut ouvrir sur les autres scènes de séduction de Dom Juan, toujours fondées sur la parole.",
+    introduction: [
+      section("intro1", "L'oeuvre", "Dom Juan est une comédie de Molière jouée en 1665. La pièce met en scène un séducteur libertin qui défie les règles sociales, morales et religieuses.", undefined, []),
+      section("intro2", "La situation du passage", "Dom Juan a promis le mariage à deux paysannes, Charlotte et Mathurine. Les deux femmes se retrouvent face à lui et réclament la vérité.", undefined, []),
+      section("intro3", "L'enjeu de la scène", "La scène est comique par la situation impossible du séducteur, mais elle révèle aussi la violence de sa parole mensongère.", undefined, []),
+      section("intro4", "Annonce du plan", "Molière fait d'abord entendre deux demandes de vérité, montre ensuite les esquives de Dom Juan, puis laisse Sganarelle formuler la dénonciation morale.", undefined, []),
+    ],
     movements: [
       movement("m1", "I. Deux demandes de vérité", 1, 18, ["mariage", "rivalité", "vérité"], [
         section("m1a", "Deux promesses se répondent", "Charlotte et Mathurine posent presque la même question : Dom Juan a-t-il promis le mariage ? La répétition enferme immédiatement le séducteur dans ses contradictions.", "Le comique naît d'une situation impossible : deux femmes réclament la même vérité en même temps.", [
@@ -1583,6 +1622,11 @@ texts.push(
           figure("f31", "Retour au village", "demeurez dans votre village", "Sganarelle propose de sortir du monde séducteur de Dom Juan.", 35),
         ]),
       ]),
+    ],
+    conclusion: [
+      section("concl1", "Bilan", "La scène fait rire par sa mécanique théâtrale : deux femmes, deux promesses, des apartés et un séducteur pris dans ses contradictions.", undefined, []),
+      section("concl2", "Réponse à la problématique", "Mais le rire dénonce aussi le mensonge : Dom Juan utilise la parole pour gagner du temps, flatter chacune séparément et éviter toute responsabilité.", undefined, []),
+      section("concl3", "Ouverture", "Sganarelle donne à la fin une portée morale : derrière la virtuosité comique du maître, il y a des victimes que le spectateur ne doit pas oublier.", undefined, []),
     ],
   }),
 );

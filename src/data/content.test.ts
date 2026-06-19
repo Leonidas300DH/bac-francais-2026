@@ -387,6 +387,64 @@ describe("study content", () => {
     }
   });
 
+  it("provides oral framing for the T13 to T16 theater documents", () => {
+    const expected = new Map([
+      [
+        "blazius-arrive",
+        {
+          problem: "Comment Musset ouvre-t-il sa pièce de manière originale et comique ?",
+          movements: [
+            "I. Une entrée très théâtrale",
+            "II. Une parole liée au vin",
+            "III. Perdican est annoncé",
+          ],
+        },
+      ],
+      [
+        "tirade-de-perdican",
+        {
+          problem: "Comment Perdican transforme-t-il une dispute amoureuse en éloge de la vie ?",
+          movements: [
+            "I. L'accusation du couvent",
+            "II. Une vision noire du monde",
+            "III. L'amour sauve la vie",
+          ],
+        },
+      ],
+      [
+        "perdican-rosette",
+        {
+          problem: "Comment cette déclaration amoureuse devient-elle une manipulation ?",
+          movements: [
+            "I. Une déclaration destinée à Camille",
+            "II. Les objets symbolisent la rupture",
+            "III. Rosette reste naïve",
+          ],
+        },
+      ],
+      [
+        "dom-juan-charlotte-mathurine",
+        {
+          problem: "Comment Molière fait-il rire tout en dénonçant le mensonge de Dom Juan ?",
+          movements: [
+            "I. Deux demandes de vérité",
+            "II. L'esquive brillante de Dom Juan",
+            "III. L'avertissement de Sganarelle",
+          ],
+        },
+      ],
+    ]);
+
+    for (const [slug, item] of expected) {
+      const text = studyTexts.find((entry) => entry.slug === slug);
+
+      expect(text?.problematique).toBe(item.problem);
+      expect(text?.introduction).toHaveLength(4);
+      expect(text?.conclusion).toHaveLength(3);
+      expect(text?.movements.map((movement) => movement.title)).toEqual(item.movements);
+    }
+  });
+
   it("provides dense analysis for the theater sequence", () => {
     const expectedMinimums = new Map([
       ["blazius-arrive", { sections: 8, figures: 24 }],
