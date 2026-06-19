@@ -50,6 +50,16 @@ function parseRangeParam(value: string | null): LineRange | null {
   return { start, end };
 }
 
+function scrollWindowTo(top: number) {
+  const root = document.documentElement;
+  const previousScrollBehavior = root.style.scrollBehavior;
+  root.style.scrollBehavior = "auto";
+  window.scrollTo({ top: Math.max(0, top), behavior: "auto" });
+  window.requestAnimationFrame(() => {
+    root.style.scrollBehavior = previousScrollBehavior;
+  });
+}
+
 function Dashboard() {
   const [query, setQuery] = useState("");
   const [lastOpenedSlug] = useState<string | null>(() =>
@@ -523,6 +533,7 @@ function StudyPage({ text }: { text: StudyText }) {
   const [selectedRange, setSelectedRange] = useState<LineRange | null>(
     requestedRange ?? text.movements[0]?.range ?? null,
   );
+  const [sourceRevealKey, setSourceRevealKey] = useState(0);
   const [detailsKey, setDetailsKey] = useState(0);
   const [defaultOpen, setDefaultOpen] = useState(false);
 
@@ -546,7 +557,7 @@ function StudyPage({ text }: { text: StudyText }) {
         if (window.navigator.userAgent.toLowerCase().includes("jsdom")) return;
 
         const top = target.getBoundingClientRect().top + window.scrollY - 8;
-        window.scrollTo({ top, behavior: "auto" });
+        scrollWindowTo(top);
       };
 
       window.requestAnimationFrame(scrollToTarget);
@@ -565,6 +576,30 @@ function StudyPage({ text }: { text: StudyText }) {
     setDetailsKey((value) => value + 1);
   }
 
+  function selectRange(range: LineRange) {
+    setSelectedRange(range);
+    setSourceRevealKey((value) => value + 1);
+    navigate({ pathname: location.pathname, search: location.search, hash: "texte-source" }, { replace: true });
+
+    if (window.navigator.userAgent.toLowerCase().includes("jsdom")) return;
+
+    if (document.activeElement instanceof HTMLElement) {
+      document.activeElement.blur();
+    }
+
+    const revealSource = () => {
+      const source = document.getElementById("texte-source");
+      if (!source) return;
+
+      const top = source.getBoundingClientRect().top + window.scrollY - 8;
+      scrollWindowTo(top);
+    };
+
+    window.requestAnimationFrame(revealSource);
+    window.setTimeout(revealSource, 120);
+    window.setTimeout(revealSource, 300);
+  }
+
   function closeAll() {
     setDefaultOpen(false);
     setSelectedRange(null);
@@ -573,7 +608,7 @@ function StudyPage({ text }: { text: StudyText }) {
       navigate({ pathname: location.pathname, search: location.search, hash: "" }, { replace: true });
     }
     if (!window.navigator.userAgent.toLowerCase().includes("jsdom")) {
-      const scrollToTop = () => window.scrollTo({ top: 0, behavior: "auto" });
+      const scrollToTop = () => scrollWindowTo(0);
       window.requestAnimationFrame(scrollToTop);
       window.setTimeout(scrollToTop, 80);
       window.setTimeout(scrollToTop, 240);
@@ -621,7 +656,7 @@ function StudyPage({ text }: { text: StudyText }) {
                   key={section.id}
                   section={section}
                   defaultOpen={defaultOpen}
-                  onSelectRange={setSelectedRange}
+                  onSelectRange={selectRange}
                 />
               ))}
               <div className="problematic">
@@ -639,7 +674,7 @@ function StudyPage({ text }: { text: StudyText }) {
                 key={movement.id}
                 movement={movement}
                 defaultOpen={defaultOpen || activeHash === movement.id}
-                onSelectRange={setSelectedRange}
+                onSelectRange={selectRange}
               />
             ))}
 
@@ -649,7 +684,7 @@ function StudyPage({ text }: { text: StudyText }) {
                   key={section.id}
                   section={section}
                   defaultOpen={defaultOpen}
-                  onSelectRange={setSelectedRange}
+                  onSelectRange={selectRange}
                 />
               ))}
             </Chapter>
@@ -657,11 +692,11 @@ function StudyPage({ text }: { text: StudyText }) {
             <FigureReviewChapter
               text={text}
               defaultOpen={defaultOpen || activeHash === "glossaire"}
-              onSelectRange={setSelectedRange}
+              onSelectRange={selectRange}
             />
 
             <Chapter id="memo" title="Mémo oral" defaultOpen={defaultOpen || activeHash === "memo"}>
-              <MemoryPanel text={text} onSelectRange={setSelectedRange} />
+              <MemoryPanel text={text} onSelectRange={selectRange} />
             </Chapter>
 
             <Chapter id="recap" title="Fil directeur à mémoriser" defaultOpen={defaultOpen || activeHash === "recap"}>
@@ -675,7 +710,12 @@ function StudyPage({ text }: { text: StudyText }) {
             </Chapter>
           </section>
 
-          <SourceText text={text} selectedRange={selectedRange} onSelectRange={setSelectedRange} />
+          <SourceText
+            text={text}
+            selectedRange={selectedRange}
+            revealKey={sourceRevealKey}
+            onSelectRange={selectRange}
+          />
         </div>
       </main>
     </div>
@@ -950,25 +990,58 @@ function Figures({
 function SourceText({
   text,
   selectedRange,
+  revealKey,
   onSelectRange,
 }: {
   text: StudyText;
   selectedRange: LineRange | null;
+  revealKey: number;
   onSelectRange: (range: LineRange) => void;
 }) {
+  const sourceRef = useRef<HTMLElement | null>(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const activeLineRef = useRef<HTMLButtonElement | null>(null);
 
   useEffect(() => {
-    activeLineRef.current?.scrollIntoView({ block: "center", behavior: "smooth" });
-  }, [selectedRange?.start, selectedRange?.end]);
+    if (window.navigator.userAgent.toLowerCase().includes("jsdom")) return;
+
+    const source = sourceRef.current;
+    const scroller = scrollRef.current;
+    const activeLine = activeLineRef.current;
+
+    if (!source || !scroller || !activeLine) return;
+
+    const centerActiveLine = () => {
+      const scrollerRect = scroller.getBoundingClientRect();
+      const lineRect = activeLine.getBoundingClientRect();
+      const delta = lineRect.top - scrollerRect.top - scrollerRect.height / 2 + lineRect.height / 2;
+      scroller.scrollTop = Math.max(0, scroller.scrollTop + delta);
+    };
+
+    const revealSource = () => {
+      const top = source.getBoundingClientRect().top + window.scrollY - 8;
+      scrollWindowTo(top);
+    };
+
+    const sourceRect = source.getBoundingClientRect();
+    const sourceIsMostlyHidden = sourceRect.bottom < 72 || sourceRect.top > window.innerHeight - 120;
+
+    centerActiveLine();
+
+    if (sourceIsMostlyHidden) {
+      revealSource();
+      window.setTimeout(revealSource, 80);
+      window.setTimeout(centerActiveLine, 120);
+    }
+  }, [selectedRange?.start, selectedRange?.end, revealKey]);
 
   return (
-    <aside className="poem-card" id="texte-source" aria-label="Texte source">
+    <aside className="poem-card" id="texte-source" aria-label="Texte source" ref={sourceRef}>
       <div className="poem-heading">
         <h2>{text.title}</h2>
         <p>{text.author} - {text.sourceLabel}</p>
       </div>
-      <div className="poem-scroll">
+      <div className="poem-scroll" ref={scrollRef}>
         {text.lines.map((line) => {
           const active = isLineInRange(line.number, selectedRange);
           return (

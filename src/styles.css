@@ -881,8 +881,12 @@ h1, h2 {
   user-select: none;
 }
 .verse.active {
-  background: var(--highlight);
-  box-shadow: inset 3px 0 0 var(--accent);
+  background: #ffe48f;
+  box-shadow: inset 4px 0 0 var(--accent), 0 0 0 1px rgba(124, 45, 51, 0.12);
+}
+.verse.active .line-number {
+  color: var(--accent-dark);
+  font-weight: 900;
 }
 
 .quiz-panel {
