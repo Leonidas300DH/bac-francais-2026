@@ -339,13 +339,35 @@ const texts: StudyText[] = [
     author: "Arthur Rimbaud",
     sourceLabel: "Les Cahiers de Douai, 1893",
     lines: sourceTexts.leMal,
-    context: "Rimbaud écrit Le Mal pendant la guerre franco-prussienne. Le sonnet attaque à la fois la violence militaire, le pouvoir politique et une religion indifférente à la souffrance des pauvres.",
-    quizFocus: "Le poème oppose l'horreur concrète du massacre à la beauté de la nature, puis accuse Dieu et l'Église de rester du côté du luxe et de l'argent.",
-    problematique: "Comment Rimbaud transforme-t-il le sonnet en réquisitoire contre la guerre et l'hypocrisie religieuse ?",
-    recap: "Rimbaud fait d'abord sentir la violence industrielle du massacre, oppose ensuite cette horreur à la nature innocente, puis termine par une satire de Dieu et de l'Église.",
+    context: "La littérature explore souvent la guerre en la montrant comme héroïque ; Rimbaud choisit au contraire d'en révéler la souffrance, le désespoir et l'absurdité.",
+    quizFocus: "Le sonnet passe du champ de bataille à l'Église : Rimbaud mêle engagement et lyrisme pour montrer sa révolte face à la guerre et à la religion complice.",
+    problematique: "Comment Rimbaud réussit-il à faire passer ce sonnet de la description de la guerre à une dénonciation de la religion ?",
+    recap: "Rimbaud construit deux tableaux contrastés : l'anonymat et la souffrance du peuple sur le champ de bataille, puis un pouvoir politique arrogant et un Dieu indifférent qui profitent de cette misère.",
     opening: "On peut le rapprocher de Familiale de Prévert, où la guerre est également dénoncée comme une mécanique sociale acceptée.",
+    introduction: [
+      {
+        id: "intro-accroche",
+        title: "Accroche",
+        simple: "La guerre est souvent présentée comme héroïque dans la littérature. Rimbaud inverse cette image : il montre la souffrance réelle et le désespoir qu'elle engendre.",
+      },
+      {
+        id: "intro-auteur",
+        title: "L'auteur et le contexte",
+        simple: "Arthur Rimbaud compose Le Mal à seize ans, pendant la guerre franco-prussienne de 1870. Le poème est écrit peu après ses fugues, dans un contexte de campagnes dévastées et d'horreur militaire.",
+      },
+      {
+        id: "intro-forme",
+        title: "La forme du poème",
+        simple: "Le Mal est un sonnet en alexandrins constitué d'une seule phrase complexe. Cette forme resserrée permet de faire avancer ensemble la description du combat et l'accusation morale.",
+      },
+      {
+        id: "intro-plan",
+        title: "Annonce du plan",
+        simple: "Le texte progresse en trois temps : un massacre, une nature aimante, puis l'indifférence et la cupidité de Dieu.",
+      },
+    ],
     movements: [
-      movement("m1", "I. La guerre comme massacre", 1, 6, ["violence", "couleurs", "mort"], [
+      movement("m1", "I. Un massacre", 1, 6, ["violence", "couleurs", "mort"], [
         section("m1a", "Une violence sale et mécanique", "La guerre n'est pas héroïque : elle est associée à des crachats, à la mitraille et au sifflement des balles. Rimbaud donne au combat une matérialité répugnante.", undefined, [
           figure("f1", "Métaphore dévalorisante", "crachats rouges de la mitraille", "La mitraille devient un rejet sale et sanguinolent, ce qui détruit toute grandeur guerrière.", 1),
           figure("f2", "Allitération", "Sifflent tout le jour", "Le son en [s] imite le passage menaçant des projectiles.", 2),
@@ -360,7 +382,7 @@ const texts: StudyText[] = [
           figure("f7", "Image déshumanisante", "un tas fumant", "Les soldats sont réduits à une matière indistincte, presque à des déchets.", 6),
         ]),
       ]),
-      movement("m2", "II. La nature innocente", 7, 8, ["pitié", "nature", "innocence"], [
+      movement("m2", "II. Une Nature aimante", 7, 8, ["pitié", "nature", "innocence"], [
         section("m2a", "Une plainte pour les morts", "Le tiret ouvre une parenthèse pathétique : Rimbaud interrompt la description du massacre pour plaindre les soldats morts.", undefined, [
           figure("f8", "Exclamation pathétique", "Pauvres morts !", "L'exclamation fait entendre la compassion du poète.", 7),
           figure("f9", "Rupture syntaxique", "- Pauvres morts !", "Le tiret coupe l'élan de la phrase et fait surgir l'émotion.", 7),
@@ -374,7 +396,7 @@ const texts: StudyText[] = [
           figure("f13", "Adverbe religieux", "saintement", "La nature est associée au sacré, contrairement à l'Église critiquée dans le dernier mouvement.", 8),
         ]),
       ]),
-      movement("m3", "III. La critique de la religion", 9, 14, ["Dieu", "argent", "mères"], [
+      movement("m3", "III. Indifférence et cupidité de Dieu", 9, 14, ["Dieu", "argent", "mères"], [
         section("m3a", "Un Dieu scandaleusement humain", "Dieu rit, dort et se réveille : Rimbaud le rabaisse en lui prêtant des comportements humains, mais ces gestes révèlent surtout son indifférence.", undefined, [
           figure("f14", "Personnification satirique", "un Dieu, qui rit", "Dieu est présenté comme un spectateur moqueur au lieu d'être compatissant.", 9),
           figure("f15", "Personnification", "s’endort / se réveille", "Le sommeil de Dieu symbolise son indifférence au massacre.", 11, 12),
@@ -389,6 +411,23 @@ const texts: StudyText[] = [
           figure("f20", "Chute accusatrice", "Lui donnent un gros sou", "Le dernier vers révèle la cible de la satire : une religion qui reçoit l'argent des pauvres.", 14),
         ]),
       ]),
+    ],
+    conclusion: [
+      {
+        id: "conclusion-bilan",
+        title: "Bilan",
+        simple: "Par ce sonnet rappelant Le Dormeur du val, Rimbaud mêle engagement et lyrisme pour montrer sa révolte face à la guerre.",
+      },
+      {
+        id: "conclusion-reponse",
+        title: "Réponse à la problématique",
+        simple: "La dénonciation avance par contraste : anonymat et souffrance du peuple d'un côté, pouvoir politique arrogant et religion indifférente de l'autre. L'Église apparaît alors comme complice et coupable de la guerre.",
+      },
+      {
+        id: "conclusion-ouverture",
+        title: "Ouverture",
+        simple: "Le poème annonce l'insolence des poètes engagés : comme Victor Hugo, Rimbaud met sa créativité au service des causes humaines.",
+      },
     ],
   }),
   makeText({

@@ -65,6 +65,21 @@ describe("study content", () => {
     }
   });
 
+  it("integrates the handwritten T2 oral plan", () => {
+    const text = studyTexts.find((item) => item.slug === "le-mal");
+
+    expect(text?.problematique).toBe(
+      "Comment Rimbaud réussit-il à faire passer ce sonnet de la description de la guerre à une dénonciation de la religion ?",
+    );
+    expect(text?.introduction).toHaveLength(4);
+    expect(text?.conclusion).toHaveLength(3);
+    expect(text?.movements.map((movement) => movement.title)).toEqual([
+      "I. Un massacre",
+      "II. Une Nature aimante",
+      "III. Indifférence et cupidité de Dieu",
+    ]);
+  });
+
   it("keeps exact uploaded wording for T4 to T6", () => {
     const expectedFragments = new Map([
       ["familiale", "Et le père qu’est-ce qu’il fait le père ?"],
