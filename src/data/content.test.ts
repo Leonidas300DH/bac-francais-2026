@@ -262,6 +262,34 @@ describe("study content", () => {
     }
   });
 
+  it("integrates the handwritten T7 and T8 oral plans", () => {
+    const mortRaphael = studyTexts.find((item) => item.slug === "mort-de-raphael");
+    const oeuvre = studyTexts.find((item) => item.slug === "l-oeuvre-zola");
+
+    expect(mortRaphael?.problematique).toBe(
+      "En quoi cette scène dramatique constitue-t-elle l'accomplissement de la malédiction, dévoilant l'acmé d'un désir furieux et mortifère ?",
+    );
+    expect(mortRaphael?.introduction).toHaveLength(4);
+    expect(mortRaphael?.conclusion).toHaveLength(3);
+    expect(mortRaphael?.movements.map((movement) => movement.title)).toEqual([
+      "I. Raphaël révèle à Pauline le secret de la Peau de chagrin",
+      "II. Raphaël pris d'un accès fou de désir pour Pauline",
+      "III. L'acmé du désir signe l'arrêt de mort de Raphaël",
+    ]);
+
+    expect(oeuvre?.problematique).toBe(
+      "En quoi cet extrait illustre-t-il les contradictions du créateur, partagé entre la souffrance et l'espérance ?",
+    );
+    expect(oeuvre?.introduction).toHaveLength(4);
+    expect(oeuvre?.conclusion).toHaveLength(3);
+    expect(oeuvre?.movements.map((movement) => movement.title)).toEqual([
+      "I. L'oeuvre ravive l'impuissance à créer et les tourments du peintre",
+      "II. Les crises du peintre",
+      "III. Le mensonge consolateur : la rêverie d'un chef-d'oeuvre",
+    ]);
+    expect(oeuvre?.conclusion.some((section) => section.simple.includes("souffrance et espérance"))).toBe(true);
+  });
+
   it("provides dense analysis for the final Balzac and Zola sequence", () => {
     const expectedMinimums = new Map([
       ["mort-de-raphael", { sections: 9, figures: 30 }],

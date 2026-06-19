@@ -713,13 +713,19 @@ const texts: StudyText[] = [
     author: "Honoré de Balzac",
     sourceLabel: "La Peau de chagrin, 1831",
     lines: sourceTexts.mortRaphael,
-    context: "À la fin du roman, la Peau est presque réduite à rien : le désir amoureux précipite la mort de Raphaël.",
-    quizFocus: "La scène fait coïncider déclaration amoureuse, contraction du talisman et agonie : l'amour n'apaise pas la malédiction, il en devient l'accomplissement.",
-    problematique: "Comment Balzac fait-il de cette scène amoureuse une scène de mort ?",
-    recap: "Balzac transforme l'amour en scène de mort en faisant du talisman un compte à rebours visible, puis en montrant le désir comme une force incontrôlable qui détruit la parole, le corps et Pauline elle-même.",
-    opening: "On peut comparer cette fin à une tragédie : le héros est détruit par sa propre passion.",
+    context: "L'extrait vient de la fin de La Peau de chagrin. Raphaël, malade, mène une vie végétative pour conserver l'énergie qui lui reste, mais le retour de Pauline précipite l'accomplissement de la malédiction.",
+    quizFocus: "La scène alterne récit et dialogue pour donner une grande intensité dramatique : Raphaël révèle le secret du talisman, le désir se déchaîne, puis l'agonie accomplit le destin annoncé.",
+    problematique: "En quoi cette scène dramatique constitue-t-elle l'accomplissement de la malédiction, dévoilant l'acmé d'un désir furieux et mortifère ?",
+    recap: "La scène accomplit la logique de la Peau de chagrin : le dernier désir de Raphaël rétrécit son énergie vitale, transforme l'amour en violence et confirme le caractère tragique et fantastique de la fin.",
+    opening: "On peut revenir au début du roman : le talisman promettait d'accomplir les désirs, mais cette promesse contenait déjà la perte de Raphaël.",
+    introduction: [
+      section("intro1", "L'oeuvre", "La Peau de chagrin, roman publié par Honoré de Balzac en 1831, raconte l'histoire de Raphaël de Valentin et de la Peau qui accomplit ses désirs au prix de sa vie.", undefined, []),
+      section("intro2", "La situation du passage", "Cet extrait est situé à la fin du roman. Raphaël, déjà malade, tente de préserver l'énergie qui lui reste, mais le retour de Pauline réactive le désir qui le condamne.", undefined, []),
+      section("intro3", "Le registre de la scène", "L'alternance entre récit et dialogue donne à la scène finale une forte intensité dramatique. La violence du désir accélère l'agonie.", undefined, []),
+      section("intro4", "Annonce du plan", "Raphaël révèle d'abord à Pauline le secret de la Peau, puis il est saisi par un accès de désir, avant que l'agonie n'accomplisse la malédiction.", undefined, []),
+    ],
     movements: [
-      movement("m1", "I. Le talisman réduit à un signe de mort", 1, 7, ["talisman", "adieu", "fragilité"], [
+      movement("m1", "I. Raphaël révèle à Pauline le secret de la Peau de chagrin", 1, 8, ["talisman", "adieu", "fragilité"], [
         section("m1a", "La Peau matérialise la vie restante", "Le passage s'ouvre sur un objet presque disparu : le talisman n'est plus une promesse de puissance, mais la mesure concrète de la vie qui reste à Raphaël.", "La mort devient lisible dans la taille de la Peau avant même que le corps ne s'effondre.", [
           figure("f1", "Comparaison", "comme la feuille d’une pervenche", "L'image végétale insiste sur la petitesse, la fragilité et la disparition prochaine du talisman.", 1),
           figure("f2", "Champ lexical de la petitesse", "lambeau / fragile et petit", "La Peau est réduite à un reste : elle annonce une existence elle aussi presque entièrement consommée.", 1),
@@ -737,7 +743,7 @@ const texts: StudyText[] = [
           figure("f10", "Points de suspension", "mourir…", "La phrase reste suspendue comme la vie de Raphaël.", 5),
         ]),
       ]),
-      movement("m2", "II. Le désir renaît et se retourne contre Pauline", 8, 18, ["désir", "terreur", "fuite"], [
+      movement("m2", "II. Raphaël pris d'un accès fou de désir pour Pauline", 8, 16, ["désir", "terreur", "fuite"], [
         section("m2a", "Pauline révèle la dernière parcelle de vie", "La lampe éclaire à la fois Raphaël et le talisman : la scène fait voir ensemble le corps du mourant et l'objet qui mesure sa fin.", "La lumière ne rassure pas ; elle révèle l'état exact du danger.", [
           figure("f11", "Lumière symbolique", "lueur vacillante", "La lumière fragile correspond à la vie presque éteinte de Raphaël.", 7),
           figure("f12", "Parallélisme visuel", "sur Raphaël et sur le talisman", "Le corps et la Peau sont placés dans le même éclairage, comme deux versions d'une même agonie.", 7),
@@ -756,7 +762,7 @@ const texts: StudyText[] = [
           figure("f21", "Accumulation verbale", "je t’aime, je t’adore, je te veux", "La progression va de l'amour à la possession : Raphaël ne demande plus seulement Pauline, il la veut.", 16),
         ]),
       ]),
-      movement("m3", "III. Une scène d'amour transformée en agonie", 19, 29, ["râle", "violence", "cadavre"], [
+      movement("m3", "III. L'acmé du désir signe l'arrêt de mort de Raphaël", 17, 29, ["râle", "violence", "cadavre"], [
         section("m3a", "Le dernier éclat de vie devient violence", "Raphaël trouve encore assez de force pour détruire la porte. Cette énergie n'est pas un retour à la vie : c'est une flambée terminale.", "Le corps agit encore, mais cette action confirme la proximité de la mort.", [
           figure("f22", "Formule tragique", "dernier éclat de vie", "L'expression annonce que la force de Raphaël est l'ultime sursaut avant l'agonie.", 19),
           figure("f23", "Hyperbole gestuelle", "il jeta la porte à terre", "La violence du geste matérialise l'irruption brutale du désir.", 19),
@@ -777,6 +783,11 @@ const texts: StudyText[] = [
         ]),
       ]),
     ],
+    conclusion: [
+      section("concl1", "Bilan", "Cet extrait avertit la mort du personnage principal annoncée dès le début de l'oeuvre, au moment où il accepte de devenir propriétaire de la Peau de chagrin.", undefined, []),
+      section("concl2", "Réponse à la problématique", "La Peau devient la métaphore d'un désir destructeur : Raphaël accède à son dernier désir, mais son accomplissement entraîne le rétrécissement ultime de son énergie vitale.", undefined, []),
+      section("concl3", "Ouverture", "La fin reste incontestablement tragique et fantastique : le surnaturel de la Peau n'est pas résolu, il accompagne jusqu'au bout la mort de Raphaël.", undefined, []),
+    ],
   }),
   makeText({
     slug: "l-oeuvre-zola",
@@ -784,13 +795,19 @@ const texts: StudyText[] = [
     author: "Émile Zola",
     sourceLabel: "L'Oeuvre, 1886",
     lines: sourceTexts.zolaOeuvre,
-    context: "Zola montre un artiste qui rêve du chef-d'oeuvre mais se heurte à son impuissance créatrice.",
-    quizFocus: "L'extrait présente la création comme une lutte physique et mentale : l'artiste voit l'oeuvre idéale, mais son corps, ses yeux et ses mains ne parviennent pas à la produire.",
-    problematique: "Comment Zola montre-t-il la souffrance de l'artiste face à l'oeuvre impossible ?",
-    recap: "Zola montre la souffrance de l'artiste par le retour du doute, par l'image d'une oeuvre qui résiste comme un obstacle matériel, puis par le mirage d'une oeuvre future qui console tout en relançant l'échec.",
-    opening: "On peut ouvrir sur Balzac : l'énergie créatrice peut autant élever que détruire.",
+    context: "Dans L'Oeuvre, Zola met en scène Claude Lantier, peintre talentueux mais rejeté par la société et perpétuellement insatisfait de son travail.",
+    quizFocus: "L'extrait plonge dans les pensées torturées de Claude : il ne parvient pas à créer l'oeuvre de génie qu'il porte en lui, mais refuse pourtant de renoncer.",
+    problematique: "En quoi cet extrait illustre-t-il les contradictions du créateur, partagé entre la souffrance et l'espérance ?",
+    recap: "L'extrait montre un créateur pris entre deux forces : l'impuissance à créer et les tourments du présent, puis le mensonge consolateur d'une oeuvre future qui entretient l'espoir.",
+    opening: "On peut ouvrir sur la fin du roman : Claude finira par se pendre devant son tableau inachevé, preuve que l'énergie créatrice peut conduire à l'autodestruction.",
+    introduction: [
+      section("intro1", "L'oeuvre", "L'Oeuvre, roman écrit par Émile Zola en 1886, appartient au cycle des Rougon-Macquart. Le livre met en scène le peintre Claude Lantier.", undefined, []),
+      section("intro2", "Le personnage", "Claude est un peintre de talent, mais il est rejeté par la société et reste profondément insatisfait de son travail.", undefined, []),
+      section("intro3", "La situation du passage", "L'extrait, issu du chapitre 8, plonge dans les pensées torturées du personnage : Claude ne parvient pas à créer l'oeuvre de génie qu'il porte en lui, mais refuse de renoncer.", undefined, []),
+      section("intro4", "Annonce du plan", "Le texte montre d'abord l'impuissance à créer, puis les crises du peintre, avant de présenter le mensonge consolateur d'une oeuvre future.", undefined, []),
+    ],
     movements: [
-      movement("m1", "I. La création comme doute et impuissance", 1, 5, ["doute", "lutte", "impuissance"], [
+      movement("m1", "I. L'oeuvre ravive l'impuissance à créer et les tourments du peintre", 1, 10, ["doute", "lutte", "impuissance"], [
         section("m1a", "Une obstination minée par le doute", "La première phrase oppose l'obstination du peintre à la reprise des doutes. L'artiste ne manque pas de volonté : il est ravagé par l'écart entre son ambition et ce qu'il obtient.", "Zola ne décrit pas une simple hésitation, mais une lutte intérieure durable.", [
           figure("f1", "Antithèse", "bravoure de son obstination / doutes d’autrefois", "La force morale est contredite par le retour du doute.", 1),
           figure("f2", "Champ lexical du combat", "lutte / ravagé", "La création est présentée comme une guerre qui abîme l'artiste.", 1),
@@ -801,51 +818,54 @@ const texts: StudyText[] = [
           figure("f5", "Négation de l'accomplissement", "ne réalisant pas l’effort tenté", "Le verbe réaliser souligne la distance entre l'élan créateur et le résultat visible.", 2),
           figure("f6", "Répétition implicite", "Toute toile qui revenait", "La formule donne à l'échec un caractère répétitif, presque mécanique.", 2),
         ]),
-        section("m1c", "L'impuissance artistique devient souffrance", "La souffrance de l'artiste tient à une impuissance précise : il possède un génie qu'il ne parvient pas à faire naître entièrement dans une oeuvre.", "Zola fait de la création un accouchement impossible, donc une douleur sans délivrance.", [
+        section("m1c", "Un tableau impossible à achever", "La souffrance vient du contraste entre des fragments réussis et l'impossibilité d'obtenir une oeuvre entière. Claude se heurte à un obstacle qui transforme le travail en impuissance.", "Le peintre a des morceaux superbes, mais il ne parvient pas à leur donner l'unité d'un chef-d'oeuvre.", [
           figure("f7", "Substantivation", "cette impuissance", "Le défaut devient une force autonome qui domine le personnage.", 3),
           figure("f8", "Hyperbole polémique", "valaient cent fois les médiocrités reçues", "L'artiste se sent supérieur aux oeuvres admises, ce qui rend son échec plus amer.", 4),
           figure("f9", "Métaphore de l'accouchement impossible", "ne pouvait accoucher son génie", "Le génie existe en lui, mais il ne parvient pas à prendre forme dans le chef-d'oeuvre.", 5),
           figure("f10", "Mot idéal", "chef-d’œuvre", "Le terme concentre l'exigence absolue qui rend toute toile insuffisante.", 5),
-        ]),
-      ]),
-      movement("m2", "II. L'oeuvre résiste et paralyse l'artiste", 6, 12, ["obstacle", "correction", "paralysie"], [
-        section("m2a", "Des fragments réussis mais un ensemble raté", "Le peintre reconnaît la beauté de certains morceaux, mais cette réussite partielle rend l'échec global plus incompréhensible. Le tableau peut contenir du superbe sans devenir une oeuvre réussie.", "La souffrance vient du désaccord entre le détail réussi et l'ensemble impossible.", [
           figure("f11", "Accumulation démonstrative", "celui-ci, de celui-là, de cet autre", "La liste prouve que les réussites existent, mais restent fragmentaires.", 6),
           figure("f12", "Questions rhétoriques", "Alors pourquoi... Pourquoi...", "Les questions font entendre l'obsession de l'échec et l'incapacité à l'expliquer.", 7, 8),
-          figure("f13", "Image destructrice", "tuant le tableau", "Une partie ratée détruit l'ensemble, comme si l'oeuvre était un organisme vivant.", 8),
-        ]),
-        section("m2b", "L'obstacle devient infranchissable", "La difficulté n'est plus seulement technique : Zola la rend matérielle avec l'image d'un mur. La correction se heurte à une limite que l'artiste ne peut pas franchir.", "L'oeuvre impossible devient un espace fermé où la volonté se brise.", [
-          figure("f14", "Métaphore", "un mur se dressait", "La difficulté prend la forme concrète d'un obstacle vertical.", 9),
-          figure("f15", "Adjectif absolu", "obstacle infranchissable", "Le mot exclut toute solution et radicalise l'impuissance.", 9),
-          figure("f16", "Interdit passif", "il lui était défendu d’aller", "La formule donne l'impression qu'une puissance extérieure interdit l'accès à la réussite.", 9),
-        ]),
-        section("m2c", "La volonté se défait", "Plus l'artiste reprend le morceau, plus il l'abîme. Le travail, au lieu de corriger, produit le gâchis, puis la paralysie de la volonté.", "Le passage répond à la problématique en montrant une souffrance qui atteint les yeux, les mains et la décision même d'agir.", [
-          figure("f17", "Répétition", "vingt fois... vingt fois", "La reprise insistante montre l'acharnement et l'échec répété.", 10),
-          figure("f18", "Champ lexical du gâchis", "brouillait / glissait au gâchis", "Le travail de correction devient une dégradation de l'oeuvre.", 10),
-          figure("f19", "Gradation négative", "ne voyait plus, n’exécutait plus", "La perte touche d'abord la perception, puis le geste.", 11),
-          figure("f20", "Question rhétorique", "Étaient-ce donc ses yeux, étaient-ce ses mains", "L'artiste ne reconnaît plus ses propres facultés.", 12),
-          figure("f21", "Formule médicale", "paralysie de la volonté", "La crise artistique devient une atteinte physique et nerveuse.", 11),
+          figure("f13", "Métaphore", "un mur se dressait", "La difficulté prend la forme concrète d'un obstacle vertical.", 9),
         ]),
       ]),
-      movement("m3", "III. Le mirage de l'oeuvre future permet de continuer", 13, 19, ["rêve", "hâte", "illusion"], [
-        section("m3a", "Une alternance d'angoisse et d'espoir", "Les crises se répètent et font osciller l'artiste entre incertitude et espérance. La création est donc à la fois torture et moteur.", "Zola montre une instabilité permanente : l'artiste ne sort jamais vraiment de la crise.", [
-          figure("f22", "Hyperbole temporelle", "semaines abominables", "La crise s'étend dans la durée et envahit la vie de l'artiste.", 13),
-          figure("f23", "Antithèse", "l’incertitude à l’espérance", "Le peintre passe sans cesse de l'effondrement à l'espoir.", 13),
-          figure("f24", "Personnification", "l’œuvre rebelle", "L'oeuvre semble résister activement à celui qui veut la créer.", 14),
+      movement("m2", "II. Les crises du peintre", 10, 16, ["obstacle", "correction", "paralysie"], [
+        section("m2a", "La correction tourne au gâchis", "Claude reprend le morceau sans parvenir à l'améliorer. Le travail, au lieu de corriger, aggrave l'échec et transforme la toile en gâchis.", "La crise naît de l'acharnement : plus Claude travaille, plus l'oeuvre lui échappe.", [
+          figure("f14", "Adjectif absolu", "obstacle infranchissable", "Le mot exclut toute solution et radicalise l'impuissance.", 9),
+          figure("f15", "Répétition", "vingt fois... vingt fois", "La reprise insistante montre l'acharnement et l'échec répété.", 10),
+          figure("f16", "Champ lexical du gâchis", "brouillait / glissait au gâchis", "Le travail de correction devient une dégradation de l'oeuvre.", 10),
         ]),
-        section("m3b", "L'oeuvre future devient consolation", "Ce qui soutient l'artiste n'est pas l'oeuvre présente, mais celle qu'il imagine ensuite. L'avenir promet la délivrance que le présent refuse.", "La consolation repose sur une projection : l'oeuvre parfaite existe d'abord comme promesse.", [
-          figure("f25", "Expression affective", "rêve consolateur", "Le rêve compense les échecs présents et donne la force de continuer.", 14),
-          figure("f26", "Projection vers l'accomplissement", "celle où il se satisferait enfin", "Le conditionnel situe la réussite dans un avenir désiré, encore incertain.", 14),
-          figure("f27", "Métaphore corporelle", "ses mains se délieraient", "Le geste créateur est imaginé comme une libération physique.", 14),
+        section("m2b", "La volonté se paralyse", "La souffrance atteint les facultés mêmes du peintre : les yeux, les mains et la volonté se dérèglent. L'artiste ne reconnaît plus ses propres moyens de créer.", "La crise artistique devient une crise physique et nerveuse.", [
+          figure("f17", "Gradation négative", "ne voyait plus, n’exécutait plus", "La perte touche d'abord la perception, puis le geste.", 11),
+          figure("f18", "Question rhétorique", "Étaient-ce donc ses yeux, étaient-ce ses mains", "L'artiste ne reconnaît plus ses propres facultés.", 12),
+          figure("f19", "Formule médicale", "paralysie de la volonté", "La crise artistique devient une atteinte physique et nerveuse.", 11),
         ]),
-        section("m3c", "Le mirage final rend la création possible", "L'artiste supporte le travail en cours parce qu'il imagine déjà l'oeuvre suivante, plus forte et définitive. Le mirage est faux, mais il rend la production possible.", "Le passage s'achève sur un paradoxe : l'illusion trompe l'artiste, mais sans elle il ne créerait plus.", [
-          figure("f28", "Antithèse temporelle", "travail en train / ce qu’il ferait ensuite", "Le présent est dévalorisé au profit d'une oeuvre future idéalisée.", 16, 18),
-          figure("f29", "Accumulation méliorative", "superbe et héroïque, inattaquable, indestructible", "Les adjectifs construisent l'image d'une oeuvre parfaite et invincible.", 18),
-          figure("f30", "Métaphore centrale", "Perpétuel mirage", "L'idéal artistique attire l'artiste tout en restant inaccessible.", 19),
-          figure("f31", "Métaphore tragique", "damnés de l’art", "Les artistes sont représentés comme condamnés par leur propre vocation.", 19),
-          figure("f32", "Paradoxe", "mensonge de tendresse et de pitié", "L'illusion est fausse, mais elle protège l'artiste de l'arrêt complet.", 19),
+        section("m2c", "Les crises oscillent entre souffrance et espérance", "Les crises se répètent et font passer Claude de l'incertitude à l'espérance. L'oeuvre actuelle le torture, mais l'idée de l'oeuvre future le maintient au travail.", "La contradiction du créateur apparaît ici : souffrir de créer et espérer encore créer.", [
+          figure("f20", "Hyperbole temporelle", "semaines abominables", "La crise s'étend dans la durée et envahit la vie de l'artiste.", 13),
+          figure("f21", "Antithèse", "l’incertitude à l’espérance", "Le peintre passe sans cesse de l'effondrement à l'espoir.", 13),
+          figure("f22", "Personnification", "l’œuvre rebelle", "L'oeuvre semble résister activement à celui qui veut la créer.", 14),
+          figure("f23", "Expression affective", "rêve consolateur", "Le rêve compense les échecs présents et donne la force de continuer.", 14),
         ]),
       ]),
+      movement("m3", "III. Le mensonge consolateur : la rêverie d'un chef-d'oeuvre", 16, 19, ["rêve", "hâte", "illusion"], [
+        section("m3a", "L'oeuvre suivante remplace le présent", "Claude ne supporte le travail en cours qu'en rêvant déjà au tableau suivant. Le présent de la création est dévalorisé au profit d'un avenir idéalisé.", "Le peintre vit dans la projection : l'oeuvre future promet ce que l'oeuvre présente refuse.", [
+          figure("f24", "Projection vers l'accomplissement", "celle où il se satisferait enfin", "Le conditionnel situe la réussite dans un avenir désiré, encore incertain.", 14),
+          figure("f25", "Métaphore corporelle", "ses mains se délieraient", "Le geste créateur est imaginé comme une libération physique.", 14),
+          figure("f26", "Antithèse temporelle", "travail en train / ce qu’il ferait ensuite", "Le présent est dévalorisé au profit d'une oeuvre future idéalisée.", 16, 18),
+        ]),
+        section("m3b", "Un chef-d'oeuvre fantasmé", "L'oeuvre future est imaginée comme parfaite, invincible et définitive. Cette image console Claude, mais elle reste un fantasme.", "L'espérance naît d'une oeuvre qui n'existe pas encore.", [
+          figure("f27", "Accumulation méliorative", "superbe et héroïque, inattaquable, indestructible", "Les adjectifs construisent l'image d'une oeuvre parfaite et invincible.", 18),
+          figure("f28", "Métaphore centrale", "Perpétuel mirage", "L'idéal artistique attire l'artiste tout en restant inaccessible.", 19),
+        ]),
+        section("m3c", "Un mensonge nécessaire", "Le mirage est faux, mais il rend la production possible. Zola présente donc l'espérance artistique comme un mensonge qui soutient autant qu'il condamne.", "Le paradoxe final résume la contradiction du créateur : il a besoin d'une illusion pour continuer.", [
+          figure("f29", "Métaphore tragique", "damnés de l’art", "Les artistes sont représentés comme condamnés par leur propre vocation.", 19),
+          figure("f30", "Paradoxe", "mensonge de tendresse et de pitié", "L'illusion est fausse, mais elle protège l'artiste de l'arrêt complet.", 19),
+        ]),
+      ]),
+    ],
+    conclusion: [
+      section("concl1", "Bilan", "Cet extrait illustre les contradictions de l'artiste, partagé entre souffrance et espérance : les tourments de Claude révèlent une impuissance à créer douloureuse.", undefined, []),
+      section("concl2", "Réponse à la problématique", "La contradiction vient du fait que Claude vit le fantasme du chef-d'oeuvre futur plutôt que le présent de la création : l'espoir le soutient, mais ne résout pas son échec.", undefined, []),
+      section("concl3", "Ouverture", "L'illustration reste négative du parcours associé : l'artiste ne parvient pas à mettre son énergie au service de la création, et cette énergie peut conduire à l'autodestruction.", undefined, []),
     ],
   }),
   makeText({
