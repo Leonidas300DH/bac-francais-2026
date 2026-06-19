@@ -112,19 +112,19 @@ La vie avec le cimetière.
   `),
 
   portraitRaphael: toLines(`
-Au premier coup d’œil, les joueurs lurent sur le visage du novice quelque horrible mystère.
-Ses jeunes traits étaient empreints d’une grâce nébuleuse, son regard attestait des efforts trahis, mille espérances trompées !
+Au premier coup d’œil, les joueurs lurent sur le visage du novice quelque horrible mystère,
+ses jeunes traits étaient empreints d’une grâce nébuleuse, son regard attestait des efforts trahis, mille espérances trompées !
 La morne impassibilité du suicide donnait à ce front une pâleur mate et maladive.
 Un sourire amer dessinait le léger pli dans les coins de la bouche, et la physionomie exprimait une résignation qui faisait mal à voir.
 Quelque secret génie scintillait au fond de ces yeux voilés peut-être par les fatigues du plaisir.
 Était-ce la débauche qui marquait de son sale cachet cette noble figure jadis pure et brûlante, maintenant dégradée ?
-Les médecins auraient sans doute attribué à des lésions au cœur ou à la poitrine le cercle jaune qui encadrait les paupières, et la rougeur qui marquait les joues.
-Les poètes eussent voulu reconnaître à ces signes les ravages de la science, les traces de nuits passées à la lueur d’une lampe studieuse.
-Mais une passion plus mortelle que la maladie, une maladie plus impitoyable que l’étude et le génie, altéraient cette jeune tête.
-Elle contractait ces muscles vivaces, tordait ce cœur qu’avaient seulement effleuré les orgies, l’étude et la maladie.
-Comme, lorsqu’un célèbre criminel arrive au bagne, les condamnés l’accueillent avec respect.
-Ainsi tous ces démons humains, experts en tortures, saluèrent une douleur inouïe, une blessure profonde que sondait leur regard.
-Ils reconnurent un de leurs princes à la majesté de sa muette ironie, à l’élégante misère de ses vêtements.
+Les médecins auraient sans doute attribué à des lésions au cœur ou à la poitrine le cercle jaune qui encadrait les paupières, et la rougeur qui marquait les joues,
+tandis que les poètes eussent voulu reconnaître à ces signes les ravages de la science, les traces de nuits passées à la lueur d’une lampe studieuse.
+Mais une passion plus mortelle que la maladie, une maladie plus impitoyable que l’étude et le génie, altéraient cette jeune tête,
+contractaient ces muscles vivaces, tordaient ce cœur qu’avaient seulement effleuré les orgies, l’étude et la maladie.
+Comme, lorsqu’ un célèbre criminel arrive au bagne, les condamnés l’accueillent avec respect,
+ainsi tous ces démons humains, experts en tortures, saluèrent une douleur inouïe, une blessure profonde que sondait leur regard,
+et reconnurent un de leurs princes à la majesté de sa muette ironie, à l’élégante misère de ses vêtements.
   `),
 
   antiquaire: toLines(`
@@ -213,67 +213,67 @@ Vous vous laissez enlever sous vos yeux le plus beau et le plus clair de votre r
 Vous vivez de sorte que vous ne pouvez pas vous vanter que rien ne soit à vous ; et il semblerait que désormais vous seriez contents d’être simples locataires de vos biens, vos familles et vos vies viles.
 Et tout ce dégât, ce malheur, cette ruine vous vient non pas des ennemis, mais certes ou bien de l’ennemi.
 De celui que vous faites si grand qu’il est, pour lequel vous allez si courageusement à la guerre, pour la grandeur duquel vous ne refusez point de vous présenter à la mort.
-Celui qui vous maîtrise tant n’a que deux yeux, n’a que deux mains, n’a qu’un corps.
-Il n’a pas d’autre avantage par rapport au moindre des hommes parmi le nombre infini de vos villes, sinon celui que vous lui faites pour vous détruire.
+Celui qui vous maîtrise tant n’a que deux yeux, n’a que deux mains, n’a qu’un corps,
+et n’a pas d’autre avantage par rapport au moindre des hommes parmi le nombre infini de vos villes, sinon celui que vous lui faites pour vous détruire.
 D’où a-t-il pris tant d’yeux dont il vous épie si vous ne les lui donnez ?
 Comment a-t-il tant de mains pour vous frapper, s’il ne les prend de vous ?
 Les pieds dont il foule vos cités, d’où les a-t-il si ce ne sont les vôtres ?
 Comment a-t-il aucun pouvoir sur vous, que par vous ?
 Comment oserait-il vous marcher dessus, s’il ne s’entendait pas avec vous ?
 Que pourrait-il vous faire, si vous n’étiez receleurs du larron qui vous pille, complices du meurtrier qui vous tue, et traîtres à vous-mêmes ?
-Vous semez vos fruits afin qu’il les ravage ; vous meublez et remplissez vos maisons afin de fournir à ses pilleries.
-Vous nourrissez vos filles afin qu’il ait de quoi satisfaire sa luxure.
-Vous nourrissez vos enfants afin que, pour le mieux qu’il saurait faire, il les mène en ses guerres, qu’il les conduise à la boucherie, qu’il les fasse instruments de ses convoitises, et exécuteurs de ses vengeances.
-Vous vous rompez à la peine afin qu’il puisse minauder en ses délices et se vautrer dans de sales et vilains plaisirs.
-Vous vous affaiblissez, afin de le rendre plus fort et dur à vous tenir plus courte la bride.
-Et toutes ces indignités que les bêtes mêmes ne les sentiraient point, ou ne les endureraient point, vous pouvez vous en délivrer si vous essayez, non pas de vous en délivrer, mais seulement de vouloir le faire.
+Vous semez vos fruits afin qu’il les ravage ; vous meublez et remplissez vos maisons afin de fournir à ses pilleries ;
+vous nourrissez vos filles afin qu’il ait de quoi satisfaire sa luxure ;
+vous nourrissez vos enfants afin que, pour le mieux qu’il saurait faire, il les mène en ses guerres, qu’il les conduise à la boucherie, qu’il les fasse instruments de ses convoitises, et exécuteurs de ses vengeances ;
+vous vous rompez à la peine afin qu’il puisse minauder en ses délices et se vautrer dans de sales et vilains plaisirs ;
+vous vous affaiblissez, afin de le rendre plus fort et dur à vous tenir plus courte la bride ;
+et toutes ces indignités que les bêtes mêmes ne les sentiraient point, ou ne les endureraient point, vous pouvez vous en délivrer si vous essayez, non pas de vous en délivrer, mais seulement de vouloir le faire.
 Soyez résolus de ne plus servir et vous voilà libres.
-Je ne veux pas que vous le poussiez ou l’ébranliez, mais seulement ne le soutenez plus.
-Et vous le verrez comme un grand colosse à qui on a dérobé la base s’effondrer sous son propre poids et se rompre.
+Je ne veux pas que vous le poussiez ou l’ébranliez, mais seulement ne le soutenez plus,
+et vous le verrez comme un grand colosse à qui on a dérobé la base s’effondrer sous son propre poids et se rompre.
   `),
 
   laboetieRuses: toLines(`
-Mais cette ruse de tyran d’abêtir leurs sujets ne peut pas se connaître plus clairement que par ce que Cyrus fit aux Lydiens.
-Après qu’il se fut emparé de Sardes, la capitale de la Lydie, et qu’il eut fait prisonnier Crésus, ce si riche roi, on lui apporta la nouvelle que les Sardains s’étaient révoltés.
-Il les aurait bien vite soumis à sa poigne ; mais ne voulant pas ni mettre à sac une si belle ville, ni être toujours en peine d’y tenir une armée pour la garder, il s’avisa d’un grand stratagème pour s’en assurer.
-Il y établit des bordels, des tavernes et des jeux publics, et fit publier une ordonnance pour que les habitants soient obligés de s’en servir.
-Il se trouva si bien de cette garnison que depuis, jamais il ne fallut tirer un coup d’épée contre les Lydiens.
-Ces pauvres et misérables gens s’amusèrent à inventer toutes sortes de jeux.
-Si bien que les Latins en ont tiré leur mot, et ce que nous appelons « passe-temps » ils l’appellent « lude », comme s’ils voulaient dire « de Lydie ».
-Tous les tyrans n’ont pas ainsi déclaré expressément vouloir effeminer leurs gens.
-Mais à vrai dire, ce que celui-ci ordonna formellement, ils l’ont en effet pour la plupart recherché discrètement.
-À la vérité, c’est le naturel du menu peuple, dont le nombre est toujours plus grand dans les villes.
-Il est soupçonneux à l’endroit de celui qui l’aime, et naïf envers celui qui le trompe.
-Ne pensez pas qu’il y ait aucun oiseau qui ne se prenne mieux au piège, ni aucun poisson qui s’accroche plus vite à l’hameçon par la friandise du ver.
-Que tous les peuples qui s’allèchent si vite à la servitude par la moindre plume qu’on leur passe, comme on dit, sous la bouche.
-C’est chose très étonnante qu’ils se laissent faire aussi vite, dès lors qu’on les chatouille.
-Les théâtres, les jeux, les farces, les spectacles, les gladiateurs, les bêtes étranges, les médailles, les tableaux et autres telles pharmacies, c’étaient pour les peuples anciens les appâts de la servitude, le prix de leur liberté, les outils de la tyrannie.
-C’est ce moyen, cette pratique, cette façon d’allécher qu’avaient les anciens tyrans pour endormir leurs sujets sous leur joug.
+Mais cette ruse de tyran d’abêtir leurs sujets ne peut pas se connaître plus clairement que par ce que Cyrus fit aux Lydiens :
+après qu’il se fut emparé de Sardes, la capitale de la Lydie et qu’il eut fait prisonnier Crésus, ce si riche roi, on lui apporta la nouvelle que les Sardains s’étaient révoltés ;
+il les aurait bien vite soumis à sa poigne ; mais ne voulant pas ni mettre à sac une si belle ville, ni être toujours en peine d’y tenir une armée pour la garder, il s’avisa d’un grand stratagème pour s’en assurer ;
+il y établit des bordels, des tavernes et des jeux publics, et fit publier une ordonnance pour que les habitants soient obligés de s’en servir.
+Il se trouva si bien de cette garnison que depuis, jamais il ne fallut tirer un coup d’épée contre les Lydiens :
+ces pauvres et misérables gens s’amusèrent à inventer toutes sortes de jeux,
+si bien que les Latins en ont tiré leur mot, et ce que nous appelons « passe-temps » ils l’appellent « lude », comme s’ils voulaient dire « de Lydie ».
+Tous les tyrans n’ont pas ainsi déclaré expressément vouloir effeminer leurs gens :
+mais à vrai dire, ce que celui-ci ordonna formellement, ils l’ont en effet pour la plupart recherché discrètement.
+À la vérité, c’est le naturel du menu peuple, dont le nombre est toujours plus grand dans les villes :
+il est soupçonneux à l’endroit de celui qui l’aime, et naïf envers celui qui le trompe.
+Ne pensez pas qu’il y ait aucun oiseau qui ne se prenne mieux au piège, ni aucun poisson qui s’accroche plus vite à l’hameçon par la friandise du ver,
+que tous les peuples qui s’allèchent si vite à la servitude par la moindre plume qu’on leur passe, comme on dit, sous la bouche :
+c’est chose très étonnante qu’ils se laissent faire aussi vite, dès lors qu’on les chatouille.
+Les théâtres, les jeux, les farces, les spectacles, les gladiateurs, les bêtes étranges, les médailles, les tableaux et autres telles pharmacies, c’étaient pour les peuples anciens les appâts de la servitude, le prix de leur liberté, les outils de la tyrannie :
+c’est ce moyen, cette pratique, cette façon d’allécher qu’avaient les anciens tyrans pour endormir leurs sujets sous leur joug.
 Ainsi, les peuples abêtis trouvant beaux ces passe-temps, amusés d’un vain plaisir qui leur passait devant les yeux, s’accoutumaient à servir aussi niaisement, mais plus mal, que les petits enfants qui apprennent à lire parce qu’ils regardent les images brillantes des livres enluminés.
   `),
 
   laboetieFavoris: toLines(`
-En somme, qu’on en arrive là par les faveurs ou les sous-faveurs, les gains et les regains qu’on a avec les tyrans, il se trouve finalement autant de gens à qui la tyrannie semble profitable que de ceux à qui la liberté serait agréable.
-De même que les médecins disent que s’il y a quelque chose de gâté dans notre corps, alors dès que quelque chose bouge à un autre endroit, cela se rend aussitôt vers cette partie véreuse.
-Pareillement, dès lors qu’un roi s’est déclaré tyran, tout le mauvais, toute la lie du royaume, je ne dis pas un tas de larrons et d’estropiés qui ne peuvent guère faire ni mal ni bien à une république.
-Mais ceux qui sont marqués par une ardente ambition et une notable avarice, s’amassent autour de lui et le soutiennent pour avoir part au butin, et être sous le grand tyran des tyranneaux eux-mêmes.
-Ainsi font les grands voleurs et les fameux corsaires.
-Les uns courent le pays, les autres persécutent les voyageurs ; les uns sont en embuscade, les autres font le guet ; les autres massacrent, les autres dépouillent.
-Et bien qu’il y ait entre eux des prééminences, que les uns ne soient que valets, et d’autres des chefs de l’assemblée, finalement il n’y en a pas un qui ne participe, si ce n’est au principal butin, au moins à la recherche.
-On dit bien que non seulement les pirates ciliens s’assemblèrent en si grand nombre qu’il fallut envoyer contre eux Pompée Le Grand.
-Mais que de plus ils attirèrent dans leur alliance plusieurs belles villes et grandes cités aux ports desquelles ils se mettaient en sûreté en revenant de leurs courses.
-Et auxquelles, pour récompense, ils cédaient une part du butin de leur pillage.
-Ainsi le tyran asservit les sujets les uns par le moyen des autres, et est gardé par ceux dont il devrait se méfier, s’ils valaient quelque chose.
-Comme on dit pour fendre le bois, il faut les coins du bois même.
+En somme, qu’on en arrive là par les faveurs ou les sous faveurs, les gains et les regains qu’on a avec les tyrans, il se trouve finalement autant de gens à qui la tyrannie semble profitable que de ceux à qui la liberté serait agréable.
+De même que les médecins disent que s’il y a quelque chose de gâté dans notre corps, alors dès que quelque chose bouge à un autre endroit, cela se rend aussitôt vers cette partie véreuse :
+pareillement, dès lors qu’un roi s’est déclaré tyran, tout le mauvais, toute la lie du royaume, je ne dis pas un tas de larrons et d’estropiés qui ne peuvent guère faire ni mal ni bien à une république,
+mais ceux qui sont marqués par une ardente ambition et une notable avarice, s’amassent autour de lui et le soutiennent pour avoir part au butin, et être sous le grand tyran des tyranneaux eux-mêmes.
+Ainsi font les grands voleurs et les fameux corsaires ;
+les uns courent le pays, les autres persécutent les voyageurs ; les uns sont en embuscade, les autres font le guet ; les autres massacrent, les autres dépouillent ;
+et bien qu’il y ait entre eux des prééminences, que les uns ne soient que valets, et d’autres des chefs de l’assemblée, finalement il n’y en a pas un qui ne participe, si ce n’est au principal butin, au moins à la recherche.
+On dit bien que non seulement les pirates ciliens s’assemblèrent en si grand nombre qu’il fallut envoyer contre eux Pompée Le Grand,
+mais que de plus ils attirèrent dans leur alliance plusieurs belles villes et grandes cités aux ports desquelles ils se mettaient en sûreté en revenant de leurs courses
+et auxquelles, pour récompense, ils cédaient une part du butin de leur pillage.
+Ainsi le tyran asservit les sujets les uns par le moyen des autres, et est gardé par ceux dont il devrait se méfier, s’ils valaient quelque chose :
+et comme on dit pour fendre le bois, il faut les coins du bois même.
   `),
 
   diderotTahitien: toLines(`
-Puis s’adressant à Bougainville, il ajouta : « Et toi, chef des brigands qui t’obéissent, écarte promptement ton vaisseau de notre rive.
-Nous sommes innocents, nous sommes heureux ; et tu ne peux que nuire à notre bonheur.
+Puis s’adressant à Bougainville, il ajouta : « Et toi, chef des brigands qui t’obéissent, écarte promptement ton vaisseau de notre rive :
+nous sommes innocents, nous sommes heureux ; et tu ne peux que nuire à notre bonheur.
 Nous suivons le pur instinct de la nature ; et tu as tenté d’effacer de nos âmes son caractère.
 Ici tout est à tous ; et tu nous as prêché je ne sais quelle distinction du tien et du mien.
-Nos filles et nos femmes nous sont communes ; tu as partagé ce privilège avec nous.
-Tu es venu allumer en elles des fureurs inconnues.
+Nos filles et nos femmes nous sont communes ; tu as partagé ce privilège avec nous ;
+et tu es venu allumer en elles des fureurs inconnues.
 Elles sont devenues folles dans tes bras ; tu es devenu féroce entre les leurs.
 Elles ont commencé à se haïr ; vous vous êtes égorgés pour elles ; et elles nous sont revenues teintes de votre sang.
 Nous sommes libres ; et voilà que tu as enfoui dans notre terre le titre de notre futur esclavage.
@@ -282,8 +282,8 @@ Orou ! toi qui entends la langue de ces hommes-là, dis-nous à tous, comme tu m
 Ce pays est à toi ! et pourquoi ? parce que tu y as mis le pied ?
 Si un Tahitien débarquait un jour sur vos côtes, et qu’il gravât sur une de vos pierres ou sur l’écorce d’un de vos arbres : Ce pays appartient aux habitants de Tahiti, qu’en penserais-tu ?
 Tu es le plus fort ! Et qu’est-ce que cela fait ?
-Lorsqu’on t’a enlevé une des méprisables bagatelles dont ton bâtiment est rempli, tu t’es récrié, tu t’es vengé.
-Et dans le même instant tu as projeté au fond de ton cœur le vol de toute une contrée !
+Lorsqu’on t’a enlevé une des méprisables bagatelles dont ton bâtiment est rempli, tu t’es récrié, tu t’es vengé ;
+et dans le même instant tu as projeté au fond de ton cœur le vol de toute une contrée !
 Tu n’es pas esclave : tu souffrirais la mort plutôt que de l’être, et tu veux nous asservir !
 Tu crois donc que le Tahitien ne sait pas défendre sa liberté et mourir ?
 Celui dont tu veux t’emparer comme de la brute, le Tahitien est ton frère.
@@ -299,7 +299,7 @@ LE CHOEUR. - Doucement bercé sur sa mule fringante, messer Blazius s'avance dan
 Comme un poupon sur l'oreiller, il se ballotte sur son ventre rebondi, et les yeux à demi fermés, il marmotte un Pater noster dans son triple menton.
 Salut, maître Blazius ; vous arrivez au temps de la vendange, pareil à une amphore antique.
 MAÎTRE BLAZIUS. - Que ceux qui veulent apprendre une nouvelle d'importance m'apportent ici premièrement un verre de vin frais.
-LE CHOEUR. - Voilà notre plus grande écuelle ; buvez, maître Blazius ; le vin est bon ; vous parlerez après.
+LE CHŒUR. - Voilà notre plus grande écuelle ; buvez, maître Blazius ; le vin est bon ; vous parlerez après.
 MAÎTRE BLAZIUS. - Vous saurez, mes enfants, que le jeune Perdican, fils de notre seigneur, vient d'atteindre à sa majorité, et qu'il est reçu docteur à Paris.
 Il revient aujourd'hui même au château, la bouche toute pleine de façons de parler si belles et si fleuries, qu'on ne sait que lui répondre les trois quarts du temps.
 Toute sa gracieuse personne est un livre d'or.

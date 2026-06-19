@@ -78,6 +78,25 @@ describe("study content", () => {
     }
   });
 
+  it("keeps uploaded sentence links for Balzac and argumentative prose", () => {
+    const expectedFragments = [
+      ["portrait-de-raphael", "mystère, ses jeunes traits"],
+      ["portrait-de-raphael", "jeune tête, contractaient ces muscles"],
+      ["pauvres-peuples-insenses", "n’a qu’un corps, et n’a pas d’autre avantage"],
+      ["pauvres-peuples-insenses", "ne le soutenez plus, et vous le verrez"],
+      ["les-ruses-du-tyran", "Cyrus fit aux Lydiens : après qu’il"],
+      ["les-ruses-du-tyran", "ne se prenne mieux au piège, ni aucun poisson"],
+      ["satire-des-favoris", "partie véreuse : pareillement"],
+      ["discours-du-vieux-tahitien", "notre rive : nous sommes innocents"],
+      ["discours-du-vieux-tahitien", "privilège avec nous ; et tu es venu"],
+    ] as const;
+
+    for (const [slug, fragment] of expectedFragments) {
+      const text = studyTexts.find((item) => item.slug === slug);
+      expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
+    }
+  });
+
   it("provides dense analysis for the Prévert and Balzac sequence", () => {
     const expectedMinimums = new Map([
       ["familiale", { sections: 9, figures: 18 }],
