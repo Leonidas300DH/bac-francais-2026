@@ -80,6 +80,20 @@ describe("study content", () => {
     ]);
   });
 
+  it("integrates the handwritten T3 oral notes", () => {
+    const text = studyTexts.find((item) => item.slug === "reve-pour-l-hiver");
+
+    expect(text?.problematique).toBe("Comment Rimbaud exprime-t-il dans ce poème son désir d'amour et de liberté ?");
+    expect(text?.introduction).toHaveLength(4);
+    expect(text?.conclusion).toHaveLength(3);
+    expect(text?.movements.map((movement) => movement.title)).toEqual([
+      "I. Naissance rêvée du confort et de l'intimité",
+      "II. Un dehors inquiétant rejeté par l'imaginaire",
+      "III. Les jeux amoureux",
+    ]);
+    expect(text?.conclusion.some((section) => section.simple.includes("Sensation"))).toBe(true);
+  });
+
   it("keeps exact uploaded wording for T4 to T6", () => {
     const expectedFragments = new Map([
       ["familiale", "Et le père qu’est-ce qu’il fait le père ?"],
@@ -91,6 +105,22 @@ describe("study content", () => {
       const text = studyTexts.find((item) => item.slug === slug);
       expect(text?.lines.map((line) => line.text).join(" ")).toContain(fragment);
     }
+  });
+
+  it("integrates the handwritten T4 oral plan", () => {
+    const text = studyTexts.find((item) => item.slug === "familiale");
+
+    expect(text?.problematique).toBe(
+      "Comment Prévert met-il en avant l'absurdité de cette société passive et complice, incarnée par la famille ?",
+    );
+    expect(text?.introduction).toHaveLength(4);
+    expect(text?.conclusion).toHaveLength(3);
+    expect(text?.movements.map((movement) => movement.title)).toEqual([
+      "I. Un poème déconcertant",
+      "II. Une famille enfermée dans sa routine",
+      "III. Une routine qui devient dénonciation",
+    ]);
+    expect(text?.conclusion.some((section) => section.simple.includes("Dormeur du val"))).toBe(true);
   });
 
   it("keeps uploaded sentence links for Balzac and argumentative prose", () => {

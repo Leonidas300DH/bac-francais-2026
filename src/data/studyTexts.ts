@@ -436,55 +436,66 @@ const texts: StudyText[] = [
     author: "Arthur Rimbaud",
     sourceLabel: "Les Cahiers de Douai, 1893",
     lines: sourceTexts.revePourLHiver,
-    context: "Rimbaud écrit ce poème de jeunesse sous la forme d'une adresse amoureuse. Le train devient un espace imaginaire où l'hiver, la peur et le dehors sont tenus à distance.",
-    quizFocus: "Le poème transforme un voyage en train en scène amoureuse intime : le wagon protège, le dehors devient inquiétant, puis le baiser apporte une fantaisie sensuelle.",
-    problematique: "Comment Rimbaud construit-il une rêverie amoureuse à la fois protectrice, inquiétante et ludique ?",
-    recap: "Rimbaud installe d'abord un cocon tendre, oppose ensuite ce refuge aux monstres du dehors, puis termine sur une scène de baiser à la fois sensuelle et joueuse.",
-    opening: "On peut le comparer à d'autres poèmes de jeunesse de Rimbaud où l'amour est rêve et liberté.",
+    context: "Rimbaud rédige ce poème lors d'une fugue en Belgique, en octobre 1870, alors qu'il a seize ans. Le voyage en train devient le décor d'un rêve amoureux où le désir, la liberté et le réconfort se mêlent.",
+    quizFocus: "Le poème part d'un rêve de wagon protecteur, rejette le dehors inquiétant, puis transforme le baiser en jeu amoureux mobile et complice.",
+    problematique: "Comment Rimbaud exprime-t-il dans ce poème son désir d'amour et de liberté ?",
+    recap: "Rêvé pour l'hiver présente un rêve adolescent écrit au futur : le wagon protège les amants, l'imaginaire tient les peurs à distance et la fin donne au baiser une liberté joueuse.",
+    opening: "On peut le rapprocher de Sensation ou de Première soirée, deux autres poèmes des Cahiers de Douai où le désir amoureux passe par le voyage, le corps et la liberté.",
+    introduction: [
+      section("intro1", "Accroche", "La poésie lyrique célèbre souvent l'amour et les rêves d'un bonheur simple, projetés dans des lieux intimes ou idéalisés.", undefined, []),
+      section("intro2", "Rimbaud et le contexte", "Rimbaud écrit Rêvé pour l'hiver lors d'une fugue en Belgique, en octobre 1870. Il n'a alors que seize ans, ce qui donne au poème l'énergie d'un rêve adolescent.", undefined, []),
+      section("intro3", "La forme du poème", "Le texte reprend la forme du sonnet, mais la déstabilise par une versification hétérométrique : alexandrins, hexasyllabes et octosyllabes alternent.", undefined, []),
+      section("intro4", "Annonce du plan", "Le poème dédie d'abord le rêve à une femme aimée ou imaginaire, construit ensuite un refuge intime contre le dehors, puis termine sur un jeu amoureux.", undefined, []),
+    ],
     movements: [
-      movement("m1", "I. Un cocon amoureux", 1, 5, ["intimité", "couleurs", "douceur"], [
-        section("m1a", "Une dédicace intime", "Le poème commence comme une confidence adressée à une femme. Le titre et la formule initiale installent une rêverie personnelle plus qu'un récit réaliste.", undefined, [
+      movement("m1", "I. Naissance rêvée du confort et de l'intimité", 1, 5, ["intimité", "futur", "réconfort"], [
+        section("m1a", "Une dédicace intime", "Le titre fonctionne comme une dédicace. La destinataire reste volontairement imprécise : elle peut être une femme aimée, mais aussi une figure rêvée par le poète.", undefined, [
           figure("f1", "Dédicace", "À… Elle.", "L'adresse crée un destinataire mystérieux et intime.", 1),
-          figure("f2", "Futur de projection", "nous irons", "Le futur ouvre un scénario imaginé, pas encore vécu.", 2),
+          figure("f2", "Futur de projection", "nous irons", "Le futur ouvre une action non réalisée et place le poème dans le rêve.", 2),
         ]),
-        section("m1b", "Un décor doux et coloré", "Le wagon n'est pas seulement un moyen de transport : il devient une petite chambre mobile, protégée par des couleurs tendres.", undefined, [
-          figure("f3", "Champ lexical du confort", "wagon rose / coussins bleus / moelleux", "Les détails transforment le train en abri sensuel.", 2, 5),
+        section("m1b", "Un wagon-refuge", "Le wagon n'est pas seulement un moyen de transport : il devient un lieu de réconfort. Les couleurs et les matières créent une intimité enfantine et douce.", undefined, [
+          figure("f3", "Champ lexical du confort", "wagon rose / coussins bleus / moelleux", "Les détails transforment le train en abri chaleureux.", 2, 5),
           figure("f4", "Couleurs tendres", "rose / bleus", "Les couleurs adoucissent l'hiver annoncé par le premier mot du vers 2.", 2, 3),
         ]),
-        section("m1c", "Un espace amoureux fermé", "Le pronom nous domine le début du poème. Le couple existe dans un intérieur réduit, comme séparé du reste du monde.", undefined, [
+        section("m1c", "Le nid amoureux", "L'image du nid confirme le rêve de protection. Le couple existe dans un intérieur réduit, séparé du monde extérieur et rempli d'une sensualité légère.", undefined, [
           figure("f5", "Pronom personnel", "nous", "Le pronom construit l'intimité du couple.", 2, 4),
           figure("f6", "Métaphore", "Un nid de baisers fous", "Le wagon devient un nid, donc un lieu de chaleur, de protection et de désir.", 4),
         ]),
       ]),
-      movement("m2", "II. Le dehors devient inquiétant", 6, 9, ["ombres", "démons", "protection"], [
-        section("m2a", "Fermer les yeux au monde extérieur", "Le poète demande à la destinataire de fermer l'œil : l'amour repose sur une mise à distance du réel.", undefined, [
-          figure("f7", "Impératif futurisé", "Tu fermeras l’œil", "Le geste protège la rêverie amoureuse.", 6),
+      movement("m2", "II. Un dehors inquiétant rejeté par l'imaginaire", 6, 9, ["ombres", "démons", "protection"], [
+        section("m2a", "Ne plus voir le réel", "Le poète demande à la jeune fille de fermer les yeux. L'amour suppose ici une suspension du réel et une entrée complète dans la rêverie.", undefined, [
+          figure("f7", "Futur à valeur d'ordre", "Tu fermeras l’œil", "La forme verbale fait entendre une consigne douce donnée à la destinataire.", 6),
           figure("f8", "Négation", "pour ne point voir", "La négation rejette explicitement le spectacle extérieur.", 6),
         ]),
-        section("m2b", "Un paysage de cauchemar", "Le dehors n'est pas décrit objectivement : il est transformé en théâtre d'ombres et de monstres.", undefined, [
+        section("m2b", "Le dehors monstrueux", "Le paysage vu par la vitre se déforme. Les ombres deviennent presque des figures de cauchemar, ce qui renforce la valeur protectrice du wagon.", undefined, [
           figure("f9", "Personnification", "Grimacer les ombres", "Les ombres prennent un visage hostile.", 7),
           figure("f10", "Lexique péjoratif", "monstruosités hargneuses", "Les mots donnent au paysage une agressivité presque fantastique.", 8),
         ]),
-        section("m2c", "La menace du noir", "La répétition de noir concentre l'angoisse. Face au wagon rose et bleu, le dehors devient un monde hostile.", undefined, [
+        section("m2c", "Un contraste de couleurs", "Le noir du dehors répond au rose et au bleu du wagon. Ce contraste oppose l'inquiétude extérieure au refuge intérieur.", undefined, [
           figure("f11", "Répétition", "noirs / noirs", "La répétition insiste sur l'obscurité menaçante.", 9),
-          figure("f12", "Métaphores animales et diaboliques", "démons noirs et loups noirs", "Les ombres sont assimilées à des créatures de peur.", 9),
+          figure("f12", "Images fantastiques", "démons noirs et loups noirs", "Les ombres sont assimilées à des créatures effrayantes.", 9),
         ]),
       ]),
-      movement("m3", "III. Le baiser devient jeu", 10, 15, ["fantaisie", "baiser", "jeu"], [
-        section("m3a", "Une sensualité surprise", "Le baiser surgit comme une sensation physique inattendue. L'égratignure légère rend la scène plus vive que sentimentale.", undefined, [
+      movement("m3", "III. Les jeux amoureux", 10, 15, ["baiser", "complicité", "liberté"], [
+        section("m3a", "Le contact amoureux", "La jeune fille ferme les yeux et le poète peut commencer à la taquiner. Le baiser surgit comme une sensation physique légère, presque malicieuse.", undefined, [
           figure("f13", "Passif sensoriel", "tu te sentiras la joue égratignée", "La destinataire ressent le baiser avant de le comprendre.", 10),
-          figure("f14", "Diminutif affectif", "Un petit baiser", "Le désir reste léger, tendre et joueur.", 11),
+          figure("f14", "Adjectif affectif", "Un petit baiser", "Le désir reste léger, tendre et joueur.", 11),
         ]),
-        section("m3b", "Le baiser transformé en créature", "Rimbaud donne au baiser une vie propre : il court, se cache et devient une petite bête à chercher.", undefined, [
+        section("m3b", "Une image étrange et joueuse", "Rimbaud imagine les sensations éprouvées par la jeune fille. La comparaison avec l'araignée introduit une fausse frayeur, aussitôt rendue légère par le jeu amoureux.", undefined, [
           figure("f15", "Comparaison", "comme une folle araignée", "Le baiser devient une créature rapide, étrange et amusante.", 11),
           figure("f16", "Personnification", "Te courra par le cou", "Le baiser agit comme un être vivant.", 12),
         ]),
-        section("m3c", "Un jeu amoureux final", "La fin transforme la sensualité en jeu de poursuite. Les tirets ralentissent le rythme et prolongent le plaisir de chercher.", undefined, [
+        section("m3c", "La chasse au baiser", "La fin repose sur un discours direct et sur les tirets, qui font entendre une scène vive. Le baiser devient une bête voyageuse : la fantaisie donne au désir une forme libre.", undefined, [
           figure("f17", "Discours direct", "Cherche !", "La parole de la destinataire introduit le jeu amoureux.", 13),
-          figure("f18", "Suspension temporelle", "nous prendrons du temps", "Le couple savoure la durée du jeu.", 14),
+          figure("f18", "Tirets", "- Et / - Qui", "Les tirets mettent en avant l'échange et les sensations manifestées.", 14, 15),
           figure("f19", "Métaphore filée", "cette bête / Qui voyage beaucoup", "Le baiser-créature prolonge la fantaisie jusqu'au dernier vers.", 14, 15),
         ]),
       ]),
+    ],
+    conclusion: [
+      section("concl1", "Bilan", "Le poème fait l'état d'un rêve adolescent écrit au futur, mêlant amour, liberté, voyage et réconfort.", undefined, []),
+      section("concl2", "Forme et fantaisie", "La légèreté du fond amoureux s'accorde avec une forme mobile : Rimbaud conserve le cadre du sonnet tout en jouant avec les mètres et le rythme.", undefined, []),
+      section("concl3", "Ouverture", "Ce rêve amoureux et complice rejoint d'autres poèmes des Cahiers de Douai, notamment Sensation et Première soirée.", undefined, []),
     ],
   }),
   makeText({
@@ -493,55 +504,66 @@ const texts: StudyText[] = [
     author: "Jacques Prévert",
     sourceLabel: "Paroles, 1946",
     lines: sourceTexts.familiale,
-    context: "Dans Paroles, Prévert adopte une écriture volontairement orale et répétitive pour attaquer les évidences sociales. Familiale montre une famille ordinaire qui accepte la guerre et les affaires comme un ordre naturel.",
-    quizFocus: "Le poème montre que la guerre, le travail domestique et les affaires sont traités comme des gestes équivalents, jusqu'à rendre la mort du fils presque banale.",
-    problematique: "Comment Prévert utilise-t-il la répétition du quotidien pour dénoncer la banalisation de la guerre ?",
-    recap: "Prévert enferme d'abord chaque membre de la famille dans un rôle mécanique, efface ensuite la pensée du fils, puis montre que la mort elle-même ne brise pas le cycle social.",
-    opening: "On peut le rapprocher de Rimbaud, Le Mal, qui dénonce aussi la violence guerrière.",
+    context: "Dans Paroles, Prévert adopte une écriture simple, répétitive et proche de l'oral. Familiale critique la guerre et la société qui la rend possible en montrant une famille passive devant la mort du fils.",
+    quizFocus: "Le poème montre une société passive et complice : la famille accepte comme naturelles la guerre, les affaires, la mort et la poursuite d'un ordre social absurde.",
+    problematique: "Comment Prévert met-il en avant l'absurdité de cette société passive et complice, incarnée par la famille ?",
+    recap: "Par une écriture simple, répétitive et proche de l'oral, Prévert dénonce l'absurdité de la guerre, l'indifférence morale et la domination des intérêts économiques.",
+    opening: "On peut le rapprocher du Dormeur du val de Rimbaud : les deux poèmes dénoncent la guerre par une violence longtemps implicite.",
+    introduction: [
+      section("intro1", "Jacques Prévert", "Jacques Prévert est un poète et scénariste du XXe siècle, proche du mouvement surréaliste. Son écriture privilégie souvent la liberté, l'oralité et la critique sociale.", undefined, []),
+      section("intro2", "Paroles", "Dans Paroles, publié en 1946, il aborde notamment la liberté, l'amour, l'enfance et la critique de la société.", undefined, []),
+      section("intro3", "Une écriture accessible", "Le poème repose sur un langage simple, répétitif et proche de l'oral. Ce refus des formes poétiques traditionnelles rend la dénonciation plus directe.", undefined, []),
+      section("intro4", "Annonce du plan", "Familiale progresse de la présentation d'une famille ordinaire vers la mort du fils, puis vers le constat d'une société qui continue comme si cette mort était normale.", undefined, []),
+    ],
     movements: [
-      movement("m1", "I. Une famille mécanique", 1, 9, ["répétition", "quotidien", "normalité"], [
-        section("m1a", "Des rôles distribués comme une évidence", "Le début associe immédiatement la mère, le fils et le père à une activité fixe. Aucun personnage n'est présenté par ses sentiments : chacun est réduit à une fonction.", undefined, [
-          figure("f1", "Parallélisme", "La mère fait / Le fils fait", "La même structure grammaticale place tricot et guerre sur le même plan.", 1, 2),
-          figure("f2", "Verbe banal", "fait", "Le verbe ordinaire banalise des réalités très différentes, de l'activité domestique à la guerre.", 1, 5),
+      movement("m1", "I. Un poème déconcertant", 1, 5, ["rôles", "oralité", "absurde"], [
+        section("m1a", "Un récit très simple", "Le début ressemble à une petite scène racontée à l'oral. Les personnages ne sont pas individualisés : ils sont désignés par leur rôle familial, avec l'article défini.", undefined, [
+          figure("f1", "Désignations familiales", "La mère / Le fils / le père", "Les personnages sont réduits à leur place dans la famille.", 1, 4),
+          figure("f2", "Présent de narration", "fait / trouve / fait", "Le présent donne à la scène une valeur d'habitude installée.", 1, 5),
         ]),
-        section("m1b", "Une normalité inquiétante", "La mère puis le père trouvent la situation naturelle. L'horreur vient du fait que personne ne s'étonne de voir le fils faire la guerre.", undefined, [
-          figure("f3", "Reprise insistante", "tout naturel", "La répétition signale une acceptation sociale absurde.", 3, 9),
-          figure("f4", "Registre familier", "ça", "Le langage courant donne à la guerre une place banale dans la conversation.", 3),
+        section("m1b", "Des activités mises sur le même plan", "La mère tricote, le fils fait la guerre, le père fait des affaires. L'association de ces activités sans hiérarchie produit une simplicité absurde.", undefined, [
+          figure("f3", "Parallélisme", "La mère fait / Le fils fait", "La même structure grammaticale place le tricot et la guerre sur le même plan.", 1, 2),
+          figure("f4", "Verbe banal", "fait", "Le verbe ordinaire banalise des réalités pourtant incompatibles.", 1, 5),
         ]),
-        section("m1c", "La guerre mise au même niveau que les affaires", "Le poème enchaîne le tricot, la guerre et les affaires sans hiérarchie. Cette égalité grammaticale dénonce une société qui traite la guerre comme une activité ordinaire.", undefined, [
-          figure("f5", "Ellipse verbale", "Son fils la guerre / Lui des affaires", "La suppression du verbe accélère la mécanique des rôles.", 7, 8),
-          figure("f6", "Question rhétorique", "qu’est-ce qu’il fait le père ?", "La fausse question relance le système sans vraiment l'interroger.", 4),
+        section("m1c", "Une réalité déjà dérangeante", "La formule naturelle appliquée à la guerre crée le malaise. L'oralité familière et l'absence de ponctuation donnent l'impression d'un récit évident, alors que ce qui est raconté est moralement inacceptable.", undefined, [
+          figure("f5", "Registre familier", "ça", "Le pronom donne à la guerre une place banale dans la conversation.", 3),
+          figure("f6", "Expression de normalité", "tout naturel", "L'expression révèle l'acceptation passive d'une situation absurde.", 3),
         ]),
       ]),
-      movement("m2", "II. Le fils n'a pas de pensée possible", 10, 18, ["vide", "mort", "destin"], [
-        section("m2a", "Le fils devient le centre vide du poème", "La répétition de son nom attire l'attention sur lui, mais quand la question porte sur ce qu'il pense ou trouve, la réponse est le vide.", undefined, [
-          figure("f7", "Répétition", "Et le fils et le fils", "La répétition crée une attente autour du fils.", 10),
-          figure("f8", "Question directe", "Qu’est-ce qu’il trouve le fils ?", "La question semble ouvrir un espace de pensée individuelle.", 11),
+      movement("m2", "II. Une famille enfermée dans sa routine", 6, 15, ["routine", "répétition", "vide"], [
+        section("m2a", "La routine familiale", "Les vers 6 à 9 reprennent les mêmes mots et les mêmes activités. La famille n'agit pas comme un groupe vivant : chacun répète sa fonction sans véritable relation avec les autres.", undefined, [
+          figure("f7", "Écriture orale", "Sa femme fait du tricot / Son fils la guerre / Lui des affaires", "La syntaxe brève et elliptique imite une parole ordinaire.", 6, 8),
+          figure("f8", "Répétitions", "tricot / guerre / affaires", "La reprise des mêmes termes enferme les personnages dans une routine.", 6, 9),
         ]),
-        section("m2b", "Une intériorité niée", "Le fils ne trouve rien : le poème lui refuse une parole personnelle, comme si la guerre empêchait toute pensée propre.", undefined, [
-          figure("f9", "Négation absolue", "rien absolument rien", "L'accumulation de la négation vide le personnage de toute perspective.", 12),
-          figure("f10", "Répétition du nom", "le fils", "Le nom revient, mais sans construire une identité autonome.", 10, 13),
+        section("m2b", "Le fils réduit au vide", "La répétition met soudain le fils au centre, mais la question sur ce qu'il trouve débouche sur une négation totale. La guerre lui retire toute pensée et tout avenir personnel.", undefined, [
+          figure("f9", "Reprise insistante", "Et le fils et le fils", "La répétition crée une attente autour du fils.", 10),
+          figure("f10", "Négation absolue", "rien absolument rien", "La formule vide le personnage de toute intériorité exprimée.", 12),
         ]),
-        section("m2c", "Un destin social déjà tracé", "Le vers 13 rassemble toute la famille dans une seule phrase sans ponctuation forte. La suite annonce que le fils passera de la guerre aux affaires, comme son père.", undefined, [
-          figure("f11", "Accumulation", "sa mère fait du tricot son père des affaires lui la guerre", "La phrase compacte enferme chacun dans son rôle.", 13),
+        section("m2c", "Un avenir déjà programmé", "Le fils n'est défini que par rapport à la guerre et au père. S'il survit, il passera mécaniquement aux affaires, ce qui prolonge le même ordre social.", undefined, [
+          figure("f11", "Accumulation sans ponctuation", "sa mère fait du tricot son père des affaires lui la guerre", "La phrase compacte enferme chaque personnage dans sa place.", 13),
           figure("f12", "Futur programmatique", "Il fera des affaires avec son père", "Le futur présente l'avenir du fils comme une reproduction du modèle paternel.", 15),
         ]),
       ]),
-      movement("m3", "III. La vie continue absurdement", 19, 24, ["cimetière", "cycle", "critique"], [
-        section("m3a", "La mort intégrée au mécanisme", "La mort du fils est énoncée brutalement, sans lyrisme. Le choc vient de la simplicité de la phrase et du contraste avec la continuation des autres activités.", undefined, [
-          figure("f13", "Antithèse", "La guerre continue / Le fils est tué", "La guerre continue alors que le fils, lui, ne continue plus.", 16, 18),
-          figure("f14", "Phrase brève", "Le fils est tué", "La sécheresse de la phrase rend la mort plus violente.", 18),
+      movement("m3", "III. Une routine qui devient dénonciation", 16, 24, ["mort", "cimetière", "critique"], [
+        section("m3a", "La mort absorbée par la routine", "La répétition du verbe continuer rend la mort du fils encore plus violente. Tout se poursuit, sauf lui.", undefined, [
+          figure("f13", "Répétition", "continue / continue / continue", "La reprise fait entendre une routine mécanique.", 16, 17),
+          figure("f14", "Antithèse", "continue / ne continue plus", "L'opposition souligne que seule la mort du fils interrompt la continuité.", 16, 18),
         ]),
-        section("m3b", "Le cimetière accepté comme une étape ordinaire", "Les parents vont au cimetière et trouvent encore cela naturel. Prévert dénonce une société où même la mort du fils est absorbée par l'habitude.", undefined, [
+        section("m3b", "Une absence de deuil", "Les parents vont au cimetière, puis trouvent encore la situation naturelle. L'expression familiale devient accusatrice : elle montre une société qui accepte même la mort comme un fait normal.", undefined, [
           figure("f15", "Euphémisme narratif", "vont au cimetière", "Le déplacement remplace l'expression directe du deuil.", 19),
-          figure("f16", "Reprise accusatrice", "Ils trouvent ça naturel", "La formule réapparaît après la mort et devient insupportable.", 20),
+          figure("f16", "Reprise accusatrice", "Ils trouvent ça naturel", "La formule réapparaît après la mort et devient moralement choquante.", 20),
         ]),
-        section("m3c", "Une boucle sociale sans issue", "Les derniers vers mélangent le tricot, la guerre et les affaires dans un ordre circulaire. La vie continue, mais cette vie contient désormais le cimetière.", undefined, [
+        section("m3c", "Le monde social dénoncé", "Les derniers vers recommencent la ronde du tricot, de la guerre et des affaires. Mais la chute associe désormais la vie au cimetière : la société paraît immuable parce qu'elle croise les vivants avec les morts.", undefined, [
           figure("f17", "Anaphore", "La vie continue la vie", "La répétition donne une impression de cycle automatique.", 21),
           figure("f18", "Énumération circulaire", "le tricot la guerre les affaires", "Les trois mots tournent comme les pièces d'un mécanisme social.", 21, 23),
           figure("f19", "Chute", "La vie avec le cimetière.", "Le dernier vers associe définitivement la vie sociale à la mort.", 24),
         ]),
       ]),
+    ],
+    conclusion: [
+      section("concl1", "Bilan", "Par une écriture simple, répétitive et proche de l'oral, Prévert dénonce l'absurdité de la guerre et l'indifférence morale qui l'accompagne.", undefined, []),
+      section("concl2", "Portée critique", "Le poème met en lumière une société où la vie humaine est sacrifiée au profit d'un ordre social présenté comme immuable.", undefined, []),
+      section("concl3", "Ouverture", "Le titre Familiale est engagé et profondément critique : il peut faire penser au Dormeur du val de Rimbaud, autre dénonciation implicite de la guerre.", undefined, []),
     ],
   }),
   makeText({
