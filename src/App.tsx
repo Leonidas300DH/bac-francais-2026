@@ -1,14 +1,11 @@
 import {
   BookOpen,
-  Check,
   CheckCircle2,
   ChevronLeft,
   Circle,
-  FileText,
   GraduationCap,
   Languages,
   Layers3,
-  ListChecks,
   NotebookTabs,
   Search,
   Sparkles,
@@ -20,36 +17,7 @@ import { findStudyText, studyTexts } from "./data/studyTexts";
 import { buildFigureIndex, filterFigureIndex, getFigureNameCounts } from "./lib/figures";
 import { filterGrammarCards, getGrammarNotions, getGrammarText } from "./lib/grammar";
 import { formatRange, isLineInRange } from "./lib/ranges";
-import { computeCompletionPercent, readProgress, writeProgress } from "./lib/progress";
-import { computeQuizScore, updateFlashcardKnowledge } from "./lib/quiz";
-import type { Figure, FigureIndexEntry, GrammarCard, LineRange, Movement, QuizItem, StudySection, StudyText, TextProgress } from "./types";
-
-function getSectionIds(text: StudyText): string[] {
-  return [
-    ...text.introduction.map((section) => section.id),
-    ...text.movements.flatMap((movement) => movement.sections.map((section) => section.id)),
-    ...text.conclusion.map((section) => section.id),
-    "glossaire",
-    "memo",
-    "grammaire",
-    "quiz",
-  ];
-}
-
-function useTextProgress(slug: string) {
-  const [progress, setProgress] = useState<TextProgress>(() => readProgress(slug));
-
-  useEffect(() => {
-    setProgress(readProgress(slug));
-  }, [slug]);
-
-  function update(next: TextProgress) {
-    setProgress(next);
-    writeProgress(slug, next);
-  }
-
-  return { progress, update };
-}
+import type { Figure, FigureIndexEntry, GrammarCard, LineRange, Movement, StudySection, StudyText } from "./types";
 
 function getFigureGroups(text: StudyText) {
   return text.movements.map((movement) => ({
@@ -89,24 +57,10 @@ function Dashboard() {
     typeof window === "undefined" ? null : window.localStorage.getItem("bac-francais-2026:last-opened"),
   );
 
-  const progressSummaries = studyTexts.map((text) => {
-    const progress = readProgress(text.slug);
-    const percent = computeCompletionPercent(progress, getSectionIds(text));
-    return { text, progress, percent };
-  });
-  const overallPercent = Math.round(
-    progressSummaries.reduce((total, item) => total + item.percent, 0) / progressSummaries.length,
-  );
-  const completedCount = progressSummaries.filter((item) => item.percent === 100).length;
-  const startedCount = progressSummaries.filter((item) => item.percent > 0).length;
-  const quizAttempts = progressSummaries.reduce((total, item) => total + item.progress.quizHistory.length, 0);
   const lastOpenedText = studyTexts.find((text) => text.slug === lastOpenedSlug);
-  const nextText =
-    progressSummaries.find((item) => item.percent > 0 && item.percent < 100)?.text ??
-    progressSummaries.find((item) => item.percent === 0)?.text ??
-    studyTexts[0];
+  const nextText = lastOpenedText ?? studyTexts[0];
 
-  const filteredTexts = progressSummaries.filter(({ text }) => {
+  const filteredTexts = studyTexts.filter((text) => {
     const haystack = `${text.title} ${text.author} ${text.sourceLabel}`.toLowerCase();
     return haystack.includes(query.trim().toLowerCase());
   });
@@ -121,7 +75,7 @@ function Dashboard() {
           </div>
           <h1>Réviser les 16 textes sans se perdre dans ses notes</h1>
           <p>
-            Fiches à tiroirs, texte source synchronisé, figures de style et quiz pour préparer
+            Fiches à tiroirs, texte source synchronisé, figures de style et questions ouvertes pour préparer
             l'explication linéaire à l'oral.
           </p>
         </div>
@@ -129,28 +83,6 @@ function Dashboard() {
           <BookOpen aria-hidden="true" />
           Commencer
         </Link>
-      </section>
-
-      <section className="dashboard-summary" aria-label="Pilotage de la révision">
-        <article className="summary-card main-summary">
-          <span>Progression globale</span>
-          <strong>{overallPercent}%</strong>
-          <div className="progress-bar" aria-label={`${overallPercent}% terminé sur l'ensemble des textes`}>
-            <i style={{ width: `${overallPercent}%` }} />
-          </div>
-        </article>
-        <article className="summary-card">
-          <span>Textes commencés</span>
-          <strong>{startedCount}/16</strong>
-        </article>
-        <article className="summary-card">
-          <span>Textes terminés</span>
-          <strong>{completedCount}/16</strong>
-        </article>
-        <article className="summary-card">
-          <span>Quiz enregistrés</span>
-          <strong>{quizAttempts}</strong>
-        </article>
       </section>
 
       <section className="resume-strip" aria-label="Reprise rapide">
@@ -166,7 +98,7 @@ function Dashboard() {
             </Link>
           ) : null}
           <Link className="primary-action" to={`/textes/${nextText.slug}`}>
-            Prochain texte
+            Ouvrir une fiche
           </Link>
           <Link className="secondary-action" to="/memo">
             Mémo oral
@@ -233,16 +165,13 @@ function Dashboard() {
       </section>
 
       <section className="text-grid" aria-label="Liste des textes">
-        {filteredTexts.map(({ text, percent }) => {
+        {filteredTexts.map((text) => {
           return (
             <Link className="text-card" to={`/textes/${text.slug}`} key={text.slug}>
               <span className={`status-dot ${text.status}`}>{statusLabel(text.status)}</span>
               <h2>{text.title}</h2>
               <p>{text.author}</p>
               <span>{text.sourceLabel}</span>
-              <div className="progress-bar" aria-label={`${percent}% terminé`}>
-                <i style={{ width: `${percent}%` }} />
-              </div>
             </Link>
           );
         })}
@@ -254,35 +183,16 @@ function Dashboard() {
 function GrammarHub() {
   const [query, setQuery] = useState("");
   const [selectedNotion, setSelectedNotion] = useState("all");
-  const [version, setVersion] = useState(0);
   const notions = useMemo(() => getGrammarNotions(grammarCards), []);
   const filteredCards = useMemo(
     () => filterGrammarCards(grammarCards, query, selectedNotion),
     [query, selectedNotion],
   );
-  const knownCount = grammarCards.filter((card) => {
-    const progress = readProgress(card.textSlug);
-    return Boolean(progress.completedSections[`grammaire:${card.id}`]);
-  }).length;
   const coveredTextCount = new Set(grammarCards.map((card) => card.textSlug)).size;
   const textCount = studyTexts.length;
 
-  function toggleGrammar(card: GrammarCard, known: boolean) {
-    const progress = readProgress(card.textSlug);
-    const nextKnown = !known;
-    writeProgress(card.textSlug, {
-      ...progress,
-      completedSections: {
-        ...progress.completedSections,
-        grammaire: nextKnown,
-        [`grammaire:${card.id}`]: nextKnown,
-      },
-    });
-    setVersion((current) => current + 1);
-  }
-
   return (
-    <main className="grammar-hub" data-progress-version={version}>
+    <main className="grammar-hub">
       <header className="grammar-hub-header">
         <Link className="back-link" to="/">
           <ChevronLeft aria-hidden="true" />
@@ -308,8 +218,8 @@ function GrammarHub() {
           <strong>{coveredTextCount}/{textCount}</strong>
         </article>
         <article>
-          <span>Questions sues</span>
-          <strong>{knownCount}/{grammarCards.length}</strong>
+          <span>Notions</span>
+          <strong>{notions.length}</strong>
         </article>
       </section>
 
@@ -334,18 +244,9 @@ function GrammarHub() {
       </section>
 
       <section className="grammar-card-list" aria-label="Questions de grammaire">
-        {filteredCards.map((card) => {
-          const progress = readProgress(card.textSlug);
-          const known = Boolean(progress.completedSections[`grammaire:${card.id}`]);
-          return (
-            <GrammarHubCard
-              key={card.id}
-              card={card}
-              known={known}
-              onToggle={() => toggleGrammar(card, known)}
-            />
-          );
-        })}
+        {filteredCards.map((card) => (
+          <GrammarHubCard key={card.id} card={card} />
+        ))}
       </section>
     </main>
   );
@@ -353,26 +254,19 @@ function GrammarHub() {
 
 function GrammarHubCard({
   card,
-  known,
-  onToggle,
 }: {
   card: GrammarCard;
-  known: boolean;
-  onToggle: () => void;
 }) {
   const text = getGrammarText(card);
 
   return (
-    <article className={known ? "grammar-card known" : "grammar-card"}>
+    <article className="grammar-card">
       <div className="grammar-card-head">
         <div>
           <span>{card.notion}</span>
           <h2>{text?.title ?? card.textSlug}</h2>
           <p>{text?.author}</p>
         </div>
-        <button type="button" className={known ? "grammar-known known" : "grammar-known"} onClick={onToggle}>
-          {known ? "Question sue" : "À revoir"}
-        </button>
       </div>
 
       <div className="grammar-question">
@@ -403,37 +297,16 @@ function GrammarHubCard({
 
 function MemoHub() {
   const [query, setQuery] = useState("");
-  const [showOnlyReview, setShowOnlyReview] = useState(false);
-  const [progressVersion, setProgressVersion] = useState(0);
 
-  const memoEntries = studyTexts.map((text) => {
-    const progress = readProgress(text.slug);
-    const known = Boolean(progress.completedSections.memo);
-    return { text, progress, known };
-  });
-  const knownCount = memoEntries.filter((entry) => entry.known).length;
   const textCount = studyTexts.length;
-  const filteredEntries = memoEntries.filter(({ text, known }) => {
+  const filteredEntries = studyTexts.filter((text) => {
     const haystack = `${text.title} ${text.author} ${text.sourceLabel} ${text.memoryCard.problem}`.toLowerCase();
     const matchesQuery = haystack.includes(query.trim().toLowerCase());
-    const matchesStatus = !showOnlyReview || !known;
-    return matchesQuery && matchesStatus;
+    return matchesQuery;
   });
 
-  function toggleMemo(text: StudyText, known: boolean) {
-    const progress = readProgress(text.slug);
-    writeProgress(text.slug, {
-      ...progress,
-      completedSections: {
-        ...progress.completedSections,
-        memo: !known,
-      },
-    });
-    setProgressVersion((version) => version + 1);
-  }
-
   return (
-    <main className="memo-hub" data-progress-version={progressVersion}>
+    <main className="memo-hub">
       <header className="memo-hub-header">
         <Link className="back-link" to="/">
           <ChevronLeft aria-hidden="true" />
@@ -451,12 +324,12 @@ function MemoHub() {
 
       <section className="memo-hub-stats" aria-label="Synthèse des mémos">
         <article>
-          <span>Mémos prêts</span>
-          <strong>{knownCount}/{textCount}</strong>
+          <span>Textes</span>
+          <strong>{textCount}</strong>
         </article>
         <article>
-          <span>À revoir</span>
-          <strong>{textCount - knownCount}</strong>
+          <span>Citations par fiche</span>
+          <strong>3</strong>
         </article>
         <article>
           <span>Format</span>
@@ -473,18 +346,11 @@ function MemoHub() {
             placeholder="Chercher un texte, un auteur, une problématique..."
           />
         </label>
-        <button
-          type="button"
-          className={showOnlyReview ? "memo-filter active" : "memo-filter"}
-          onClick={() => setShowOnlyReview((value) => !value)}
-        >
-          {showOnlyReview ? "Tous les mémos" : "À revoir seulement"}
-        </button>
       </section>
 
       <section className="memo-hub-list" aria-label="Liste des mémos oraux">
-        {filteredEntries.map(({ text, known }) => (
-          <MemoHubCard key={text.slug} text={text} known={known} onToggle={() => toggleMemo(text, known)} />
+        {filteredEntries.map((text) => (
+          <MemoHubCard key={text.slug} text={text} />
         ))}
       </section>
     </main>
@@ -493,23 +359,16 @@ function MemoHub() {
 
 function MemoHubCard({
   text,
-  known,
-  onToggle,
 }: {
   text: StudyText;
-  known: boolean;
-  onToggle: () => void;
 }) {
   return (
-    <article className={known ? "memo-hub-card known" : "memo-hub-card"}>
+    <article className="memo-hub-card">
       <div className="memo-hub-card-header">
         <div>
           <span>{text.author}</span>
           <h2>{text.title}</h2>
         </div>
-        <button type="button" className={known ? "memo-known-toggle known" : "memo-known-toggle"} onClick={onToggle}>
-          {known ? "Mémo su" : "À revoir"}
-        </button>
       </div>
 
       <div className="memo-hub-problem">
@@ -714,9 +573,6 @@ function StudyPage({ text }: { text: StudyText }) {
   );
   const [detailsKey, setDetailsKey] = useState(0);
   const [defaultOpen, setDefaultOpen] = useState(false);
-  const { progress, update } = useTextProgress(text.slug);
-  const sectionIds = useMemo(() => getSectionIds(text), [text]);
-  const percent = computeCompletionPercent(progress, sectionIds);
 
   useEffect(() => {
     window.localStorage.setItem("bac-francais-2026:last-opened", text.slug);
@@ -725,16 +581,6 @@ function StudyPage({ text }: { text: StudyText }) {
   useEffect(() => {
     setSelectedRange(requestedRange ?? text.movements[0]?.range ?? null);
   }, [requestedRange, text.slug, text.movements]);
-
-  function toggleSectionDone(sectionId: string) {
-    update({
-      ...progress,
-      completedSections: {
-        ...progress.completedSections,
-        [sectionId]: !progress.completedSections[sectionId],
-      },
-    });
-  }
 
   function openAll() {
     setDefaultOpen(true);
@@ -761,10 +607,6 @@ function StudyPage({ text }: { text: StudyText }) {
             <h1>{text.title}</h1>
             <p>{text.author} - {text.sourceLabel}</p>
           </div>
-          <div className="study-progress" aria-label={`${percent}% de la fiche marqué comme su`}>
-            <span>{percent}%</span>
-            <div className="progress-bar"><i style={{ width: `${percent}%` }} /></div>
-          </div>
         </header>
 
         <nav className="toolbar" aria-label="Navigation de la fiche">
@@ -776,7 +618,7 @@ function StudyPage({ text }: { text: StudyText }) {
           <a href="#conclusion">Conclusion</a>
           <a href="#glossaire">Figures</a>
           <a href="#memo">Mémo</a>
-          <a href="#quiz">Quiz</a>
+          <a href="#quiz">Questions</a>
           <Link to="/figures">Atelier figures</Link>
           <Link to="/memo">Mémos</Link>
           <Link to="/grammaire">Grammaire</Link>
@@ -791,8 +633,6 @@ function StudyPage({ text }: { text: StudyText }) {
                 <SectionDrawer
                   key={section.id}
                   section={section}
-                  done={Boolean(progress.completedSections[section.id])}
-                  onToggleDone={() => toggleSectionDone(section.id)}
                   defaultOpen={defaultOpen}
                   onSelectRange={setSelectedRange}
                 />
@@ -812,8 +652,6 @@ function StudyPage({ text }: { text: StudyText }) {
                 key={movement.id}
                 movement={movement}
                 defaultOpen={defaultOpen}
-                progress={progress}
-                onToggleDone={toggleSectionDone}
                 onSelectRange={setSelectedRange}
               />
             ))}
@@ -823,8 +661,6 @@ function StudyPage({ text }: { text: StudyText }) {
                 <SectionDrawer
                   key={section.id}
                   section={section}
-                  done={Boolean(progress.completedSections[section.id])}
-                  onToggleDone={() => toggleSectionDone(section.id)}
                   defaultOpen={defaultOpen}
                   onSelectRange={setSelectedRange}
                 />
@@ -839,7 +675,7 @@ function StudyPage({ text }: { text: StudyText }) {
               <strong>Fil directeur à mémoriser :</strong> {text.recap}
             </div>
 
-            <QuizPanel text={text} progress={progress} updateProgress={update} />
+            <QuizPanel text={text} />
           </section>
 
           <SourceText text={text} selectedRange={selectedRange} onSelectRange={setSelectedRange} />
@@ -858,8 +694,6 @@ function LibrarySidebar({ activeSlug }: { activeSlug: string }) {
       </div>
       <nav>
         {studyTexts.map((text, index) => {
-          const progress = readProgress(text.slug);
-          const percent = computeCompletionPercent(progress, getSectionIds(text));
           return (
             <Link
               key={text.slug}
@@ -868,7 +702,7 @@ function LibrarySidebar({ activeSlug }: { activeSlug: string }) {
             >
               <span>{index + 1}</span>
               <strong>{text.title}</strong>
-              <small>{percent}% - {statusLabel(text.status)}</small>
+              <small>{text.author} - {statusLabel(text.status)}</small>
             </Link>
           );
         })}
@@ -1025,14 +859,10 @@ function Chapter({
 function MovementChapter({
   movement,
   defaultOpen,
-  progress,
-  onToggleDone,
   onSelectRange,
 }: {
   movement: Movement;
   defaultOpen: boolean;
-  progress: TextProgress;
-  onToggleDone: (id: string) => void;
   onSelectRange: (range: LineRange) => void;
 }) {
   return (
@@ -1049,8 +879,6 @@ function MovementChapter({
         <SectionDrawer
           key={section.id}
           section={section}
-          done={Boolean(progress.completedSections[section.id])}
-          onToggleDone={() => onToggleDone(section.id)}
           defaultOpen={defaultOpen}
           onSelectRange={onSelectRange}
         />
@@ -1061,14 +889,10 @@ function MovementChapter({
 
 function SectionDrawer({
   section,
-  done,
-  onToggleDone,
   defaultOpen,
   onSelectRange,
 }: {
   section: StudySection;
-  done: boolean;
-  onToggleDone: () => void;
   defaultOpen: boolean;
   onSelectRange: (range: LineRange) => void;
 }) {
@@ -1076,18 +900,6 @@ function SectionDrawer({
     <details className="subpart" open={defaultOpen}>
       <summary>
         <span>{section.title}</span>
-        <button
-          className={done ? "done-toggle done" : "done-toggle"}
-          type="button"
-          onClick={(event) => {
-            event.preventDefault();
-            event.stopPropagation();
-            onToggleDone();
-          }}
-          aria-label={done ? "Marquer comme non su" : "Marquer comme su"}
-        >
-          {done ? <Check aria-hidden="true" /> : <Circle aria-hidden="true" />}
-        </button>
       </summary>
       <div className="detail">
         <div className="simple-box">
@@ -1181,72 +993,22 @@ function SourceText({
   );
 }
 
-function QuizPanel({
-  text,
-  progress,
-  updateProgress,
-}: {
-  text: StudyText;
-  progress: TextProgress;
-  updateProgress: (progress: TextProgress) => void;
-}) {
-  const score = computeQuizScore(text.quiz, progress.quizAnswers);
+function QuizPanel({ text }: { text: StudyText }) {
   const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
 
-  function chooseAnswer(item: QuizItem, answer: string) {
-    updateProgress({
-      ...progress,
-      quizAnswers: {
-        ...progress.quizAnswers,
-        [item.id]: answer,
-      },
-    });
-  }
-
-  function saveScore() {
-    updateProgress({
-      ...progress,
-      completedSections: {
-        ...progress.completedSections,
-        quiz: true,
-      },
-      quizHistory: [
-        ...progress.quizHistory,
-        { ...score, takenAt: new Date().toISOString() },
-      ],
-    });
-  }
-
   return (
-    <section className="quiz-panel" id="quiz" aria-label="Quiz de révision">
+    <section className="quiz-panel" id="quiz" aria-label="Questions de révision">
       <div className="quiz-heading">
         <div>
-          <h2>Révision active</h2>
-          <p>Questions rapides pour préparer l'oral et fixer les procédés.</p>
+          <h2>Questions de révision</h2>
+          <p>Questions ouvertes avec réponse masquée, pour vérifier le contenu sans propositions imposées.</p>
         </div>
-        <strong>{score.correct}/{score.total}</strong>
       </div>
 
       <div className="quiz-grid">
         {text.quiz.map((item) => (
           <article className="quiz-card" key={item.id}>
             <h3>{item.prompt}</h3>
-            <div className="choices">
-              {(item.choices ?? [item.answer]).map((choice) => {
-                const selected = progress.quizAnswers[item.id] === choice;
-                const correct = choice === item.answer;
-                return (
-                  <button
-                    key={choice}
-                    type="button"
-                    className={selected ? (correct ? "choice correct" : "choice wrong") : "choice"}
-                    onClick={() => chooseAnswer(item, choice)}
-                  >
-                    {choice}
-                  </button>
-                );
-              })}
-            </div>
             <button
               className="answer-reveal"
               type="button"
@@ -1257,46 +1019,17 @@ function QuizPanel({
                 }))
               }
             >
-              {revealedAnswers[item.id] ? "Masquer la réponse" : "Afficher la réponse"}
+              {revealedAnswers[item.id] ? "Masquer la réponse" : "Voir la réponse"}
             </button>
-            {progress.quizAnswers[item.id] || revealedAnswers[item.id] ? (
+            {revealedAnswers[item.id] ? (
               <p className="answer-feedback">
-                Réponse attendue : <strong>{item.answer}</strong>
+                <strong>Réponse :</strong> {item.answer}
                 {item.explanation ? <span> {item.explanation}</span> : null}
               </p>
             ) : null}
           </article>
         ))}
       </div>
-
-      <div className="flashcards">
-        <h3>Flashcards</h3>
-        {text.movements.map((movement) => {
-          const known = Boolean(progress.flashcards[movement.id]);
-          return (
-            <button
-              key={movement.id}
-              type="button"
-              className={known ? "flashcard known" : "flashcard"}
-              onClick={() =>
-                updateProgress({
-                  ...progress,
-                  flashcards: updateFlashcardKnowledge(progress.flashcards, movement.id, !known),
-                })
-              }
-            >
-              <FileText aria-hidden="true" />
-              <span>{movement.title}</span>
-              <strong>{known ? "su" : "à revoir"}</strong>
-            </button>
-          );
-        })}
-      </div>
-
-      <button className="primary-action quiz-save" type="button" onClick={saveScore}>
-        <ListChecks aria-hidden="true" />
-        Enregistrer le score
-      </button>
     </section>
   );
 }

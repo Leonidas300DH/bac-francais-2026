@@ -97,15 +97,12 @@ function conclusionSections(input: TextInput): StudySection[] {
 }
 
 function quiz(input: TextInput): QuizItem[] {
-  const first = input.movements[0];
-  const second = input.movements[1];
-  const third = input.movements[2];
   const firstFigure = input.movements.flatMap((movementItem) =>
     movementItem.sections.flatMap((sectionItem) => sectionItem.figures ?? []),
   )[0];
-  const secondFigure = input.movements.flatMap((movementItem) =>
-    movementItem.sections.flatMap((sectionItem) => sectionItem.figures ?? []),
-  )[1];
+  const planAnswer = input.movements
+    .map((movementItem, index) => `${index + 1}. ${normalizePlanTitle(movementItem.title)} : ${movementItem.keywords.join(", ")}`)
+    .join(" ; ");
   const figureAnswer = firstFigure
     ? `${firstFigure.name} : ${firstFigure.quote} -> ${firstFigure.explanation}`
     : input.recap;
@@ -114,29 +111,21 @@ function quiz(input: TextInput): QuizItem[] {
       id: "q-enjeu",
       prompt: "Quel est l'enjeu principal de ce texte ?",
       answer: input.quizFocus,
-      choices: [input.quizFocus, "Faire seulement un portrait décoratif.", "Raconter une anecdote sans portée."],
     },
     {
-      id: "q-m1",
-      prompt: `Quel est le noyau du ${first.title.toLowerCase()} ?`,
-      answer: first.keywords.join(" / "),
-      choices: [first.keywords.join(" / "), second.keywords.join(" / "), third.keywords.join(" / ")],
+      id: "q-plan",
+      prompt: "Quel plan faut-il annoncer à l'oral ?",
+      answer: planAnswer,
     },
     {
       id: "q-procede",
       prompt: "Quel procédé précis peut servir d'appui dans ce texte ?",
       answer: figureAnswer,
-      choices: [
-        figureAnswer,
-        secondFigure ? `${secondFigure.name} : ${secondFigure.quote}` : second.keywords.join(" / "),
-        third.keywords.join(" / "),
-      ],
     },
     {
       id: "q-recap",
       prompt: "Quel fil directeur faut-il mémoriser ?",
       answer: input.recap,
-      choices: [input.recap, "Le texte n'a pas d'organisation.", "Le texte se limite à une description sans enjeu."],
     },
   ];
 }

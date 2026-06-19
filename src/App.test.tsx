@@ -8,16 +8,17 @@ afterEach(() => {
 });
 
 describe("study app interface", () => {
-  it("renders dashboard progress controls", () => {
+  it("renders dashboard navigation without progress widgets", () => {
     render(
       <MemoryRouter initialEntries={["/"]}>
         <App />
       </MemoryRouter>,
     );
 
-    expect(screen.getByText("Progression globale")).toBeInTheDocument();
+    expect(screen.queryByText("Progression globale")).not.toBeInTheDocument();
+    expect(screen.queryByText("Quiz enregistrés")).not.toBeInTheDocument();
     expect(screen.getByText("Reprise rapide")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Prochain texte" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Ouvrir une fiche" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Ouvrir l'atelier/i })).toHaveAttribute("href", "/figures");
     expect(screen.getByRole("link", { name: /Ouvrir les mémos/i })).toHaveAttribute("href", "/memo");
     expect(screen.getByRole("link", { name: /Ouvrir la grammaire/i })).toHaveAttribute("href", "/grammaire");
@@ -31,24 +32,10 @@ describe("study app interface", () => {
     );
 
     expect(screen.getByRole("heading", { name: "Mémos d'oral" })).toBeInTheDocument();
-    expect(screen.getByText("Mémos prêts")).toBeInTheDocument();
-    expect(screen.getAllByRole("button", { name: "À revoir" })).toHaveLength(16);
+    expect(screen.getByText("Citations par fiche")).toBeInTheDocument();
+    expect(screen.queryByText("Mémos prêts")).not.toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "À revoir" })).not.toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Ouvrir la fiche" })).toHaveLength(16);
-  });
-
-  it("persists oral memo knowledge locally", () => {
-    render(
-      <MemoryRouter initialEntries={["/memo"]}>
-        <App />
-      </MemoryRouter>,
-    );
-
-    fireEvent.click(screen.getAllByRole("button", { name: "À revoir" })[0]);
-
-    expect(screen.getByText("1/16")).toBeInTheDocument();
-    expect(JSON.parse(window.localStorage.getItem("bac-francais-2026:les-effares") ?? "{}")).toMatchObject({
-      completedSections: { memo: true },
-    });
   });
 
   it("links memo quotes to highlighted source lines", () => {
@@ -86,28 +73,11 @@ describe("study app interface", () => {
 
     expect(screen.getByRole("heading", { name: "Grammaire en 2 minutes" })).toBeInTheDocument();
     expect(screen.getByText("Textes couverts")).toBeInTheDocument();
-    expect(screen.getAllByRole("button", { name: "À revoir" })).toHaveLength(16);
+    expect(screen.getByText("Notions")).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: "À revoir" })).not.toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Voir Vers 4" }).map((link) => link.getAttribute("href"))).toContain(
       "/textes/les-effares?ligne=4#texte-source",
     );
-  });
-
-  it("persists grammar question knowledge locally", () => {
-    render(
-      <MemoryRouter initialEntries={["/grammaire"]}>
-        <App />
-      </MemoryRouter>,
-    );
-
-    fireEvent.click(screen.getAllByRole("button", { name: "À revoir" })[0]);
-
-    expect(screen.getByText("1/16")).toBeInTheDocument();
-    expect(JSON.parse(window.localStorage.getItem("bac-francais-2026:les-effares") ?? "{}")).toMatchObject({
-      completedSections: {
-        grammaire: true,
-        "grammaire:g-les-effares-1": true,
-      },
-    });
   });
 
   it("does not repeat the official method block inside a study fiche", () => {
@@ -149,16 +119,21 @@ describe("study app interface", () => {
     expect(activeLine).toHaveTextContent("friandise du ver,");
   });
 
-  it("can reveal quiz answers directly", () => {
+  it("renders open revision questions with masked answers", () => {
     render(
       <MemoryRouter initialEntries={["/textes/les-effares"]}>
         <App />
       </MemoryRouter>,
     );
 
-    fireEvent.click(screen.getAllByRole("button", { name: "Afficher la réponse" })[0]);
+    expect(document.querySelector(".answer-feedback")).not.toBeInTheDocument();
+    expect(screen.queryByText("Flashcards")).not.toBeInTheDocument();
+    expect(screen.queryByText(/Enregistrer le score/i)).not.toBeInTheDocument();
+    expect(screen.queryAllByRole("button", { name: /Faire seulement|Raconter une anecdote/i })).toHaveLength(0);
 
-    expect(screen.getByText(/Réponse attendue/)).toBeInTheDocument();
+    fireEvent.click(screen.getAllByRole("button", { name: "Voir la réponse" })[0]);
+
+    expect(document.querySelector(".answer-feedback")).toHaveTextContent("Réponse :");
     expect(screen.getAllByText(/Le poème montre cinq enfants affamés/).length).toBeGreaterThan(1);
   });
 });

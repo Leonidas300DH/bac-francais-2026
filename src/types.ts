@@ -44,7 +44,6 @@ export type QuizItem = {
   id: string;
   prompt: string;
   answer: string;
-  choices?: string[];
   explanation?: string;
 };
 
@@ -99,11 +98,4 @@ export type GrammarCard = {
   answer: string;
   reflex: string;
   range: LineRange;
-};
-
-export type TextProgress = {
-  completedSections: Record<string, boolean>;
-  quizAnswers: Record<string, string>;
-  quizHistory: { correct: number; total: number; percent: number; takenAt: string }[];
-  flashcards: Record<string, boolean>;
 };

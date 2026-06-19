@@ -47,12 +47,6 @@ export function validateStudyText(text: StudyText): string[] {
     });
   });
 
-  text.quiz.forEach((item) => {
-    if (item.choices && !item.choices.includes(item.answer)) {
-      errors.push(`${prefix} quiz ${item.id} answer is not in choices`);
-    }
-  });
-
   text.memoryCard?.keyQuotes.forEach((item, index) => {
     if (!lineNumbers.has(item.range.start) || !lineNumbers.has(item.range.end)) {
       errors.push(`${prefix} memoryCard quote ${index + 1} points to missing lines`);

@@ -120,23 +120,6 @@ h1, h2 {
   text-decoration: none;
 }
 
-.dashboard-summary {
-  display: grid;
-  grid-template-columns: minmax(260px, 1.7fr) repeat(3, minmax(150px, 1fr));
-  gap: 12px;
-  margin: 8px 0 14px;
-}
-
-.summary-card {
-  min-width: 0;
-  padding: 15px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--paper);
-  box-shadow: var(--shadow);
-}
-
-.summary-card span,
 .resume-strip span {
   display: block;
   color: var(--muted);
@@ -144,19 +127,6 @@ h1, h2 {
   font-weight: 850;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-}
-
-.summary-card strong {
-  display: block;
-  margin-top: 5px;
-  color: var(--accent-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 2rem;
-  line-height: 1;
-}
-
-.main-summary strong {
-  font-size: 2.45rem;
 }
 
 .resume-strip {
@@ -353,20 +323,6 @@ h1, h2 {
 .status-dot.ready { background: var(--simple); color: #365840; }
 .status-dot.review { background: var(--figure); color: #72531c; }
 
-.progress-bar {
-  height: 7px;
-  margin-top: 14px;
-  overflow: hidden;
-  border-radius: 999px;
-  background: #e7ded5;
-}
-.progress-bar i {
-  display: block;
-  height: 100%;
-  border-radius: inherit;
-  background: var(--accent);
-}
-
 .study-shell {
   display: grid;
   grid-template-columns: 250px minmax(0, 1fr);
@@ -452,12 +408,6 @@ h1, h2 {
   color: var(--accent-dark);
   font-weight: 800;
   text-decoration: none;
-}
-
-.study-progress {
-  min-width: 170px;
-  color: var(--accent-dark);
-  font-weight: 900;
 }
 
 .toolbar {
@@ -628,24 +578,6 @@ h1, h2 {
 .subpart[open] > summary {
   color: var(--accent-dark);
   background: var(--accent-soft);
-}
-
-.done-toggle {
-  display: grid;
-  flex: 0 0 32px;
-  width: 32px;
-  height: 32px;
-  place-items: center;
-  border: 1px solid var(--line);
-  border-radius: 50%;
-  background: #fff;
-  color: var(--muted);
-}
-.done-toggle svg { width: 16px; height: 16px; }
-.done-toggle.done {
-  border-color: var(--simple-border);
-  background: var(--simple);
-  color: #365840;
 }
 
 .detail { padding: 15px 16px 17px; }
@@ -1031,28 +963,7 @@ h1, h2 {
   margin: 0 0 10px;
   font-size: 1rem;
 }
-.choices {
-  display: grid;
-  gap: 7px;
-}
-.choice {
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: #fdfbf8;
-  color: var(--ink);
-  text-align: left;
-}
-.choice.correct {
-  border-color: var(--simple-border);
-  background: var(--simple);
-}
-.choice.wrong {
-  border-color: #bc7575;
-  background: #f9e3df;
-}
 .answer-reveal {
-  margin-top: 9px;
   padding: 7px 9px;
   border: 1px solid var(--line);
   border-radius: 9px;
@@ -1073,34 +984,6 @@ h1, h2 {
 .answer-feedback strong {
   color: var(--accent-dark);
 }
-.flashcards {
-  display: grid;
-  gap: 8px;
-  margin-top: 14px;
-}
-.flashcards h3 { margin: 0; }
-.flashcard {
-  display: grid;
-  grid-template-columns: 22px minmax(0, 1fr) auto;
-  gap: 8px;
-  align-items: center;
-  padding: 10px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--ink);
-  text-align: left;
-}
-.flashcard svg { width: 18px; height: 18px; color: var(--accent); }
-.flashcard.known {
-  border-color: var(--simple-border);
-  background: var(--simple);
-}
-.flashcard strong {
-  color: var(--accent-dark);
-  font-size: 0.84rem;
-}
-.quiz-save { margin-top: 14px; }
 
 .figure-hub,
 .memo-hub,
@@ -1195,11 +1078,6 @@ h1, h2 {
   box-shadow: var(--shadow);
 }
 
-.grammar-card.known {
-  border-color: var(--simple-border);
-  background: linear-gradient(180deg, var(--paper), var(--simple));
-}
-
 .grammar-card-head {
   display: flex;
   justify-content: space-between;
@@ -1226,24 +1104,6 @@ h1, h2 {
 .grammar-card-head p {
   margin: 2px 0 0;
   color: var(--muted);
-}
-
-.grammar-known {
-  flex: 0 0 auto;
-  min-height: 36px;
-  padding: 7px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--accent-dark);
-  font-size: 0.86rem;
-  font-weight: 850;
-}
-
-.grammar-known.known {
-  border-color: var(--simple-border);
-  background: var(--simple);
-  color: #365840;
 }
 
 .grammar-question,
@@ -1313,24 +1173,6 @@ h1, h2 {
   padding: 7px 11px;
 }
 
-.memo-filter {
-  flex: 0 0 auto;
-  min-height: 42px;
-  padding: 9px 13px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #fff;
-  color: var(--accent-dark);
-  font-weight: 850;
-}
-
-.memo-filter:hover,
-.memo-filter.active {
-  border-color: var(--simple-border);
-  background: var(--simple);
-  color: #365840;
-}
-
 .memo-hub-list {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1346,11 +1188,6 @@ h1, h2 {
   border-radius: 14px;
   background: var(--paper);
   box-shadow: var(--shadow);
-}
-
-.memo-hub-card.known {
-  border-color: var(--simple-border);
-  background: linear-gradient(180deg, var(--paper), var(--simple));
 }
 
 .memo-hub-card-header {
@@ -1374,24 +1211,6 @@ h1, h2 {
   color: var(--accent);
   font-size: 1.45rem;
   line-height: 1.08;
-}
-
-.memo-known-toggle {
-  flex: 0 0 auto;
-  min-height: 36px;
-  padding: 7px 10px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: #fff;
-  color: var(--accent-dark);
-  font-size: 0.86rem;
-  font-weight: 850;
-}
-
-.memo-known-toggle.known {
-  border-color: var(--simple-border);
-  background: var(--simple);
-  color: #365840;
 }
 
 .memo-hub-problem,
@@ -1710,7 +1529,6 @@ h1, h2 {
     order: -1;
   }
   .poem-scroll { max-height: none; }
-  .study-progress { min-width: 0; }
 }
 
 @media (max-width: 720px) {
@@ -1738,11 +1556,9 @@ h1, h2 {
   .glossary-strip,
   .figure-hub-stats,
   .memo-hub-stats,
-  .grammar-hub-stats,
-  .dashboard-summary {
+  .grammar-hub-stats {
     grid-template-columns: 1fr;
   }
-  .main-summary { grid-column: auto; }
   .resume-actions,
   .resume-actions a {
     width: 100%;
@@ -1754,9 +1570,6 @@ h1, h2 {
   .memo-hub,
   .grammar-hub,
   .select-field {
-    width: 100%;
-  }
-  .memo-filter {
     width: 100%;
   }
   .memo-hub-card-header,
@@ -1823,7 +1636,6 @@ h1, h2 {
   .library-sidebar,
   .toolbar,
   .back-link,
-  .done-toggle,
   .quiz-panel,
   .verse-link,
   .locate {
