@@ -771,13 +771,35 @@ const texts: StudyText[] = [
     author: "Étienne de La Boétie",
     sourceLabel: "Discours de la servitude volontaire, 1548",
     lines: sourceTexts.laboetiePeuples,
-    context: "La Boétie s'adresse directement aux peuples pour leur montrer qu'ils participent eux-mêmes au pouvoir du tyran.",
-    quizFocus: "Le discours accuse les peuples de fournir eux-mêmes au tyran les richesses, les corps et le pouvoir qui les écrasent.",
-    problematique: "Comment La Boétie pousse-t-il le peuple à refuser la servitude ?",
-    recap: "La Boétie réveille le peuple par l'apostrophe, démonte le pouvoir du tyran en montrant qu'il vient des dominés, puis fait de la liberté un retrait volontaire du soutien collectif.",
-    opening: "On peut ouvrir sur Diderot, qui défend aussi la liberté contre la domination.",
+    context: "La Boétie, écrivain humaniste du XVIe siècle et ami de Montaigne, est marqué par la brutalité de la répression d'une révolte en Guyenne en 1548. Dans le Discours de la servitude volontaire, il traduit son désir de liberté face à l'absolutisme.",
+    quizFocus: "Le discours interpelle directement les peuples pour expliquer qu'ils sont aussi responsables de leur asservissement : le tyran ne tient que parce qu'ils l'aident, le nourrissent et le soutiennent.",
+    problematique: "De quelle façon La Boétie s'y prend-il pour tenter de faire prendre conscience aux peuples de ce caractère volontaire de leur servitude ?",
+    recap: "Dans ce réquisitoire, La Boétie multiplie les accusations et les images contre le système tyrannique : il peint une nature humaine qui s'attaque à elle-même et invite les peuples à reconnaître leur propre pouvoir d'action.",
+    opening: "On peut ouvrir sur 1984 de George Orwell, autre réflexion sur les mécanismes de l'oppression et la complicité produite par les régimes totalitaires.",
+    introduction: [
+      {
+        id: "intro-auteur",
+        title: "L'auteur et l'oeuvre",
+        simple: "Étienne de La Boétie est un écrivain humaniste français du XVIe siècle. Ami intime de Montaigne, il a étudié le droit et s'interroge très tôt sur la liberté politique.",
+      },
+      {
+        id: "intro-contexte",
+        title: "Le contexte",
+        simple: "Le Discours de la servitude volontaire, rédigé vers 1548, traduit un désir de liberté cultivé devant la réalité de l'absolutisme. La Boétie cherche à comprendre pourquoi des peuples entiers acceptent d'obéir à un seul tyran.",
+      },
+      {
+        id: "intro-passage",
+        title: "La situation du passage",
+        simple: "Dans cet extrait, l'auteur interpelle directement les peuples. Il veut leur faire comprendre qu'ils ne sont pas seulement victimes : ils donnent eux-mêmes au tyran une grande partie de sa force.",
+      },
+      {
+        id: "intro-plan",
+        title: "Annonce du plan",
+        simple: "Le texte avance en quatre temps : dénoncer la soumission du peuple, critiquer le pouvoir tyrannique, accuser la complicité des peuples, puis appeler à une prise de conscience et à l'action.",
+      },
+    ],
     movements: [
-      movement("m1", "I. Un réveil brutal du peuple", 1, 7, ["apostrophe", "accusation", "perte"], [
+      movement("m1", "I. Dénonciation de la soumission du peuple", 1, 6, ["apostrophe", "accusation", "perte"], [
         section("m1a", "Une apostrophe qui secoue les dominés", "La Boétie commence par parler directement aux peuples. Il ne les présente pas comme de simples victimes : il les accuse d'être obstinés dans leur propre malheur.", "L'entrée du texte a une fonction de choc : rendre insupportable une servitude devenue habituelle.", [
           figure("f1", "Apostrophe", "Pauvres et misérables peuples insensés", "L'adresse directe transforme le passage en discours d'alerte.", 1),
           figure("f2", "Accumulation dépréciative", "pauvres / misérables / insensés / opiniâtres / aveugles", "La série d'adjectifs construit un portrait sévère du peuple soumis.", 1),
@@ -793,43 +815,59 @@ const texts: StudyText[] = [
           figure("f8", "Correction polémique", "non pas des ennemis, mais... de l’ennemi", "Le singulier concentre la responsabilité sur le tyran, mais aussi sur ceux qui le rendent puissant.", 4),
           figure("f9", "Subordonnée accusatrice", "celui que vous faites si grand", "Le peuple est présenté comme l'artisan de la grandeur du tyran.", 5),
           figure("f10", "Restriction démystifiante", "n’a que deux yeux, n’a que deux mains, n’a qu’un corps", "Le tyran est ramené à un homme ordinaire.", 6),
+        ]),
+      ]),
+      movement("m2", "II. La critique du pouvoir tyrannique", 7, 11, ["questions", "démystification", "pouvoir"], [
+        section("m2a", "Le tyran est ramené à un dominateur ordinaire", "La Boétie insiste sur la faiblesse réelle du tyran : il n'a rien de plus qu'un homme ordinaire. Sa puissance est donc une construction, non une supériorité naturelle.", "La critique commence par désacraliser le tyran.", [
           figure("f11", "Opposition", "moindre des hommes / nombre infini de vos villes", "La faiblesse physique du tyran contraste avec la masse des peuples.", 7),
+          figure("f12", "Restriction", "n’a pas d’autre avantage", "La formule réduit le pouvoir du tyran à ce que les peuples lui accordent.", 7),
+          figure("f13", "Finale accusatrice", "sinon celui que vous lui faites pour vous détruire", "Le peuple fabrique l'avantage qui se retourne contre lui.", 7),
+        ]),
+        section("m2b", "Les questions démontent les organes du pouvoir", "La série de questions rhétoriques oblige à reconnaître que le tyran n'a ni yeux, ni mains, ni pieds qui ne viennent des peuples eux-mêmes.", "Le raisonnement est implacable : le pouvoir du tyran est emprunté aux dominés.", [
+          figure("f14", "Questions rhétoriques", "D’où a-t-il pris / Comment a-t-il / d’où les a-t-il", "Les questions guident le lecteur vers une seule réponse : le peuple fournit tout.", 8, 10),
+          figure("f15", "Métonymies du pouvoir", "yeux / mains / pieds", "Les parties du corps représentent l'espionnage, la violence et l'occupation du territoire.", 8, 10),
+          figure("f16", "Répétition conditionnelle", "si vous ne les lui donnez / s’il ne les prend de vous", "La syntaxe fait dépendre la puissance du tyran de la participation du peuple.", 8, 10),
+        ]),
+        section("m2c", "La formule centrale résume la dépendance du tyran", "Quand La Boétie demande comment le tyran peut avoir du pouvoir « que par vous », il donne la clé du passage : la force tyrannique vient des dominés eux-mêmes.", "La thèse tient en quelques mots : sans le peuple, le tyran ne peut rien.", [
+          figure("f17", "Formule synthétique", "que par vous", "La brièveté de l'expression concentre toute la thèse de La Boétie.", 11),
+          figure("f18", "Question rhétorique", "Comment a-t-il aucun pouvoir sur vous", "La question pousse le lecteur à reconnaître sa propre responsabilité.", 11),
+          figure("f19", "Pronom accusateur", "vous", "La répétition du pronom met directement les peuples en cause.", 11),
         ]),
       ]),
-      movement("m2", "II. Le tyran est faible sans le peuple", 8, 18, ["questions", "complicité", "pouvoir"], [
-        section("m2a", "Les questions démontent le pouvoir tyrannique", "La série de questions rhétoriques oblige à reconnaître que le tyran n'a ni yeux, ni mains, ni pieds qui ne viennent des peuples eux-mêmes.", "Le raisonnement est implacable : le pouvoir du tyran est emprunté aux dominés.", [
-          figure("f12", "Questions rhétoriques", "D’où a-t-il pris / Comment a-t-il / d’où les a-t-il", "Les questions guident le lecteur vers une seule réponse : le peuple fournit tout.", 8, 10),
-          figure("f13", "Métonymies du pouvoir", "yeux / mains / pieds", "Les parties du corps représentent l'espionnage, la violence et l'occupation du territoire.", 8, 10),
-          figure("f14", "Formule synthétique", "que par vous", "La brièveté de l'expression concentre toute la thèse de La Boétie.", 11),
+      movement("m3", "III. L'accusation de complicité du peuple", 12, 18, ["complicité", "auto-destruction", "responsabilité"], [
+        section("m3a", "La victime devient complice", "La Boétie va plus loin que la plainte : il accuse les peuples d'être receleurs, complices, traîtres à eux-mêmes. Le vocabulaire judiciaire transforme la servitude en faute collective.", "La dénonciation est violente parce qu'elle vise à provoquer une réaction.", [
+          figure("f20", "Champ lexical judiciaire", "receleurs / complices / traîtres", "Les peuples ne sont plus seulement victimes : ils sont associés au crime tyrannique.", 13),
+          figure("f21", "Parallélisme", "qui vous pille / qui vous tue", "Les deux relatives donnent au tyran les figures du voleur et du meurtrier.", 13),
+          figure("f22", "Apostrophe implicite", "vous-mêmes", "La formule referme l'accusation sur les peuples : ils agissent contre eux-mêmes.", 13),
         ]),
-        section("m2b", "La victime devient complice", "La Boétie va plus loin que la plainte : il accuse les peuples d'être receleurs, complices, traîtres à eux-mêmes. Le vocabulaire judiciaire transforme la servitude en faute collective.", "La dénonciation est violente parce qu'elle vise à provoquer une réaction.", [
-          figure("f15", "Champ lexical judiciaire", "receleurs / complices / traîtres", "Les peuples ne sont plus seulement victimes : ils sont associés au crime tyrannique.", 13),
-          figure("f16", "Parallélisme", "qui vous pille / qui vous tue", "Les deux relatives donnent au tyran les figures du voleur et du meurtrier.", 13),
-          figure("f17", "Apostrophe implicite", "vous-mêmes", "La formule referme l'accusation sur les peuples : ils agissent contre eux-mêmes.", 13),
+        section("m3b", "Le peuple nourrit la machine qui le détruit", "Les phrases répétées montrent que tout ce que les peuples produisent est retourné contre eux : récoltes, maisons, filles, enfants, travail, force physique.", "La servitude est décrite comme un système d'auto-destruction.", [
+          figure("f23", "Anaphore", "Vous semez / Vous nourrissez / Vous vous rompez / Vous vous affaiblissez", "La répétition place le peuple au début de chaque action : il alimente lui-même le pouvoir.", 14, 18),
+          figure("f24", "Champ lexical économique et domestique", "fruits / maisons / filles / enfants", "La domination envahit toute la vie matérielle et familiale.", 14, 16),
+          figure("f25", "Métaphore sanglante", "la boucherie", "La guerre est réduite à un massacre d'enfants envoyés par le tyran.", 16),
+          figure("f26", "Antithèse de force", "vous vous affaiblissez / le rendre plus fort", "La puissance du tyran augmente à mesure que le peuple se diminue.", 18),
         ]),
-        section("m2c", "Le peuple nourrit la machine qui le détruit", "Les phrases répétées montrent que tout ce que les peuples produisent est retourné contre eux : récoltes, maisons, filles, enfants, travail, force physique.", "La servitude est décrite comme un système d'auto-destruction.", [
-          figure("f18", "Anaphore", "Vous semez / Vous nourrissez / Vous vous rompez / Vous vous affaiblissez", "La répétition place le peuple au début de chaque action : il alimente lui-même le pouvoir.", 14, 18),
-          figure("f19", "Champ lexical économique et domestique", "fruits / maisons / filles / enfants", "La domination envahit toute la vie matérielle et familiale.", 14, 16),
-          figure("f20", "Métaphore sanglante", "la boucherie", "La guerre est réduite à un massacre d'enfants envoyés par le tyran.", 16),
-          figure("f21", "Antithèse de force", "vous vous affaiblissez / le rendre plus fort", "La puissance du tyran augmente à mesure que le peuple se diminue.", 18),
+        section("m3c", "La violence du tyran est fabriquée par les ressources du peuple", "La Boétie montre que les fruits, les maisons, les enfants et le travail servent tous le même système : ce que le peuple produit devient l'instrument de sa propre oppression.", "L'accusation est dure, mais elle prépare la solution : si le peuple fournit tout, il peut aussi cesser de fournir.", [
+          figure("f27", "Accumulation", "fruits / maisons / filles / enfants", "La liste donne une vision totale de ce que le peuple livre au tyran.", 14, 16),
+          figure("f28", "Finales répétées", "afin qu’il", "La répétition montre que chaque action du peuple nourrit le pouvoir tyrannique.", 14, 18),
+          figure("f29", "Métaphore équestre", "tenir plus courte la bride", "Le peuple fabrique une contrainte qui se resserre contre lui.", 18),
         ]),
       ]),
-      movement("m3", "III. La liberté tient à un refus", 19, 22, ["volonté", "liberté", "colosse"], [
-        section("m3a", "La libération commence par une volonté", "La Boétie affirme que la sortie de la servitude ne demande pas d'abord une bataille, mais une décision : vouloir ne plus soutenir le tyran.", "La liberté est rendue accessible parce qu'elle dépend d'un refus collectif.", [
-          figure("f22", "Correction argumentative", "non pas de vous en délivrer, mais seulement de vouloir le faire", "La phrase réduit l'obstacle : la première victoire est dans la volonté.", 19),
-          figure("f23", "Impératif", "Soyez résolus de ne plus servir", "L'ordre transforme l'analyse en appel à l'action.", 20),
-          figure("f24", "Présent immédiat", "vous voilà libres", "La liberté est présentée comme la conséquence directe du refus.", 20),
+      movement("m4", "IV. L'appel à la prise de conscience et à l'action", 19, 22, ["volonté", "liberté", "colosse"], [
+        section("m4a", "La libération commence par une volonté", "La Boétie affirme que la sortie de la servitude ne demande pas d'abord une bataille, mais une décision : vouloir ne plus soutenir le tyran.", "La liberté est rendue accessible parce qu'elle dépend d'un refus collectif.", [
+          figure("f30", "Correction argumentative", "non pas de vous en délivrer, mais seulement de vouloir le faire", "La phrase réduit l'obstacle : la première victoire est dans la volonté.", 19),
+          figure("f31", "Impératif", "Soyez résolus de ne plus servir", "L'ordre transforme l'analyse en appel à l'action.", 20),
+          figure("f32", "Présent immédiat", "vous voilà libres", "La liberté est présentée comme la conséquence directe du refus.", 20),
         ]),
-        section("m3b", "Le tyran s'effondre quand on cesse de le porter", "La fin refuse l'image d'une révolution violente : il suffit de ne plus soutenir le tyran. Sa chute vient alors de son propre poids.", "L'image finale rend visible une idée politique : le pouvoir ne tient que par sa base.", [
-          figure("f25", "Négation de la violence", "Je ne veux pas que vous le poussiez ou l’ébranliez", "La Boétie distingue la libération de l'affrontement direct.", 21),
-          figure("f26", "Restriction décisive", "mais seulement ne le soutenez plus", "Toute la stratégie tient dans le retrait du soutien.", 21),
-          figure("f27", "Comparaison", "comme un grand colosse", "Le tyran paraît monumental mais dépend d'une base fragile.", 22),
-          figure("f28", "Métaphore architecturale", "dérobé la base", "Sans appui populaire, la puissance tyrannique s'effondre mécaniquement.", 22),
+        section("m4b", "Le tyran s'effondre quand on cesse de le porter", "La fin refuse l'image d'une révolution violente : il suffit de ne plus soutenir le tyran. Sa chute vient alors de son propre poids.", "L'image finale rend visible une idée politique : le pouvoir ne tient que par sa base.", [
+          figure("f33", "Négation de la violence", "Je ne veux pas que vous le poussiez ou l’ébranliez", "La Boétie distingue la libération de l'affrontement direct.", 21),
+          figure("f34", "Restriction décisive", "mais seulement ne le soutenez plus", "Toute la stratégie tient dans le retrait du soutien.", 21),
+          figure("f35", "Comparaison", "comme un grand colosse", "Le tyran paraît monumental mais dépend d'une base fragile.", 22),
+          figure("f36", "Métaphore architecturale", "dérobé la base", "Sans appui populaire, la puissance tyrannique s'effondre mécaniquement.", 22),
         ]),
-        section("m3c", "L'image finale rend la liberté mémorable", "Le colosse semble immense, mais il tombe dès que sa base disparaît. La Boétie donne ainsi une forme concrète à son idée : le tyran n'est fort que parce qu'on le porte.", "La conclusion transforme le raisonnement politique en image simple : retirer le soutien, c'est déjà faire tomber le pouvoir.", [
-          figure("f29", "Verbe de chute", "tombera de son propre poids", "La chute vient du tyran lui-même dès que le peuple cesse de le soutenir.", 22),
-          figure("f30", "Effondrement mécanique", "se rompra", "Le pouvoir tyrannique est figuré comme une construction qui casse faute d'appui.", 22),
-          figure("f31", "Opposition architecturale", "base / poids", "La relation entre soutien et masse résume la dépendance du tyran envers les dominés.", 22),
+        section("m4c", "L'image finale rend la liberté mémorable", "Le colosse semble immense, mais il tombe dès que sa base disparaît. La Boétie donne ainsi une forme concrète à son idée : le tyran n'est fort que parce qu'on le porte.", "La conclusion transforme le raisonnement politique en image simple : retirer le soutien, c'est déjà faire tomber le pouvoir.", [
+          figure("f37", "Verbe de chute", "tombera de son propre poids", "La chute vient du tyran lui-même dès que le peuple cesse de le soutenir.", 22),
+          figure("f38", "Effondrement mécanique", "se rompra", "Le pouvoir tyrannique est figuré comme une construction qui casse faute d'appui.", 22),
+          figure("f39", "Opposition architecturale", "base / poids", "La relation entre soutien et masse résume la dépendance du tyran envers les dominés.", 22),
         ]),
       ]),
     ],

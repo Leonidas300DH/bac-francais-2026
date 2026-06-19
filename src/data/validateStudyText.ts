@@ -29,12 +29,17 @@ export function validateStudyText(text: StudyText): string[] {
   if (text.quiz.length === 0) errors.push(`${prefix} missing quiz`);
 
   const lineNumbers = new Set(text.lines.map((line) => line.number));
+  const figureIds = new Set<string>();
   text.movements.forEach((movement) => {
     if (!lineNumbers.has(movement.range.start) || !lineNumbers.has(movement.range.end)) {
       errors.push(`${prefix} movement ${movement.id} points to missing lines`);
     }
     movement.sections.forEach((section) => {
       section.figures?.forEach((figure) => {
+        if (figureIds.has(figure.id)) {
+          errors.push(`${prefix} duplicate figure id ${figure.id}`);
+        }
+        figureIds.add(figure.id);
         if (!lineNumbers.has(figure.range.start) || !lineNumbers.has(figure.range.end)) {
           errors.push(`${prefix} figure ${figure.id} points to missing lines`);
         }

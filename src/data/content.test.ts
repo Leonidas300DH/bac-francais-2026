@@ -112,6 +112,22 @@ describe("study content", () => {
     ]);
   });
 
+  it("integrates the handwritten T9 oral plan without forcing it into three movements", () => {
+    const text = studyTexts.find((item) => item.slug === "pauvres-peuples-insenses");
+
+    expect(text?.problematique).toBe(
+      "De quelle façon La Boétie s'y prend-il pour tenter de faire prendre conscience aux peuples de ce caractère volontaire de leur servitude ?",
+    );
+    expect(text?.introduction).toHaveLength(4);
+    expect(text?.movements.map((movement) => movement.title)).toEqual([
+      "I. Dénonciation de la soumission du peuple",
+      "II. La critique du pouvoir tyrannique",
+      "III. L'accusation de complicité du peuple",
+      "IV. L'appel à la prise de conscience et à l'action",
+    ]);
+    expect(text?.conclusion.some((section) => section.simple.includes("1984"))).toBe(true);
+  });
+
   it("integrates the handwritten T11 and T12 oral plans", () => {
     const favoris = studyTexts.find((item) => item.slug === "satire-des-favoris");
     const tahitien = studyTexts.find((item) => item.slug === "discours-du-vieux-tahitien");
@@ -198,7 +214,8 @@ describe("study content", () => {
     for (const text of studyTexts) {
       expect(text.status).not.toBe("draft");
       expect(text.lines.length).toBeGreaterThanOrEqual(10);
-      expect(text.movements).toHaveLength(3);
+      expect(text.movements.length).toBeGreaterThanOrEqual(3);
+      expect(text.movements.length).toBeLessThanOrEqual(4);
       expect(text.quiz.length).toBeGreaterThanOrEqual(4);
       expect(text.recap).not.toMatch(/à compléter/i);
     }
@@ -216,7 +233,7 @@ describe("study content", () => {
   it("provides a short oral memory card for every text", () => {
     for (const text of studyTexts) {
       expect(text.memoryCard.problem).toBe(text.problematique);
-      expect(text.memoryCard.plan).toHaveLength(3);
+      expect(text.memoryCard.plan).toHaveLength(text.movements.length);
       expect(text.memoryCard.keyQuotes.length).toBeGreaterThanOrEqual(3);
       expect(text.memoryCard.finalSentence).toBe(text.recap);
       expect(text.memoryCard.traps.length).toBeGreaterThanOrEqual(2);
@@ -321,7 +338,7 @@ describe("study content", () => {
 
   it("provides dense analysis for the argumentation sequence", () => {
     const expectedMinimums = new Map([
-      ["pauvres-peuples-insenses", { sections: 8, figures: 25 }],
+      ["pauvres-peuples-insenses", { sections: 12, figures: 30 }],
       ["les-ruses-du-tyran", { sections: 8, figures: 25 }],
       ["satire-des-favoris", { sections: 8, figures: 25 }],
       ["discours-du-vieux-tahitien", { sections: 9, figures: 30 }],
