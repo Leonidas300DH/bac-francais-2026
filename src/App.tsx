@@ -663,6 +663,7 @@ function QuizPanel({
   updateProgress: (progress: TextProgress) => void;
 }) {
   const score = computeQuizScore(text.quiz, progress.quizAnswers);
+  const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
 
   function chooseAnswer(item: QuizItem, answer: string) {
     updateProgress({
@@ -718,9 +719,22 @@ function QuizPanel({
                 );
               })}
             </div>
-            {progress.quizAnswers[item.id] ? (
+            <button
+              className="answer-reveal"
+              type="button"
+              onClick={() =>
+                setRevealedAnswers((current) => ({
+                  ...current,
+                  [item.id]: !current[item.id],
+                }))
+              }
+            >
+              {revealedAnswers[item.id] ? "Masquer la réponse" : "Afficher la réponse"}
+            </button>
+            {progress.quizAnswers[item.id] || revealedAnswers[item.id] ? (
               <p className="answer-feedback">
-                {progress.quizAnswers[item.id] === item.answer ? "Correct." : `Réponse : ${item.answer}`}
+                Réponse attendue : <strong>{item.answer}</strong>
+                {item.explanation ? <span> {item.explanation}</span> : null}
               </p>
             ) : null}
           </article>

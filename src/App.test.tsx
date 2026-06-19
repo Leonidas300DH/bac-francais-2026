@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import { afterEach, describe, expect, it } from "vitest";
 import App from "./App";
@@ -41,5 +41,18 @@ describe("study app interface", () => {
     expect(screen.getByText("Réviser les figures de style")).toBeInTheDocument();
     expect(screen.getByText(/procédés repérés dans cette fiche/)).toBeInTheDocument();
     expect(screen.getAllByRole("button", { name: /Champ lexical du froid/i }).length).toBeGreaterThan(0);
+  });
+
+  it("can reveal quiz answers directly", () => {
+    render(
+      <MemoryRouter initialEntries={["/textes/les-effares"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    fireEvent.click(screen.getAllByRole("button", { name: "Afficher la réponse" })[0]);
+
+    expect(screen.getByText(/Réponse attendue/)).toBeInTheDocument();
+    expect(screen.getAllByText(/Le poème montre cinq enfants affamés/).length).toBeGreaterThan(1);
   });
 });
