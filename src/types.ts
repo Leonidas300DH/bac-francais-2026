@@ -90,6 +90,17 @@ export type FigureIndexEntry = Figure & {
   sectionTitle: string;
 };
 
+export type GrammarCard = {
+  id: string;
+  textSlug: string;
+  notion: string;
+  question: string;
+  excerpt: string;
+  answer: string;
+  reflex: string;
+  range: LineRange;
+};
+
 export type TextProgress = {
   completedSections: Record<string, boolean>;
   quizAnswers: Record<string, string>;

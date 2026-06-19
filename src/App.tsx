@@ -6,6 +6,7 @@ import {
   Circle,
   FileText,
   GraduationCap,
+  Languages,
   Layers3,
   ListChecks,
   NotebookTabs,
@@ -14,12 +15,14 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Link, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { grammarCards } from "./data/grammarCards";
 import { findStudyText, studyTexts } from "./data/studyTexts";
 import { buildFigureIndex, filterFigureIndex, getFigureNameCounts } from "./lib/figures";
+import { filterGrammarCards, getGrammarNotions, getGrammarText } from "./lib/grammar";
 import { formatRange, isLineInRange } from "./lib/ranges";
 import { computeCompletionPercent, readProgress, writeProgress } from "./lib/progress";
 import { computeQuizScore, updateFlashcardKnowledge } from "./lib/quiz";
-import type { Figure, FigureIndexEntry, LineRange, Movement, QuizItem, StudySection, StudyText, TextProgress } from "./types";
+import type { Figure, FigureIndexEntry, GrammarCard, LineRange, Movement, QuizItem, StudySection, StudyText, TextProgress } from "./types";
 
 function getSectionIds(text: StudyText): string[] {
   return [
@@ -28,6 +31,7 @@ function getSectionIds(text: StudyText): string[] {
     ...text.conclusion.map((section) => section.id),
     "glossaire",
     "memo",
+    "grammaire",
     "quiz",
   ];
 }
@@ -167,6 +171,9 @@ function Dashboard() {
           <Link className="secondary-action" to="/memo">
             Mémo oral
           </Link>
+          <Link className="secondary-action" to="/grammaire">
+            Grammaire
+          </Link>
           <Link className="secondary-action" to="/figures">
             Figures
           </Link>
@@ -194,6 +201,18 @@ function Dashboard() {
         <Link className="secondary-action" to="/figures">
           <Layers3 aria-hidden="true" />
           Ouvrir l'atelier
+        </Link>
+      </section>
+
+      <section className="grammar-hub-teaser" aria-label="Révision des questions de grammaire">
+        <div>
+          <span>Question de grammaire</span>
+          <strong>16 entraînements courts</strong>
+          <p>Une phrase du texte, une notion, une réponse prête à redire en deux minutes.</p>
+        </div>
+        <Link className="secondary-action" to="/grammaire">
+          <Languages aria-hidden="true" />
+          Ouvrir la grammaire
         </Link>
       </section>
 
@@ -229,6 +248,156 @@ function Dashboard() {
         })}
       </section>
     </main>
+  );
+}
+
+function GrammarHub() {
+  const [query, setQuery] = useState("");
+  const [selectedNotion, setSelectedNotion] = useState("all");
+  const [version, setVersion] = useState(0);
+  const notions = useMemo(() => getGrammarNotions(grammarCards), []);
+  const filteredCards = useMemo(
+    () => filterGrammarCards(grammarCards, query, selectedNotion),
+    [query, selectedNotion],
+  );
+  const knownCount = grammarCards.filter((card) => {
+    const progress = readProgress(card.textSlug);
+    return Boolean(progress.completedSections[`grammaire:${card.id}`]);
+  }).length;
+  const coveredTextCount = new Set(grammarCards.map((card) => card.textSlug)).size;
+  const textCount = studyTexts.length;
+
+  function toggleGrammar(card: GrammarCard, known: boolean) {
+    const progress = readProgress(card.textSlug);
+    const nextKnown = !known;
+    writeProgress(card.textSlug, {
+      ...progress,
+      completedSections: {
+        ...progress.completedSections,
+        grammaire: nextKnown,
+        [`grammaire:${card.id}`]: nextKnown,
+      },
+    });
+    setVersion((current) => current + 1);
+  }
+
+  return (
+    <main className="grammar-hub" data-progress-version={version}>
+      <header className="grammar-hub-header">
+        <Link className="back-link" to="/">
+          <ChevronLeft aria-hidden="true" />
+          Accueil
+        </Link>
+        <div>
+          <div className="brand-line">
+            <Languages aria-hidden="true" />
+            <span>Question de grammaire</span>
+          </div>
+          <h1>Grammaire en 2 minutes</h1>
+          <p>Chaque carte part d'une phrase du texte et donne une réponse courte, syntaxique, directement réutilisable.</p>
+        </div>
+      </header>
+
+      <section className="grammar-hub-stats" aria-label="Synthèse de grammaire">
+        <article>
+          <span>Questions</span>
+          <strong>{grammarCards.length}</strong>
+        </article>
+        <article>
+          <span>Textes couverts</span>
+          <strong>{coveredTextCount}/{textCount}</strong>
+        </article>
+        <article>
+          <span>Questions sues</span>
+          <strong>{knownCount}/{grammarCards.length}</strong>
+        </article>
+      </section>
+
+      <section className="grammar-hub-tools" aria-label="Filtres de grammaire">
+        <label className="search-field">
+          <Search aria-hidden="true" />
+          <input
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="Chercher une notion, une citation, un texte..."
+          />
+        </label>
+        <label className="select-field">
+          <span>Notion</span>
+          <select value={selectedNotion} onChange={(event) => setSelectedNotion(event.target.value)}>
+            <option value="all">Toutes les notions</option>
+            {notions.map((notion) => (
+              <option key={notion} value={notion}>{notion}</option>
+            ))}
+          </select>
+        </label>
+      </section>
+
+      <section className="grammar-card-list" aria-label="Questions de grammaire">
+        {filteredCards.map((card) => {
+          const progress = readProgress(card.textSlug);
+          const known = Boolean(progress.completedSections[`grammaire:${card.id}`]);
+          return (
+            <GrammarHubCard
+              key={card.id}
+              card={card}
+              known={known}
+              onToggle={() => toggleGrammar(card, known)}
+            />
+          );
+        })}
+      </section>
+    </main>
+  );
+}
+
+function GrammarHubCard({
+  card,
+  known,
+  onToggle,
+}: {
+  card: GrammarCard;
+  known: boolean;
+  onToggle: () => void;
+}) {
+  const text = getGrammarText(card);
+
+  return (
+    <article className={known ? "grammar-card known" : "grammar-card"}>
+      <div className="grammar-card-head">
+        <div>
+          <span>{card.notion}</span>
+          <h2>{text?.title ?? card.textSlug}</h2>
+          <p>{text?.author}</p>
+        </div>
+        <button type="button" className={known ? "grammar-known known" : "grammar-known"} onClick={onToggle}>
+          {known ? "Question sue" : "À revoir"}
+        </button>
+      </div>
+
+      <div className="grammar-question">
+        <strong>Question</strong>
+        <p>{card.question}</p>
+      </div>
+
+      <blockquote>{card.excerpt}</blockquote>
+
+      <div className="grammar-answer">
+        <strong>Réponse attendue</strong>
+        <p>{card.answer}</p>
+      </div>
+
+      <div className="grammar-reflex">
+        <strong>Repère d'analyse</strong>
+        <p>{card.reflex}</p>
+      </div>
+
+      <div className="grammar-card-actions">
+        <Link className="secondary-action" to={`/textes/${card.textSlug}?ligne=${formatRangeParam(card.range)}#texte-source`}>
+          Voir {formatRange(card.range)}
+        </Link>
+      </div>
+    </article>
   );
 }
 
@@ -610,6 +779,7 @@ function StudyPage({ text }: { text: StudyText }) {
           <a href="#quiz">Quiz</a>
           <Link to="/figures">Atelier figures</Link>
           <Link to="/memo">Mémos</Link>
+          <Link to="/grammaire">Grammaire</Link>
           <button type="button" onClick={openAll}>Tout afficher</button>
           <button type="button" onClick={closeAll}>Tout fermer</button>
         </nav>
@@ -1143,6 +1313,7 @@ export default function App() {
       <Route path="/" element={<Dashboard />} />
       <Route path="/memo" element={<MemoHub />} />
       <Route path="/figures" element={<FigureHub />} />
+      <Route path="/grammaire" element={<GrammarHub />} />
       <Route path="/textes/:slug" element={<StudyRoute />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

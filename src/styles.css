@@ -173,7 +173,8 @@ h1, h2 {
 }
 
 .figure-hub-teaser,
-.memo-hub-teaser {
+.memo-hub-teaser,
+.grammar-hub-teaser {
   display: flex;
   justify-content: space-between;
   gap: 18px;
@@ -191,6 +192,11 @@ h1, h2 {
   background: var(--simple);
 }
 
+.grammar-hub-teaser {
+  border-color: var(--line);
+  background: var(--paper-strong);
+}
+
 .resume-strip strong {
   display: block;
   margin-top: 4px;
@@ -202,8 +208,10 @@ h1, h2 {
 
 .figure-hub-teaser span,
 .memo-hub-teaser span,
+.grammar-hub-teaser span,
 .figure-hub-stats span,
 .memo-hub-stats span,
+.grammar-hub-stats span,
 .select-field span {
   display: block;
   color: var(--muted);
@@ -214,7 +222,8 @@ h1, h2 {
 }
 
 .figure-hub-teaser strong,
-.memo-hub-teaser strong {
+.memo-hub-teaser strong,
+.grammar-hub-teaser strong {
   display: block;
   margin-top: 4px;
   color: #6d4d16;
@@ -227,9 +236,14 @@ h1, h2 {
   color: #365840;
 }
 
+.grammar-hub-teaser strong {
+  color: var(--accent-dark);
+}
+
 .resume-strip p,
 .figure-hub-teaser p,
-.memo-hub-teaser p {
+.memo-hub-teaser p,
+.grammar-hub-teaser p {
   margin: 4px 0 0;
   color: var(--muted);
 }
@@ -1089,21 +1103,24 @@ h1, h2 {
 .quiz-save { margin-top: 14px; }
 
 .figure-hub,
-.memo-hub {
+.memo-hub,
+.grammar-hub {
   width: min(1180px, calc(100vw - 30px));
   margin: 0 auto;
   padding: 34px 0 72px;
 }
 
 .figure-hub-header,
-.memo-hub-header {
+.memo-hub-header,
+.grammar-hub-header {
   display: grid;
   gap: 18px;
   padding: 0 0 18px;
 }
 
 .figure-hub-header h1,
-.memo-hub-header h1 {
+.memo-hub-header h1,
+.grammar-hub-header h1 {
   margin: 10px 0 8px;
   color: var(--accent);
   font-size: clamp(2.2rem, 5vw, 4rem);
@@ -1111,14 +1128,16 @@ h1, h2 {
 }
 
 .figure-hub-header p,
-.memo-hub-header p {
+.memo-hub-header p,
+.grammar-hub-header p {
   margin: 0;
   max-width: 760px;
   color: var(--muted);
 }
 
 .figure-hub-stats,
-.memo-hub-stats {
+.memo-hub-stats,
+.grammar-hub-stats {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
@@ -1126,7 +1145,8 @@ h1, h2 {
 }
 
 .figure-hub-stats article,
-.memo-hub-stats article {
+.memo-hub-stats article,
+.grammar-hub-stats article {
   padding: 15px;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -1135,7 +1155,8 @@ h1, h2 {
 }
 
 .figure-hub-stats strong,
-.memo-hub-stats strong {
+.memo-hub-stats strong,
+.grammar-hub-stats strong {
   display: block;
   margin-top: 5px;
   color: var(--accent-dark);
@@ -1145,7 +1166,8 @@ h1, h2 {
 }
 
 .figure-hub-tools,
-.memo-hub-tools {
+.memo-hub-tools,
+.grammar-hub-tools {
   display: flex;
   gap: 12px;
   align-items: center;
@@ -1154,6 +1176,141 @@ h1, h2 {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 253, 249, 0.88);
+}
+
+.grammar-card-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.grammar-card {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.grammar-card.known {
+  border-color: var(--simple-border);
+  background: linear-gradient(180deg, var(--paper), var(--simple));
+}
+
+.grammar-card-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: start;
+}
+
+.grammar-card-head span {
+  display: block;
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.grammar-card h2 {
+  margin: 3px 0 0;
+  color: var(--accent);
+  font-size: 1.35rem;
+  line-height: 1.08;
+}
+
+.grammar-card-head p {
+  margin: 2px 0 0;
+  color: var(--muted);
+}
+
+.grammar-known {
+  flex: 0 0 auto;
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent-dark);
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.grammar-known.known {
+  border-color: var(--simple-border);
+  background: var(--simple);
+  color: #365840;
+}
+
+.grammar-question,
+.grammar-answer,
+.grammar-reflex {
+  padding: 12px 13px;
+  border-left: 5px solid var(--accent);
+  border-radius: 0 10px 10px 0;
+  background: var(--accent-soft);
+}
+
+.grammar-answer {
+  border-left-color: var(--simple-border);
+  background: var(--simple);
+}
+
+.grammar-reflex {
+  border-left-color: var(--figure-border);
+  background: var(--figure);
+}
+
+.grammar-question strong,
+.grammar-answer strong,
+.grammar-reflex strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--accent-dark);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.grammar-answer strong {
+  color: #365840;
+}
+
+.grammar-reflex strong {
+  color: #6d4d16;
+}
+
+.grammar-question p,
+.grammar-answer p,
+.grammar-reflex p {
+  margin: 0;
+}
+
+.grammar-card blockquote {
+  margin: 0;
+  padding: 12px 14px;
+  border: 1px solid #e5d5b2;
+  border-radius: 11px;
+  background: #fffdfa;
+  color: var(--accent-dark);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  font-weight: 700;
+}
+
+.grammar-card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.grammar-card-actions .secondary-action {
+  min-height: 36px;
+  padding: 7px 11px;
 }
 
 .memo-filter {
@@ -1539,7 +1696,8 @@ h1, h2 {
   }
   .resume-strip,
   .figure-hub-teaser,
-  .memo-hub-teaser {
+  .memo-hub-teaser,
+  .grammar-hub-teaser {
     align-items: stretch;
     flex-direction: column;
   }
@@ -1563,6 +1721,7 @@ h1, h2 {
   .dashboard-tools,
   .figure-hub-tools,
   .memo-hub-tools,
+  .grammar-hub-tools,
   .memo-heading,
   .quiz-heading {
     align-items: stretch;
@@ -1572,12 +1731,14 @@ h1, h2 {
   .memo-grid,
   .memo-hub-list,
   .memo-hub-columns,
+  .grammar-card-list,
   .quiz-grid,
   .figure-result-list,
   .figure-review-list,
   .glossary-strip,
   .figure-hub-stats,
   .memo-hub-stats,
+  .grammar-hub-stats,
   .dashboard-summary {
     grid-template-columns: 1fr;
   }
@@ -1591,6 +1752,7 @@ h1, h2 {
   }
   .figure-hub,
   .memo-hub,
+  .grammar-hub,
   .select-field {
     width: 100%;
   }
@@ -1598,11 +1760,14 @@ h1, h2 {
     width: 100%;
   }
   .memo-hub-card-header,
-  .memo-hub-actions {
+  .memo-hub-actions,
+  .grammar-card-head,
+  .grammar-card-actions {
     align-items: stretch;
     flex-direction: column;
   }
-  .memo-hub-actions .secondary-action {
+  .memo-hub-actions .secondary-action,
+  .grammar-card-actions .secondary-action {
     justify-content: center;
     width: 100%;
   }

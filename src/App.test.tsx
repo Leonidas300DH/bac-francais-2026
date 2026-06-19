@@ -20,6 +20,7 @@ describe("study app interface", () => {
     expect(screen.getByRole("link", { name: "Prochain texte" })).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /Ouvrir l'atelier/i })).toHaveAttribute("href", "/figures");
     expect(screen.getByRole("link", { name: /Ouvrir les mémos/i })).toHaveAttribute("href", "/memo");
+    expect(screen.getByRole("link", { name: /Ouvrir la grammaire/i })).toHaveAttribute("href", "/grammaire");
   });
 
   it("renders global oral memo cards", () => {
@@ -76,6 +77,39 @@ describe("study app interface", () => {
     expect(screen.getAllByRole("link", { name: "Ouvrir" }).length).toBeGreaterThan(10);
   });
 
+  it("renders grammar training cards", () => {
+    render(
+      <MemoryRouter initialEntries={["/grammaire"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    expect(screen.getByRole("heading", { name: "Grammaire en 2 minutes" })).toBeInTheDocument();
+    expect(screen.getByText("Textes couverts")).toBeInTheDocument();
+    expect(screen.getAllByRole("button", { name: "À revoir" })).toHaveLength(16);
+    expect(screen.getAllByRole("link", { name: "Voir Vers 4" }).map((link) => link.getAttribute("href"))).toContain(
+      "/textes/les-effares?ligne=4#texte-source",
+    );
+  });
+
+  it("persists grammar question knowledge locally", () => {
+    render(
+      <MemoryRouter initialEntries={["/grammaire"]}>
+        <App />
+      </MemoryRouter>,
+    );
+
+    fireEvent.click(screen.getAllByRole("button", { name: "À revoir" })[0]);
+
+    expect(screen.getByText("1/16")).toBeInTheDocument();
+    expect(JSON.parse(window.localStorage.getItem("bac-francais-2026:les-effares") ?? "{}")).toMatchObject({
+      completedSections: {
+        grammaire: true,
+        "grammaire:g-les-effares-1": true,
+      },
+    });
+  });
+
   it("does not repeat the official method block inside a study fiche", () => {
     render(
       <MemoryRouter initialEntries={["/textes/les-effares"]}>
@@ -99,6 +133,7 @@ describe("study app interface", () => {
     expect(screen.getAllByRole("button", { name: /Champ lexical du froid/i }).length).toBeGreaterThan(0);
     expect(screen.getByRole("link", { name: "Atelier figures" })).toHaveAttribute("href", "/figures");
     expect(screen.getByRole("link", { name: "Mémos" })).toHaveAttribute("href", "/memo");
+    expect(screen.getByRole("link", { name: "Grammaire" })).toHaveAttribute("href", "/grammaire");
   });
 
   it("can open a study fiche with a requested source line highlighted", () => {
