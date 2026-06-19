@@ -85,67 +85,60 @@ function Dashboard() {
         </Link>
       </section>
 
-      <section className="resume-strip" aria-label="Reprise rapide">
-        <div>
-          <span>Reprise rapide</span>
-          <strong>{lastOpenedText ? lastOpenedText.title : "Aucun texte ouvert pour l'instant"}</strong>
-          <p>{lastOpenedText ? `${lastOpenedText.author} - ${lastOpenedText.sourceLabel}` : "Commence par une fiche, puis ce raccourci gardera le dernier texte consulté."}</p>
-        </div>
-        <div className="resume-actions">
-          {lastOpenedText ? (
-            <Link className="secondary-action" to={`/textes/${lastOpenedText.slug}`}>
-              Reprendre
+      <section className="dashboard-action-grid" aria-label="Accès rapides">
+        <article className="resume-strip">
+          <div>
+            <span>Reprise rapide</span>
+            <strong>{lastOpenedText ? lastOpenedText.title : "Aucun texte ouvert pour l'instant"}</strong>
+            <p>{lastOpenedText ? `${lastOpenedText.author} - ${lastOpenedText.sourceLabel}` : "Commence par une fiche, puis ce raccourci gardera le dernier texte consulté."}</p>
+          </div>
+          <div className="resume-actions">
+            {lastOpenedText ? (
+              <Link className="secondary-action" to={`/textes/${lastOpenedText.slug}`}>
+                Reprendre
+              </Link>
+            ) : null}
+            <Link className="primary-action" to={`/textes/${nextText.slug}`}>
+              Ouvrir une fiche
             </Link>
-          ) : null}
-          <Link className="primary-action" to={`/textes/${nextText.slug}`}>
-            Ouvrir une fiche
-          </Link>
+          </div>
+        </article>
+
+        <article className="memo-hub-teaser">
+          <div>
+            <span>Révision express</span>
+            <strong>Plans des 16 textes</strong>
+            <p>Problématique, plan, citations et réponse finale.</p>
+          </div>
           <Link className="secondary-action" to="/memo">
-            Mémo oral
+            <NotebookTabs aria-hidden="true" />
+            Mémos
           </Link>
-          <Link className="secondary-action" to="/grammaire">
-            Grammaire
-          </Link>
+        </article>
+
+        <article className="figure-hub-teaser">
+          <div>
+            <span>Révision transversale</span>
+            <strong>Figures de style</strong>
+            <p>Procédé, citation, effet produit et retour aux lignes.</p>
+          </div>
           <Link className="secondary-action" to="/figures">
+            <Layers3 aria-hidden="true" />
             Figures
           </Link>
-        </div>
-      </section>
+        </article>
 
-      <section className="memo-hub-teaser" aria-label="Révision express des mémos oraux">
-        <div>
-          <span>Révision express</span>
-          <strong>Les 16 plans à savoir redire</strong>
-          <p>Problématique, plan, citations et réponse finale sur une seule page.</p>
-        </div>
-        <Link className="secondary-action" to="/memo">
-          <NotebookTabs aria-hidden="true" />
-          Ouvrir les mémos
-        </Link>
-      </section>
-
-      <section className="figure-hub-teaser" aria-label="Révision transversale des figures">
-        <div>
-          <span>Révision transversale</span>
-          <strong>Figures de style dans les 16 textes</strong>
-          <p>Retrouver un procédé, revoir une citation, puis ouvrir directement la fiche avec les lignes utiles.</p>
-        </div>
-        <Link className="secondary-action" to="/figures">
-          <Layers3 aria-hidden="true" />
-          Ouvrir l'atelier
-        </Link>
-      </section>
-
-      <section className="grammar-hub-teaser" aria-label="Révision des questions de grammaire">
-        <div>
-          <span>Question de grammaire</span>
-          <strong>16 entraînements courts</strong>
-          <p>Une phrase du texte, une notion, une réponse prête à redire en deux minutes.</p>
-        </div>
-        <Link className="secondary-action" to="/grammaire">
-          <Languages aria-hidden="true" />
-          Ouvrir la grammaire
-        </Link>
+        <article className="grammar-hub-teaser">
+          <div>
+            <span>Question de grammaire</span>
+            <strong>16 entraînements</strong>
+            <p>Une phrase du texte, une notion, une réponse prête.</p>
+          </div>
+          <Link className="secondary-action" to="/grammaire">
+            <Languages aria-hidden="true" />
+            Grammaire
+          </Link>
+        </article>
       </section>
 
       <section className="dashboard-tools" aria-label="Recherche des textes">

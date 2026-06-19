@@ -19,9 +19,9 @@ describe("study app interface", () => {
     expect(screen.queryByText("Quiz enregistrés")).not.toBeInTheDocument();
     expect(screen.getByText("Reprise rapide")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: "Ouvrir une fiche" })).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: /Ouvrir l'atelier/i })).toHaveAttribute("href", "/figures");
-    expect(screen.getByRole("link", { name: /Ouvrir les mémos/i })).toHaveAttribute("href", "/memo");
-    expect(screen.getByRole("link", { name: /Ouvrir la grammaire/i })).toHaveAttribute("href", "/grammaire");
+    expect(screen.getByRole("link", { name: "Figures" })).toHaveAttribute("href", "/figures");
+    expect(screen.getByRole("link", { name: "Mémos" })).toHaveAttribute("href", "/memo");
+    expect(screen.getByRole("link", { name: "Grammaire" })).toHaveAttribute("href", "/grammaire");
   });
 
   it("renders global oral memo cards", () => {
