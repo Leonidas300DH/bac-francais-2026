@@ -532,6 +532,17 @@ function StudyPage({ text }: { text: StudyText }) {
     setSelectedRange(requestedRange ?? text.movements[0]?.range ?? null);
   }, [requestedRange, text.slug, text.movements]);
 
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const target = document.getElementById(decodeURIComponent(location.hash.slice(1)));
+    if (!target) return;
+
+    window.requestAnimationFrame(() => {
+      target.scrollIntoView({ block: "start" });
+    });
+  }, [location.hash, text.slug]);
+
   function openAll() {
     setDefaultOpen(true);
     setDetailsKey((value) => value + 1);
