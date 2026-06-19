@@ -840,13 +840,35 @@ const texts: StudyText[] = [
     author: "Étienne de La Boétie",
     sourceLabel: "Discours de la servitude volontaire, 1548",
     lines: sourceTexts.laboetieRuses,
-    context: "La Boétie explique comment le tyran détourne le peuple de la liberté par les distractions.",
-    quizFocus: "Le tyran maintient l'obéissance en transformant les divertissements en instruments politiques : le plaisir devient une garnison plus efficace que l'armée.",
-    problematique: "Comment La Boétie dénonce-t-il les divertissements comme instruments de domination ?",
-    recap: "La Boétie part de l'exemple de Cyrus, généralise la naïveté politique du peuple, puis assimile les spectacles à des appâts qui endorment les sujets sous le joug.",
+    context: "La Boétie écrit un discours humaniste et politique contre la tyrannie : un peuple n'est pas seulement dominé par la force, mais aussi par des méthodes plus subtiles.",
+    quizFocus: "Le tyran maintient l'obéissance en transformant les divertissements en instruments politiques : le plaisir détourne la pensée du peuple et rend la domination plus difficile à contredire.",
+    problematique: "Comment La Boétie montre-t-il que les tyrans utilisent le divertissement pour établir et maintenir leur domination ?",
+    recap: "La Boétie part d'une anecdote historique sur Cyrus, généralise ensuite cette stratégie à tous les tyrans, puis montre que les spectacles deviennent des appâts capables d'abrutir durablement les peuples.",
     opening: "On peut penser aux débats modernes sur les médias et les distractions politiques.",
+    introduction: [
+      {
+        id: "intro-auteur",
+        title: "L'auteur et l'oeuvre",
+        simple: "Étienne de La Boétie est un écrivain humaniste du XVIe siècle, proche de Montaigne. Dans le Discours de la servitude volontaire, il interroge une question politique centrale : pourquoi les peuples acceptent-ils d'obéir à un seul homme ?",
+      },
+      {
+        id: "intro-passage",
+        title: "Le passage",
+        simple: "L'extrait explique que le tyran ne domine pas uniquement par la violence. Il peut aussi maintenir son pouvoir par les plaisirs, les jeux et les spectacles, qui détournent le peuple de sa liberté.",
+      },
+      {
+        id: "intro-enjeu",
+        title: "L'enjeu",
+        simple: "À travers l'anecdote de Cyrus et des Lydiens, La Boétie expose un mécanisme de servitude volontaire : le peuple se laisse séduire par le divertissement et participe ainsi, sans toujours s'en rendre compte, à sa propre domination.",
+      },
+      {
+        id: "intro-plan",
+        title: "Annonce du plan",
+        simple: "Le texte progresse en trois temps : l'exemple historique de Cyrus, la généralisation du procédé à tous les tyrans, puis la dénonciation de l'abrutissement des peuples par les divertissements.",
+      },
+    ],
     movements: [
-      movement("m1", "I. L'exemple de Cyrus", 1, 7, ["exemple", "stratagème", "obéissance"], [
+      movement("m1", "I. L'exemple historique de Cyrus et des Lydiens", 1, 7, ["exemple", "stratagème", "obéissance"], [
         section("m1a", "Une ruse présentée comme un cas exemplaire", "La Boétie annonce que l'histoire de Cyrus rend la ruse tyrannique parfaitement visible. L'exemple sert de preuve concrète à une théorie politique.", "Le récit historique rend l'argument plus facile à retenir : dominer peut consister à distraire.", [
           figure("f1", "Exemple historique", "ce que Cyrus fit aux Lydiens", "La référence donne une autorité concrète à l'analyse.", 1),
           figure("f2", "Infinitif dégradant", "abêtir leurs sujets", "Le verbe montre que le but du tyran est de diminuer l'intelligence politique du peuple.", 1),
@@ -865,7 +887,7 @@ const texts: StudyText[] = [
           figure("f11", "Étymologie argumentative", "passe-temps / lude / de Lydie", "La référence au mot latin donne au récit une portée culturelle et mémorable.", 7),
         ]),
       ]),
-      movement("m2", "II. Une méthode générale", 8, 14, ["peuple", "naïveté", "servitude"], [
+      movement("m2", "II. La généralisation du procédé des tyrans", 8, 14, ["peuple", "naïveté", "servitude"], [
         section("m2a", "Cyrus révèle une pratique commune des tyrans", "La Boétie généralise l'exemple : tous les tyrans n'avouent pas aussi clairement leur intention, mais beaucoup recherchent discrètement le même résultat.", "L'exemple n'est pas une exception ; il révèle une règle de domination.", [
           figure("f12", "Opposition", "déclaré expressément / recherché discrètement", "La ruse change de forme mais conserve le même objectif.", 8, 9),
           figure("f13", "Adverbes de manière", "formellement / discrètement", "Les adverbes opposent l'ordre visible et la manipulation cachée.", 9),
@@ -884,7 +906,7 @@ const texts: StudyText[] = [
           figure("f22", "Métaphore tactile", "dès lors qu’on les chatouille", "La manipulation paraît douce, mais elle produit l'asservissement.", 14),
         ]),
       ]),
-      movement("m3", "III. Les loisirs comme pièges", 15, 17, ["spectacles", "appâts", "habitude"], [
+      movement("m3", "III. L'abrutissement des peuples par le divertissement", 15, 17, ["spectacles", "appâts", "habitude"], [
         section("m3a", "Les spectacles forment un système complet de domination", "La longue liste des divertissements montre que la tyrannie multiplie les plaisirs pour occuper le regard et l'esprit du peuple.", "La distraction devient une politique organisée.", [
           figure("f23", "Accumulation", "théâtres, jeux, farces, spectacles, gladiateurs", "La profusion donne l'image d'un peuple saturé de divertissements.", 15),
           figure("f24", "Métaphore", "appâts de la servitude", "Les plaisirs sont des pièges qui conduisent à l'obéissance.", 15),
@@ -902,6 +924,23 @@ const texts: StudyText[] = [
           figure("f32", "Verbe d'habitude", "s’accoutumaient à servir", "La domination réussit quand elle devient une habitude quotidienne.", 17),
         ]),
       ]),
+    ],
+    conclusion: [
+      {
+        id: "conclusion-bilan",
+        title: "Bilan",
+        simple: "La Boétie montre que le divertissement peut devenir une arme politique : au lieu de contraindre sans cesse par la force, le tyran occupe les esprits, flatte les désirs et habitue les peuples à servir.",
+      },
+      {
+        id: "conclusion-reponse",
+        title: "Réponse à la problématique",
+        simple: "Le texte répond donc que la domination passe par une ruse : détourner la pensée du peuple par des plaisirs apparemment innocents. La servitude devient alors plus stable, parce qu'elle semble agréable et volontaire.",
+      },
+      {
+        id: "conclusion-ouverture",
+        title: "Ouverture",
+        simple: "Ce passage peut être rapproché des réflexions modernes sur la propagande et les divertissements de masse, lorsqu'ils servent à détourner l'attention des citoyens.",
+      },
     ],
   }),
 ];

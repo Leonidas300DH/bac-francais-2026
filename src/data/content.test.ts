@@ -97,6 +97,21 @@ describe("study content", () => {
     }
   });
 
+  it("integrates the handwritten T10 oral notes into the Ruses du tyran fiche", () => {
+    const text = studyTexts.find((item) => item.slug === "les-ruses-du-tyran");
+
+    expect(text?.problematique).toBe(
+      "Comment La Boétie montre-t-il que les tyrans utilisent le divertissement pour établir et maintenir leur domination ?",
+    );
+    expect(text?.introduction).toHaveLength(4);
+    expect(text?.conclusion).toHaveLength(3);
+    expect(text?.movements.map((movement) => movement.title)).toEqual([
+      "I. L'exemple historique de Cyrus et des Lydiens",
+      "II. La généralisation du procédé des tyrans",
+      "III. L'abrutissement des peuples par le divertissement",
+    ]);
+  });
+
   it("provides dense analysis for the Prévert and Balzac sequence", () => {
     const expectedMinimums = new Map([
       ["familiale", { sections: 9, figures: 18 }],
