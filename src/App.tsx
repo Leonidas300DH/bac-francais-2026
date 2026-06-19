@@ -60,6 +60,14 @@ function scrollWindowTo(top: number) {
   });
 }
 
+function getScrollTargetOffset() {
+  if (!window.matchMedia("(max-width: 720px)").matches) return 8;
+
+  const toolbar = document.querySelector(".toolbar");
+  const toolbarHeight = toolbar?.getBoundingClientRect().height ?? 44;
+  return toolbarHeight + 12;
+}
+
 function Dashboard() {
   const [query, setQuery] = useState("");
   const [lastOpenedSlug] = useState<string | null>(() =>
@@ -556,7 +564,7 @@ function StudyPage({ text }: { text: StudyText }) {
       const scrollToTarget = () => {
         if (window.navigator.userAgent.toLowerCase().includes("jsdom")) return;
 
-        const top = target.getBoundingClientRect().top + window.scrollY - 8;
+        const top = target.getBoundingClientRect().top + window.scrollY - getScrollTargetOffset();
         scrollWindowTo(top);
       };
 
@@ -591,7 +599,7 @@ function StudyPage({ text }: { text: StudyText }) {
       const source = document.getElementById("texte-source");
       if (!source) return;
 
-      const top = source.getBoundingClientRect().top + window.scrollY - 8;
+      const top = source.getBoundingClientRect().top + window.scrollY - getScrollTargetOffset();
       scrollWindowTo(top);
     };
 
@@ -1019,7 +1027,7 @@ function SourceText({
     };
 
     const revealSource = () => {
-      const top = source.getBoundingClientRect().top + window.scrollY - 8;
+      const top = source.getBoundingClientRect().top + window.scrollY - getScrollTargetOffset();
       scrollWindowTo(top);
     };
 

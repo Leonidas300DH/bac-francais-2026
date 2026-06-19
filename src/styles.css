@@ -1508,6 +1508,9 @@ h1, h2 {
   .study-main {
     width: min(calc(100vw - 14px), 1320px);
   }
+  .study-main {
+    padding-top: calc(64px + env(safe-area-inset-top, 0px));
+  }
   .dashboard-main {
     padding: 10px 0 28px;
   }
@@ -1612,13 +1615,18 @@ h1, h2 {
     overflow-wrap: anywhere;
   }
   .toolbar {
+    position: fixed;
+    right: 7px;
+    left: 7px;
     max-width: 100%;
-    top: 4px;
+    top: env(safe-area-inset-top, 0px);
+    z-index: 1000;
     justify-content: flex-start;
     flex-wrap: nowrap;
     overflow-x: auto;
-    margin: 8px 0 10px;
+    margin: 0;
     padding: 5px;
+    border-radius: 0 0 12px 12px;
     scrollbar-width: none;
   }
   .toolbar::-webkit-scrollbar { display: none; }
