@@ -17,8 +17,10 @@ describe("study app interface", () => {
 
     expect(screen.queryByText("Progression globale")).not.toBeInTheDocument();
     expect(screen.queryByText("Quiz enregistrés")).not.toBeInTheDocument();
-    expect(screen.getByText("Reprise rapide")).toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "Ouvrir une fiche" })).toBeInTheDocument();
+    expect(screen.queryByText("Reprise rapide")).not.toBeInTheDocument();
+    expect(screen.queryByText("Réviser les 16 textes sans se perdre dans ses notes")).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "16 textes" })).toBeInTheDocument();
+    expect(screen.getByRole("link", { name: "Ouvrir Les Effarés" })).toHaveAttribute("href", "/textes/les-effares");
     expect(screen.getByRole("link", { name: "Figures" })).toHaveAttribute("href", "/figures");
     expect(screen.getByRole("link", { name: "Mémos" })).toHaveAttribute("href", "/memo");
     expect(screen.getByRole("link", { name: "Grammaire" })).toHaveAttribute("href", "/grammaire");

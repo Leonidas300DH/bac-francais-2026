@@ -1,5 +1,4 @@
 import {
-  BookOpen,
   CheckCircle2,
   ChevronLeft,
   Circle,
@@ -66,110 +65,68 @@ function Dashboard() {
   });
 
   return (
-    <main className="dashboard">
-      <section className="dashboard-hero">
-        <div>
-          <div className="brand-line">
-            <GraduationCap aria-hidden="true" />
-            <span>Bac Français 2026</span>
-          </div>
-          <h1>Réviser les 16 textes sans se perdre dans ses notes</h1>
-          <p>
-            Fiches à tiroirs, texte source synchronisé, figures de style et questions ouvertes pour préparer
-            l'explication linéaire à l'oral.
-          </p>
-        </div>
-        <Link className="primary-action" to="/textes/les-effares">
-          <BookOpen aria-hidden="true" />
-          Commencer
-        </Link>
-      </section>
+    <div className="dashboard-shell">
+      <LibrarySidebar activeSlug={lastOpenedSlug ?? ""} />
 
-      <section className="dashboard-action-grid" aria-label="Accès rapides">
-        <article className="resume-strip">
+      <main className="dashboard-main">
+        <header className="dashboard-topbar">
           <div>
-            <span>Reprise rapide</span>
-            <strong>{lastOpenedText ? lastOpenedText.title : "Aucun texte ouvert pour l'instant"}</strong>
-            <p>{lastOpenedText ? `${lastOpenedText.author} - ${lastOpenedText.sourceLabel}` : "Commence par une fiche, puis ce raccourci gardera le dernier texte consulté."}</p>
+            <div className="brand-line">
+              <GraduationCap aria-hidden="true" />
+              <span>Bac Français 2026</span>
+            </div>
+            <h1>16 textes</h1>
           </div>
-          <div className="resume-actions">
-            {lastOpenedText ? (
-              <Link className="secondary-action" to={`/textes/${lastOpenedText.slug}`}>
-                Reprendre
-              </Link>
-            ) : null}
+          <nav className="dashboard-actions" aria-label="Accès rapides">
             <Link className="primary-action" to={`/textes/${nextText.slug}`}>
-              Ouvrir une fiche
+              {lastOpenedText ? `Continuer : ${lastOpenedText.title}` : "Ouvrir Les Effarés"}
             </Link>
+            <Link className="secondary-action" to="/memo">
+              <NotebookTabs aria-hidden="true" />
+              Mémos
+            </Link>
+            <Link className="secondary-action" to="/figures">
+              <Layers3 aria-hidden="true" />
+              Figures
+            </Link>
+            <Link className="secondary-action" to="/grammaire">
+              <Languages aria-hidden="true" />
+              Grammaire
+            </Link>
+          </nav>
+        </header>
+
+        <section className="dashboard-tools" aria-label="Recherche des textes">
+          <label className="search-field">
+            <Search aria-hidden="true" />
+            <input
+              value={query}
+              onChange={(event) => setQuery(event.target.value)}
+              placeholder="Chercher un titre, un auteur, une oeuvre..."
+            />
+          </label>
+          <div className="status-legend">
+            <span><CheckCircle2 aria-hidden="true" /> prêt</span>
+            <span><Sparkles aria-hidden="true" /> à relire</span>
+            <span><Circle aria-hidden="true" /> brouillon</span>
           </div>
-        </article>
+        </section>
 
-        <article className="memo-hub-teaser">
-          <div>
-            <span>Révision express</span>
-            <strong>Plans des 16 textes</strong>
-            <p>Problématique, plan, citations et réponse finale.</p>
-          </div>
-          <Link className="secondary-action" to="/memo">
-            <NotebookTabs aria-hidden="true" />
-            Mémos
-          </Link>
-        </article>
-
-        <article className="figure-hub-teaser">
-          <div>
-            <span>Révision transversale</span>
-            <strong>Figures de style</strong>
-            <p>Procédé, citation, effet produit et retour aux lignes.</p>
-          </div>
-          <Link className="secondary-action" to="/figures">
-            <Layers3 aria-hidden="true" />
-            Figures
-          </Link>
-        </article>
-
-        <article className="grammar-hub-teaser">
-          <div>
-            <span>Question de grammaire</span>
-            <strong>16 entraînements</strong>
-            <p>Une phrase du texte, une notion, une réponse prête.</p>
-          </div>
-          <Link className="secondary-action" to="/grammaire">
-            <Languages aria-hidden="true" />
-            Grammaire
-          </Link>
-        </article>
-      </section>
-
-      <section className="dashboard-tools" aria-label="Recherche des textes">
-        <label className="search-field">
-          <Search aria-hidden="true" />
-          <input
-            value={query}
-            onChange={(event) => setQuery(event.target.value)}
-            placeholder="Chercher un titre, un auteur, une oeuvre..."
-          />
-        </label>
-        <div className="status-legend">
-          <span><CheckCircle2 aria-hidden="true" /> prêt</span>
-          <span><Sparkles aria-hidden="true" /> à relire</span>
-          <span><Circle aria-hidden="true" /> brouillon</span>
-        </div>
-      </section>
-
-      <section className="text-grid" aria-label="Liste des textes">
-        {filteredTexts.map((text) => {
-          return (
-            <Link className="text-card" to={`/textes/${text.slug}`} key={text.slug}>
+        <section className="text-list" aria-label="Liste des textes">
+          {filteredTexts.map((text, index) => (
+            <Link className="text-row" to={`/textes/${text.slug}`} key={text.slug}>
+              <span className="text-row-number">{String(index + 1).padStart(2, "0")}</span>
               <span className={`status-dot ${text.status}`}>{statusLabel(text.status)}</span>
-              <h2>{text.title}</h2>
-              <p>{text.author}</p>
-              <span>{text.sourceLabel}</span>
+              <span className="text-row-title">
+                <strong>{text.title}</strong>
+                <small>{text.author}</small>
+              </span>
+              <span className="text-row-source">{text.sourceLabel}</span>
             </Link>
-          );
-        })}
-      </section>
-    </main>
+          ))}
+        </section>
+      </main>
+    </div>
   );
 }
 
