@@ -952,13 +952,35 @@ texts.push(
     author: "Étienne de La Boétie",
     sourceLabel: "Discours de la servitude volontaire, 1548",
     lines: sourceTexts.laboetieFavoris,
-    context: "La Boétie explique que le tyran est soutenu par des favoris intéressés.",
-    quizFocus: "La tyrannie fonctionne parce qu'elle distribue du profit : autour du tyran se forme une chaîne de complices qui vivent du butin et participent à l'asservissement.",
-    problematique: "Comment La Boétie montre-t-il que la tyrannie repose sur des complicités ?",
-    recap: "La Boétie montre que la tyrannie attire les ambitieux comme une maladie attire la corruption, compare les favoris à une bande de voleurs, puis révèle que le tyran asservit les sujets par d'autres sujets.",
+    context: "La Boétie, écrivain humaniste du XVIe siècle et ami de Montaigne, réfléchit dans le Discours de la servitude volontaire aux raisons qui permettent au tyran d'accéder au pouvoir, puis surtout de s'y maintenir.",
+    quizFocus: "La tyrannie fonctionne parce qu'elle s'appuie sur une structure hiérarchique : des courtisans et des favoris, attirés par le profit, deviennent des rouages essentiels de la domination.",
+    problematique: "De quelle manière La Boétie multiplie-t-il les images pour dénoncer la part de responsabilité des sujets dans leur servitude ?",
+    recap: "La Boétie multiplie les images de maladie, de piraterie et de bois fendu pour montrer que la tyrannie n'est pas seulement imposée d'en haut : elle est entretenue par tout un réseau de complices.",
     opening: "On peut ouvrir sur les critiques modernes de la corruption et du clientélisme.",
+    introduction: [
+      {
+        id: "intro-auteur",
+        title: "L'auteur et l'oeuvre",
+        simple: "Étienne de La Boétie est un écrivain humaniste du XVIe siècle. Dans le Discours de la servitude volontaire, il ne s'intéresse pas seulement à la violence du tyran : il cherche à comprendre pourquoi un peuple accepte de rester soumis.",
+      },
+      {
+        id: "intro-situation",
+        title: "La situation du passage",
+        simple: "Après avoir dénoncé les malheurs du peuple et les pièges qui le détournent de la liberté, La Boétie explique ici une autre raison de la servitude : l'existence d'une hiérarchie d'intérêts autour du tyran.",
+      },
+      {
+        id: "intro-enjeu",
+        title: "L'enjeu",
+        simple: "Le passage réfléchit à la figure du courtisan, rouage essentiel de la tyrannie. Les favoris ne sont pas de simples spectateurs : ils profitent du système et contribuent à le faire durer.",
+      },
+      {
+        id: "intro-plan",
+        title: "Annonce du plan",
+        simple: "Le texte progresse en trois images : la tyrannie comme maladie contagieuse, le monde des pirates, puis l'idée que les sujets s'asservissent eux-mêmes.",
+      },
+    ],
     movements: [
-      movement("m1", "I. Les profiteurs de la tyrannie", 1, 4, ["profit", "ambition", "avarice"], [
+      movement("m1", "I. La tyrannie contagieuse", 1, 4, ["profit", "ambition", "avarice"], [
         section("m1a", "La tyrannie devient profitable", "La Boétie commence par une idée scandaleuse : autant de gens trouvent la tyrannie avantageuse que d'autres trouveraient la liberté désirable. La domination tient donc aussi par intérêt.", "Le texte déplace l'analyse : le tyran n'est pas seul, il a des bénéficiaires.", [
           figure("f1", "Antithèse politique", "tyrannie semble profitable / liberté serait agréable", "L'opposition montre que l'intérêt matériel peut l'emporter sur le goût de la liberté.", 1),
           figure("f2", "Polyptote économique", "faveurs / sous-faveurs / gains / regains", "La répétition des mots de profit donne l'image d'un système de redistribution corrupteur.", 1),
@@ -977,7 +999,7 @@ texts.push(
           figure("f11", "Diminutif ironique", "tyranneaux", "Les favoris imitent le tyran à leur échelle.", 4),
         ]),
       ]),
-      movement("m2", "II. Une bande organisée", 5, 10, ["voleurs", "hiérarchie", "butin"], [
+      movement("m2", "II. Le monde des pirates", 5, 10, ["voleurs", "hiérarchie", "butin"], [
         section("m2a", "Les favoris sont assimilés à des criminels", "La comparaison avec les voleurs et les corsaires rabaisse les puissants. Les proches du tyran ne sont pas des serviteurs de l'État, mais une organisation de prédation.", "La satire enlève toute noblesse aux courtisans.", [
           figure("f12", "Comparaison criminelle", "grands voleurs et les fameux corsaires", "Les favoris sont assimilés à des pillards.", 5),
           figure("f13", "Parallélisme", "les uns... les autres", "La répétition organise la description comme une bande où chacun a son rôle.", 6),
@@ -996,7 +1018,7 @@ texts.push(
           figure("f22", "Échange intéressé", "pour récompense... une part du butin", "La protection et le profit fondent l'alliance avec les criminels.", 10),
         ]),
       ]),
-      movement("m3", "III. Les sujets asservissent les sujets", 11, 12, ["système", "bois", "complicité"], [
+      movement("m3", "III. Les sujets s'asservissent eux-mêmes", 11, 12, ["système", "bois", "complicité"], [
         section("m3a", "Le tyran gouverne par intermédiaires", "La conclusion formule clairement le mécanisme : les sujets sont asservis par d'autres sujets. Le tyran est gardé par ceux dont il devrait se méfier.", "La force du tyran vient d'un réseau intérieur de relais et de bénéficiaires.", [
           figure("f23", "Formule synthétique", "les sujets les uns par le moyen des autres", "La phrase résume toute la mécanique de domination indirecte.", 11),
           figure("f24", "Paradoxe politique", "gardé par ceux dont il devrait se méfier", "Ceux qui pourraient renverser le tyran deviennent ses protecteurs.", 11),
@@ -1014,6 +1036,23 @@ texts.push(
         ]),
       ]),
     ],
+    conclusion: [
+      {
+        id: "conclusion-bilan",
+        title: "Bilan",
+        simple: "La Boétie convoque plusieurs images frappantes pour dénoncer un système politique fondé sur la tyrannie, la corruption, la violence et l'oppression.",
+      },
+      {
+        id: "conclusion-reponse",
+        title: "Réponse à la problématique",
+        simple: "La responsabilité des sujets apparaît dans le réseau hiérarchisé qu'ils acceptent de construire : chacun obéit à plus puissant que soi en espérant obtenir une part de profit ou un petit pouvoir.",
+      },
+      {
+        id: "conclusion-ouverture",
+        title: "Ouverture",
+        simple: "Cette analyse annonce les critiques modernes des systèmes de cour, du clientélisme et de toutes les formes de pouvoir qui récompensent la soumission.",
+      },
+    ],
   }),
   makeText({
     slug: "discours-du-vieux-tahitien",
@@ -1021,13 +1060,35 @@ texts.push(
     author: "Denis Diderot",
     sourceLabel: "Supplément au voyage de Bougainville, 1772",
     lines: sourceTexts.diderotTahitien,
-    context: "Diderot donne la parole à un Tahitien qui accuse les Européens de voler, corrompre et asservir.",
-    quizFocus: "Le discours inverse le regard colonial : Bougainville est jugé par le Tahitien, et la conquête européenne apparaît comme un vol, une corruption et une menace d'esclavage.",
-    problematique: "Comment Diderot critique-t-il la colonisation à travers la voix du vieux Tahitien ?",
-    recap: "Diderot critique la colonisation en donnant au Tahitien une parole d'accusation, en ridiculisant la propriété fondée sur la force, puis en affirmant une fraternité naturelle qui rend l'esclavage illégitime.",
+    context: "Diderot, philosophe des Lumières et directeur de l'Encyclopédie avec d'Alembert, utilise la fiction du voyage pour questionner la prise de possession de nouveaux territoires par les Européens.",
+    quizFocus: "Le discours inverse le regard colonial : le vieux Tahitien juge Bougainville et défend l'idée que l'homme naturel, libre et proche de la nature, vaut moralement mieux que l'homme civilisé corrompu par la propriété et la domination.",
+    problematique: "En quoi le discours du vieux Tahitien vise-t-il à persuader le lecteur que l'homme naturel est plus heureux et meilleur que l'homme civilisé ?",
+    recap: "Diderot donne au vieux Tahitien une parole d'accusation, oppose la liberté naturelle aux valeurs européennes de propriété et de conquête, puis affirme une égalité humaine qui rend l'esclavage illégitime.",
     opening: "On peut ouvrir sur Montaigne, qui remet aussi en question l'ethnocentrisme européen.",
+    introduction: [
+      {
+        id: "intro-lumieres",
+        title: "Le contexte des Lumières",
+        simple: "Au XVIIIe siècle, les philosophes des Lumières héritent de l'humanisme et utilisent la raison pour interroger les préjugés, les pouvoirs établis et la domination européenne.",
+      },
+      {
+        id: "intro-auteur",
+        title: "Diderot et l'oeuvre",
+        simple: "Diderot est un philosophe majeur des Lumières, directeur de l'Encyclopédie avec d'Alembert. En 1772, il rédige le Supplément au voyage de Bougainville, un dialogue fictif qui réfléchit à la liberté, au bonheur et à la morale.",
+      },
+      {
+        id: "intro-passage",
+        title: "La situation du passage",
+        simple: "Dans cet extrait, Diderot donne la parole à un vieux Tahitien qui s'adresse directement à Bougainville. Cette voix oppose l'homme naturel, libre et proche de la nature, à l'homme européen, présenté comme artificiel et corrompu.",
+      },
+      {
+        id: "intro-plan",
+        title: "Annonce du plan",
+        simple: "Le discours progresse en trois temps : le combat indigné du vieillard, le réquisitoire contre les valeurs européennes, puis la revendication de l'égalité entre Tahitiens et Européens.",
+      },
+    ],
     movements: [
-      movement("m1", "I. Un rejet violent des Européens", 1, 10, ["accusation", "bonheur", "corruption"], [
+      movement("m1", "I. Le combat indigné du vieillard", 1, 10, ["accusation", "bonheur", "corruption"], [
         section("m1a", "Bougainville est traité en brigand", "Le discours s'ouvre par une apostrophe violente. Diderot inverse le récit héroïque de l'exploration : le navigateur européen devient le chef d'une bande de voleurs.", "Le point de vue colonisé juge le colonisateur.", [
           figure("f1", "Apostrophe", "Et toi", "L'adresse directe donne au discours une force de confrontation.", 1),
           figure("f2", "Périphrase accusatrice", "chef des brigands", "Bougainville n'est plus explorateur, mais responsable d'une violence collective.", 1),
@@ -1047,7 +1108,7 @@ texts.push(
           figure("f12", "Question rhétorique", "qui es-tu donc, pour faire des esclaves ?", "La question refuse toute légitimité à Bougainville.", 10),
         ]),
       ]),
-      movement("m2", "II. La critique de la propriété coloniale", 11, 17, ["liberté", "terre", "possession"], [
+      movement("m2", "II. Le réquisitoire contre les valeurs européennes", 11, 17, ["liberté", "terre", "possession"], [
         section("m2a", "Le titre de propriété est rendu absurde", "Orou traduit l'inscription européenne : le pays serait à Bougainville. La réponse du Tahitien ridiculise immédiatement ce droit fondé sur un simple passage.", "Diderot attaque la fiction juridique qui transforme la présence en possession.", [
           figure("f13", "Mise en scène de traduction", "Orou ! toi qui entends la langue", "L'interprète rend visible la rencontre entre deux systèmes de pensée.", 11),
           figure("f14", "Objet symbolique", "cette lame de métal", "Le métal représente l'inscription coloniale, froide et artificielle.", 11),
@@ -1066,7 +1127,7 @@ texts.push(
           figure("f23", "Métaphore intérieure", "au fond de ton cœur", "La conquête est présentée comme une intention secrète et coupable.", 17),
         ]),
       ]),
-      movement("m3", "III. L'égalité naturelle contre l'esclavage", 18, 23, ["fraternité", "nature", "droit"], [
+      movement("m3", "III. La revendication de l'égalité entre Tahitiens et Européens", 18, 23, ["fraternité", "nature", "droit"], [
         section("m3a", "L'Européen est pris dans sa contradiction", "Bougainville refuse pour lui-même l'esclavage, mais veut l'imposer aux Tahitiens. Le discours révèle l'incohérence morale du colonisateur.", "Le Tahitien transforme la liberté européenne en argument contre la colonisation.", [
           figure("f24", "Antithèse", "Tu n’es pas esclave / tu veux nous asservir", "La contradiction européenne est formulée de façon nette.", 18),
           figure("f25", "Hyperbole morale", "tu souffrirais la mort plutôt que de l’être", "La phrase rappelle que la liberté vaut plus que la vie pour Bougainville lui-même.", 18),
@@ -1085,6 +1146,23 @@ texts.push(
           figure("f34", "Formule finale humaniste", "Nous avons respecté notre image en toi", "Le Tahitien reconnaît dans l'Européen un semblable, là où l'Européen veut dominer.", 23),
         ]),
       ]),
+    ],
+    conclusion: [
+      {
+        id: "conclusion-bilan",
+        title: "Bilan",
+        simple: "À travers le vieux Tahitien, Diderot touche le lecteur en mettant face à face un discours de révolte et une portée philosophique : la liberté naturelle vaut mieux que la domination civilisée.",
+      },
+      {
+        id: "conclusion-reponse",
+        title: "Réponse à la problématique",
+        simple: "Le discours persuade parce qu'il montre un peuple heureux avant l'arrivée des Européens, puis révèle que la civilisation apporte surtout propriété, violence, jalousie et esclavage.",
+      },
+      {
+        id: "conclusion-ouverture",
+        title: "Ouverture",
+        simple: "Le lien avec La Boétie est net : les deux textes défendent la liberté et refusent la soumission, en cherchant à faire réagir le lecteur.",
+      },
     ],
   }),
   makeText({

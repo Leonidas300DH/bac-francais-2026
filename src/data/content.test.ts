@@ -112,6 +112,33 @@ describe("study content", () => {
     ]);
   });
 
+  it("integrates the handwritten T11 and T12 oral plans", () => {
+    const favoris = studyTexts.find((item) => item.slug === "satire-des-favoris");
+    const tahitien = studyTexts.find((item) => item.slug === "discours-du-vieux-tahitien");
+
+    expect(favoris?.problematique).toBe(
+      "De quelle manière La Boétie multiplie-t-il les images pour dénoncer la part de responsabilité des sujets dans leur servitude ?",
+    );
+    expect(favoris?.introduction).toHaveLength(4);
+    expect(favoris?.conclusion).toHaveLength(3);
+    expect(favoris?.movements.map((movement) => movement.title)).toEqual([
+      "I. La tyrannie contagieuse",
+      "II. Le monde des pirates",
+      "III. Les sujets s'asservissent eux-mêmes",
+    ]);
+
+    expect(tahitien?.problematique).toBe(
+      "En quoi le discours du vieux Tahitien vise-t-il à persuader le lecteur que l'homme naturel est plus heureux et meilleur que l'homme civilisé ?",
+    );
+    expect(tahitien?.introduction).toHaveLength(4);
+    expect(tahitien?.conclusion).toHaveLength(3);
+    expect(tahitien?.movements.map((movement) => movement.title)).toEqual([
+      "I. Le combat indigné du vieillard",
+      "II. Le réquisitoire contre les valeurs européennes",
+      "III. La revendication de l'égalité entre Tahitiens et Européens",
+    ]);
+  });
+
   it("provides dense analysis for the Prévert and Balzac sequence", () => {
     const expectedMinimums = new Map([
       ["familiale", { sections: 9, figures: 18 }],
