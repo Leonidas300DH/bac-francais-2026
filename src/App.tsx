@@ -10,7 +10,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Link, Navigate, Route, Routes, useLocation, useParams } from "react-router-dom";
+import { Link, Navigate, Route, Routes, useLocation, useNavigate, useParams } from "react-router-dom";
 import { grammarCards } from "./data/grammarCards";
 import { findStudyText, studyTexts } from "./data/studyTexts";
 import { buildFigureIndex, filterFigureIndex, getFigureNameCounts } from "./lib/figures";
@@ -517,7 +517,9 @@ function StudyRoute() {
 
 function StudyPage({ text }: { text: StudyText }) {
   const location = useLocation();
+  const navigate = useNavigate();
   const requestedRange = useMemo(() => parseRangeParam(new URLSearchParams(location.search).get("ligne")), [location.search]);
+  const activeHash = location.hash ? decodeURIComponent(location.hash.slice(1)) : "";
   const [selectedRange, setSelectedRange] = useState<LineRange | null>(
     requestedRange ?? text.movements[0]?.range ?? null,
   );
@@ -567,6 +569,15 @@ function StudyPage({ text }: { text: StudyText }) {
     setDefaultOpen(false);
     setSelectedRange(null);
     setDetailsKey((value) => value + 1);
+    if (location.hash) {
+      navigate({ pathname: location.pathname, search: location.search, hash: "" }, { replace: true });
+    }
+    if (!window.navigator.userAgent.toLowerCase().includes("jsdom")) {
+      const scrollToTop = () => window.scrollTo({ top: 0, behavior: "auto" });
+      window.requestAnimationFrame(scrollToTop);
+      window.setTimeout(scrollToTop, 80);
+      window.setTimeout(scrollToTop, 240);
+    }
   }
 
   return (
@@ -604,7 +615,7 @@ function StudyPage({ text }: { text: StudyText }) {
 
         <div className="study-layout">
           <section className="analysis-column" key={detailsKey}>
-            <Chapter id="introduction" title="Introduction" defaultOpen={defaultOpen}>
+            <Chapter id="introduction" title="Introduction" defaultOpen={defaultOpen || activeHash === "introduction"}>
               {text.introduction.map((section) => (
                 <SectionDrawer
                   key={section.id}
@@ -627,12 +638,12 @@ function StudyPage({ text }: { text: StudyText }) {
               <MovementChapter
                 key={movement.id}
                 movement={movement}
-                defaultOpen={defaultOpen}
+                defaultOpen={defaultOpen || activeHash === movement.id}
                 onSelectRange={setSelectedRange}
               />
             ))}
 
-            <Chapter id="conclusion" title="Conclusion" defaultOpen={defaultOpen}>
+            <Chapter id="conclusion" title="Conclusion" defaultOpen={defaultOpen || activeHash === "conclusion"}>
               {text.conclusion.map((section) => (
                 <SectionDrawer
                   key={section.id}
@@ -643,15 +654,25 @@ function StudyPage({ text }: { text: StudyText }) {
               ))}
             </Chapter>
 
-            <FigureReviewChapter text={text} defaultOpen={defaultOpen} onSelectRange={setSelectedRange} />
+            <FigureReviewChapter
+              text={text}
+              defaultOpen={defaultOpen || activeHash === "glossaire"}
+              onSelectRange={setSelectedRange}
+            />
 
-            <MemoryPanel text={text} onSelectRange={setSelectedRange} />
+            <Chapter id="memo" title="Mémo oral" defaultOpen={defaultOpen || activeHash === "memo"}>
+              <MemoryPanel text={text} onSelectRange={setSelectedRange} />
+            </Chapter>
 
-            <div className="recap">
-              <strong>Fil directeur à mémoriser :</strong> {text.recap}
-            </div>
+            <Chapter id="recap" title="Fil directeur à mémoriser" defaultOpen={defaultOpen || activeHash === "recap"}>
+              <div className="recap">
+                <strong>Fil directeur à mémoriser :</strong> {text.recap}
+              </div>
+            </Chapter>
 
-            <QuizPanel text={text} />
+            <Chapter id="quiz" title="Questions de révision" defaultOpen={defaultOpen || activeHash === "quiz"}>
+              <QuizPanel text={text} />
+            </Chapter>
           </section>
 
           <SourceText text={text} selectedRange={selectedRange} onSelectRange={setSelectedRange} />
@@ -695,10 +716,9 @@ function MemoryPanel({
   onSelectRange: (range: LineRange) => void;
 }) {
   return (
-    <section className="memo-panel" id="memo" aria-label="Mémo oral">
+    <section className="memo-panel" aria-label="Mémo oral">
       <div className="memo-heading">
         <div>
-          <h2>Mémo oral</h2>
           <p>Une fiche courte à savoir redire sans lire toute l'analyse.</p>
         </div>
         <span>2 min</span>
@@ -973,10 +993,9 @@ function QuizPanel({ text }: { text: StudyText }) {
   const [revealedAnswers, setRevealedAnswers] = useState<Record<string, boolean>>({});
 
   return (
-    <section className="quiz-panel" id="quiz" aria-label="Questions de révision">
+    <section className="quiz-panel" aria-label="Questions de révision">
       <div className="quiz-heading">
         <div>
-          <h2>Questions de révision</h2>
           <p>Questions ouvertes avec réponse masquée, pour vérifier le contenu sans propositions imposées.</p>
         </div>
       </div>

@@ -739,6 +739,9 @@ h1, h2 {
   margin-top: 10px;
   scroll-margin-top: 132px;
 }
+.chapter-body .memo-panel {
+  margin-top: 0;
+}
 .memo-heading {
   display: flex;
   justify-content: space-between;
@@ -890,6 +893,13 @@ h1, h2 {
   background: var(--paper);
   box-shadow: var(--shadow);
   scroll-margin-top: 132px;
+}
+.chapter-body .quiz-panel {
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 .quiz-heading {
   display: flex;
